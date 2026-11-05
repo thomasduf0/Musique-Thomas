@@ -38,7 +38,8 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data/albums.json
             git commit -m "Mise à jour des écoutes depuis Notion [skip ci]"
-            git push
+            git pull --rebase -X theirs origin main || git rebase --abort
+            git push origin HEAD:main || echo "::warning::Données non enregistrées dans le dépôt (le site est publié quand même)"
           fi
 
       - name: Préparer le site
