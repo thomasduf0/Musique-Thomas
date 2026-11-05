@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Les écoutes de Thomas</title>
+  <meta name="description" content="Récap de mes écoutes d'albums : notes, coups de cœur et albums à écouter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💿</text></svg>">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Journal d'écoute</p>
+      <h1>Les écoutes <em>de Thomas</em></h1>
+      <p class="lede">Chaque album écouté, noté de 1 à 5 étoiles, avec mes impressions.</p>
+      <dl class="kpis" id="kpis"></dl>
+    </div>
+  </header>
+
+  <nav class="tabs wrap" role="tablist">
+    <button role="tab" data-view="all" aria-selected="true">Écoutés</button>
+    <button role="tab" data-view="fav" aria-selected="false">Coups de cœur</button>
+    <button role="tab" data-view="todo" aria-selected="false">À écouter</button>
+    <button role="tab" data-view="stats" aria-selected="false">Stats</button>
+  </nav>
+
+  <main class="wrap">
+    <section id="filters" class="filters">
+      <input id="q" type="search" placeholder="Rechercher un album ou un artiste…" aria-label="Rechercher">
+      <select id="genre" aria-label="Genre"><option value="">Tous les genres</option></select>
+      <select id="lang" aria-label="Langue"><option value="">Toutes les langues</option></select>
+      <select id="rating" aria-label="Note">
+        <option value="">Toutes les notes</option>
+        <option value="5">★★★★★</option><option value="4">★★★★</option>
+        <option value="3">★★★</option><option value="2">★★</option><option value="1">★</option>
+      </select>
+      <select id="sort" aria-label="Tri">
+        <option value="listened">Dernières écoutes</option>
+        <option value="rating">Meilleures notes</option>
+        <option value="released">Date de sortie</option>
+        <option value="artist">Artiste A→Z</option>
+      </select>
+    </section>
+
+    <p id="count" class="count"></p>
+    <section id="grid" class="grid" aria-live="polite"></section>
+    <section id="stats" class="stats" hidden></section>
+  </main>
+
+  <dialog id="detail" class="detail">
+    <button class="close" aria-label="Fermer" onclick="this.closest('dialog').close()">×</button>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <footer class="wrap foot">
+    <p>Données issues de mon Notion · <span id="updated"></span></p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+name: Synchro Notion et publication
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 5 * * *" # tous les jours vers 6h-7h (heure de Paris)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Récupérer les données (Notion si le secret existe) et les pochettes
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: node scripts/build-data.mjs
+
+      - name: Enregistrer data/albums.json s'il a changé
+        run: |
+          if ! git diff --quiet -- data/albums.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/albums.json
+            git commit -m "Mise à jour des écoutes depuis Notion [skip ci]"
+            git push
+          fi
+
+      - name: Préparer le site
+        run: |
+          mkdir -p _site
+          cp -r index.html assets data _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,2205 @@
+{
+ "updatedAt": "2026-11-05T10:04:36.927Z",
+ "source": "seed",
+ "albums": [
+  {
+   "id": "3a1a7bc0f6df80dabb69c174774f87ca",
+   "album": "Loud",
+   "artist": "Rihanna",
+   "genres": [
+    "Pop",
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2026-07-18",
+   "released": "2010-11-12",
+   "link": "https://music.apple.com/fr/album/loud-deluxe/1440895867",
+   "cover": null
+  },
+  {
+   "id": "3a1a7bc0f6df80a8af0bfa27b9341299",
+   "album": "Inferno",
+   "artist": "Boards of Canada",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 1,
+   "listened": true,
+   "listenedOn": "2026-07-16",
+   "released": "2026-05-29",
+   "link": "https://music.apple.com/fr/album/inferno/1890015523",
+   "cover": null
+  },
+  {
+   "id": "3a1a7bc0f6df80c1bab2f5e9cf07c49a",
+   "album": "CONFESSIONS II",
+   "artist": "Madonna",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-07-15",
+   "released": "2026-07-03",
+   "link": "https://music.apple.com/fr/album/confessions-ii/1892545087",
+   "cover": null
+  },
+  {
+   "id": "378a7bc0f6df80a0b51eee4b2fee3421",
+   "album": "MA CLAQUE",
+   "artist": "KALIKA",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 1,
+   "listened": true,
+   "listenedOn": "2026-06-07",
+   "released": "2026-05-29",
+   "link": "https://open.qobuz.com/album/r080gbqzwcf05",
+   "cover": null
+  },
+  {
+   "id": "378a7bc0f6df80edb892d0b454d2562f",
+   "album": "Ö",
+   "artist": "Fcukers",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-06-07",
+   "released": "2026-03-27",
+   "link": "https://open.qobuz.com/album/yzlb2qe94okba",
+   "cover": null
+  },
+  {
+   "id": "377a7bc0f6df8093bb73ebc51a659964",
+   "album": "SOMA",
+   "artist": "Skrillex",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Espagnol",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2026-06-06",
+   "released": "2026-06-05",
+   "link": "https://open.qobuz.com/album/w7l5yz1yb621d",
+   "cover": null
+  },
+  {
+   "id": "2eca7bc0f6df80f1b224fe084b360973",
+   "album": "Ambiguous Desire",
+   "artist": "Arlo Parks",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-06-02",
+   "released": "2026-04-03",
+   "link": "https://music.apple.com/fr/album/ambiguous-desire/1862570378",
+   "cover": null
+  },
+  {
+   "id": "373a7bc0f6df80669101e4f2b077b29a",
+   "album": "Detour",
+   "artist": "Kim Petras",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-06-02",
+   "released": "2026-05-29",
+   "link": "https://music.apple.com/fr/album/detour/6771896253",
+   "cover": null
+  },
+  {
+   "id": "2eea7bc0f6df808290b5f1b4ff3dc0a0",
+   "album": "Fancy That",
+   "artist": "PinkPantheress",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-06-02",
+   "released": "2025-05-09",
+   "link": "https://music.apple.com/fr/album/fancy-that/1806614239",
+   "cover": null
+  },
+  {
+   "id": "2eaa7bc0f6df8045bbedebce0e4dff82",
+   "album": "Kiss all the time. Disco, Occasionally.",
+   "artist": "Harry Styles",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-06-02",
+   "released": "2026-03-06",
+   "link": "https://music.apple.com/fr/album/kiss-all-the-time-disco-occasionally/1870984032",
+   "cover": null
+  },
+  {
+   "id": "372a7bc0f6df80d3a7f3e971ff7544a7",
+   "album": "spleen. social club",
+   "artist": "aupinard",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-06-01",
+   "released": "2026-04-24",
+   "link": "https://music.apple.com/fr/album/spleen-social-club/1885922024",
+   "cover": null
+  },
+  {
+   "id": "2f7a7bc0f6df809789c8ce863b94fbbc",
+   "album": "THIS MUSIC MAY CONTAIN HOPE.",
+   "artist": "RAYE",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-06-01",
+   "released": "2026-03-27",
+   "link": "https://music.apple.com/fr/album/this-music-may-contain-hope/1871085677",
+   "cover": null
+  },
+  {
+   "id": "36da7bc0f6df80c5938cd5505b2530fc",
+   "album": "COME CLOSER",
+   "artist": "TOMORA",
+   "genres": [
+    "Electro",
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-05-27",
+   "released": "2026-04-17",
+   "link": "https://music.apple.com/fr/album/come-closer/1871184398",
+   "cover": null
+  },
+  {
+   "id": "36da7bc0f6df80b4bc39d49d3c30c28a",
+   "album": "La Dame",
+   "artist": "Meryl",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2026-05-27",
+   "released": "2025-11-28",
+   "link": "https://music.apple.com/fr/album/la-dame/1856597410",
+   "cover": null
+  },
+  {
+   "id": "2eca7bc0f6df80f99a54c242d8f2d39d",
+   "album": "Sexistential",
+   "artist": "Robyn",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-05-27",
+   "released": "2026-03-27",
+   "link": "https://music.apple.com/fr/album/sexistential/1852752613",
+   "cover": null
+  },
+  {
+   "id": "36ca7bc0f6df807d928efcea7c9a3ceb",
+   "album": "Des pieds et des mains",
+   "artist": "NeS",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-05-26",
+   "released": "2026-03-13",
+   "link": "https://music.apple.com/fr/album/des-pieds-et-des-mains/1866875474",
+   "cover": null
+  },
+  {
+   "id": "368a7bc0f6df806a9c6dcf793fec5ae1",
+   "album": "Funk Wav Bounces Vol. 1",
+   "artist": "Calvin Harris",
+   "genres": [
+    "Electro",
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-05-22",
+   "released": "2017-06-30",
+   "link": "https://music.apple.com/fr/album/funk-wav-bounces-vol-1/1233842167",
+   "cover": null
+  },
+  {
+   "id": "314a7bc0f6df80488f0ffb802cb957a2",
+   "album": "The Romantic",
+   "artist": "Bruno Mars",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-02-27",
+   "released": "2026-02-27",
+   "link": "https://music.apple.com/fr/album/the-romantic/1866732792",
+   "cover": null
+  },
+  {
+   "id": "30ba7bc0f6df80ebbf69f3b12f96ef75",
+   "album": "DOULA (des couloirs des portières)",
+   "artist": "Odezenne",
+   "genres": [
+    "Pop",
+    "Alternative"
+   ],
+   "lang": "Français",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2026-02-18",
+   "released": "2025-06-03",
+   "link": "https://music.apple.com/fr/album/doula-des-couloirs-des-porti%C3%A8res/1811640308",
+   "cover": null
+  },
+  {
+   "id": "30ba7bc0f6df806d94f0cd8598d37245",
+   "album": "DOULA (hypercouleurs)",
+   "artist": "Odezenne",
+   "genres": [
+    "Pop",
+    "Alternative"
+   ],
+   "lang": "Français",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2026-02-18",
+   "released": "2025-11-25",
+   "link": "https://music.apple.com/fr/album/doula-hypercouleurs/1854376822",
+   "cover": null
+  },
+  {
+   "id": "2a7a7bc0f6df801a965dd45bba677a86",
+   "album": "A Love For Strangers",
+   "artist": "Chet Faker",
+   "genres": [
+    "Pop",
+    "Alternative"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-02-13",
+   "released": "2026-02-13",
+   "link": "https://music.apple.com/fr/album/a-love-for-strangers/1846189472",
+   "cover": null
+  },
+  {
+   "id": "2aaa7bc0f6df8094993ec8a9a3468828",
+   "album": "Wuthering Heights",
+   "artist": "Charli XCX",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-02-13",
+   "released": "2026-02-13",
+   "link": "https://music.apple.com/fr/album/wuthering-heights/1852566184",
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df80d2bb38ca83666a5f9e",
+   "album": "Sex Dreams and Denim Jeans",
+   "artist": "Uffie",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-02-10",
+   "released": "2010-06-14",
+   "link": "https://music.apple.com/fr/album/sex-dreams-and-denim-jeans/373547935",
+   "cover": null
+  },
+  {
+   "id": "2e3a7bc0f6df80119082f4722acdd199",
+   "album": "Magnetofille",
+   "artist": "Pi Ja Ma",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-01-30",
+   "released": "2026-01-30",
+   "link": "https://music.apple.com/fr/album/magnetofille/1849396048",
+   "cover": null
+  },
+  {
+   "id": "2f7a7bc0f6df8027b115f557ad648e9f",
+   "album": "ENCORE",
+   "artist": "CHATON",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2026-01-27",
+   "released": "2026-01-16",
+   "link": "https://music.apple.com/fr/album/encore/1862456576",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80819135dfc064e65d1b",
+   "album": "GUTS",
+   "artist": "Olivia Rodrigo",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2026-01-15",
+   "released": "2023-09-08",
+   "link": "https://music.apple.com/fr/album/guts/1694386825",
+   "cover": null
+  },
+  {
+   "id": "2e0a7bc0f6df80169853ef82314023a2",
+   "album": "Oil of Every Pearl’s Un-Insides",
+   "artist": "SOPHIE",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-01-15",
+   "released": "2018-06-15",
+   "link": "https://music.apple.com/fr/album/oil-of-every-pearls-un-insides/1395045797",
+   "cover": null
+  },
+  {
+   "id": "2e9a7bc0f6df80e7ad54e12811f649b7",
+   "album": "STARFUCKER",
+   "artist": "Slayyyter",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-01-15",
+   "released": "2023-09-22",
+   "link": "https://music.apple.com/fr/album/starfucker-deluxe/1821173497",
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df80e78acbfef96665fbba",
+   "album": "Media Nocte",
+   "artist": "La Mverte",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 1,
+   "listened": true,
+   "listenedOn": "2026-01-09",
+   "released": "2026-01-09",
+   "link": "https://music.apple.com/fr/album/media-nocte/1856260640",
+   "cover": null
+  },
+  {
+   "id": "2e0a7bc0f6df807cb21cc34e408ed6be",
+   "album": "Melodrama",
+   "artist": "Lorde",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2026-01-06",
+   "released": "2017-06-16",
+   "link": "https://music.apple.com/fr/album/melodrama/1429662346",
+   "cover": null
+  },
+  {
+   "id": "2e0a7bc0f6df806e842ddaaaaae04b96",
+   "album": "Wallsocket (Director’s Cut)",
+   "artist": "underscores",
+   "genres": [
+    "Electro",
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-01-06",
+   "released": "2024-06-28",
+   "link": "https://music.apple.com/fr/album/wallsocket-directors-cut/1752550191",
+   "cover": null
+  },
+  {
+   "id": "2dfa7bc0f6df8054be2dd52808b9ce93",
+   "album": "Getting Killed",
+   "artist": "Geese",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2026-01-05",
+   "released": "2025-09-26",
+   "link": "https://music.apple.com/fr/album/getting-killed/1818548779",
+   "cover": null
+  },
+  {
+   "id": "2dfa7bc0f6df808488b2d699b242c895",
+   "album": "The Art Of Loving",
+   "artist": "Olivia Dean",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-01-05",
+   "released": "2025-09-26",
+   "link": "https://music.apple.com/fr/album/the-art-of-loving/1817609404",
+   "cover": null
+  },
+  {
+   "id": "2dda7bc0f6df804db124ec60cb6b3dbe",
+   "album": "Addison",
+   "artist": "Addison Rae",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-01-03",
+   "released": "2025-06-06",
+   "link": "https://music.apple.com/fr/album/addison/1809015416",
+   "cover": null
+  },
+  {
+   "id": "2dca7bc0f6df80798104d6b171257daf",
+   "album": "Midnight Sun",
+   "artist": "Zara Larsson",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-01-02",
+   "released": "2025-09-26",
+   "link": "https://music.apple.com/fr/album/midnight-sun/1817499239",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df806f8089e4e97e5390bd",
+   "album": "Destinée",
+   "artist": "Aya Nakamura",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-12-20",
+   "released": "2025-11-21",
+   "link": "https://music.apple.com/fr/album/destin%C3%A9e/1852566197",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80879e91c13c504cd4fd",
+   "album": "on s’en rappellera pas",
+   "artist": "disiz",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-11-22",
+   "released": "2025-11-21",
+   "link": "https://music.apple.com/fr/album/on-sen-rappellera-pas/1846293544",
+   "cover": null
+  },
+  {
+   "id": "2a8a7bc0f6df808f9fccdf9211923d84",
+   "album": "EUSEXUA",
+   "artist": "FKA Twigs",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-11-11",
+   "released": "2025-01-24",
+   "link": "https://music.apple.com/fr/album/eusexua/1767658574",
+   "cover": null
+  },
+  {
+   "id": "2a8a7bc0f6df803f99e2c017c08ef0fb",
+   "album": "SHISH",
+   "artist": "Portugal. The Man",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-11-11",
+   "released": "2025-11-07",
+   "link": "https://music.apple.com/fr/album/shish/1836273576",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df80e88b4afa5e191b6537",
+   "album": "Brûler le feu",
+   "artist": "Juliette Armanet",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-11-10",
+   "released": "2021-11-19",
+   "link": "https://music.apple.com/fr/album/br%C3%BBler-le-feu/1588286822",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df80ffb7c5ee00691de750",
+   "album": "I'm Only Fucking Myself",
+   "artist": "Lola Young",
+   "genres": [
+    "Pop",
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-11-09",
+   "released": "2025-09-19",
+   "link": "https://music.apple.com/fr/album/im-only-f-king-myself/1819085978",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80c687e5f59c89c187c8",
+   "album": "BREAK",
+   "artist": "Max Baby",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-11-07",
+   "released": "2025-11-07",
+   "link": "https://music.apple.com/fr/album/break/1846453824",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8092aa97dd1e44796873",
+   "album": "La fuite en avant",
+   "artist": "Orelsan",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-11-07",
+   "released": "2025-11-07",
+   "link": "https://music.apple.com/fr/album/la-fuite-en-avant/1850732644",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df806c9254eb29bbc401b9",
+   "album": "Lux",
+   "artist": "Rosalía",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Espagnol",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2025-11-07",
+   "released": "2025-11-07",
+   "link": "https://music.apple.com/fr/album/lux/1848167516",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80cab8c0f6f3108a9a51",
+   "album": "West End Girl",
+   "artist": "Lily Allen",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-11-07",
+   "released": "2025-10-24",
+   "link": "https://music.apple.com/fr/album/west-end-girl/1846342052",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df806b8940c0dfb7a31fd0",
+   "album": "Virgin",
+   "artist": "Lorde",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-11-06",
+   "released": "2025-06-27",
+   "link": "https://music.apple.com/fr/album/virgin/1810905299",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8096ba3ded98f3662b18",
+   "album": "Everybody Scream",
+   "artist": "Florence + the Machine",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-10-31",
+   "released": "2025-10-31",
+   "link": "https://music.apple.com/fr/album/everybody-scream/1833586446",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8047a45eefc27856c8d2",
+   "album": "choke enough (Deluxe)",
+   "artist": "Oklou",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2025-10-30",
+   "released": "2025-10-30",
+   "link": "https://music.apple.com/fr/album/choke-enough-deluxe/1845349804",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80edb514ee490bfccd95",
+   "album": "Deadbeat",
+   "artist": "Tame Impala",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-10-17",
+   "released": "2025-10-17",
+   "link": "https://music.apple.com/fr/album/deadbeat/1836226516",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df805ca1c2e22939e81eb3",
+   "album": "Est-ce que quelqu'un m'entend ?",
+   "artist": "Kaky",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-10-11",
+   "released": "2025-05-16",
+   "link": "https://music.apple.com/fr/album/est-ce-que-quelquun-mentend/1804410805",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df808ca9f2c06d74441eb1",
+   "album": "What No One's Thinking",
+   "artist": "AJR",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-10-11",
+   "released": "2025-08-29",
+   "link": "https://music.apple.com/fr/album/what-no-ones-thinking-ep/1824542297",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8054b414cdbfce47c4d9",
+   "album": "industry plant",
+   "artist": "Miki",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-10-03",
+   "released": "2025-10-03",
+   "link": "https://music.apple.com/fr/album/industry-plant/1836468875",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80779af5c15b341445df",
+   "album": "La symphonie des éclairs (Orchestral Odyssey)",
+   "artist": "Zaho de Sagazan",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-10-03",
+   "released": "2025-10-03",
+   "link": "https://music.apple.com/fr/album/la-symphonie-des-%C3%A9clairs-orchestral-odyssey/1828200469",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df804788d7f30a17aff4ff",
+   "album": "Second Helping",
+   "artist": "Lynyrd Skynyrd",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-10-01",
+   "released": "1990-05-27",
+   "link": "https://music.apple.com/fr/album/second-helping/1440846806",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80de9e82ee327850fb59",
+   "album": "Man's Best Friend",
+   "artist": "Sabrina Carpenter",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-09-29",
+   "released": "2025-08-29",
+   "link": "https://music.apple.com/fr/album/mans-best-friend/1819861154",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80559711cf78ea0c5d43",
+   "album": "Vie",
+   "artist": "Doja Cat",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-09-29",
+   "released": "2025-09-26",
+   "link": "https://music.apple.com/fr/album/vie/1834042903",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80bca369e6aabd8f1a78",
+   "album": "grandir",
+   "artist": "marguerite",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-09-26",
+   "released": "2025-09-26",
+   "link": "https://music.apple.com/fr/album/grandir-ep/1830256075",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df800bba2ce359d9c44b02",
+   "album": "THAT'S SHOWBIZ BABY!",
+   "artist": "Jade",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-09-15",
+   "released": "2025-09-12",
+   "link": "https://music.apple.com/fr/album/thats-showbiz-baby/1813142774",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8069b6f8f6ebea3799ff",
+   "album": "BLEU MÉDITERRANÉE",
+   "artist": "Ajar",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-09-11",
+   "released": "2025-03-21",
+   "link": "https://music.apple.com/fr/album/bleu-m%C3%A9diterran%C3%A9e-ep/1800152236",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80a6b034da4f3c2ae78c",
+   "album": "Déjà Vous",
+   "artist": "Yuksek",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-09-11",
+   "released": "2025-06-06",
+   "link": "https://music.apple.com/fr/album/d%C3%A9j%C3%A0-vous-ep/1814186121",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80068b16cb232049ff05",
+   "album": "What Happened To The Heart?",
+   "artist": "AURORA",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-09-11",
+   "released": "2024-06-07",
+   "link": "https://music.apple.com/fr/album/what-happened-to-the-heart/1738227839",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80c3a561cc2c06ff6752",
+   "album": "What if I break up with u ?",
+   "artist": "Iliona",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-09-11",
+   "released": "2025-06-13",
+   "link": "https://music.apple.com/fr/album/what-if-i-break-up-with-u/1825379829",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80eb8ce0f3860ecfe425",
+   "album": "PLДYING / PRДYING",
+   "artist": "KOMPROMAT",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-08-25",
+   "released": "2025-01-24",
+   "link": "https://music.apple.com/fr/album/pl%D0%B4ying-pr%D0%B4ying/1775560114",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80959a7dc4dd323d8200",
+   "album": "Guitar",
+   "artist": "Mac DeMarco",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-08-22",
+   "released": "2025-08-22",
+   "link": "https://music.apple.com/fr/album/guitar/1816172823",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df800c8121d501b84d9a29",
+   "album": "SWAG",
+   "artist": "Justin Bieber",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-07-29",
+   "released": "2025-07-11",
+   "link": "https://music.apple.com/fr/album/swag/1825994646",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80458861f6f63531f026",
+   "album": "Abbey Road",
+   "artist": "The Beatles",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-07-22",
+   "released": "1969-08-20",
+   "link": "https://music.apple.com/fr/album/abbey-road-remastered/1441164426",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df808ca45bebbbbae0f15d",
+   "album": "Grace",
+   "artist": "Jeff Buckley",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-07-22",
+   "released": "1994-08-15",
+   "link": "https://music.apple.com/fr/album/grace/1046187510",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8074abc0c632743b0b77",
+   "album": "Lemonade",
+   "artist": "Beyoncé",
+   "genres": [
+    "Pop",
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2025-07-22",
+   "released": "2016-05-06",
+   "link": "https://music.apple.com/fr/album/lemonade/1460430561",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80ada640f8ccc462806a",
+   "album": "Purple Rain",
+   "artist": "Prince",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-07-22",
+   "released": "1984-06-19",
+   "link": "https://music.apple.com/fr/album/purple-rain/1746833068",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80148a02dd68eb0c1d79",
+   "album": "CHROMAKOPIA",
+   "artist": "Tyler The Creator",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2025-07-21",
+   "released": "2024-10-28",
+   "link": "https://music.apple.com/fr/album/chromakopia/1776500452",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8052b4e2fc87dd2d01d9",
+   "album": "DON'T TAP THE GLASS",
+   "artist": "Tyler The Creator",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-07-21",
+   "released": "2025-07-21",
+   "link": "https://music.apple.com/fr/album/dont-tap-the-glass/1827715784",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df808f9402d6559df23d4d",
+   "album": "Body Talk",
+   "artist": "Robyn",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 1,
+   "listened": true,
+   "listenedOn": "2025-07-20",
+   "released": "2010-11-24",
+   "link": "https://music.apple.com/fr/album/body-talk/1440486599",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df805eacd5d410ac0eeadf",
+   "album": "BRAT",
+   "artist": "Charli XCX",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2025-07-20",
+   "released": "2024-06-07",
+   "link": "https://music.apple.com/fr/album/brat/1739079974",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80a2b961d215e9704db8",
+   "album": "Blonde",
+   "artist": "Frank Ocean",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-07-19",
+   "released": "2016-08-20",
+   "link": "https://music.apple.com/fr/album/blonde/1146195596",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8004aab1dcc5d4fd962c",
+   "album": "Sex Hysteria",
+   "artist": "Jessie Murph",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 1,
+   "listened": true,
+   "listenedOn": "2025-07-19",
+   "released": "2025-07-18",
+   "link": "https://music.apple.com/fr/album/sex-hysteria/1817707266",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df802f969af59647495d84",
+   "album": "SOS",
+   "artist": "SZA",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2025-07-19",
+   "released": "2022-12-09",
+   "link": "https://music.apple.com/fr/album/sos/1657869377",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80bda698f7f921c90656",
+   "album": ".",
+   "artist": "Kesha",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-07-04",
+   "released": "2025-07-04",
+   "link": "https://music.apple.com/fr/album/1804117398",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80dfa9a7fdd6d862902e",
+   "album": "MAYHEM",
+   "artist": "Lady Gaga",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2025-03-07",
+   "released": "2025-03-07",
+   "link": "https://music.apple.com/fr/album/mayhem/1792666546",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80c691d9eab81e9cefc2",
+   "album": "La Favorite",
+   "artist": "Yoa",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2025-01-31",
+   "released": "2025-01-31",
+   "link": "https://music.apple.com/fr/album/la-favorite/1785943259",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8041b47dfd158d0d0013",
+   "album": "MEGA BBL",
+   "artist": "Theodora",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2024-11-01",
+   "released": "2024-11-01",
+   "link": "https://music.apple.com/fr/album/mega-bbl/1813911411",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df808d9965fb35335bf1ea",
+   "album": "HIT ME HARD AND SOFT",
+   "artist": "Billie Eilish",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2024-05-17",
+   "released": "2024-05-17",
+   "link": "https://music.apple.com/fr/album/hit-me-hard-and-soft/1739659134",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80cc8fe3cd29fc1b0d8d",
+   "album": "Cowboy Carter",
+   "artist": "Beyoncé",
+   "genres": [
+    "Pop",
+    "Country"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2024-03-29",
+   "released": "2024-03-29",
+   "link": "https://music.apple.com/fr/album/cowboy-carter/1738363766",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df802fa3fcc5c59e28349f",
+   "album": "Crash Cœur",
+   "artist": "Eddy de Pretto",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2023-11-17",
+   "released": "2023-11-17",
+   "link": "https://music.apple.com/fr/album/crash-c%C5%93ur/1709076220",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df8003a4f6d826c9cea3c0",
+   "album": "La Symphonie Des Éclairs",
+   "artist": "Zaho de Sagazan",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2023-09-01",
+   "released": "2023-03-21",
+   "link": "https://music.apple.com/fr/album/la-symphonie-des-%C3%A9clairs/1708455052",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80738e67d9418f923c1d",
+   "album": "Les Royaumes des Minuscules",
+   "artist": "Voyou",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2023-02-24",
+   "released": "2023-02-24",
+   "link": "https://music.apple.com/fr/album/les-royaumes-minuscules-augment%C3%A9s/1743791728",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80a0b2e8eff4fb6f2571",
+   "album": "IOTA",
+   "artist": "Lous and the Yakuza",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2022-11-11",
+   "released": "2022-11-11",
+   "link": "https://music.apple.com/fr/album/gore/1530784231",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8030ba11c5978a4b4586",
+   "album": "Renaissance",
+   "artist": "Beyoncé",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2022-07-29",
+   "released": "2022-07-29",
+   "link": "https://music.apple.com/fr/album/renaissance/1630005298",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80ac8416fbc0b21a88ba",
+   "album": "Gore",
+   "artist": "Lous and the Yakuza",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2022-06-18",
+   "released": "2020-10-16",
+   "link": "https://music.apple.com/fr/album/gore/1530784231",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80c1a45dd4319296c79a",
+   "album": "L’Amour",
+   "artist": "disiz",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2022-03-18",
+   "released": "2022-03-18",
+   "link": "https://music.apple.com/fr/album/lamour/1609060693",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df806ab3f2fac4c2ca88b2",
+   "album": "Civilisation",
+   "artist": "Orelsan",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2021-11-19",
+   "released": "2021-11-19",
+   "link": "https://music.apple.com/fr/album/civilisation-%C3%A9dition-ultime/1788305915",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df80ab917cc73abe34fb54",
+   "album": "A Tous Les Batards",
+   "artist": "Eddy de Pretto",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2021-03-26",
+   "released": "2021-03-26",
+   "link": "https://music.apple.com/fr/album/%C3%A0-tous-les-b%C3%A2tards/1631321590",
+   "cover": null
+  },
+  {
+   "id": "2a8a7bc0f6df8089af15edfdb7e1555c",
+   "album": "Tako Tsubo",
+   "artist": "L'Impératrice",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": null,
+   "listened": true,
+   "listenedOn": "2021-03-26",
+   "released": "2021-03-26",
+   "link": "https://music.apple.com/fr/album/tako-tsubo/1545197529",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80cf8858f9d7c9a23b08",
+   "album": "L'Ère du Verseau",
+   "artist": "Yelle",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2020-09-04",
+   "released": "2020-09-04",
+   "link": "https://music.apple.com/fr/album/l%C3%A8re-du-verseau/1518632290",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80b1aaf5e8a77440330a",
+   "album": "Brol La Suite",
+   "artist": "Angèle",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2019-11-07",
+   "released": "2019-11-07",
+   "link": "https://music.apple.com/fr/album/brol-la-suite/1482645200",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80f58a94d9533a68813a",
+   "album": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
+   "artist": "Billie Eilish",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2019-03-29",
+   "released": "2019-03-29",
+   "link": "https://music.apple.com/fr/album/when-we-all-fall-asleep-where-do-we-go/1450695723",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df8064a7b0f96938535136",
+   "album": "Disizilla",
+   "artist": "disiz",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2018-09-14",
+   "released": "2018-09-14",
+   "link": "https://music.apple.com/fr/album/disizilla/1430032818",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df8003ae6befe96af331ec",
+   "album": "Cure",
+   "artist": "Eddy de Pretto",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2018-03-02",
+   "released": "2018-03-02",
+   "link": "https://music.apple.com/fr/album/cure/1440904486",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df8031bbb6c2bc011d4391",
+   "album": "La fête est finie",
+   "artist": "Orelsan",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2017-10-20",
+   "released": "2017-10-20",
+   "link": "https://music.apple.com/fr/album/la-f%C3%AAte-est-finie/1788305428",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df80d4a0effcbc0087606e",
+   "album": "Evolve",
+   "artist": "Imagine Dragons",
+   "genres": [
+    "Pop",
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2017-06-23",
+   "released": "2017-06-23",
+   "link": "https://music.apple.com/fr/album/evolve/1411625594",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df8041b887d89b2eba68b0",
+   "album": "Pacifique",
+   "artist": "disiz",
+   "genres": [
+    "Hip-hop/Rap",
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2017-06-09",
+   "released": "2017-06-09",
+   "link": "https://music.apple.com/fr/album/pacifique/1440881726",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df805a9dc5cded1a31ae9c",
+   "album": "Feu",
+   "artist": "Nekfeu",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2015-06-08",
+   "released": "2015-06-08",
+   "link": "https://music.apple.com/fr/album/feu/1440826417",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80acbf86dce9af8b0f84",
+   "album": "Complètement fou",
+   "artist": "Yelle",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2014-09-29",
+   "released": "2014-09-29",
+   "link": "https://music.apple.com/fr/album/compl%C3%A8tement-fou/1447192212",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df80aa9373fc9cf9279394",
+   "album": "Smoke + Mirrors",
+   "artist": "Imagine Dragons",
+   "genres": [
+    "Pop",
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2014-09-18",
+   "released": "2014-09-18",
+   "link": "https://music.apple.com/fr/album/smoke-mirrors-deluxe/1440831203",
+   "cover": null
+  },
+  {
+   "id": "2dca7bc0f6df808daf3bf2ead2f4262d",
+   "album": "Beyoncé",
+   "artist": "Beyoncé",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2013-12-13",
+   "released": "2013-12-13",
+   "link": "https://music.apple.com/fr/album/pretty-hurts/939775882?i=939777955",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df802b9846cb7dc3059076",
+   "album": "Racine Carrée",
+   "artist": "Stromae",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2013-08-19",
+   "released": "2013-08-19",
+   "link": "https://music.apple.com/fr/album/racine-carr%C3%A9e/1440856001",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df806a963ad6a9d2d0bc0e",
+   "album": "Random Access Memories",
+   "artist": "Daft Punk",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2013-05-17",
+   "released": "2013-05-17",
+   "link": "https://music.apple.com/fr/album/random-access-memories/617154241",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df8091a38ed49d7911d861",
+   "album": "Night Visions",
+   "artist": "Imagine Dragons",
+   "genres": [
+    "Rock",
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2012-01-01",
+   "released": "2012-01-01",
+   "link": "https://music.apple.com/fr/album/night-visions/1440829989",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df808f9f20f906ba70cb84",
+   "album": "Tetra",
+   "artist": "C2C",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2012-01-01",
+   "released": "2012-01-01",
+   "link": "https://music.apple.com/fr/album/tetra/1440862752",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df80149a43cfedc8b0270b",
+   "album": "21",
+   "artist": "Adele",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2011-01-24",
+   "released": "2011-01-24",
+   "link": "https://music.apple.com/fr/album/21/403037872",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df806c8b69ddc36d71d6b7",
+   "album": "Back To Black",
+   "artist": "Amy Winehouse",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2006-10-30",
+   "released": "2006-10-30",
+   "link": "https://music.apple.com/fr/album/back-to-black/1422677780",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df80ca903ec3dc1266eb56",
+   "album": "Life in Cartoon Motion",
+   "artist": "Mika",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2006-01-01",
+   "released": "2006-01-01",
+   "link": "https://music.apple.com/fr/album/life-in-cartoon-motion/1443261504",
+   "cover": null
+  },
+  {
+   "id": "2a4a7bc0f6df806985b7e2aaadab50eb",
+   "album": "Discovery",
+   "artist": "Daft Punk",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2001-03-12",
+   "released": "2001-03-12",
+   "link": "https://music.apple.com/fr/album/discovery/697194953",
+   "cover": null
+  },
+  {
+   "id": "2a8a7bc0f6df80abaabed2640e36b8b1",
+   "album": "ABBA Gold: Greatest Hits",
+   "artist": "ABBA",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "1999-11-13",
+   "released": "1992-09-21",
+   "link": "https://music.apple.com/fr/album/abba-gold-greatest-hits/1422648512",
+   "cover": null
+  },
+  {
+   "id": "2e9a7bc0f6df806389c9c4060766694c",
+   "album": "All The Flowers Have Bloomed",
+   "artist": "Kofi Stone",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2025-11-07",
+   "link": "https://music.apple.com/fr/album/all-the-flowers-have-bloomed/1838668078",
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df808aa124d7b939515194",
+   "album": "An Electronic Storm",
+   "artist": "White Noise",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "1969-01-01",
+   "link": "https://music.apple.com/fr/album/an-electric-storm/1443189179",
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df8024b242eb43d133d3bf",
+   "album": "Attack Decay Sustain Release",
+   "artist": "Simian Mobile Disco",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2007-01-01",
+   "link": "https://music.apple.com/fr/album/attack-decay-sustain-release/1818674591",
+   "cover": null
+  },
+  {
+   "id": "2f7a7bc0f6df80339afdc958bdf16fba",
+   "album": "Cherie on top",
+   "artist": "Vickie Cherie",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Français",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-01-23",
+   "link": "https://music.apple.com/fr/album/cherie-on-top-friends-edition/1867453384",
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df801e85d4e923c6248d78",
+   "album": "Desire, I Want To Turn Intro You",
+   "artist": "Caroline Polachek",
+   "genres": [
+    "Electro",
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2023-02-14",
+   "link": "https://music.apple.com/fr/album/desire-i-want-to-turn-into-you-everasking-edition/1732294271",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df80a3b84beb8e8e3459db",
+   "album": "Don't Tease Me With A Good Time",
+   "artist": "Jessie J",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2025-11-28",
+   "link": null,
+   "cover": null
+  },
+  {
+   "id": "2a8a7bc0f6df80ffa604df67a1ea0d74",
+   "album": "Essex Honey",
+   "artist": "Blood Orange",
+   "genres": [],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2025-08-29",
+   "link": "https://music.apple.com/fr/album/essex-honey/1825903903",
+   "cover": null
+  },
+  {
+   "id": "37ca7bc0f6df80aa8df5c61c8d55638a",
+   "album": "ESTRUS",
+   "artist": "Tove Lo",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-09-18",
+   "link": "https://music.apple.com/fr/album/estrus/6766440172",
+   "cover": null
+  },
+  {
+   "id": "31ea7bc0f6df80ada27fe1588ba4edbd",
+   "album": "GILDAA",
+   "artist": "Gildaa",
+   "genres": [
+    "Alternative"
+   ],
+   "lang": "Français",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-03-06",
+   "link": null,
+   "cover": null
+  },
+  {
+   "id": "368a7bc0f6df80bfaefcdc471736c637",
+   "album": "Grandma’s Gospel Favorites",
+   "artist": "Jason Mraz",
+   "genres": [
+    "Gospel"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-05-08",
+   "link": "https://music.apple.com/fr/album/grandmas-gospel-favorites/1880392609",
+   "cover": null
+  },
+  {
+   "id": "373a7bc0f6df8064923bf37e753dfc76",
+   "album": "guérir",
+   "artist": "marguerite",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-10-02",
+   "link": null,
+   "cover": null
+  },
+  {
+   "id": "2f7a7bc0f6df80469120ee7915f695e5",
+   "album": "Hyperlove",
+   "artist": "Mika",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-01-23",
+   "link": "https://music.apple.com/fr/album/hyperlove/1856033810",
+   "cover": null
+  },
+  {
+   "id": "368a7bc0f6df805f926ae058fc247ad7",
+   "album": "Jeune & Laide",
+   "artist": "Camille Yembe",
+   "genres": [
+    "Hip-hop/Rap",
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-05-22",
+   "link": "https://music.apple.com/fr/album/jeune-laide/1887504127",
+   "cover": null
+  },
+  {
+   "id": "2f8a7bc0f6df80219518dffcd55d8f74",
+   "album": "LE COEUR ET SA DICTATURE.",
+   "artist": "Zélie",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-02-27",
+   "link": "https://music.apple.com/fr/album/le-c%C5%93ur-et-sa-dictature/1866866053",
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df80e49306ee0197e47f11",
+   "album": "Murmurations",
+   "artist": "Simian Mobile Disco",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2018-05-11",
+   "link": "https://music.apple.com/fr/album/murmurations/1350637598",
+   "cover": null
+  },
+  {
+   "id": "372a7bc0f6df80a3abcececbde56314c",
+   "album": "Music, Fashion, Film",
+   "artist": "Charli XCX",
+   "genres": [
+    "Pop",
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-07-24",
+   "link": null,
+   "cover": null
+  },
+  {
+   "id": "2f7a7bc0f6df8096b51bf0af754c7547",
+   "album": "Ouverture",
+   "artist": "SPORE",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Français",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2025-11-28",
+   "link": "https://music.apple.com/fr/album/ouverture/1815366444",
+   "cover": null
+  },
+  {
+   "id": "37ca7bc0f6df800cb97bc38a7693f8c6",
+   "album": "petal",
+   "artist": "Ariana Grande",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-07-31",
+   "link": "https://music.apple.com/fr/album/petal/1895420989",
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df806db2b7fa7a5f17d72f",
+   "album": "Presque punk",
+   "artist": "P.R2B",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2025-12-05",
+   "link": "https://music.apple.com/fr/album/presque-punk/1848316166",
+   "cover": null
+  },
+  {
+   "id": "368a7bc0f6df8090bc2dfa9ea61e7db7",
+   "album": "Ritual",
+   "artist": "Icona Pop",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-08-14",
+   "link": "https://music.apple.com/fr/album/ritual/1892426976",
+   "cover": null
+  },
+  {
+   "id": "2d6a7bc0f6df80769649d44da19547c1",
+   "album": "Ruby",
+   "artist": "Jennie",
+   "genres": [],
+   "lang": null,
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2025-12-26",
+   "link": null,
+   "cover": null
+  },
+  {
+   "id": "2f7a7bc0f6df80ed94fcc362caf61742",
+   "album": "Sunday Best",
+   "artist": "Nick Jonas",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-02-06",
+   "link": "https://music.apple.com/fr/album/sunday-best/1856393193",
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df80dd9dcdff8abe1a2806",
+   "album": "Sunshine Factory",
+   "artist": "Uffie",
+   "genres": [
+    "Electro"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2022-05-20",
+   "link": "https://music.apple.com/fr/album/sunshine-factory/1603453621",
+   "cover": null
+  },
+  {
+   "id": "368a7bc0f6df807e9d9dd3909ded2219",
+   "album": "The Afterparty",
+   "artist": "Lykke Li",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-05-08",
+   "link": "https://music.apple.com/fr/album/the-afterparty/1857952252",
+   "cover": null
+  },
+  {
+   "id": "379a7bc0f6df802abca0ca5ff5252fcf",
+   "album": "The Moment (The Score)",
+   "artist": "A. G. Cook",
+   "genres": [
+    "Electro"
+   ],
+   "lang": null,
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-01-30",
+   "link": "https://open.qobuz.com/album/oc1sldun75rf9",
+   "cover": null
+  },
+  {
+   "id": "2a6a7bc0f6df80a6afe1f4e865022e7a",
+   "album": "The Mountain",
+   "artist": "Gorillaz",
+   "genres": [
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-02-27",
+   "link": "https://music.apple.com/fr/album/the-mountain/1837237742",
+   "cover": null
+  },
+  {
+   "id": "2a8a7bc0f6df807897a9c6f81784bd29",
+   "album": "The Secret Of Us",
+   "artist": "Gracie Abrams",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2024-06-20",
+   "link": null,
+   "cover": null
+  },
+  {
+   "id": "2dba7bc0f6df800b9ef3fed00d0ffe01",
+   "album": "Tons of Friends",
+   "artist": "Crookers",
+   "genres": [
+    "Electro",
+    "Pop",
+    "Hip-hop/Rap"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2010-03-08",
+   "link": "https://music.apple.com/fr/album/tons-of-friends/472566837",
+   "cover": null
+  },
+  {
+   "id": "2f7a7bc0f6df80c2b83ae7e2aaccc449",
+   "album": "Trying Times",
+   "artist": "James Blake",
+   "genres": [
+    "Alternative"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-03-13",
+   "link": "https://music.apple.com/fr/album/trying-times/1862353780",
+   "cover": null
+  },
+  {
+   "id": "2a9a7bc0f6df80ceb5fcc9e49fe743ca",
+   "album": "USB",
+   "artist": "Fred again..",
+   "genres": [
+    "Electro"
+   ],
+   "lang": null,
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2025-12-12",
+   "link": "https://music.apple.com/fr/album/usb/1840941494",
+   "cover": null
+  },
+  {
+   "id": "2a9a7bc0f6df80c7a836ea73861b52a7",
+   "album": "Whatever’s Clever!",
+   "artist": "Charlie Puth",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-03-06",
+   "link": "https://music.apple.com/fr/album/whatevers-clever/1845189970",
+   "cover": null
+  },
+  {
+   "id": "2f7a7bc0f6df805f8b36f7754a42ba5a",
+   "album": "WOR$T GIRL IN AMERICA",
+   "artist": "Slayyyter",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-03-27",
+   "link": "https://music.apple.com/fr/album/wor%24t-girl-in-america/1867530577",
+   "cover": null
+  }
+ ]
+}
