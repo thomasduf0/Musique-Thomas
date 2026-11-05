@@ -30,7 +30,7 @@ Un clic sur un album ouvre sa fiche : note, dates, genres, mon avis (le texte de
 
 Ensuite, le site se met à jour tout seul chaque matin. Pour forcer une mise à jour après avoir noté un album, relancer le workflow.
 
-Le site sera à l'adresse : `https://thomasduf0.github.io/musique-thomas/`
+Le site sera à l'adresse : `https://thomasduf0.github.io/Musique-Thomas/`
 
 ## En local
 
