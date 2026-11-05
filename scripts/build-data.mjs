@@ -6,8 +6,9 @@
 //
 // Usage : node scripts/build-data.mjs
 
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir, unlink } from "node:fs/promises";
 import { existsSync } from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -82,7 +83,8 @@ async function fromNotion() {
         listenedOn: p["Date d'écoute"]?.date?.start || null,
         released: p["Date de sortie"]?.date?.start || null,
         link: p["URL"]?.url || null,
-        cover: page.cover?.external?.url || page.cover?.file?.url || null,
+        cover: page.cover?.external?.url || null,
+        coverFile: page.cover?.file?.url || null, // image importée dans Notion : lien temporaire
       });
     }
     cursor = data.has_more ? data.next_cursor : null;
@@ -126,7 +128,38 @@ function normalize(rows) {
   return out.filter((r) => r.listened || !heard.has(`${r.artist}|${r.album}`.toLowerCase()));
 }
 
-// ---------- Pochettes (iTunes) ----------
+// ---------- Pochettes importées dans Notion ----------
+// Notion donne pour ces images un lien qui expire au bout d'une heure : on les copie dans covers/.
+async function saveNotionFiles(rows) {
+  const dir = path.join(ROOT, "covers");
+  await mkdir(dir, { recursive: true });
+  for (const r of rows) {
+    if (!r.coverFile) continue;
+    const u = new URL(r.coverFile);
+    const ext = (path.extname(u.pathname).toLowerCase().match(/^\.(jpe?g|png|webp|gif|avif)$/) || [".jpg"])[0];
+    const key = createHash("sha1").update(u.pathname).digest("hex").slice(0, 10);
+    const name = `${r.id}-${key}${ext}`;
+    const file = path.join(dir, name);
+    if (!existsSync(file)) {
+      try {
+        const res = await fetch(r.coverFile);
+        if (!res.ok) throw new Error(res.status);
+        await writeFile(file, Buffer.from(await res.arrayBuffer()));
+      } catch (e) {
+        console.warn("Pochette Notion non téléchargée :", r.album, e.message);
+        delete r.coverFile;
+        continue;
+      }
+    }
+    r.cover = `covers/${name}`;
+    delete r.coverFile;
+  }
+  // Supprime les anciennes pochettes qui ne servent plus
+  const used = new Set(rows.map((r) => r.cover).filter((c) => c?.startsWith("covers/")).map((c) => c.slice(7)));
+  for (const f of await readdir(dir)) if (!used.has(f) && f !== ".gitkeep") await unlink(path.join(dir, f));
+}
+
+// ---------- Pochettes (iTunes, en secours) ----------
 async function addCovers(rows, previous) {
   const prevById = new Map(previous.map((a) => [a.id, a]));
   for (const r of rows) {
@@ -165,6 +198,7 @@ if (!NOTION_TOKEN) {
   rows = rows.map((r) => ({ ...r, review: prevById.get(r.id)?.review || r.review }));
 }
 
+if (NOTION_TOKEN) await saveNotionFiles(rows);
 rows = await addCovers(rows, previous);
 rows.sort((a, b) => (b.listenedOn || "").localeCompare(a.listenedOn || "") || a.album.localeCompare(b.album));
 

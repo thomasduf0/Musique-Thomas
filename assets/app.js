@@ -59,7 +59,7 @@
   function openDetail(id) {
     const a = state.albums.find((x) => x.id === id);
     if (!a) return;
-    const linkLabel = a.link?.includes("qobuz") ? "Écouter sur Qobuz" : "Écouter sur Apple Music";
+    const linkLabel = a.link?.includes("spotify") ? "Écouter sur Spotify" : a.link?.includes("qobuz") ? "Écouter sur Qobuz" : "Écouter sur Apple Music";
     $("#detail-body").innerHTML = `
       <div class="d-wrap">
         ${coverHTML(a, true)}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Ajouter un album</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/admin.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💿</text></svg>">
+</head>
+<body>
+  <header class="hero small">
+    <div class="wrap">
+      <a class="back" href="./">← Retour au site</a>
+      <h1>Ajouter <em>un album</em></h1>
+      <p id="status" class="lede"></p>
+    </div>
+  </header>
+
+  <main class="wrap admin">
+    <section id="login" class="panel" hidden>
+      <h3>Accès</h3>
+      <form id="login-form" class="row">
+        <input id="password" type="password" placeholder="Mot de passe" autocomplete="current-password" required>
+        <button class="btn">Entrer</button>
+      </form>
+    </section>
+
+    <div id="app" hidden>
+      <section class="panel">
+        <h3>1. Rechercher sur Spotify</h3>
+        <form id="search-form" class="row">
+          <input id="s-album" placeholder="Album" autocomplete="off">
+          <input id="s-artist" placeholder="Artiste" autocomplete="off">
+          <button class="btn">Rechercher</button>
+        </form>
+        <div id="results" class="results"></div>
+      </section>
+
+      <section id="form-panel" class="panel" hidden>
+        <h3>2. Compléter et enregistrer</h3>
+        <form id="album-form">
+          <div class="pick">
+            <img id="f-cover" alt="">
+            <div>
+              <label>Album<input id="f-album" required></label>
+              <label>Artiste<input id="f-artist" required></label>
+              <label>Date de sortie<input id="f-released" type="date"></label>
+            </div>
+          </div>
+
+          <div class="seg" role="radiogroup" aria-label="Statut">
+            <label><input type="radio" name="status" value="todo" checked> À écouter</label>
+            <label><input type="radio" name="status" value="done"> Déjà écouté</label>
+          </div>
+
+          <div id="done-fields" hidden>
+            <div class="rate" id="f-rating" aria-label="Note">
+              <button type="button" data-v="1">★</button><button type="button" data-v="2">★</button><button type="button" data-v="3">★</button><button type="button" data-v="4">★</button><button type="button" data-v="5">★</button>
+            </div>
+            <label>Date d'écoute<input id="f-listened" type="date"></label>
+            <label>Mon avis<textarea id="f-review" rows="4" placeholder="Facultatif"></textarea></label>
+          </div>
+
+          <label>Langue
+            <select id="f-lang"><option value="">—</option><option>Français</option><option>Anglais</option><option>Espagnol</option></select>
+          </label>
+          <fieldset class="genres" id="f-genres"><legend>Genres</legend></fieldset>
+
+          <p class="hint">Le lien Spotify et la pochette (en en-tête de la fiche) sont ajoutés automatiquement.</p>
+          <button class="btn" id="save">Enregistrer dans Notion</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h3>À écouter</h3>
+        <p class="hint">Les albums ajoutés depuis Spotify sont cochés tout seuls quand toutes leurs pistes ont été écoutées. Sinon, marque-les ici.</p>
+        <div id="todo" class="todo"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/config.js"></script>
+  <script src="assets/admin.js"></script>
+</body>
+</html>

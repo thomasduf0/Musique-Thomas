@@ -1,0 +1,25 @@
+name = "musique-thomas"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Vérifie toutes les heures l'historique Spotify pour cocher les albums écoutés en entier
+[triggers]
+crons = ["7 * * * *"]
+
+[vars]
+ALLOWED_ORIGIN = "https://thomasduf0.github.io"
+NOTION_DATA_SOURCE_ID = "2a4a7bc0-f6df-80c3-bd83-000b2fd1b71e"
+GITHUB_REPO = "thomasduf0/Musique-Thomas"
+
+# Stockage du jeton Spotify et du suivi des pistes écoutées.
+# Remplace l'id par celui affiché par : npx wrangler kv namespace create STATE
+[[kv_namespaces]]
+binding = "STATE"
+id = "REMPLACER_PAR_L_ID_KV"
+
+# Secrets à définir avec « npx wrangler secret put NOM » (jamais dans ce fichier) :
+#   ADMIN_PASSWORD          mot de passe de la page d'ajout
+#   NOTION_TOKEN            jeton de l'intégration Notion
+#   SPOTIFY_CLIENT_ID       app créée sur developer.spotify.com
+#   SPOTIFY_CLIENT_SECRET
+#   GITHUB_TOKEN            (facultatif) jeton GitHub pour republier le site tout de suite

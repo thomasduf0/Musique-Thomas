@@ -1,0 +1,177 @@
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const API = (window.MUSIQUE_API || "").replace(/\/$/, "");
+  const GENRES = ["Pop", "Hip-hop/Rap", "Electro", "Rock", "Country", "Funk", "Alternative", "Gospel"];
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const today = () => new Intl.DateTimeFormat("fr-CA", { timeZone: "Europe/Paris" }).format(new Date());
+
+  let password = "";
+  try { password = localStorage.getItem("musique:pw") || ""; } catch {}
+  let chosen = null;
+  let rating = 0;
+
+  function toast(msg, err = false) {
+    const t = $("#toast");
+    t.textContent = msg; t.className = "toast show" + (err ? " err" : "");
+    clearTimeout(toast.t); toast.t = setTimeout(() => (t.className = "toast"), 4000);
+  }
+
+  async function api(path, opts = {}) {
+    const res = await fetch(API + path, {
+      ...opts,
+      headers: { "Content-Type": "application/json", "X-Password": password, ...(opts.headers || {}) },
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.status === 401) { logout(); throw new Error("Mot de passe incorrect"); }
+    if (!res.ok) throw new Error(data.error || `Erreur ${res.status}`);
+    return data;
+  }
+
+  function logout() {
+    password = "";
+    try { localStorage.removeItem("musique:pw"); } catch {}
+    $("#app").hidden = true; $("#login").hidden = false;
+  }
+
+  // ---------- Démarrage ----------
+  async function start() {
+    if (!API) {
+      $("#status").textContent = "La fonction Cloudflare n'est pas encore configurée (assets/config.js).";
+      return;
+    }
+    if (!password) { $("#login").hidden = false; return; }
+    try {
+      const s = await api("/status");
+      $("#login").hidden = true; $("#app").hidden = false;
+      const linkUrl = `${API}/spotify/login?password=${encodeURIComponent(password)}`;
+      const last = s.lastCheck?.at ? ` · dernière vérification ${new Date(s.lastCheck.at).toLocaleString("fr-FR", { dateStyle: "short", timeStyle: "short" })}` : "";
+      $("#status").innerHTML = s.spotifyLinked
+        ? `Spotify relié : les albums écoutés en entier sont cochés automatiquement${esc(last)}.`
+        : `Spotify n'est pas encore relié pour la détection d'écoute. <a href="${esc(linkUrl)}" style="color:var(--accent)">Relier mon compte Spotify</a>`;
+      loadTodo();
+    } catch (e) {
+      toast(e.message, true);
+    }
+  }
+
+  $("#login-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    password = $("#password").value;
+    try { localStorage.setItem("musique:pw", password); } catch {}
+    start();
+  });
+
+  // ---------- Recherche ----------
+  $("#search-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const album = $("#s-album").value.trim(), artist = $("#s-artist").value.trim();
+    if (!album && !artist) return toast("Indique au moins un album ou un artiste", true);
+    const btn = e.submitter; btn.disabled = true;
+    $("#results").innerHTML = `<p class="hint">Recherche…</p>`;
+    try {
+      const { results } = await api(`/search?album=${encodeURIComponent(album)}&artist=${encodeURIComponent(artist)}`);
+      $("#results").innerHTML = results.length ? results.map((r, i) => `
+        <button type="button" class="result" data-i="${i}" aria-pressed="false">
+          <img src="${esc(r.thumb || r.cover || "")}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
+          <b>${esc(r.album)}</b>
+          <span>${esc(r.artist)}</span>
+          <span>${esc((r.released || "").slice(0, 4))} · ${r.tracks} titre${r.tracks > 1 ? "s" : ""}${r.type !== "album" ? " · " + esc(r.type) : ""}</span>
+        </button>`).join("") : `<p class="hint">Aucun résultat. Essaie une autre orthographe.</p>`;
+      $("#results").onclick = (ev) => {
+        const b = ev.target.closest(".result"); if (!b) return;
+        document.querySelectorAll(".result").forEach((x) => x.setAttribute("aria-pressed", x === b));
+        choose(results[+b.dataset.i]);
+      };
+    } catch (err) {
+      $("#results").innerHTML = ""; toast(err.message, true);
+    } finally { btn.disabled = false; }
+  });
+
+  function choose(r) {
+    chosen = r;
+    $("#form-panel").hidden = false;
+    $("#f-cover").src = r.cover || "";
+    $("#f-cover").style.visibility = r.cover ? "visible" : "hidden";
+    $("#f-album").value = r.album;
+    $("#f-artist").value = r.mainArtist || r.artist;
+    $("#f-released").value = r.released || "";
+    $("#f-listened").value = today();
+    document.querySelectorAll("#f-genres input").forEach((c) => (c.checked = r.genres.includes(c.value)));
+    $("#form-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // ---------- Formulaire ----------
+  $("#f-genres").insertAdjacentHTML("beforeend", GENRES.map((g) => `<label><input type="checkbox" value="${g}"><span>${g}</span></label>`).join(""));
+
+  document.querySelectorAll("input[name=status]").forEach((r) => r.addEventListener("change", () => {
+    $("#done-fields").hidden = $("input[name=status]:checked").value !== "done";
+  }));
+
+  function paintStars(container, n) {
+    container.querySelectorAll("button").forEach((b) => b.classList.toggle("on", +b.dataset.v <= n));
+  }
+  $("#f-rating").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    rating = +b.dataset.v === rating ? 0 : +b.dataset.v;
+    paintStars($("#f-rating"), rating);
+  });
+
+  $("#album-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!chosen) return toast("Choisis d'abord un album dans les résultats", true);
+    const listened = $("input[name=status]:checked").value === "done";
+    const body = {
+      album: $("#f-album").value.trim(),
+      artist: $("#f-artist").value.trim(),
+      released: $("#f-released").value || null,
+      link: chosen.link,
+      cover: chosen.cover,
+      lang: $("#f-lang").value || null,
+      genres: [...document.querySelectorAll("#f-genres input:checked")].map((c) => c.value),
+      listened,
+      rating: listened ? rating || null : null,
+      listenedOn: listened ? $("#f-listened").value || today() : null,
+      review: listened ? $("#f-review").value.trim() : "",
+    };
+    const btn = $("#save"); btn.disabled = true;
+    try {
+      const r = await api("/albums", { method: "POST", body: JSON.stringify(body) });
+      toast(r.published ? "Ajouté dans Notion ✓ Le site se met à jour dans une minute." : "Ajouté dans Notion ✓ Visible sur le site à la prochaine synchro.");
+      $("#album-form").reset(); rating = 0; paintStars($("#f-rating"), 0);
+      $("#done-fields").hidden = true; $("#form-panel").hidden = true; $("#results").innerHTML = "";
+      $("#s-album").value = ""; $("#s-artist").value = ""; chosen = null;
+    } catch (err) { toast(err.message, true); }
+    finally { btn.disabled = false; }
+  });
+
+  // ---------- À écouter ----------
+  async function loadTodo() {
+    try {
+      const data = await fetch("data/albums.json", { cache: "no-cache" }).then((r) => r.json());
+      const todo = data.albums.filter((a) => !a.listened).sort((a, b) => (b.released || "").localeCompare(a.released || ""));
+      $("#todo").innerHTML = todo.length ? todo.map((a) => `
+        <div class="todo-item" data-id="${a.id}">
+          ${a.cover ? `<img src="${esc(a.cover)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : `<div class="ph-mini" style="background:var(--line)"></div>`}
+          <div><b>${esc(a.album)}</b><span>${esc(a.artist)}${a.link?.includes("spotify") ? " · suivi Spotify" : ""}</span></div>
+          <div class="actions">
+            <select aria-label="Note"><option value="">Note</option><option value="5">★★★★★</option><option value="4">★★★★</option><option value="3">★★★</option><option value="2">★★</option><option value="1">★</option></select>
+            <button class="btn" type="button">Écouté</button>
+          </div>
+        </div>`).join("") : `<p class="hint">Rien à écouter pour le moment.</p>`;
+    } catch { $("#todo").innerHTML = `<p class="hint">Liste indisponible.</p>`; }
+  }
+
+  $("#todo").addEventListener("click", async (e) => {
+    const btn = e.target.closest(".btn"); if (!btn) return;
+    const item = btn.closest(".todo-item");
+    const r = +item.querySelector("select").value || null;
+    btn.disabled = true;
+    try {
+      const res = await api(`/albums/${item.dataset.id}`, { method: "PATCH", body: JSON.stringify({ listened: true, rating: r, listenedOn: today() }) });
+      item.remove();
+      toast(res.published ? "Marqué comme écouté ✓ Le site se met à jour dans une minute." : "Marqué comme écouté ✓");
+    } catch (err) { toast(err.message, true); btn.disabled = false; }
+  });
+
+  start();
+})();
