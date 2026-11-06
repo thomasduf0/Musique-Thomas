@@ -17,44 +17,28 @@ Adresse : <https://thomasduf0.github.io/Musique-Thomas/>
 | `index.html`, `ajouter.html`, `assets/` | Le site (HTML/CSS/JS, sans framework) |
 | `assets/config.js` | Adresse de la fonction Cloudflare |
 | `data/albums.json`, `covers/` | Les données affichées et les pochettes importées dans Notion |
-| `scripts/build-data.mjs` | Lit Notion (propriétés, pochette d'en-tête, avis) et régénère `data/albums.json` |
-| `worker/` | Fonction Cloudflare : recherche Spotify, écriture dans Notion, détection d'écoute complète |
-| `.github/workflows/deploy.yml` | Synchro (chaque matin, ou à chaque ajout) + publication sur GitHub Pages |
+| `scripts/build-data.mjs` | Lit les données (via la fonction Cloudflare) et régénère `data/albums.json` |
+| `worker/` | Fonction Cloudflare : recherche Spotify, écriture dans Notion, détection d'écoute complète, export des données |
+| `.github/workflows/deploy.yml` | Synchro toutes les heures + publication sur GitHub Pages |
 
 Le site est public et ne contient aucune clé. Les clés Notion, Spotify et GitHub sont stockées uniquement dans la fonction Cloudflare et dans les secrets GitHub.
 
 ## Mise en route
 
-### 1. Notion
+Tout est déjà configuré (fonction Cloudflare `musique-thomas`, stockage KV `musique-state`, app Spotify « Musique Thomas »). Il reste à saisir les 4 secrets dans Cloudflare : *Workers et Pages → musique-thomas → Paramètres → Variables et secrets*, en type **Secret** :
 
-1. Sur <https://www.notion.so/profile/integrations>, créer une intégration *Interne* avec les droits **Lire**, **Mettre à jour** et **Insérer du contenu**. Copier son jeton.
-2. Dans Notion, ouvrir la page **Suivi d'écoutes** → `•••` → *Connexions* → ajouter l'intégration.
-3. Dans GitHub : *Settings → Secrets and variables → Actions → New repository secret*, nom `NOTION_TOKEN`, valeur = le jeton.
+| Nom | Valeur |
+|---|---|
+| `NOTION_TOKEN` | jeton de l'intégration Notion (<https://www.notion.so/profile/integrations>), connectée à la page **Suivi d'écoutes** |
+| `SPOTIFY_CLIENT_ID` / `SPOTIFY_CLIENT_SECRET` | app « Musique Thomas » sur <https://developer.spotify.com/dashboard> → *Settings* |
+| `ADMIN_PASSWORD` | mot de passe au choix pour `ajouter.html` |
 
-### 2. Spotify
+Ensuite :
 
-1. Sur <https://developer.spotify.com/dashboard>, *Create app*.
-2. *Redirect URI* : `https://musique-thomas.TON-SOUS-DOMAINE.workers.dev/spotify/callback` (l'adresse exacte s'affiche à l'étape 3, on peut la corriger ensuite dans *Settings*).
-3. API utilisée : **Web API**. Copier le *Client ID* et le *Client secret*.
+1. Dans Cloudflare, *Paramètres → Événements déclencheurs → Déclencheurs cron* : `7 * * * *` (détection d'écoute complète toutes les heures).
+2. Sur `ajouter.html` : **Relier mon compte Spotify**, puis **Remplacer les liens par Spotify** pour la base existante.
 
-### 3. Fonction Cloudflare (gratuite)
-
-1. Créer un compte sur <https://dash.cloudflare.com>, puis *Workers & Pages → Create → Worker*, nom `musique-thomas`, *Deploy*.
-2. *Edit code* : remplacer tout le contenu par celui de `worker/src/index.js`, puis *Deploy*.
-3. *Storage & Databases → KV → Create* un espace nommé `musique-state`. Dans le Worker : *Settings → Bindings → Add → KV namespace*, nom de variable **`STATE`**, espace `musique-state`.
-4. *Settings → Variables and Secrets* :
-   - variables (texte) : `ALLOWED_ORIGIN` = `https://thomasduf0.github.io`, `NOTION_DATA_SOURCE_ID` = `2a4a7bc0-f6df-80c3-bd83-000b2fd1b71e`, `GITHUB_REPO` = `thomasduf0/Musique-Thomas` ;
-   - secrets : `ADMIN_PASSWORD` (au choix), `NOTION_TOKEN`, `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, et facultativement `GITHUB_TOKEN` (voir plus bas).
-5. *Settings → Trigger events → Add → Cron* : `7 * * * *` (toutes les heures).
-6. Copier l'adresse du Worker (`https://musique-thomas.….workers.dev`) dans `assets/config.js`.
-
-`GITHUB_TOKEN` permet de republier le site dans la minute après un ajout. Sans lui, les ajouts apparaissent à la synchro du matin. Pour le créer : GitHub → *Settings → Developer settings → Fine-grained tokens*, accès au seul dépôt `Musique-Thomas`, permission **Contents : Read and write**.
-
-Alternative en ligne de commande : `cd worker`, compléter `wrangler.toml` (id KV), `npx wrangler secret put …` pour chaque secret, puis `npx wrangler deploy`.
-
-### 4. Relier Spotify
-
-Ouvrir `ajouter.html`, entrer le mot de passe, puis cliquer sur **Relier mon compte Spotify**. La détection d'écoute complète démarre à partir de ce moment.
+Aucun secret n'est nécessaire côté GitHub : la synchro horaire lit les données via la fonction Cloudflare (`/export`, en lecture seule, uniquement ce qui est déjà publié sur le site). Facultatif : le secret Cloudflare `GITHUB_TOKEN` (jeton GitHub limité au dépôt, permission *Contents : Read and write*) republie le site dans la minute après un ajout, au lieu de l'heure suivante.
 
 ## En local
 

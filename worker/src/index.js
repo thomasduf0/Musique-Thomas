@@ -126,16 +126,16 @@ function mapGenres(spotifyGenres = []) {
   return [...new Set(out)];
 }
 
-async function searchAlbums(env, album, artist) {
+async function searchAlbums(env, album, artist, opts = {}) {
   const token = await appToken(env);
-  const q = [album && `album:${album}`, artist && `artist:${artist}`].filter(Boolean).join(" ");
+  const q = opts.q || [album && `album:${album}`, artist && `artist:${artist}`].filter(Boolean).join(" ");
   const data = await spotify(token, `/search?type=album&limit=10&market=FR&q=${encodeURIComponent(q)}`);
   const items = data.albums?.items || [];
 
   // Genres : récupérés sur les artistes principaux (peut être vide selon Spotify)
   const artistIds = [...new Set(items.map((a) => a.artists[0]?.id).filter(Boolean))].slice(0, 50);
   let genresByArtist = {};
-  if (artistIds.length) {
+  if (artistIds.length && opts.genres !== false) {
     try {
       const arts = await spotify(token, `/artists?ids=${artistIds.join(",")}`);
       genresByArtist = Object.fromEntries((arts.artists || []).filter(Boolean).map((a) => [a.id, a.genres || []]));
@@ -231,11 +231,113 @@ async function checkFullListens(env) {
   return { newPlays: items.length, marked: done };
 }
 
+// ---------------------------------------------------------------- export (lecture seule, public)
+// Les données sont publiées sur le site de toute façon : la synchro GitHub les lit ici,
+// sans avoir besoin d'aucune clé de son côté.
+const plainText = (rich = []) => rich.map((t) => t.plain_text).join("").trim();
+
+async function exportAlbums(env) {
+  const cached = await env.STATE.get("cache:export");
+  if (cached) return JSON.parse(cached);
+  const albums = [];
+  let cursor;
+  do {
+    const d = await notion(env, `/data_sources/${env.NOTION_DATA_SOURCE_ID}/query`, "POST", { page_size: 100, ...(cursor ? { start_cursor: cursor } : {}) });
+    for (const page of d.results) {
+      const p = page.properties;
+      const note = p["Note"]?.select?.name || "";
+      albums.push({
+        id: page.id.replace(/-/g, ""),
+        edited: page.last_edited_time,
+        album: plainText(p["Album"]?.title),
+        artist: p["Artiste"]?.select?.name || null,
+        genres: (p["Genre"]?.multi_select || []).map((g) => g.name),
+        lang: p["Langue principale"]?.select?.name || null,
+        rating: note ? (note.match(/⭐/g) || []).length : null,
+        listened: !!p["Ecouté"]?.checkbox,
+        listenedOn: p["Date d'écoute"]?.date?.start || null,
+        released: p["Date de sortie"]?.date?.start || null,
+        link: p["URL"]?.url || null,
+        cover: page.cover?.external?.url || null,
+        coverFile: page.cover?.file?.url || null,
+      });
+    }
+    cursor = d.has_more ? d.next_cursor : null;
+  } while (cursor);
+  await env.STATE.put("cache:export", JSON.stringify(albums), { expirationTtl: 300 });
+  return albums;
+}
+
+// Avis (texte des fiches), par lots, mis en cache tant que la fiche n'est pas modifiée
+async function exportReviews(env, items) {
+  const out = {};
+  let fetched = 0;
+  for (const { id, edited } of items) {
+    const key = `review:${id}`;
+    const hit = JSON.parse((await env.STATE.get(key)) || "null");
+    if (hit && hit.edited === edited) { out[id] = hit.text; continue; }
+    if (fetched >= 40) continue; // limite de requêtes par appel : le reste au prochain appel
+    const d = await notion(env, `/blocks/${id}/children?page_size=100`);
+    fetched++;
+    const text = d.results.map((b) => plainText(b[b.type]?.rich_text)).filter(Boolean).join("\n").slice(0, 1200);
+    await env.STATE.put(key, JSON.stringify({ edited, text }));
+    out[id] = text;
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------- migration des liens vers Spotify
+const fold = (s) => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
+  .replace(/[’']/g, "").replace(/\((deluxe|remaster|expanded|edition|version|bonus)[^)]*\)/g, "")
+  .replace(/[^a-z0-9]+/g, " ").trim();
+
+function matchScore(album, artist, c) {
+  const a = fold(album), n = fold(c.album), ar = fold(artist);
+  const artistOk = c.artist.split(", ").some((x) => { const f = fold(x); return f === ar || f.includes(ar) || ar.includes(f); });
+  let s = artistOk ? 2 : 0;
+  if (a === n) s += 3; else if (a && n && (n.startsWith(a) || a.startsWith(n))) s += 2; else if (a && n && (n.includes(a) || a.includes(n))) s += 1;
+  if (c.type === "album") s += 0.5;
+  return s;
+}
+
+async function migratePreview(env, ids) {
+  const albums = await exportAlbums(env);
+  const out = [];
+  for (const a of albums.filter((x) => ids.includes(x.id))) {
+    if (!a.album || !a.artist) continue;
+    let results = await searchAlbums(env, a.album, a.artist, { genres: false });
+    if (!results.length) results = await searchAlbums(env, "", "", { genres: false, q: `${a.album} ${a.artist}` });
+    const best = results.map((c) => ({ c, s: matchScore(a.album, a.artist, c) })).sort((x, y) => y.s - x.s)[0];
+    const confidence = !best ? "aucun" : best.s >= 5 ? "sûr" : best.s >= 3.5 ? "probable" : "douteux";
+    out.push({
+      id: a.id, album: a.album, artist: a.artist, old: a.link, confidence,
+      spotify: best ? { album: best.c.album, artist: best.c.artist, released: best.c.released, tracks: best.c.tracks, link: best.c.link, thumb: best.c.thumb } : null,
+    });
+  }
+  return out;
+}
+
 // ---------------------------------------------------------------- routes
 async function handle(req, env) {
   const url = new URL(req.url);
   const h = cors(env, req);
   if (req.method === "OPTIONS") return new Response(null, { headers: h });
+
+  // Lecture publique (aucune donnée qui ne soit déjà sur le site)
+  if (req.method === "GET" && url.pathname === "/export") {
+    try {
+      const albums = await exportAlbums(env);
+      return json({ albums, ids: albums.filter((a) => a.listened).map((a) => `${a.id}:${a.edited}`) }, 200, h);
+    } catch (e) { return json({ error: e.message }, 502, h); }
+  }
+  if (req.method === "GET" && url.pathname === "/export/reviews") {
+    try {
+      const items = (url.searchParams.get("ids") || "").split(",").filter(Boolean).slice(0, 100)
+        .map((s) => { const [id, edited] = s.split(":"); return { id, edited: s.slice(id.length + 1) || edited }; })
+        .filter((x) => /^[0-9a-f]{32}$/.test(x.id));
+      return json({ reviews: await exportReviews(env, items) }, 200, h);
+    } catch (e) { return json({ error: e.message }, 502, h); }
+  }
 
   // Connexion du compte Spotify (une seule fois, depuis le navigateur)
   if (url.pathname === "/spotify/login") {
@@ -299,6 +401,7 @@ async function handle(req, env) {
         }),
         children: reviewBlocks(a.review),
       });
+      await env.STATE.delete("cache:export");
       const published = await triggerSiteUpdate(env);
       return json({ ok: true, id: page.id, url: page.url, published }, 201, h);
     }
@@ -313,11 +416,33 @@ async function handle(req, env) {
       });
       await notion(env, `/pages/${m[1]}`, "PATCH", { properties: props });
       if (a.review) await notion(env, `/blocks/${m[1]}/children`, "PATCH", { children: reviewBlocks(a.review) });
+      await env.STATE.delete("cache:export");
       const published = await triggerSiteUpdate(env);
       return json({ ok: true, published }, 200, h);
     }
 
     if (url.pathname === "/check" && req.method === "POST") return json(await checkFullListens(env), 200, h);
+
+    // Migration : liste des albums à traiter, puis aperçu par lots de 15, puis application
+    if (url.pathname === "/migrate/todo" && req.method === "GET") {
+      const albums = await exportAlbums(env);
+      return json({ ids: albums.filter((a) => a.album && a.artist && !a.link?.includes("open.spotify.com/album/")).map((a) => a.id) }, 200, h);
+    }
+    if (url.pathname === "/migrate/preview" && req.method === "POST") {
+      const { ids = [] } = await req.json();
+      return json({ results: await migratePreview(env, ids.slice(0, 15)) }, 200, h);
+    }
+    if (url.pathname === "/migrate/apply" && req.method === "POST") {
+      const { items = [] } = await req.json();
+      let n = 0;
+      for (const it of items.slice(0, 40)) {
+        if (!/^[0-9a-f]{32}$/.test(it.id) || !/^https:\/\/open\.spotify\.com\/album\/[A-Za-z0-9]+$/.test(it.link)) continue;
+        await notion(env, `/pages/${it.id}`, "PATCH", { properties: { URL: { url: it.link } } });
+        n++;
+      }
+      await env.STATE.delete("cache:export");
+      return json({ ok: true, updated: n }, 200, h);
+    }
 
     return json({ error: "Route inconnue" }, 404, h);
   } catch (e) {

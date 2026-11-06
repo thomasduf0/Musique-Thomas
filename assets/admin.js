@@ -173,5 +173,72 @@
     } catch (err) { toast(err.message, true); btn.disabled = false; }
   });
 
+  // ---------- Migration des liens vers Spotify ----------
+  let mResults = [];
+  $("#m-start").addEventListener("click", async () => {
+    const btn = $("#m-start"); btn.disabled = true;
+    $("#m-list").innerHTML = ""; $("#m-apply").hidden = true; mResults = [];
+    try {
+      const { ids } = await api("/migrate/todo");
+      if (!ids.length) { $("#m-progress").textContent = "Tous les albums ont déjà un lien Spotify."; return; }
+      for (let i = 0; i < ids.length; i += 10) {
+        $("#m-progress").textContent = `Recherche… ${Math.min(i, ids.length)} / ${ids.length}`;
+        const { results } = await api("/migrate/preview", { method: "POST", body: JSON.stringify({ ids: ids.slice(i, i + 10) }) });
+        mResults.push(...results);
+      }
+      $("#m-progress").textContent = `${mResults.length} albums analysés. Vérifie surtout les lignes en rouge.`;
+      renderMigration();
+    } catch (err) { toast(err.message, true); $("#m-progress").textContent = ""; }
+    finally { btn.disabled = false; }
+  });
+
+  function renderMigration() {
+    const order = { aucun: 0, douteux: 1, probable: 2, "sûr": 3 };
+    const label = { aucun: "Aucun résultat", douteux: "Douteux", probable: "Probable", "sûr": "Sûr" };
+    const sorted = [...mResults].sort((a, b) => order[a.confidence] - order[b.confidence]);
+    let last = "";
+    $("#m-list").innerHTML = sorted.map((r) => {
+      const head = r.confidence !== last ? `<p class="mgroup">${label[r.confidence]}</p>` : "";
+      last = r.confidence;
+      const checked = r.confidence === "sûr" || r.confidence === "probable";
+      return head + `<label class="mrow">
+        <input type="checkbox" data-id="${r.id}" ${r.spotify ? "" : "disabled"} ${checked && r.spotify ? "checked" : ""}>
+        <img src="${esc(r.spotify?.thumb || "")}" alt="" onerror="this.style.visibility='hidden'">
+        <div><b>${esc(r.album)} — ${esc(r.artist)}</b>
+          <span>${r.spotify ? `Spotify : ${esc(r.spotify.album)} — ${esc(r.spotify.artist)} (${esc((r.spotify.released || "").slice(0, 4))}, ${r.spotify.tracks} titres)` : "Rien trouvé sur Spotify"}</span></div>
+        <span class="tag ${r.confidence === "sûr" ? "sur" : r.confidence}">${label[r.confidence]}</span>
+      </label>`;
+    }).join("");
+    updateApply();
+  }
+  const checkedItems = () => [...document.querySelectorAll("#m-list input:checked")].map((c) => {
+    const r = mResults.find((x) => x.id === c.dataset.id);
+    return { id: r.id, link: r.spotify.link };
+  });
+  function updateApply() {
+    const n = checkedItems().length;
+    $("#m-apply").hidden = !mResults.length;
+    $("#m-apply").textContent = `Remplacer ${n} lien${n > 1 ? "s" : ""} dans Notion`;
+    $("#m-apply").disabled = !n;
+  }
+  $("#m-list").addEventListener("change", updateApply);
+  $("#m-apply").addEventListener("click", async () => {
+    const items = checkedItems(); const btn = $("#m-apply"); btn.disabled = true;
+    try {
+      let done = 0;
+      for (let i = 0; i < items.length; i += 30) {
+        const r = await api("/migrate/apply", { method: "POST", body: JSON.stringify({ items: items.slice(i, i + 30) }) });
+        done += r.updated;
+        $("#m-progress").textContent = `Mise à jour… ${done} / ${items.length}`;
+      }
+      const ids = new Set(items.map((x) => x.id));
+      mResults = mResults.filter((r) => !ids.has(r.id));
+      renderMigration();
+      $("#m-progress").textContent = `${done} liens remplacés dans Notion ✓${mResults.length ? " Les albums restants n'ont pas été modifiés." : ""}`;
+      toast(`${done} liens remplacés ✓`);
+    } catch (err) { toast(err.message, true); }
+    finally { btn.disabled = false; }
+  });
+
   start();
 })();

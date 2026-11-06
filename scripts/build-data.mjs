@@ -1,7 +1,8 @@
 // Génère data/albums.json à partir de la base Notion « Musiques écoutées ».
 //
 // - Avec la variable NOTION_TOKEN : lit la base via l'API Notion (+ le texte de chaque fiche = ton avis).
-// - Sans NOTION_TOKEN : utilise scripts/seed-rows.json (export initial).
+// - Sinon, si assets/config.js contient l'adresse de la fonction Cloudflare : lit les données via celle-ci.
+// - Sinon : utilise scripts/seed-rows.json (export initial).
 // Dans les deux cas, les pochettes sont récupérées via l'API iTunes à partir des liens Apple Music.
 //
 // Usage : node scripts/build-data.mjs
@@ -187,18 +188,57 @@ async function addCovers(rows, previous) {
   return rows;
 }
 
+// ---------- Fonction Cloudflare (aucune clé nécessaire ici) ----------
+async function workerApi() {
+  if (process.env.MUSIQUE_API) return process.env.MUSIQUE_API.replace(/\/$/, "");
+  try {
+    const cfg = await readFile(path.join(ROOT, "assets", "config.js"), "utf8");
+    return (cfg.match(/MUSIQUE_API\s*=\s*"([^"]+)"/) || [])[1]?.replace(/\/$/, "") || null;
+  } catch { return null; }
+}
+
+async function fromWorker(api, previous) {
+  const res = await fetch(`${api}/export`);
+  const data = await res.json();
+  if (!res.ok) throw new Error(`Export : ${data.error || res.status}`);
+  const rows = data.albums;
+  // Avis : par lots, la fonction met en cache ceux qui n'ont pas changé
+  const prev = new Map(previous.map((a) => [a.id, a]));
+  const reviews = {};
+  let pending = data.ids;
+  for (let round = 0; round < 10 && pending.length; round++) {
+    for (let i = 0; i < pending.length; i += 50) {
+      const r = await fetch(`${api}/export/reviews?ids=${encodeURIComponent(pending.slice(i, i + 50).join(","))}`).then((x) => x.json());
+      Object.assign(reviews, r.reviews || {});
+    }
+    pending = pending.filter((s) => !(s.split(":")[0] in reviews));
+  }
+  for (const r of rows) r.review = reviews[r.id] ?? prev.get(r.id)?.review ?? undefined;
+  return rows;
+}
+
 // ---------- Main ----------
 const previous = existsSync(OUT) ? JSON.parse(await readFile(OUT, "utf8")).albums || [] : [];
-const source = NOTION_TOKEN ? "notion" : "seed";
-let rows = normalize(NOTION_TOKEN ? await fromNotion() : await fromSeed());
+const API = NOTION_TOKEN ? null : await workerApi();
+let source = NOTION_TOKEN ? "notion" : API ? "cloudflare" : "seed";
+let rows;
+try {
+  rows = NOTION_TOKEN ? await fromNotion() : API ? await fromWorker(API, previous) : await fromSeed();
+} catch (e) {
+  console.warn("Source indisponible, données précédentes conservées :", e.message);
+  source = "seed";
+  rows = previous.length ? previous : await fromSeed();
+}
+rows = normalize(rows);
 
-// Sans Notion, on conserve les avis déjà récupérés lors d'une synchro précédente.
-if (!NOTION_TOKEN) {
+// Sans source en direct, on conserve les avis déjà récupérés lors d'une synchro précédente.
+if (source === "seed") {
   const prevById = new Map(previous.map((a) => [a.id, a]));
   rows = rows.map((r) => ({ ...r, review: prevById.get(r.id)?.review || r.review }));
 }
 
-if (NOTION_TOKEN) await saveNotionFiles(rows);
+if (source !== "seed") await saveNotionFiles(rows);
+for (const r of rows) { delete r.edited; delete r.coverFile; if (!r.review) delete r.review; }
 rows = await addCovers(rows, previous);
 rows.sort((a, b) => (b.listenedOn || "").localeCompare(a.listenedOn || "") || a.album.localeCompare(b.album));
 

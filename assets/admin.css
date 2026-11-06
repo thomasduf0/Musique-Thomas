@@ -79,3 +79,17 @@
   .todo-item .actions { grid-column: 1 / -1; }
   .todo-item .actions .btn { flex: 1; }
 }
+
+/* ---------- Migration Spotify ---------- */
+.mlist { display: grid; gap: 8px; margin: 6px 0 14px; }
+.mrow { display: grid; grid-template-columns: auto 48px 1fr auto; gap: 12px; align-items: center; background: var(--card); border-radius: 10px; padding: 8px 10px; }
+.mrow img { width: 48px; height: 48px; border-radius: 6px; object-fit: cover; background: var(--line); }
+.mrow input { width: 18px; height: 18px; accent-color: var(--accent); }
+.mrow b { display: block; font-size: 14px; }
+.mrow span { display: block; color: var(--muted); font-size: 12px; }
+.mrow .tag { font-size: 11px; border-radius: 999px; padding: 2px 8px; border: 1px solid var(--line); white-space: nowrap; }
+.tag.sur { color: #3dd68c; border-color: #3dd68c55; }
+.tag.probable { color: var(--gold); border-color: #f5c45e55; }
+.tag.douteux, .tag.aucun { color: #ff6b6b; border-color: #ff6b6b55; }
+.mgroup { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; margin: 12px 0 2px; }
+@media (max-width: 640px) { .mrow { grid-template-columns: auto 40px 1fr; } .mrow .tag { grid-column: 3; justify-self: start; } .mrow img { width: 40px; height: 40px; } }

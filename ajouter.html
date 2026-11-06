@@ -76,6 +76,15 @@
         </form>
       </section>
 
+      <section class="panel" id="migrate">
+        <h3>Remplacer les liens par Spotify</h3>
+        <p class="hint">Cherche sur Spotify chaque album de la base qui n'a pas encore de lien Spotify. Rien n'est modifié avant que tu valides : décoche les correspondances fausses.</p>
+        <button class="btn" type="button" id="m-start">Chercher les correspondances</button>
+        <p class="hint" id="m-progress"></p>
+        <div id="m-list" class="mlist"></div>
+        <button class="btn" type="button" id="m-apply" hidden></button>
+      </section>
+
       <section class="panel">
         <h3>À écouter</h3>
         <p class="hint">Les albums ajoutés depuis Spotify sont cochés tout seuls quand toutes leurs pistes ont été écoutées. Sinon, marque-les ici.</p>

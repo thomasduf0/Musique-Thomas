@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 5 * * *" # tous les jours vers 6h-7h (heure de Paris)
+    - cron: "23 * * * *" # toutes les heures (les ajouts et écoutes apparaissent dans l'heure)
   workflow_dispatch:
   repository_dispatch:
     types: [notion-updated]
