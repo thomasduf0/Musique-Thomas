@@ -509,19 +509,32 @@
   }
 
   // ---------- Recherche (en-tête) : ta base + Spotify ----------
+  // Ta base s'affiche instantanément à chaque frappe ; Spotify arrive ensuite (une seule requête,
+  // mise en cache, les requêtes devenues inutiles sont annulées) sans effacer les résultats affichés.
   const sInput = $("#search"), sBox = $("#sresults");
-  let sSeq = 0, sTimer = 0, sSpotify = [];
+  let sTimer = 0, sSpotify = [], sAbort = null, sShown = { q: "", list: null };
+  const sCache = new Map(); // requête normalisée → résultats Spotify
   const thumb = (src, alt = "") => src ? `<img src="${esc(fixCover(src))}" alt="${esc(alt)}" loading="lazy" onerror="this.style.visibility='hidden'">` : `<span class="ph-s"></span>`;
   function closeSearch() { sBox.hidden = true; }
   function localMatches(q) {
-    const k = norm(q);
-    return state.albums.filter((a) => norm(`${a.album} ${a.artist}`).includes(k) || norm(`${a.artist} ${a.album}`).includes(k))
-      .sort((a, b) => (b.listened - a.listened) || (b.listenedOn || "").localeCompare(a.listenedOn || "")).slice(0, 6);
+    const words = norm(q).split(/\s+/).filter(Boolean);
+    if (!words.length) return [];
+    const score = (a) => {
+      const al = norm(a.album), ar = norm(a.artist), all = `${al} ${ar}`;
+      if (!words.every((w) => all.includes(w))) return -1;
+      const k = words.join(" ");
+      return (al === k || ar === k ? 4 : 0) + (al.startsWith(k) || ar.startsWith(k) ? 2 : 0)
+        + words.filter((w) => all.split(/\s+/).some((t) => t.startsWith(w))).length / words.length;
+    };
+    return state.albums.map((a) => [a, score(a)]).filter(([, s]) => s >= 0)
+      .sort((x, y) => (y[1] - x[1]) || (y[0].listened - x[0].listened) || (y[0].listenedOn || "").localeCompare(x[0].listenedOn || ""))
+      .slice(0, 6).map(([a]) => a);
   }
   function renderSearch(q, spotify, loading) {
     const local = localMatches(q);
     const ext = (spotify || []).filter((r) => !findInBase(r)).slice(0, 8);
     sSpotify = ext;
+    const keepFocus = sBox.contains(document.activeElement) ? [...sBox.querySelectorAll(".srow")].indexOf(document.activeElement.closest(".srow")) : -1;
     sBox.innerHTML = `
       ${local.length ? `<h4>Dans ton journal</h4>${local.map((a) => `
         <div class="srow local" role="button" tabindex="0" data-open="${a.id}">
@@ -529,34 +542,82 @@
           <div><b>${esc(a.album)}</b><span>${esc(a.artist)}${a.released ? " · " + esc(a.released.slice(0, 4)) : ""}</span></div>
           <span class="tag${a.listened ? " heard" : ""}">${a.listened ? (a.rating ? "★".repeat(a.rating) : "Écouté") : "À écouter"}</span>
         </div>`).join("")}` : ""}
-      <h4>Sur Spotify</h4>
-      ${loading ? `<p class="hint">Recherche…</p>` : ext.length ? ext.map((r, i) => `
-        <div class="srow">
+      <h4>Sur Spotify${loading ? ` <span class="s-spin" aria-label="Recherche en cours"></span>` : ""}</h4>
+      ${ext.length ? `<div class="s-ext${loading ? " stale" : ""}">${ext.map((r, i) => `
+        <div class="srow" tabindex="-1">
           ${thumb(r.thumb || r.cover)}
           <div><b>${esc(r.album)}</b><span>${esc(r.artist)}${r.released ? " · " + esc(r.released.slice(0, 4)) : ""}${r.type && r.type !== "album" ? " · " + esc(r.type) : ""}</span></div>
           <div class="acts">
             <button class="mini-btn primary" type="button" data-s-heard="${i}">✓ Écouté</button>
             <button class="mini-btn" type="button" data-s-todo="${i}">+ À écouter</button>
           </div>
-        </div>`).join("") : `<p class="hint">${spotify ? "Rien de plus sur Spotify." : "Spotify indisponible pour le moment."}</p>`}`;
+        </div>`).join("")}</div>`
+        : loading ? `<p class="hint">Recherche…</p>`
+        : `<p class="hint">${spotify ? (local.length ? "Rien de plus sur Spotify." : "Aucun résultat.") : "Spotify indisponible pour le moment."}</p>`}`;
     sBox.hidden = false;
+    if (keepFocus >= 0) sBox.querySelectorAll(".srow")[keepFocus]?.focus();
+  }
+  async function fetchSpotify(q) {
+    const key = norm(q);
+    if (sCache.has(key)) return sCache.get(key);
+    sAbort?.abort();
+    const ctrl = sAbort = new AbortController();
+    const { results = [] } = await api(`/search?q=${encodeURIComponent(q)}`, { signal: ctrl.signal });
+    sCache.set(key, results);
+    if (sCache.size > 60) sCache.delete(sCache.keys().next().value);
+    return results;
   }
   async function runSearch() {
     const q = sInput.value.trim();
-    if (q.length < 2) return closeSearch();
-    const seq = ++sSeq;
-    renderSearch(q, [], true);
-    const e = encodeURIComponent(q);
-    const calls = await Promise.allSettled([api(`/search?q=${e}&album=${e}`), api(`/search?artist=${e}`)]);
-    if (seq !== sSeq) return;
-    const ok = calls.filter((c) => c.status === "fulfilled");
-    const seen = new Set();
-    const all = ok.flatMap((c) => c.value.results || []).filter((r) => !seen.has(r.spotifyId) && seen.add(r.spotifyId));
-    renderSearch(q, ok.length ? all : null, false);
+    if (q.length < 2) return;
+    const key = norm(q);
+    if (sCache.has(key)) { sShown = { q: key, list: sCache.get(key) }; return renderSearch(q, sShown.list, false); }
+    try {
+      const list = await fetchSpotify(q);
+      if (norm(sInput.value.trim()) !== key) return; // l'utilisateur a continué à taper
+      sShown = { q: key, list };
+      renderSearch(q, list, false);
+    } catch (err) {
+      if (err.name === "AbortError") return;
+      if (norm(sInput.value.trim()) === key) renderSearch(q, null, false);
+    }
   }
-  sInput.addEventListener("input", () => { clearTimeout(sTimer); sTimer = setTimeout(runSearch, 350); });
+  function onType() {
+    clearTimeout(sTimer);
+    const q = sInput.value.trim();
+    if (q.length < 2) { sAbort?.abort(); return closeSearch(); }
+    const key = norm(q), cached = sCache.get(key);
+    // Affichage immédiat : ta base + les derniers résultats Spotify (estompés) en attendant les nouveaux
+    renderSearch(q, cached || sShown.list || [], !cached);
+    if (cached) { sShown = { q: key, list: cached }; return; }
+    sTimer = setTimeout(runSearch, 220);
+  }
+  sInput.addEventListener("input", onType);
   sInput.addEventListener("focus", () => { if (sInput.value.trim().length >= 2 && sBox.innerHTML) sBox.hidden = false; });
-  sInput.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeSearch(); sInput.blur(); } if (e.key === "Enter") { clearTimeout(sTimer); runSearch(); } });
+  // Navigation au clavier : ↓/↑ parcourent les résultats, Entrée ouvre, Échap ferme
+  const sRows = () => [...sBox.querySelectorAll(".srow")];
+  function moveFocus(dir) {
+    const rows = sRows(); if (!rows.length) return;
+    const i = rows.indexOf(document.activeElement.closest?.(".srow"));
+    const next = i + dir;
+    if (next < 0) return sInput.focus();
+    rows[Math.min(next, rows.length - 1)].focus();
+  }
+  sInput.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { closeSearch(); sInput.blur(); }
+    if (e.key === "ArrowDown" && !sBox.hidden) { e.preventDefault(); moveFocus(1); }
+    if (e.key === "Enter") {
+      e.preventDefault(); clearTimeout(sTimer);
+      const first = sBox.hidden ? null : sBox.querySelector("[data-open]");
+      if (first) first.click(); else runSearch();
+    }
+  });
+  sBox.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") { e.preventDefault(); moveFocus(1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); moveFocus(-1); }
+    else if (e.key === "Escape") { closeSearch(); sInput.focus(); }
+    else if (e.key === "Enter" && e.target.matches("[data-open]")) e.target.click();
+  });
   document.addEventListener("click", (e) => { if (!e.target.closest(".search")) closeSearch(); });
   sBox.addEventListener("click", async (e) => {
     const open = e.target.closest("[data-open]");
@@ -567,10 +628,9 @@
     if (t) {
       const r = sSpotify[+t.dataset.sTodo];
       const a = await saveNew({ ...r, artist: r.mainArtist || r.artist }, { listened: false }, t);
-      if (a) runSearch();
+      if (a) renderSearch(sInput.value.trim(), sShown.list, false);
     }
   });
-  sBox.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.matches("[data-open]")) e.target.click(); });
 
   // ---------- Écoute aléatoire : un album noté 4★ ou 5★, ou un album « À écouter » ----------
   const recent = [];

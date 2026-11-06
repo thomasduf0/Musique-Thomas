@@ -346,3 +346,12 @@ h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
 .random-btn:hover { transform: translateY(-2px); }
 .random-btn:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 @media (max-width: 640px) { .hero-actions { flex-wrap: wrap; } .search { flex-basis: 100%; } .random-btn { flex: 1; justify-content: center; } }
+
+/* Recherche : indicateur discret pendant le chargement Spotify, sans effacer les résultats */
+.s-spin { display: inline-block; width: 10px; height: 10px; margin-left: 6px; vertical-align: -1px;
+  border: 2px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: s-spin .7s linear infinite; }
+@keyframes s-spin { to { transform: rotate(360deg); } }
+.s-ext { transition: opacity .15s; }
+.s-ext.stale { opacity: .55; }
+.srow:not(.local):focus-visible { background: var(--card); outline: none; }
+@media (prefers-reduced-motion: reduce) { .s-spin { animation-duration: 2s; } }
