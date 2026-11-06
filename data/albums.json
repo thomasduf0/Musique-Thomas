@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T21:57:44.229Z",
+ "updatedAt": "2026-11-06T22:25:14.103Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -99,6 +99,43 @@
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/b7/5e/29b75e77-283a-76eb-12b3-5e6af7eac4db/5060525431999_cover.jpg/600x600bb.jpg"
   },
   {
+   "id": "2f7a7bc0f6df805f8b36f7754a42ba5a",
+   "album": "WOR$T GIRL IN AMERICA",
+   "artist": "Slayyyter",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-09-06",
+   "released": "2026-03-27",
+   "link": "https://open.spotify.com/album/5siV9C6eK0NpAqER2FfCVA",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e7/41/d8/e741d8f3-f8db-d401-5d93-fdfd69d8f17e/196873835891.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
+  },
+  {
+   "id": "37ca7bc0f6df800cb97bc38a7693f8c6",
+   "album": "petal",
+   "artist": "Ariana Grande",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-07-31",
+   "released": "2026-07-31",
+   "link": "https://open.spotify.com/album/2k4FmEtXR0WiDW0Ac2QArT",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7e/e6/82/7ee682bd-1b17-6adc-be63-b5af1bdff369/26UMGIM51126.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/56/f4/96/56f49612-02dd-83f4-44fe-d2118cc70707/26UMGIM51129.rgb.jpg/600x600bb.jpg"
+  },
+  {
    "id": "3a1a7bc0f6df80dabb69c174774f87ca",
    "album": "Loud",
    "artist": "Rihanna",
@@ -154,6 +191,24 @@
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/eb/8f/5d/eb8f5dcf-aec1-1f58-fbea-dc0bb086f1c8/093624819837.jpg/600x600bb.jpg",
    "myGenres": [
     "Pop"
+   ]
+  },
+  {
+   "id": "31ea7bc0f6df80ada27fe1588ba4edbd",
+   "album": "GILDAA",
+   "artist": "Gildaa",
+   "genres": [
+    "Variété française"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-07-06",
+   "released": "2026-03-06",
+   "link": "https://open.spotify.com/album/2Lxn9SgKaLw60lcucWubnn",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/e0/34/97e034b0-c094-6081-9348-1a777c169f25/5400863203580_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Alternative"
    ]
   },
   {
@@ -2362,24 +2417,6 @@
    ]
   },
   {
-   "id": "31ea7bc0f6df80ada27fe1588ba4edbd",
-   "album": "GILDAA",
-   "artist": "Gildaa",
-   "genres": [
-    "Variété française"
-   ],
-   "lang": "Français",
-   "rating": null,
-   "listened": false,
-   "listenedOn": null,
-   "released": "2026-03-06",
-   "link": "https://open.spotify.com/album/2Lxn9SgKaLw60lcucWubnn",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/e0/34/97e034b0-c094-6081-9348-1a777c169f25/5400863203580_cover.jpg/600x600bb.jpg",
-   "myGenres": [
-    "Alternative"
-   ]
-  },
-  {
    "id": "368a7bc0f6df80bfaefcdc471736c637",
    "album": "Grandma’s Gospel Favorites",
    "artist": "Jason Mraz",
@@ -2485,25 +2522,6 @@
     "Rock"
    ],
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/75/2d/e2/752de26b-fe7c-3e32-d822-6b4fa75f324d/3663729366221_cover.jpg/600x600bb.jpg"
-  },
-  {
-   "id": "37ca7bc0f6df800cb97bc38a7693f8c6",
-   "album": "petal",
-   "artist": "Ariana Grande",
-   "genres": [
-    "Pop"
-   ],
-   "lang": "Anglais",
-   "rating": null,
-   "listened": false,
-   "listenedOn": null,
-   "released": "2026-07-31",
-   "link": "https://open.spotify.com/album/2k4FmEtXR0WiDW0Ac2QArT",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7e/e6/82/7ee682bd-1b17-6adc-be63-b5af1bdff369/26UMGIM51126.rgb.jpg/600x600bb.jpg",
-   "myGenres": [
-    "Pop"
-   ],
-   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/56/f4/96/56f49612-02dd-83f4-44fe-d2118cc70707/26UMGIM51129.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2dba7bc0f6df806db2b7fa7a5f17d72f",
@@ -2739,24 +2757,6 @@
    "released": "2026-03-06",
    "link": "https://open.spotify.com/album/2ivbRaW10BVYVDTGRGDW6p",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/e0/a1/48e0a157-0f2a-28fc-a864-b274409703d8/075679599575.jpg/600x600bb.jpg",
-   "myGenres": [
-    "Pop"
-   ]
-  },
-  {
-   "id": "2f7a7bc0f6df805f8b36f7754a42ba5a",
-   "album": "WOR$T GIRL IN AMERICA",
-   "artist": "Slayyyter",
-   "genres": [
-    "Pop"
-   ],
-   "lang": "Anglais",
-   "rating": null,
-   "listened": false,
-   "listenedOn": null,
-   "released": "2026-03-27",
-   "link": "https://open.spotify.com/album/5siV9C6eK0NpAqER2FfCVA",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e7/41/d8/e741d8f3-f8db-d401-5d93-fdfd69d8f17e/196873835891.jpg/600x600bb.jpg",
    "myGenres": [
     "Pop"
    ]
