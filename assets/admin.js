@@ -49,6 +49,7 @@
         ? `Spotify relié : les albums écoutés en entier sont cochés automatiquement${esc(last)}.`
         : `Spotify n'est pas encore relié pour la détection d'écoute. <a href="${esc(linkUrl)}" style="color:var(--accent)">Relier mon compte Spotify</a>`;
       loadTodo();
+      loadToRate();
     } catch (e) {
       toast(e.message, true);
     }
@@ -170,6 +171,75 @@
       const res = await api(`/albums/${item.dataset.id}`, { method: "PATCH", body: JSON.stringify({ listened: true, rating: r, listenedOn: today() }) });
       item.remove();
       toast(res.published ? "Marqué comme écouté ✓ Le site se met à jour dans une minute." : "Marqué comme écouté ✓");
+    } catch (err) { toast(err.message, true); btn.disabled = false; }
+  });
+
+  // ---------- À noter ----------
+  const fmt = (d) => d ? new Date(d + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" }) : "";
+  const starsHTML = () => `<div class="rate" aria-label="Note">${[1, 2, 3, 4, 5].map((v) => `<button type="button" data-v="${v}">★</button>`).join("")}</div>`;
+  function rowHTML({ key, cover, album, artist, when, extra = "", actions }) {
+    return `<div class="todo-item" data-key="${esc(key)}" data-rating="0">
+      ${cover ? `<img src="${esc(cover)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : `<div class="ph-mini" style="background:var(--line)"></div>`}
+      <div><b>${esc(album)}</b><span>${esc(artist)}${extra}</span><span class="when">${esc(when)}</span></div>
+      <div class="actions">${starsHTML()}${actions}</div>
+    </div>`;
+  }
+  let heardList = [];
+  async function loadToRate() {
+    // 1. Écoutés sans note (données du site)
+    try {
+      const data = await fetch("data/albums.json", { cache: "no-cache" }).then((r) => r.json());
+      const list = data.albums.filter((a) => a.listened && !a.rating).sort((a, b) => (b.listenedOn || "").localeCompare(a.listenedOn || ""));
+      $("#to-rate").innerHTML = list.length ? list.map((a) => rowHTML({
+        key: a.id, cover: a.cover, album: a.album, artist: a.artist,
+        when: a.listenedOn ? "Écouté le " + fmt(a.listenedOn) : "",
+        actions: `<button class="btn" type="button" data-act="rate">Noter</button>`,
+      })).join("") : `<p class="hint">Tous tes albums écoutés ont une note 👍</p>`;
+    } catch { $("#to-rate").innerHTML = `<p class="hint">Liste indisponible.</p>`; }
+    // 2. Écoutés en entier sur Spotify, hors base
+    try {
+      heardList = (await api("/heard")).heard || [];
+      $("#heard-title").hidden = !heardList.length;
+      $("#heard").innerHTML = heardList.slice().reverse().map((h) => rowHTML({
+        key: h.spotifyId, cover: h.thumb || h.cover, album: h.album, artist: h.artist,
+        extra: h.released ? " · " + esc(h.released.slice(0, 4)) : "",
+        when: "Écouté en entier le " + fmt(h.listenedOn),
+        actions: `<button class="btn" type="button" data-act="add">Ajouter</button><button class="btn ghost" type="button" data-act="ignore" title="Ne plus proposer cet album">Ignorer</button>`,
+      })).join("");
+    } catch { /* section facultative */ }
+  }
+
+  $("#rate-panel").addEventListener("click", async (e) => {
+    const item = e.target.closest(".todo-item"); if (!item) return;
+    const star = e.target.closest(".rate button");
+    if (star) {
+      const v = +star.dataset.v === +item.dataset.rating ? 0 : +star.dataset.v;
+      item.dataset.rating = v; paintStars(item.querySelector(".rate"), v);
+      return;
+    }
+    const btn = e.target.closest(".btn"); if (!btn) return;
+    const r = +item.dataset.rating || null;
+    const act = btn.dataset.act;
+    if (act === "rate" && !r) return toast("Choisis d'abord une note", true);
+    btn.disabled = true;
+    try {
+      let res;
+      if (act === "rate") {
+        res = await api(`/albums/${item.dataset.key}`, { method: "PATCH", body: JSON.stringify({ rating: r }) });
+      } else if (act === "add") {
+        const h = heardList.find((x) => x.spotifyId === item.dataset.key);
+        let genres = [];
+        try { genres = (await api(`/search?album=${encodeURIComponent(h.album)}&artist=${encodeURIComponent(h.artist)}`)).results.find((x) => x.spotifyId === h.spotifyId)?.genres || []; } catch {}
+        res = await api("/albums", { method: "POST", body: JSON.stringify({
+          album: h.album, artist: h.artist, released: h.released, link: h.link, cover: h.cover, genres,
+          listened: true, rating: r, listenedOn: h.listenedOn, fromHeard: h.spotifyId,
+        }) });
+      } else if (act === "ignore") {
+        await api(`/heard/${item.dataset.key}`, { method: "DELETE" });
+      }
+      item.remove();
+      $("#heard-title").hidden = !document.querySelector("#heard .todo-item");
+      if (act !== "ignore") toast(res?.published ? "Enregistré ✓ Le site se met à jour dans une minute." : "Enregistré ✓ Visible sur le site dans l'heure.");
     } catch (err) { toast(err.message, true); btn.disabled = false; }
   });
 

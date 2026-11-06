@@ -225,10 +225,59 @@ async function checkFullListens(env) {
     done.push(page.properties["Album"]?.title?.[0]?.plain_text || albumId);
   }
 
+  // Albums écoutés en entier mais absents de la base : proposés dans « À noter » sur la page d'ajout
+  let found = [];
+  try { found = await findHeardOutsideBase(env, token, played); }
+  catch (e) { console.log("Albums hors base :", e.message); }
+
   await env.STATE.put("spotify:played", JSON.stringify(played));
-  await env.STATE.put("status:last_check", JSON.stringify({ at: new Date().toISOString(), newPlays: items.length, marked: done }));
+  await env.STATE.put("status:last_check", JSON.stringify({ at: new Date().toISOString(), newPlays: items.length, marked: done, heard: found }));
   if (done.length) await triggerSiteUpdate(env);
   return { newPlays: items.length, marked: done };
+}
+
+const simple = (s) => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  .replace(/\s*[\(\[][^\)\]]*[\)\]]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+
+async function findHeardOutsideBase(env, token, played) {
+  const base = await exportAlbums(env);
+  const ids = new Set(base.map((a) => a.link?.match(/album\/([A-Za-z0-9]+)/)?.[1]).filter(Boolean));
+  const names = new Set(base.map((a) => `${simple(a.artist)}|${simple(a.album)}`));
+  const heard = JSON.parse((await env.STATE.get("spotify:heard")) || "[]");
+  const ignored = new Set(JSON.parse((await env.STATE.get("spotify:ignored")) || "[]"));
+  const known = new Set(heard.map((h) => h.spotifyId));
+  const found = [];
+  let lookups = 0;
+  for (const [albumId, entry] of Object.entries(played)) {
+    if (ids.has(albumId) || ignored.has(albumId) || known.has(albumId) || entry.skip) continue;
+    if (entry.keys.length < 5) continue; // trop peu de pistes pour un album
+    if (!entry.meta) {
+      if (lookups++ >= 15) continue; // le reste à la vérification suivante
+      const a = await spotify(token, `/albums/${albumId}?market=FR`);
+      if (a.album_type !== "album" || a.total_tracks < 5) { entry.skip = true; continue; }
+      const tracks = [...(a.tracks?.items || [])];
+      let next = a.tracks?.next ? a.tracks.next.replace("https://api.spotify.com/v1", "") : null;
+      while (next) { const d = await spotify(token, next); tracks.push(...d.items); next = d.next ? d.next.replace("https://api.spotify.com/v1", "") : null; }
+      entry.meta = {
+        album: a.name,
+        artist: a.artists?.[0]?.name || "",
+        released: a.release_date_precision === "day" ? a.release_date : a.release_date_precision === "month" ? `${a.release_date}-01` : `${a.release_date}-01-01`,
+        cover: a.images?.[0]?.url || null,
+        thumb: a.images?.[a.images.length > 1 ? 1 : 0]?.url || null,
+        link: a.external_urls?.spotify || `https://open.spotify.com/album/${albumId}`,
+        tracks: tracks.map((t) => `${t.disc_number}-${t.track_number}`),
+      };
+    }
+    const m = entry.meta;
+    if (names.has(`${simple(m.artist)}|${simple(m.album)}`)) { entry.skip = true; continue; }
+    if (!m.tracks.every((k) => entry.keys.includes(k))) continue;
+    heard.push({ spotifyId: albumId, album: m.album, artist: m.artist, released: m.released, cover: m.cover, thumb: m.thumb, link: m.link, listenedOn: parisDate(entry.last), tracks: m.tracks.length });
+    known.add(albumId);
+    delete played[albumId];
+    found.push(m.album);
+  }
+  if (found.length) await env.STATE.put("spotify:heard", JSON.stringify(heard.slice(-100)));
+  return found;
 }
 
 // ---------------------------------------------------------------- export (lecture seule, public)
@@ -315,6 +364,16 @@ async function migratePreview(env, ids) {
     });
   }
   return out;
+}
+
+async function dropHeard(env, id, ignore) {
+  const heard = JSON.parse((await env.STATE.get("spotify:heard")) || "[]");
+  await env.STATE.put("spotify:heard", JSON.stringify(heard.filter((x) => x.spotifyId !== id)));
+  if (ignore) {
+    const ignored = JSON.parse((await env.STATE.get("spotify:ignored")) || "[]");
+    if (!ignored.includes(id)) ignored.push(id);
+    await env.STATE.put("spotify:ignored", JSON.stringify(ignored.slice(-500)));
+  }
 }
 
 // ---------------------------------------------------------------- routes
@@ -413,6 +472,7 @@ async function handle(req, env) {
         children: reviewBlocks(a.review),
       });
       await env.STATE.delete("cache:export");
+      if (a.fromHeard) await dropHeard(env, a.fromHeard, false);
       const published = await triggerSiteUpdate(env);
       return json({ ok: true, id: page.id, url: page.url, published }, 201, h);
     }
@@ -431,6 +491,12 @@ async function handle(req, env) {
       const published = await triggerSiteUpdate(env);
       return json({ ok: true, published }, 200, h);
     }
+
+    if (url.pathname === "/heard" && req.method === "GET") {
+      return json({ heard: JSON.parse((await env.STATE.get("spotify:heard")) || "[]") }, 200, h);
+    }
+    const hm = url.pathname.match(/^\/heard\/([A-Za-z0-9]+)$/);
+    if (hm && req.method === "DELETE") { await dropHeard(env, hm[1], true); return json({ ok: true }, 200, h); }
 
     if (url.pathname === "/check" && req.method === "POST") return json(await checkFullListens(env), 200, h);
 

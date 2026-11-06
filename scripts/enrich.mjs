@@ -173,6 +173,114 @@ function studioAlbums(results, artistId) {
     .map(([, x]) => x);
 }
 
+// ---------- Sélection de la semaine (Deezer : artistes proches, sans clé) ----------
+let dzLast = 0;
+async function deezer(path) {
+  const wait = dzLast + 150 - Date.now();
+  if (wait > 0) await sleep(wait);
+  dzLast = Date.now();
+  const res = await fetch(`https://api.deezer.com${path}`, { headers: { "Accept-Language": "fr" } });
+  const d = await res.json();
+  if (!res.ok || d.error) throw new Error(`Deezer ${d.error?.message || res.status}`);
+  return d;
+}
+function isoWeek(date = new Date()) {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const day = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - day);
+  const y = d.getUTCFullYear();
+  return [y, Math.ceil(((d - Date.UTC(y, 0, 1)) / 86400000 + 1) / 7)];
+}
+function rng(seed) { // mulberry32
+  return () => { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+}
+
+async function weeklyPicks(rows, cache, excludeArtists, count = 16) {
+  const [year, week] = isoWeek();
+  const weekKey = `${year}-W${String(week).padStart(2, "0")}`;
+  cache.weekly ||= {};
+  cache.dz ||= { ids: {}, related: {} };
+  if (cache.weekly.week === weekKey && cache.weekly.picks?.length) return cache.weekly.picks;
+
+  // Artistes « graines » : ceux que tu as le mieux notés (4★ = 1 point, 5★ = 2 points)
+  const seeds = new Map();
+  for (const r of rows) {
+    if (!r.listened || !r.rating || r.rating < 4) continue;
+    const s = seeds.get(norm(r.artist)) || { name: r.artist, w: 0, best: 0 };
+    s.w += r.rating - 3; s.best = Math.max(s.best, r.rating);
+    seeds.set(norm(r.artist), s);
+  }
+  const top = [...seeds.values()].sort((a, b) => b.w - a.w).slice(0, 25);
+  const flat = (x) => norm(x).replace(/[^a-z0-9]+/g, "");
+  const inBase = new Set(rows.map((r) => flat(r.artist)));
+  excludeArtists.forEach((a) => inBase.add(flat(a)));
+
+  const cand = new Map();
+  for (const s of top) {
+    const k = flat(s.name);
+    try {
+      if (!(k in cache.dz.ids)) {
+        const d = await deezer(`/search/artist?q=${encodeURIComponent(s.name)}&limit=5`);
+        const hit = (d.data || []).find((x) => flat(x.name) === k) || null;
+        cache.dz.ids[k] = hit ? hit.id : null;
+      }
+      const id = cache.dz.ids[k];
+      if (!id) continue;
+      let rel = cache.dz.related[id];
+      if (!rel || Date.now() - rel.at > 30 * 86400000) {
+        const d = await deezer(`/artist/${id}/related?limit=20`);
+        rel = cache.dz.related[id] = { at: Date.now(), list: (d.data || []).map((x) => [x.id, x.name]) };
+      }
+      rel.list.forEach(([cid, cname], i) => {
+        if (inBase.has(flat(cname))) return;
+        const c = cand.get(cid) || { id: cid, name: cname, score: 0, via: [] };
+        c.score += s.w * (1 - i / 25);
+        c.via.push(s);
+        cand.set(cid, c);
+      });
+    } catch (e) { console.warn("Deezer :", s.name, e.message); }
+  }
+
+  // Tirage pondéré, différent chaque semaine, parmi les 50 artistes les plus proches
+  const pool = [...cand.values()].sort((a, b) => b.score - a.score).slice(0, 50);
+  const rand = rng(year * 100 + week);
+  const order = [];
+  while (pool.length) {
+    const total = pool.reduce((t, c) => t + c.score, 0);
+    let x = rand() * total, i = 0;
+    while (i < pool.length - 1 && (x -= pool[i].score) > 0) i++;
+    order.push(pool.splice(i, 1)[0]);
+  }
+
+  const knownTitles = new Set(rows.map((r) => `${flat(r.artist)}|${baseTitle(r.album)}`));
+  const picks = [];
+  for (const c of order) {
+    if (picks.length >= count) break;
+    try {
+      const d = await deezer(`/artist/${c.id}/albums?limit=100`);
+      const albums = (d.data || []).filter((a) => {
+        if (a.record_type !== "album") return false;
+        const parens = (a.title.match(/[\(\[][^\)\]]*[\)\]]/g) || []).join(" ");
+        if (REISSUE_IN_PARENS.test(parens) || NOT_A_STUDIO_ALBUM.test(a.title)) return false;
+        return !knownTitles.has(`${flat(c.name)}|${baseTitle(a.title)}`);
+      });
+      if (!albums.length) continue;
+      const best = albums.sort((a, b) => (b.fans || 0) - (a.fans || 0))[0];
+      let genre = null, tracks = null;
+      try { const full = await deezer(`/album/${best.id}`); genre = full.genres?.data?.[0]?.name || null; tracks = full.nb_tracks || null; } catch {}
+      const via = c.via.sort((a, b) => b.w - a.w).slice(0, 2).map((s) => `${s.name} (${s.best}★)`);
+      picks.push({
+        title: best.title, artist: c.name, cover: best.cover_xl || best.cover_big || null,
+        released: best.release_date || null, url: best.link || `https://www.deezer.com/album/${best.id}`,
+        genre, tracks, why: `Proche de ${via.join(" et ")}, que tu as très bien noté${via.length > 1 ? "s" : ""}.`,
+      });
+    } catch (e) { console.warn("Deezer :", c.name, e.message); }
+  }
+  if (picks.length >= Math.min(8, count)) cache.weekly = { week: weekKey, picks };
+  return picks.length ? picks : cache.weekly.picks || [];
+}
+
 // ---------- Programme principal ----------
 export async function enrich(rows, { cachePath, selectionPath }) {
   const cache = existsSync(cachePath) ? JSON.parse(await readFile(cachePath, "utf8")) : {};
@@ -245,7 +353,16 @@ export async function enrich(rows, { cachePath, selectionPath }) {
     }
   }
 
-  // 4. Sélection faite à la main
+  // 4. Sélection de la semaine (Deezer), sinon sélection faite à la main
+  try {
+    const weekly = await weeklyPicks(rows, cache, [...artists.values()].filter((a) => a.count >= 2).map((a) => a.name));
+    if (weekly.length) {
+      await writeFile(cachePath, JSON.stringify(cache) + "\n");
+      console.log(`Apple Music : ${calls} requêtes · sélection de la semaine ${cache.weekly?.week || "?"} : ${weekly.length} albums`);
+      return { fromArtists, picks: weekly, week: cache.weekly?.week || null };
+    }
+  } catch (e) { console.warn("Sélection de la semaine indisponible :", e.message); }
+
   const selection = existsSync(selectionPath) ? JSON.parse(await readFile(selectionPath, "utf8")) : [];
   const picks = [];
   const autoIds = new Set(fromArtists.map((x) => x.appleId));

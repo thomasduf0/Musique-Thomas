@@ -93,3 +93,10 @@
 .tag.douteux, .tag.aucun { color: #ff6b6b; border-color: #ff6b6b55; }
 .mgroup { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; margin: 12px 0 2px; }
 @media (max-width: 640px) { .mrow { grid-template-columns: auto 40px 1fr; } .mrow .tag { grid-column: 3; justify-self: start; } .mrow img { width: 40px; height: 40px; } }
+
+/* ---------- À noter ---------- */
+.sub-h { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 22px 0 10px; font-weight: 600; }
+.todo-item .rate { display: inline-flex; gap: 2px; margin: 0; }
+.todo-item .rate button { font-size: 20px; padding: 0 2px; }
+.btn.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.todo-item .when { display: block; }

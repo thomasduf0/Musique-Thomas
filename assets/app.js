@@ -124,7 +124,7 @@
     const picksHTML = list.map((r, i) => [r, i]).filter(([r]) => r.kind === "pick").map(([r, i]) => recoCard(r, i, r.why)).join("");
     els.reco.innerHTML = `
       <h2>Ça pourrait te plaire</h2>
-      <p class="sub">Ma sélection, d'après tes notes et tes écoutes.</p>
+      <p class="sub">${R.week ? "Sélection de la semaine, renouvelée chaque lundi d'après les artistes que tu as le mieux notés." : "Ma sélection, d'après tes notes et tes écoutes."}</p>
       <div class="grid">${picksHTML}</div>
       <h2>Tes artistes, albums pas encore écoutés</h2>
       <p class="sub">Albums studio des artistes que tu as écoutés au moins deux fois (sans rééditions, live, compilations ni EP).</p>
@@ -149,7 +149,7 @@
           <div class="why-box">${esc(why)}</div>
           <div class="btns">
             <a class="btn" href="${esc(spotifySearch(r))}" target="_blank" rel="noopener">Chercher sur Spotify ↗</a>
-            ${r.url ? `<a class="btn ghost" href="${esc(r.url)}" target="_blank" rel="noopener">Apple Music ↗</a>` : ""}
+            ${r.url ? `<a class="btn ghost" href="${esc(r.url)}" target="_blank" rel="noopener">${r.url.includes("deezer") ? "Deezer" : "Apple Music"} ↗</a>` : ""}
           </div>
         </div>
       </div>`;

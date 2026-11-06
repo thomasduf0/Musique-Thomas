@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/admin.css">
+  <link rel="stylesheet" href="assets/admin.css?v=2">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💿</text></svg>">
 </head>
 <body>
@@ -31,6 +31,14 @@
     </section>
 
     <div id="app" hidden>
+      <section class="panel" id="rate-panel">
+        <h3>À noter</h3>
+        <p class="hint">Les albums cochés « Écouté » sans note, et ceux que tu as écoutés en entier sur Spotify sans qu'ils soient dans ta base.</p>
+        <div id="to-rate" class="todo"></div>
+        <h4 class="sub-h" id="heard-title" hidden>Écoutés en entier sur Spotify, pas encore dans ta base</h4>
+        <div id="heard" class="todo"></div>
+      </section>
+
       <section class="panel">
         <h3>1. Rechercher sur Spotify</h3>
         <form id="search-form" class="row">
@@ -95,6 +103,6 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="assets/config.js"></script>
-  <script src="assets/admin.js"></script>
+  <script src="assets/admin.js?v=2"></script>
 </body>
 </html>
