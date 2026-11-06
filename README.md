@@ -35,8 +35,9 @@ Tout est déjà configuré (fonction Cloudflare `musique-thomas`, stockage KV `m
 
 Ensuite :
 
-1. Dans Cloudflare, *Paramètres → Événements déclencheurs → Déclencheurs cron* : `7 * * * *` (détection d'écoute complète toutes les heures).
-2. Sur `ajouter.html` : **Relier mon compte Spotify**, puis **Remplacer les liens par Spotify** pour la base existante.
+Sur `ajouter.html` : **Relier mon compte Spotify**, puis **Remplacer les liens par Spotify** pour la base existante.
+
+La détection d'écoute complète est lancée chaque heure par la synchro GitHub (appel à `/tick`). Un déclencheur cron Cloudflare (`7 * * * *`) peut la remplacer, mais n'est pas nécessaire.
 
 Aucun secret n'est nécessaire côté GitHub : la synchro horaire lit les données via la fonction Cloudflare (`/export`, en lecture seule, uniquement ce qui est déjà publié sur le site). Facultatif : le secret Cloudflare `GITHUB_TOKEN` (jeton GitHub limité au dépôt, permission *Contents : Read and write*) republie le site dans la minute après un ajout, au lieu de l'heure suivante.
 

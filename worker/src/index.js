@@ -330,6 +330,17 @@ async function handle(req, env) {
       return json({ albums, ids: albums.filter((a) => a.listened).map((a) => `${a.id}:${a.edited}`) }, 200, h);
     } catch (e) { return json({ error: e.message }, 502, h); }
   }
+  // Déclenché chaque heure par la synchro GitHub (remplace un déclencheur cron Cloudflare).
+  // Sans effet si une vérification a eu lieu il y a moins de 30 minutes.
+  if (req.method === "POST" && url.pathname === "/tick") {
+    const last = JSON.parse((await env.STATE.get("status:last_check")) || "null");
+    if (last?.at && Date.now() - Date.parse(last.at) < 30 * 60 * 1000) return json({ skipped: "trop tôt" }, 200, h);
+    try { return json(await checkFullListens(env), 200, h); }
+    catch (e) {
+      await env.STATE.put("status:last_check", JSON.stringify({ at: new Date().toISOString(), error: e.message }));
+      return json({ error: e.message }, 502, h);
+    }
+  }
   if (req.method === "GET" && url.pathname === "/export/reviews") {
     try {
       const items = (url.searchParams.get("ids") || "").split(",").filter(Boolean).slice(0, 100)
