@@ -1,6 +1,6 @@
 {
- "updatedAt": "2026-11-06T16:06:23.713Z",
- "source": "seed",
+ "updatedAt": "2026-11-06T16:36:00.593Z",
+ "source": "cloudflare",
  "albums": [
   {
    "id": "3a1a7bc0f6df80dabb69c174774f87ca",
@@ -16,7 +16,8 @@
    "listenedOn": "2026-07-18",
    "released": "2010-11-12",
    "link": "https://music.apple.com/fr/album/loud-deluxe/1440895867",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/c6/b1/6c/c6b16cd1-5580-a214-8745-c4f6faa490d6/16UMGIM59220.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/c6/b1/6c/c6b16cd1-5580-a214-8745-c4f6faa490d6/16UMGIM59220.rgb.jpg",
+   "review": "On oublie a quel point cet album est bien, c’est dingue"
   },
   {
    "id": "3a1a7bc0f6df80a8af0bfa27b9341299",
@@ -31,7 +32,8 @@
    "listenedOn": "2026-07-16",
    "released": "2026-05-29",
    "link": "https://music.apple.com/fr/album/inferno/1890015523",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/18/f7/ee/18f7ee40-b891-3d7f-e0b3-e4e2470cbdac/5056818808906.png/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/18/f7/ee/18f7ee40-b891-3d7f-e0b3-e4e2470cbdac/5056818808906.png",
+   "review": "C’est objectivement bien mais ça m’a juste créé une crise d’angoisse"
   },
   {
    "id": "3a1a7bc0f6df80c1bab2f5e9cf07c49a",
@@ -46,7 +48,7 @@
    "listenedOn": "2026-07-15",
    "released": "2026-07-03",
    "link": "https://music.apple.com/fr/album/confessions-ii/1892545087",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/eb/8f/5d/eb8f5dcf-aec1-1f58-fbea-dc0bb086f1c8/093624819837.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/eb/8f/5d/eb8f5dcf-aec1-1f58-fbea-dc0bb086f1c8/093624819837.jpg"
   },
   {
    "id": "378a7bc0f6df80a0b51eee4b2fee3421",
@@ -61,7 +63,8 @@
    "listenedOn": "2026-06-07",
    "released": "2026-05-29",
    "link": "https://open.qobuz.com/album/r080gbqzwcf05",
-   "cover": null
+   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/4c/54/31/20010060/1520-1/tsp20260310100059/Ma-claque.jpg",
+   "review": "J’ai même pas fini l’écoute. C’est vide…"
   },
   {
    "id": "378a7bc0f6df80edb892d0b454d2562f",
@@ -77,7 +80,7 @@
    "listenedOn": "2026-06-07",
    "released": "2026-03-27",
    "link": "https://open.qobuz.com/album/yzlb2qe94okba",
-   "cover": null
+   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/9b/d2/2e/19845787/1540-1/tsp20260206130259/O.jpg"
   },
   {
    "id": "377a7bc0f6df8093bb73ebc51a659964",
@@ -92,7 +95,8 @@
    "listenedOn": "2026-06-06",
    "released": "2026-06-05",
    "link": "https://open.qobuz.com/album/w7l5yz1yb621d",
-   "cover": null
+   "cover": "https://i.scdn.co/image/ab67616d00001e0200a2e7fd71815224583d7a1e",
+   "review": "Je suis sur que c’est super en live\nMais je prends pas beaucoup de plaisir à écouter ça dans mon casque 😕"
   },
   {
    "id": "2eca7bc0f6df80f1b224fe084b360973",
@@ -107,7 +111,7 @@
    "listenedOn": "2026-06-02",
    "released": "2026-04-03",
    "link": "https://music.apple.com/fr/album/ambiguous-desire/1862570378",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/86/10/2a/86102a67-2d84-24f7-dd60-4c7a6846ed05/5400863205140_cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/86/10/2a/86102a67-2d84-24f7-dd60-4c7a6846ed05/5400863205140_cover.jpg"
   },
   {
    "id": "373a7bc0f6df80669101e4f2b077b29a",
@@ -122,7 +126,7 @@
    "listenedOn": "2026-06-02",
    "released": "2026-05-29",
    "link": "https://music.apple.com/fr/album/detour/6771896253",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d3/0c/8f/d30c8f09-66db-8c4e-2583-32c4eb0de432/820233450478.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/d3/0c/8f/d30c8f09-66db-8c4e-2583-32c4eb0de432/820233450478.jpg"
   },
   {
    "id": "2eea7bc0f6df808290b5f1b4ff3dc0a0",
@@ -137,7 +141,7 @@
    "listenedOn": "2026-06-02",
    "released": "2025-05-09",
    "link": "https://music.apple.com/fr/album/fancy-that/1806614239",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/12/db/5a/12db5a38-94c1-42bc-b36b-7204b7aa4eac/5021732768650.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/12/db/5a/12db5a38-94c1-42bc-b36b-7204b7aa4eac/5021732768650.jpg"
   },
   {
    "id": "2eaa7bc0f6df8045bbedebce0e4dff82",
@@ -152,7 +156,7 @@
    "listenedOn": "2026-06-02",
    "released": "2026-03-06",
    "link": "https://music.apple.com/fr/album/kiss-all-the-time-disco-occasionally/1870984032",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/07/41/6a/07416a78-38b9-2d47-7ce8-8a52a44c510f/196874010112.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/07/41/6a/07416a78-38b9-2d47-7ce8-8a52a44c510f/196874010112.jpg"
   },
   {
    "id": "372a7bc0f6df80d3a7f3e971ff7544a7",
@@ -167,7 +171,7 @@
    "listenedOn": "2026-06-01",
    "released": "2026-04-24",
    "link": "https://music.apple.com/fr/album/spleen-social-club/1885922024",
-   "cover": null
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/d8/48/f0/d848f0f1-dc65-de92-de86-3feac44581ab/4099964239065.jpg"
   },
   {
    "id": "2f7a7bc0f6df809789c8ce863b94fbbc",
@@ -182,7 +186,7 @@
    "listenedOn": "2026-06-01",
    "released": "2026-03-27",
    "link": "https://music.apple.com/fr/album/this-music-may-contain-hope/1871085677",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/50/05/10/5005106d-bb8a-32db-1172-f18405cf4a46/820200038890.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/50/05/10/5005106d-bb8a-32db-1172-f18405cf4a46/820200038890.jpg"
   },
   {
    "id": "36da7bc0f6df80c5938cd5505b2530fc",
@@ -198,7 +202,8 @@
    "listenedOn": "2026-05-27",
    "released": "2026-04-17",
    "link": "https://music.apple.com/fr/album/come-closer/1871184398",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/46/10/7f/46107fb0-ccff-4370-49f4-3ddd29b2729c/25UM2IM08119.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/46/10/7f/46107fb0-ccff-4370-49f4-3ddd29b2729c/25UM2IM08119.rgb.jpg",
+   "review": "J’ai bien aimé mais je trouve que tout se ressemble un peu\nJe pense pas réécouter"
   },
   {
    "id": "36da7bc0f6df80b4bc39d49d3c30c28a",
@@ -213,7 +218,7 @@
    "listenedOn": "2026-05-27",
    "released": "2025-11-28",
    "link": "https://music.apple.com/fr/album/la-dame/1856597410",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8f/ea/08/8fea08e9-2f01-c650-a23d-8070c8266479/artwork.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/8f/ea/08/8fea08e9-2f01-c650-a23d-8070c8266479/artwork.jpg"
   },
   {
    "id": "2eca7bc0f6df80f99a54c242d8f2d39d",
@@ -228,7 +233,7 @@
    "listenedOn": "2026-05-27",
    "released": "2026-03-27",
    "link": "https://music.apple.com/fr/album/sexistential/1852752613",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/41/3d/16/413d16f4-c9a1-9c4b-11c2-cae616a49f9d/889030046772.png/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/41/3d/16/413d16f4-c9a1-9c4b-11c2-cae616a49f9d/889030046772.png"
   },
   {
    "id": "36ca7bc0f6df807d928efcea7c9a3ceb",
@@ -243,7 +248,7 @@
    "listenedOn": "2026-05-26",
    "released": "2026-03-13",
    "link": "https://music.apple.com/fr/album/des-pieds-et-des-mains/1866875474",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/22/f3/fb/22f3fbff-5f3e-2db4-7871-3ffb78924761/3663729419293_cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/22/f3/fb/22f3fbff-5f3e-2db4-7871-3ffb78924761/3663729419293_cover.jpg"
   },
   {
    "id": "368a7bc0f6df806a9c6dcf793fec5ae1",
@@ -259,7 +264,7 @@
    "listenedOn": "2026-05-22",
    "released": "2017-06-30",
    "link": "https://music.apple.com/fr/album/funk-wav-bounces-vol-1/1233842167",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/e5/50/bde5506f-7295-6c84-727a-4c544a1f40c4/886446500355.jpg/600x600bb.jpg"
+   "cover": "https://m.media-amazon.com/images/I/81mIaRSDd6L.jpg"
   },
   {
    "id": "314a7bc0f6df80488f0ffb802cb957a2",
@@ -274,7 +279,7 @@
    "listenedOn": "2026-02-27",
    "released": "2026-02-27",
    "link": "https://music.apple.com/fr/album/the-romantic/1866732792",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ed/46/bf/ed46bf4e-7cb9-965a-54f3-03059977fe6c/075679589293.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/ed/46/bf/ed46bf4e-7cb9-965a-54f3-03059977fe6c/075679589293.jpg"
   },
   {
    "id": "30ba7bc0f6df80ebbf69f3b12f96ef75",
@@ -290,7 +295,7 @@
    "listenedOn": "2026-02-18",
    "released": "2025-06-03",
    "link": "https://music.apple.com/fr/album/doula-des-couloirs-des-porti%C3%A8res/1811640308",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f2/ab/26/f2ab26bf-d622-457e-c61f-ec16fa4d658c/cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/f2/ab/26/f2ab26bf-d622-457e-c61f-ec16fa4d658c/cover.jpg"
   },
   {
    "id": "30ba7bc0f6df806d94f0cd8598d37245",
@@ -306,7 +311,7 @@
    "listenedOn": "2026-02-18",
    "released": "2025-11-25",
    "link": "https://music.apple.com/fr/album/doula-hypercouleurs/1854376822",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ba/dd/be/baddbefd-e377-ce80-26d5-208923369ac7/cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/ba/dd/be/baddbefd-e377-ce80-26d5-208923369ac7/cover.jpg"
   },
   {
    "id": "2a7a7bc0f6df801a965dd45bba677a86",
@@ -322,7 +327,7 @@
    "listenedOn": "2026-02-13",
    "released": "2026-02-13",
    "link": "https://music.apple.com/fr/album/a-love-for-strangers/1846189472",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/43/bb/e3/43bbe3fa-920a-4119-9bdf-26ce35781286/4099964177046.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/43/bb/e3/43bbe3fa-920a-4119-9bdf-26ce35781286/4099964177046.jpg"
   },
   {
    "id": "2aaa7bc0f6df8094993ec8a9a3468828",
@@ -337,7 +342,8 @@
    "listenedOn": "2026-02-13",
    "released": "2026-02-13",
    "link": "https://music.apple.com/fr/album/wuthering-heights/1852566184",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a8/e6/66/a8e6669b-9028-900c-adb9-05d4ddee4625/075679591906.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/a8/e6/66/a8e6669b-9028-900c-adb9-05d4ddee4625/075679591906.jpg",
+   "review": "13/02 : Je mets 4/5 mais il va me falloir une 2 écoute"
   },
   {
    "id": "2dba7bc0f6df80d2bb38ca83666a5f9e",
@@ -352,7 +358,8 @@
    "listenedOn": "2026-02-10",
    "released": "2010-06-14",
    "link": "https://music.apple.com/fr/album/sex-dreams-and-denim-jeans/373547935",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e6/7a/1b/e67a1b69-382a-035a-9713-c268a2b500e5/mzi.mpjvrepn.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/e6/7a/1b/e67a1b69-382a-035a-9713-c268a2b500e5/mzi.mpjvrepn.jpg",
+   "review": "On sent de qui s’est inspirée Charli xcx"
   },
   {
    "id": "2e3a7bc0f6df80119082f4722acdd199",
@@ -367,7 +374,8 @@
    "listenedOn": "2026-01-30",
    "released": "2026-01-30",
    "link": "https://music.apple.com/fr/album/magnetofille/1849396048",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ce/2a/c6/ce2ac64b-f2cd-493b-7819-82d77be57737/Cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/ce/2a/c6/ce2ac64b-f2cd-493b-7819-82d77be57737/Cover.jpg",
+   "review": "C’est agréable, j’ai ajouté quelques musiques à ma bibliothèque mais je ne pense pas réécouter."
   },
   {
    "id": "2f7a7bc0f6df8027b115f557ad648e9f",
@@ -382,7 +390,7 @@
    "listenedOn": "2026-01-27",
    "released": "2026-01-16",
    "link": "https://music.apple.com/fr/album/encore/1862456576",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/08/42/07/084207f8-89c4-b582-6227-dc5b1fa8778e/cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/08/42/07/084207f8-89c4-b582-6227-dc5b1fa8778e/cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df80819135dfc064e65d1b",
@@ -397,7 +405,8 @@
    "listenedOn": "2026-01-15",
    "released": "2023-09-08",
    "link": "https://music.apple.com/fr/album/guts/1694386825",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/9b/d8/9c/9bd89c9e-b44d-ad25-1516-b9b30f64fd2a/23UMGIM71510.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music126/v4/9b/d8/9c/9bd89c9e-b44d-ad25-1516-b9b30f64fd2a/23UMGIM71510.rgb.jpg",
+   "review": "C’est très rock en fait ? Ambiance un peu années 2000 avec le son de la voix très saturée et les percussions vachement mises en avant\nDisney kid\nC’est agréable à écouter, mais je réecouterai pas car je m’ennuie"
   },
   {
    "id": "2e0a7bc0f6df80169853ef82314023a2",
@@ -413,7 +422,8 @@
    "listenedOn": "2026-01-15",
    "released": "2018-06-15",
    "link": "https://music.apple.com/fr/album/oil-of-every-pearls-un-insides/1395045797",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/b5/d3/b7/b5d3b7c4-2be0-d0a8-5695-ba3af5ea3351/cover.jpg/600x600bb.jpg"
+   "cover": "https://media.pitchfork.com/photos/648747aaaed875e699bc73ed/master/pass/Sophie.jpg",
+   "review": "Hyper intéressant à écouter, j’avais déjà une musique dans ma bibliotheque\nÀ voir si j’ai envie d’avoir une 2e écoute mais je pense que ça peut être nécessaire pour apprécier l’album"
   },
   {
    "id": "2e9a7bc0f6df80e7ad54e12811f649b7",
@@ -428,7 +438,8 @@
    "listenedOn": "2026-01-15",
    "released": "2023-09-22",
    "link": "https://music.apple.com/fr/album/starfucker-deluxe/1821173497",
-   "cover": null
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/20/18/df/2018df43-b479-aafc-c137-9dcc1901b246/00829299263534_Cover.jpg",
+   "review": "Nécessite absolument une 2e écoute !!!!!"
   },
   {
    "id": "2dba7bc0f6df80e78acbfef96665fbba",
@@ -443,7 +454,7 @@
    "listenedOn": "2026-01-09",
    "released": "2026-01-09",
    "link": "https://music.apple.com/fr/album/media-nocte/1856260640",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/02/b7/26/02b72696-9606-4b97-2155-ae508a8f7772/15548.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/02/b7/26/02b72696-9606-4b97-2155-ae508a8f7772/15548.jpg"
   },
   {
    "id": "2e0a7bc0f6df807cb21cc34e408ed6be",
@@ -458,7 +469,7 @@
    "listenedOn": "2026-01-06",
    "released": "2017-06-16",
    "link": "https://music.apple.com/fr/album/melodrama/1429662346",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8d/0d/15/8d0d1532-493b-52ec-6a29-a239ced6931b/17UMGIM81023.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/8d/0d/15/8d0d1532-493b-52ec-6a29-a239ced6931b/17UMGIM81023.rgb.jpg"
   },
   {
    "id": "2e0a7bc0f6df806e842ddaaaaae04b96",
@@ -474,7 +485,7 @@
    "listenedOn": "2026-01-06",
    "released": "2024-06-28",
    "link": "https://music.apple.com/fr/album/wallsocket-directors-cut/1752550191",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b5/34/00/b5340016-da8a-3dd1-27ea-7b750271309b/810090095516.png/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/b5/34/00/b5340016-da8a-3dd1-27ea-7b750271309b/810090095516.png"
   },
   {
    "id": "2dfa7bc0f6df8054be2dd52808b9ce93",
@@ -489,7 +500,8 @@
    "listenedOn": "2026-01-05",
    "released": "2025-09-26",
    "link": "https://music.apple.com/fr/album/getting-killed/1818548779",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0b/b8/f1/0bb8f1d7-1df0-20c0-9539-51d08058eeb1/5400863191436_Cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/0b/b8/f1/0bb8f1d7-1df0-20c0-9539-51d08058eeb1/5400863191436_Cover.jpg",
+   "review": "C’est pas mauvais, mais c’est pas du tout ce que j’écoute\nje n’ai pas terminé l’écoute"
   },
   {
    "id": "2dfa7bc0f6df808488b2d699b242c895",
@@ -504,7 +516,7 @@
    "listenedOn": "2026-01-05",
    "released": "2025-09-26",
    "link": "https://music.apple.com/fr/album/the-art-of-loving/1817609404",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/08/e2/21/08e22164-7c0b-1522-818f-e0e74f62dc49/25UMGIM69703.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/08/e2/21/08e22164-7c0b-1522-818f-e0e74f62dc49/25UMGIM69703.rgb.jpg"
   },
   {
    "id": "2dda7bc0f6df804db124ec60cb6b3dbe",
@@ -519,7 +531,7 @@
    "listenedOn": "2026-01-03",
    "released": "2025-06-06",
    "link": "https://music.apple.com/fr/album/addison/1809015416",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/4a/e3/cf4ae3c9-3420-6021-f059-cc6c87cf11b2/196872958249.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/cf/4a/e3/cf4ae3c9-3420-6021-f059-cc6c87cf11b2/196872958249.jpg"
   },
   {
    "id": "2dca7bc0f6df80798104d6b171257daf",
@@ -534,7 +546,8 @@
    "listenedOn": "2026-01-02",
    "released": "2025-09-26",
    "link": "https://music.apple.com/fr/album/midnight-sun/1817499239",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fb/1d/2d/fb1d2d1c-0f79-53ad-ab9b-ac20918b5856/196873177199.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/fb/1d/2d/fb1d2d1c-0f79-53ad-ab9b-ac20918b5856/196873177199.jpg",
+   "review": "Hyper groovy et goofy, on danse dessus\nj’ai mis un 3/5 alors qu’il me reste encore deux musiques, mais je pense avoir l’idée générale de l’album\nL’avant-dernière fait tache dans l’album et n’est pas aussi dansante que les autres, le refrain est chouette"
   },
   {
    "id": "2a6a7bc0f6df806f8089e4e97e5390bd",
@@ -549,7 +562,7 @@
    "listenedOn": "2025-12-20",
    "released": "2025-11-21",
    "link": "https://music.apple.com/fr/album/destin%C3%A9e/1852566197",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/21/52/4f215265-175c-f38f-f6c0-eb78536b70ed/5026854227283.jpg/600x600bb.jpg"
+   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/94/20/2a/19538068/1507-1/tsp20251029132104/Destinee.jpg"
   },
   {
    "id": "2a4a7bc0f6df80879e91c13c504cd4fd",
@@ -564,7 +577,7 @@
    "listenedOn": "2025-11-22",
    "released": "2025-11-21",
    "link": "https://music.apple.com/fr/album/on-sen-rappellera-pas/1846293544",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/49/0d/1f490dc9-1e4d-7a91-f25a-086566f406e6/196873642161.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/1f/49/0d/1f490dc9-1e4d-7a91-f25a-086566f406e6/196873642161.jpg"
   },
   {
    "id": "2a8a7bc0f6df808f9fccdf9211923d84",
@@ -580,7 +593,8 @@
    "listenedOn": "2025-11-11",
    "released": "2025-01-24",
    "link": "https://music.apple.com/fr/album/eusexua/1767658574",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ae/c8/24/aec824cf-8748-fb40-12c8-b7fb69a5ffe3/075679634382.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/ae/c8/24/aec824cf-8748-fb40-12c8-b7fb69a5ffe3/075679634382.jpg",
+   "review": "Super voix\nUn peu répétitif\nJ’ai apprécié le côté expérimental de Durms of Death (que je n’ai pas ajouté pour autant)\nLa thématique de l’album où un le fait que la musique techno, et electro au sens large, puisse être libérateur (= EUSEXUA) me plaît beaucoup mais je le sens pas ici où je trouve que c’est très “accrocheur” sur les premiers morceaux pour donner envie d’écouter la suite qui est trop mélancolique.\nJ’écris ces lignes à la moitié de l’album et je ne pense pas réécouter plus tard\nIl y a un air de l’album de Oklou sur Sticky, Keep It, Hold It mais que je trouve moins bien exercé (j’ai découvert l’album de Oklou il y a peu de temps et ils sont sortis à un mois d’intervalle. Je me sens obligé de les comparer.\nMention spéciale pour Childlike Things que j’ai apprécié (peut-être plus radiophonique ou plus oldies) mais je ne comprends pas ce que ça fout ici les sonorités asiatiques (chinoises ?). Ok “Lost in a world…” mais l’européenne qui considère l’aie comme la bout du monde c’est déjà vu ? J’ai pas compris la musique je pense\nJ’ai skip les 3 dernières musiques\nJe me suis ennuyé\n2 étoiles"
   },
   {
    "id": "2a8a7bc0f6df803f99e2c017c08ef0fb",
@@ -595,7 +609,8 @@
    "listenedOn": "2025-11-11",
    "released": "2025-11-07",
    "link": "https://music.apple.com/fr/album/shish/1836273576",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/af/1b/ca/af1bca85-0c0a-3c4b-c58e-9af4be909bf6/199538654530.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/af/1b/ca/af1bca85-0c0a-3c4b-c58e-9af4be909bf6/199538654530.jpg",
+   "review": "Les transitions sont superbe, c’est très agréable à écouter.\nUn début assez intense puis ça ralentit sur le dernier tiers.\nJ’adore la pochette de l’album, le style oldies avec l’aspect mélancolique de l’album est hyper cohérent.\nJe connais surement mal Portugal. The Man, mais je m’attendais à un album avec plus de codes de la pop et moins un quasi 100% rock.\nTrès bonne écoute tout de même, j’ai aimé de manière objective l’album mais je suis pas sur de vouloir y retourner.\nMention spéciale pour SHISH pour le côté diffusible à la radio ; Kokhanockers pour la répétition de fin qui m’accroche"
   },
   {
    "id": "2a6a7bc0f6df80e88b4afa5e191b6537",
@@ -610,7 +625,7 @@
    "listenedOn": "2025-11-10",
    "released": "2021-11-19",
    "link": "https://music.apple.com/fr/album/br%C3%BBler-le-feu/1588286822",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b3/9d/96/b39d9699-2c9e-5e0c-350d-d7c3749dd155/21UM1IM21498.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music125/v4/b3/9d/96/b39d9699-2c9e-5e0c-350d-d7c3749dd155/21UM1IM21498.rgb.jpg"
   },
   {
    "id": "2a6a7bc0f6df80ffb7c5ee00691de750",
@@ -626,7 +641,7 @@
    "listenedOn": "2025-11-09",
    "released": "2025-09-19",
    "link": "https://music.apple.com/fr/album/im-only-f-king-myself/1819085978",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ba/49/f2/ba49f247-d1b3-518f-0eee-22c6bbf63c0e/25UMGIM74990.rgb.jpg/600x600bb.jpg"
+   "cover": "https://m.media-amazon.com/images/I/91VeGBlFo+L._SL1500_.jpg"
   },
   {
    "id": "2a4a7bc0f6df80c687e5f59c89c187c8",
@@ -641,7 +656,8 @@
    "listenedOn": "2025-11-07",
    "released": "2025-11-07",
    "link": "https://music.apple.com/fr/album/break/1846453824",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/91/1c/f5/911cf54e-1d8f-ef5b-4179-ba31ca457c69/cover.jpg/600x600bb.jpg"
+   "cover": "covers/2a4a7bc0f6df80c687e5f59c89c187c8-a7b92b727b.jpeg",
+   "review": "En soit c’est riche, très intéressant à écouter, j’aime beaucoup sa voix mais c’est trop « rock » pour moi. Je pense qu’il faudrait une touche plus pop pour que j’accroche."
   },
   {
    "id": "2a4a7bc0f6df8092aa97dd1e44796873",
@@ -656,7 +672,7 @@
    "listenedOn": "2025-11-07",
    "released": "2025-11-07",
    "link": "https://music.apple.com/fr/album/la-fuite-en-avant/1850732644",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/54/ea/7b/54ea7be0-f223-48cf-ffd1-0b2dc03ade5d/196873630922.jpg/600x600bb.jpg"
+   "cover": "https://m.media-amazon.com/images/I/61NqqluN9DL._SL1024_.jpg"
   },
   {
    "id": "2a4a7bc0f6df806c9254eb29bbc401b9",
@@ -671,7 +687,7 @@
    "listenedOn": "2025-11-07",
    "released": "2025-11-07",
    "link": "https://music.apple.com/fr/album/lux/1848167516",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/95/ae/80/95ae8046-a6b9-e493-0def-5ae33d63f43a/196873722672.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/95/ae/80/95ae8046-a6b9-e493-0def-5ae33d63f43a/196873722672.jpg"
   },
   {
    "id": "2a4a7bc0f6df80cab8c0f6f3108a9a51",
@@ -686,7 +702,7 @@
    "listenedOn": "2025-11-07",
    "released": "2025-10-24",
    "link": "https://music.apple.com/fr/album/west-end-girl/1846342052",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d7/d9/9e/d7d99eca-a4ec-80c1-afec-379a26af58c6/4099964193565.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/d7/d9/9e/d7d99eca-a4ec-80c1-afec-379a26af58c6/4099964193565.jpg"
   },
   {
    "id": "2a4a7bc0f6df806b8940c0dfb7a31fd0",
@@ -702,7 +718,7 @@
    "listenedOn": "2025-11-06",
    "released": "2025-06-27",
    "link": "https://music.apple.com/fr/album/virgin/1810905299",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/3c/07/723c07a7-4ff6-b052-927d-6997fff13676/25UMGIM60545.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/72/3c/07/723c07a7-4ff6-b052-927d-6997fff13676/25UMGIM60545.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8096ba3ded98f3662b18",
@@ -717,7 +733,7 @@
    "listenedOn": "2025-10-31",
    "released": "2025-10-31",
    "link": "https://music.apple.com/fr/album/everybody-scream/1833586446",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2e/5b/79/2e5b79a5-c166-da6b-3545-abc762f3beb2/25UM1IM19575.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/2e/5b/79/2e5b79a5-c166-da6b-3545-abc762f3beb2/25UM1IM19575.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8047a45eefc27856c8d2",
@@ -733,7 +749,7 @@
    "listenedOn": "2025-10-30",
    "released": "2025-10-30",
    "link": "https://music.apple.com/fr/album/choke-enough-deluxe/1845349804",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/af/b0/6d/afb06d49-c6d9-b416-217c-1d5f6d62cf54/5056556170549_cover.jpg/600x600bb.jpg"
+   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/6b/83/19/18449259/1507-1/tsp20241121084056/Choke-enough.jpg"
   },
   {
    "id": "2a4a7bc0f6df80edb514ee490bfccd95",
@@ -749,7 +765,7 @@
    "listenedOn": "2025-10-17",
    "released": "2025-10-17",
    "link": "https://music.apple.com/fr/album/deadbeat/1836226516",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/80/54/11/80541122-c1c4-50ad-a673-ff79f4cf8aa7/196873555331.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/80/54/11/80541122-c1c4-50ad-a673-ff79f4cf8aa7/196873555331.jpg"
   },
   {
    "id": "2a4a7bc0f6df805ca1c2e22939e81eb3",
@@ -764,7 +780,7 @@
    "listenedOn": "2025-10-11",
    "released": "2025-05-16",
    "link": "https://music.apple.com/fr/album/est-ce-que-quelquun-mentend/1804410805",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e6/ff/52/e6ff5289-cd43-5552-5bb7-d93b5780dde9/196872973334.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/e6/ff/52/e6ff5289-cd43-5552-5bb7-d93b5780dde9/196872973334.jpg"
   },
   {
    "id": "2a4a7bc0f6df808ca9f2c06d74441eb1",
@@ -779,7 +795,7 @@
    "listenedOn": "2025-10-11",
    "released": "2025-08-29",
    "link": "https://music.apple.com/fr/album/what-no-ones-thinking-ep/1824542297",
-   "cover": null
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/0f/62/ba/0f62baf2-d836-8d1c-d137-2dd98af6dd93/751238075147.png"
   },
   {
    "id": "2a4a7bc0f6df8054b414cdbfce47c4d9",
@@ -794,7 +810,7 @@
    "listenedOn": "2025-10-03",
    "released": "2025-10-03",
    "link": "https://music.apple.com/fr/album/industry-plant/1836468875",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8b/52/68/8b5268a4-89b2-8753-1939-7a87db9a1667/cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/8b/52/68/8b5268a4-89b2-8753-1939-7a87db9a1667/cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df80779af5c15b341445df",
@@ -809,7 +825,7 @@
    "listenedOn": "2025-10-03",
    "released": "2025-10-03",
    "link": "https://music.apple.com/fr/album/la-symphonie-des-%C3%A9clairs-orchestral-odyssey/1828200469",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fa/78/e5/fa78e5af-05f6-5871-9dc6-695bb500d609/25UMGIM70758.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/fa/78/e5/fa78e5af-05f6-5871-9dc6-695bb500d609/25UMGIM70758.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df804788d7f30a17aff4ff",
@@ -824,7 +840,7 @@
    "listenedOn": "2025-10-01",
    "released": "1990-05-27",
    "link": "https://music.apple.com/fr/album/second-helping/1440846806",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c2/d6/41/c2d64132-6a94-38ea-3309-3326f4680169/14UMGIM00873.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/c2/d6/41/c2d64132-6a94-38ea-3309-3326f4680169/14UMGIM00873.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80de9e82ee327850fb59",
@@ -839,7 +855,7 @@
    "listenedOn": "2025-09-29",
    "released": "2025-08-29",
    "link": "https://music.apple.com/fr/album/mans-best-friend/1819861154",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/bc/ef/ccbcefb5-cf3a-1c55-0173-c37602827c7a/25UMGIM81699.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/cc/bc/ef/ccbcefb5-cf3a-1c55-0173-c37602827c7a/25UMGIM81699.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80559711cf78ea0c5d43",
@@ -854,7 +870,7 @@
    "listenedOn": "2025-09-29",
    "released": "2025-09-26",
    "link": "https://music.apple.com/fr/album/vie/1834042903",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a8/c7/ea/a8c7eaf1-d92b-2ce6-74e4-1282b369cd38/196873471068.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/a8/c7/ea/a8c7eaf1-d92b-2ce6-74e4-1282b369cd38/196873471068.jpg"
   },
   {
    "id": "2a4a7bc0f6df80bca369e6aabd8f1a78",
@@ -869,7 +885,7 @@
    "listenedOn": "2025-09-26",
    "released": "2025-09-26",
    "link": "https://music.apple.com/fr/album/grandir-ep/1830256075",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/aa/bd/e6/aabde69d-f134-f13d-5c8e-5d555f7797ec/196873387871.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/aa/bd/e6/aabde69d-f134-f13d-5c8e-5d555f7797ec/196873387871.jpg"
   },
   {
    "id": "2a6a7bc0f6df800bba2ce359d9c44b02",
@@ -885,7 +901,7 @@
    "listenedOn": "2025-09-15",
    "released": "2025-09-12",
    "link": "https://music.apple.com/fr/album/thats-showbiz-baby/1813142774",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ee/25/ef/ee25ef48-9c5a-1899-cb2f-f3884bc5a15a/196873087917.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/ee/25/ef/ee25ef48-9c5a-1899-cb2f-f3884bc5a15a/196873087917.jpg"
   },
   {
    "id": "2a4a7bc0f6df8069b6f8f6ebea3799ff",
@@ -900,7 +916,7 @@
    "listenedOn": "2025-09-11",
    "released": "2025-03-21",
    "link": "https://music.apple.com/fr/album/bleu-m%C3%A9diterran%C3%A9e-ep/1800152236",
-   "cover": null
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/2d/25/5f/2d255fda-1e06-40c5-b7b3-c0d248cdf4c8/199282726477_cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df80a6b034da4f3c2ae78c",
@@ -915,7 +931,7 @@
    "listenedOn": "2025-09-11",
    "released": "2025-06-06",
    "link": "https://music.apple.com/fr/album/d%C3%A9j%C3%A0-vous-ep/1814186121",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2f/81/ca/2f81cac3-1539-1d4c-02c2-75a9d0e20382/4062548118308.png/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/2f/81/ca/2f81cac3-1539-1d4c-02c2-75a9d0e20382/4062548118308.png"
   },
   {
    "id": "2a4a7bc0f6df80068b16cb232049ff05",
@@ -930,7 +946,8 @@
    "listenedOn": "2025-09-11",
    "released": "2024-06-07",
    "link": "https://music.apple.com/fr/album/what-happened-to-the-heart/1738227839",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/72/86/c7/7286c731-029b-d5fa-2a71-d6aea3722eea/24UMGIM18966.rgb.jpg/600x600bb.jpg"
+   "cover": "https://m.media-amazon.com/images/I/91CBhKp88VL._SL1500_.jpg",
+   "review": "J’avais initialement mis 4 étoiles, mais en parcourant ma bibliothèque je me suis rendu compte que j’avais ajouté 0 musiques\nDonc perte de 1 étoile pour AURORA"
   },
   {
    "id": "2a4a7bc0f6df80c3a561cc2c06ff6752",
@@ -945,7 +962,7 @@
    "listenedOn": "2025-09-11",
    "released": "2025-06-13",
    "link": "https://music.apple.com/fr/album/what-if-i-break-up-with-u/1825379829",
-   "cover": null
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/86/e8/a8/86e8a860-1ae9-fe99-4c71-950d733a2b38/cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df80eb8ce0f3860ecfe425",
@@ -960,7 +977,7 @@
    "listenedOn": "2025-08-25",
    "released": "2025-01-24",
    "link": "https://music.apple.com/fr/album/pl%D0%B4ying-pr%D0%B4ying/1775560114",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fa/65/59/fa6559bf-eb2c-5b76-8678-4b69b8e328e1/cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/fa/65/59/fa6559bf-eb2c-5b76-8678-4b69b8e328e1/cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df80959a7dc4dd323d8200",
@@ -975,7 +992,7 @@
    "listenedOn": "2025-08-22",
    "released": "2025-08-22",
    "link": "https://music.apple.com/fr/album/guitar/1816172823",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/10/1d/52/101d52d0-ab69-03af-2c04-6952fc0906ce/00198704459184_Cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/10/1d/52/101d52d0-ab69-03af-2c04-6952fc0906ce/00198704459184_Cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df800c8121d501b84d9a29",
@@ -990,7 +1007,7 @@
    "listenedOn": "2025-07-29",
    "released": "2025-07-11",
    "link": "https://music.apple.com/fr/album/swag/1825994646",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f9/09/36/f9093663-c05f-7f95-0a60-4e95d52fbb22/25UMGIM93915.rgb.jpg/600x600bb.jpg"
+   "cover": "covers/2a4a7bc0f6df800c8121d501b84d9a29-35917f0353.jpg"
   },
   {
    "id": "2a4a7bc0f6df80458861f6f63531f026",
@@ -1005,7 +1022,7 @@
    "listenedOn": "2025-07-22",
    "released": "1969-08-20",
    "link": "https://music.apple.com/fr/album/abbey-road-remastered/1441164426",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/df/db/61/dfdb615d-47f8-06e9-9533-b96daccc029f/18UMGIM31076.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/df/db/61/dfdb615d-47f8-06e9-9533-b96daccc029f/18UMGIM31076.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df808ca45bebbbbae0f15d",
@@ -1020,7 +1037,7 @@
    "listenedOn": "2025-07-22",
    "released": "1994-08-15",
    "link": "https://music.apple.com/fr/album/grace/1046187510",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/26/d6/e3/26d6e339-a7a9-d61e-1b5f-0852a5515a55/886445517880.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/26/d6/e3/26d6e339-a7a9-d61e-1b5f-0852a5515a55/886445517880.jpg"
   },
   {
    "id": "2a4a7bc0f6df8074abc0c632743b0b77",
@@ -1036,7 +1053,8 @@
    "listenedOn": "2025-07-22",
    "released": "2016-05-06",
    "link": "https://music.apple.com/fr/album/lemonade/1460430561",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/db/25/a1/db25a1c0-8a4a-3b4d-226d-7c7704dc92da/886447680711.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/db/25/a1/db25a1c0-8a4a-3b4d-226d-7c7704dc92da/886447680711.jpg",
+   "review": "A la première écoute j’ai mis un 4 étoiles.\nEt finalement en me renseignant sur tout le lore de l’album, en regardant le film album : un 5 étoiles est largement mérité."
   },
   {
    "id": "2a4a7bc0f6df80ada640f8ccc462806a",
@@ -1051,7 +1069,7 @@
    "listenedOn": "2025-07-22",
    "released": "1984-06-19",
    "link": "https://music.apple.com/fr/album/purple-rain/1746833068",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/00/17/f2/0017f24f-e580-b77a-71a8-1bc7b75881bf/603497822065.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/00/17/f2/0017f24f-e580-b77a-71a8-1bc7b75881bf/603497822065.jpg"
   },
   {
    "id": "2a4a7bc0f6df80148a02dd68eb0c1d79",
@@ -1066,7 +1084,7 @@
    "listenedOn": "2025-07-21",
    "released": "2024-10-28",
    "link": "https://music.apple.com/fr/album/chromakopia/1776500452",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7d/bd/e9/7dbde97e-b97d-8cc3-0203-218b687408a9/196872555059.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/7d/bd/e9/7dbde97e-b97d-8cc3-0203-218b687408a9/196872555059.jpg"
   },
   {
    "id": "2a4a7bc0f6df8052b4e2fc87dd2d01d9",
@@ -1081,7 +1099,8 @@
    "listenedOn": "2025-07-21",
    "released": "2025-07-21",
    "link": "https://music.apple.com/fr/album/dont-tap-the-glass/1827715784",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a0/ae/e6/a0aee657-b365-fed2-249c-0f22efa507d0/196873435435.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/a0/ae/e6/a0aee657-b365-fed2-249c-0f22efa507d0/196873435435.jpg",
+   "review": "Je me souviens avoir apprécié la 1ère écoute, mais pas assez pour en avoir une deuxième. J’écoute donc une 2ème fois en écrivant ces lignes, mais l’album ne m’avait pas assez marqué pour en avoir envie avant."
   },
   {
    "id": "2a4a7bc0f6df808f9402d6559df23d4d",
@@ -1096,7 +1115,8 @@
    "listenedOn": "2025-07-20",
    "released": "2010-11-24",
    "link": "https://music.apple.com/fr/album/body-talk/1440486599",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c2/03/29/c20329ef-9858-7c0c-da41-89d8fa303a39/00602527588025.rgb.jpg/600x600bb.jpg"
+   "cover": "https://upload.wikimedia.org/wikipedia/en/c/cd/Body_Talk_by_Robyn.png",
+   "review": "J’écris ces lignes plusieurs mois après l’écoute de cet album : je n’en ai absolument aucun souvenir. Initialement on était à 2 étoiles, on passe à 1 seule."
   },
   {
    "id": "2a4a7bc0f6df805eacd5d410ac0eeadf",
@@ -1112,7 +1132,7 @@
    "listenedOn": "2025-07-20",
    "released": "2024-06-07",
    "link": "https://music.apple.com/fr/album/brat/1739079974",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/88/4e/63/884e6321-ad41-aab1-f6f0-20efcafcfd55/075679666130.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/88/4e/63/884e6321-ad41-aab1-f6f0-20efcafcfd55/075679666130.jpg"
   },
   {
    "id": "2a4a7bc0f6df80a2b961d215e9704db8",
@@ -1127,7 +1147,7 @@
    "listenedOn": "2025-07-19",
    "released": "2016-08-20",
    "link": "https://music.apple.com/fr/album/blonde/1146195596",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/45/68/bb4568f3-68cd-619d-fbcb-4e179916545d/BlondCover-Final.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/bb/45/68/bb4568f3-68cd-619d-fbcb-4e179916545d/BlondCover-Final.jpg"
   },
   {
    "id": "2a4a7bc0f6df8004aab1dcc5d4fd962c",
@@ -1142,7 +1162,7 @@
    "listenedOn": "2025-07-19",
    "released": "2025-07-18",
    "link": "https://music.apple.com/fr/album/sex-hysteria/1817707266",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/93/4a/2a/934a2a00-c2e1-6d61-483c-762f86394042/196873058115.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/93/4a/2a/934a2a00-c2e1-6d61-483c-762f86394042/196873058115.jpg"
   },
   {
    "id": "2a4a7bc0f6df802f969af59647495d84",
@@ -1157,7 +1177,7 @@
    "listenedOn": "2025-07-19",
    "released": "2022-12-09",
    "link": "https://music.apple.com/fr/album/sos/1657869377",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/3b/a9/bd3ba9fb-9609-144f-bcfe-ead67b5f6ab3/196589564931.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/bd/3b/a9/bd3ba9fb-9609-144f-bcfe-ead67b5f6ab3/196589564931.jpg"
   },
   {
    "id": "2a4a7bc0f6df80bda698f7f921c90656",
@@ -1172,7 +1192,7 @@
    "listenedOn": "2025-07-04",
    "released": "2025-07-04",
    "link": "https://music.apple.com/fr/album/1804117398",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2e/11/3a/2e113a91-1990-f7f7-7b20-4d810e9ffebd/5034644564371.jpg/600x600bb.jpg"
+   "cover": "https://vinyltap.co.uk/cdn/shop/files/887ead5805c791b1f101f4d482398027_3b135edc-744a-4ad5-a929-717db3ac2d98.jpg?v=1751587705"
   },
   {
    "id": "2a4a7bc0f6df80dfa9a7fdd6d862902e",
@@ -1187,7 +1207,7 @@
    "listenedOn": "2025-03-07",
    "released": "2025-03-07",
    "link": "https://music.apple.com/fr/album/mayhem/1792666546",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/be/11/d1/be11d187-1aeb-99f3-01c5-597ed65cdb6a/25UMGIM07433.rgb.jpg/600x600bb.jpg"
+   "cover": "https://i.scdn.co/image/ab67616d0000b273b0860cf0a98e09663c82290c"
   },
   {
    "id": "2a4a7bc0f6df80c691d9eab81e9cefc2",
@@ -1202,7 +1222,7 @@
    "listenedOn": "2025-01-31",
    "released": "2025-01-31",
    "link": "https://music.apple.com/fr/album/la-favorite/1785943259",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/f3/a5/35f3a584-14ac-79d2-899e-cd43b32d44d9/3596974755529_cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/35/f3/a5/35f3a584-14ac-79d2-899e-cd43b32d44d9/3596974755529_cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df8041b47dfd158d0d0013",
@@ -1217,7 +1237,7 @@
    "listenedOn": "2024-11-01",
    "released": "2024-11-01",
    "link": "https://music.apple.com/fr/album/mega-bbl/1813911411",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/bf/ca/97bfca44-9e03-06cb-e0bb-65cc94e3d153/25UMGIM62999.rgb.jpg/600x600bb.jpg"
+   "cover": "covers/2a4a7bc0f6df8041b47dfd158d0d0013-e687144304.jpg"
   },
   {
    "id": "2a4a7bc0f6df808d9965fb35335bf1ea",
@@ -1232,7 +1252,7 @@
    "listenedOn": "2024-05-17",
    "released": "2024-05-17",
    "link": "https://music.apple.com/fr/album/hit-me-hard-and-soft/1739659134",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80cc8fe3cd29fc1b0d8d",
@@ -1248,7 +1268,7 @@
    "listenedOn": "2024-03-29",
    "released": "2024-03-29",
    "link": "https://music.apple.com/fr/album/cowboy-carter/1738363766",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bd/f6/83/bdf683a5-28de-08cb-cb91-2940c1e6270b/196871853729.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/bd/f6/83/bdf683a5-28de-08cb-cb91-2940c1e6270b/196871853729.jpg"
   },
   {
    "id": "2a6a7bc0f6df802fa3fcc5c59e28349f",
@@ -1263,7 +1283,7 @@
    "listenedOn": "2023-11-17",
    "released": "2023-11-17",
    "link": "https://music.apple.com/fr/album/crash-c%C5%93ur/1709076220",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9f/ab/57/9fab57c0-8d23-11c7-5e53-8589210f987b/23UM1IM11067.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music116/v4/9f/ab/57/9fab57c0-8d23-11c7-5e53-8589210f987b/23UM1IM11067.rgb.jpg"
   },
   {
    "id": "2a6a7bc0f6df8003a4f6d826c9cea3c0",
@@ -1278,7 +1298,7 @@
    "listenedOn": "2023-09-01",
    "released": "2023-03-21",
    "link": "https://music.apple.com/fr/album/la-symphonie-des-%C3%A9clairs/1708455052",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e5/99/a8/e599a871-48f7-a131-773e-2bbd8894ea5d/22UM1IM33918.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music116/v4/e5/99/a8/e599a871-48f7-a131-773e-2bbd8894ea5d/22UM1IM33918.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80738e67d9418f923c1d",
@@ -1293,7 +1313,7 @@
    "listenedOn": "2023-02-24",
    "released": "2023-02-24",
    "link": "https://music.apple.com/fr/album/les-royaumes-minuscules-augment%C3%A9s/1743791728",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/64/01/4b/64014bb3-d49a-ef93-c5b8-a46d3be378af/196872069600.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/75/d2/6e/75d26e43-d094-2a82-695a-09c485f6861c/196589498779.jpg"
   },
   {
    "id": "2a4a7bc0f6df80a0b2e8eff4fb6f2571",
@@ -1308,7 +1328,7 @@
    "listenedOn": "2022-11-11",
    "released": "2022-11-11",
    "link": "https://music.apple.com/fr/album/gore/1530784231",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/fe/87/5a/fe875a74-5c85-78eb-0b9f-0ee54db5183c/196589529497.jpg"
   },
   {
    "id": "2a4a7bc0f6df8030ba11c5978a4b4586",
@@ -1323,7 +1343,7 @@
    "listenedOn": "2022-07-29",
    "released": "2022-07-29",
    "link": "https://music.apple.com/fr/album/renaissance/1630005298",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/05/f3/0505f338-9873-feb4-af7f-27a470405e5f/196589246974.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/05/05/f3/0505f338-9873-feb4-af7f-27a470405e5f/196589246974.jpg"
   },
   {
    "id": "2a4a7bc0f6df80ac8416fbc0b21a88ba",
@@ -1338,7 +1358,8 @@
    "listenedOn": "2022-06-18",
    "released": "2020-10-16",
    "link": "https://music.apple.com/fr/album/gore/1530784231",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg",
+   "review": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg"
   },
   {
    "id": "2a4a7bc0f6df80c1a45dd4319296c79a",
@@ -1353,7 +1374,7 @@
    "listenedOn": "2022-03-18",
    "released": "2022-03-18",
    "link": "https://music.apple.com/fr/album/lamour/1609060693",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/7c/42/0a/7c420a76-3ccc-cc8e-def0-374fc81c2c78/22UMGIM13515.rgb.jpg/600x600bb.jpg"
+   "cover": "covers/2a4a7bc0f6df80c1a45dd4319296c79a-50f7c47838.jpg"
   },
   {
    "id": "2a4a7bc0f6df806ab3f2fac4c2ca88b2",
@@ -1368,7 +1389,7 @@
    "listenedOn": "2021-11-19",
    "released": "2021-11-19",
    "link": "https://music.apple.com/fr/album/civilisation-%C3%A9dition-ultime/1788305915",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/43/a4/78/43a47870-f087-4e4e-e7b8-b1ca7d04a5dc/3596974281424.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/43/a4/78/43a47870-f087-4e4e-e7b8-b1ca7d04a5dc/3596974281424.jpg"
   },
   {
    "id": "2a6a7bc0f6df80ab917cc73abe34fb54",
@@ -1383,7 +1404,7 @@
    "listenedOn": "2021-03-26",
    "released": "2021-03-26",
    "link": "https://music.apple.com/fr/album/%C3%A0-tous-les-b%C3%A2tards/1631321590",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b1/3b/2c/b13b2ceb-bdb0-ce71-d3e1-e2450271535e/20UMGIM97711.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/b1/3b/2c/b13b2ceb-bdb0-ce71-d3e1-e2450271535e/20UMGIM97711.rgb.jpg"
   },
   {
    "id": "2a8a7bc0f6df8089af15edfdb7e1555c",
@@ -1398,7 +1419,7 @@
    "listenedOn": "2021-03-26",
    "released": "2021-03-26",
    "link": "https://music.apple.com/fr/album/tako-tsubo/1545197529",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0a/3e/16/0a3e1678-1579-f661-0941-267e04eb2f0b/3663729117120_cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music125/v4/0a/3e/16/0a3e1678-1579-f661-0941-267e04eb2f0b/3663729117120_cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df80cf8858f9d7c9a23b08",
@@ -1413,7 +1434,7 @@
    "listenedOn": "2020-09-04",
    "released": "2020-09-04",
    "link": "https://music.apple.com/fr/album/l%C3%A8re-du-verseau/1518632290",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/fa/df/d2/fadfd281-0c97-72ee-6922-d5dec65ec999/3663729126221_cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music113/v4/fa/df/d2/fadfd281-0c97-72ee-6922-d5dec65ec999/3663729126221_cover.jpg"
   },
   {
    "id": "2a4a7bc0f6df80b1aaf5e8a77440330a",
@@ -1428,7 +1449,7 @@
    "listenedOn": "2019-11-07",
    "released": "2019-11-07",
    "link": "https://music.apple.com/fr/album/brol-la-suite/1482645200",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/d8/ac/ff/d8acff60-ced5-db4f-c8aa-1c6ca651856d/19UMGIM90938.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music123/v4/d8/ac/ff/d8acff60-ced5-db4f-c8aa-1c6ca651856d/19UMGIM90938.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80f58a94d9533a68813a",
@@ -1443,7 +1464,7 @@
    "listenedOn": "2019-03-29",
    "released": "2019-03-29",
    "link": "https://music.apple.com/fr/album/when-we-all-fall-asleep-where-do-we-go/1450695723",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg"
   },
   {
    "id": "2a6a7bc0f6df8064a7b0f96938535136",
@@ -1458,7 +1479,7 @@
    "listenedOn": "2018-09-14",
    "released": "2018-09-14",
    "link": "https://music.apple.com/fr/album/disizilla/1430032818",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/d1/66/af/d166affb-4e89-a946-bde3-75bcb4da7815/00602567882107.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music128/v4/d1/66/af/d166affb-4e89-a946-bde3-75bcb4da7815/00602567882107.rgb.jpg"
   },
   {
    "id": "2a6a7bc0f6df8003ae6befe96af331ec",
@@ -1473,7 +1494,7 @@
    "listenedOn": "2018-03-02",
    "released": "2018-03-02",
    "link": "https://music.apple.com/fr/album/cure/1440904486",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/e6/87/e1e68798-a576-f784-ed24-5182fdaa395a/18UMGIM05575.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/e1/e6/87/e1e68798-a576-f784-ed24-5182fdaa395a/18UMGIM05575.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8031bbb6c2bc011d4391",
@@ -1488,7 +1509,7 @@
    "listenedOn": "2017-10-20",
    "released": "2017-10-20",
    "link": "https://music.apple.com/fr/album/la-f%C3%AAte-est-finie/1788305428",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b4/3a/b3/b43ab341-83c5-0cd8-9493-d2149122b763/3596973519320.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/b4/3a/b3/b43ab341-83c5-0cd8-9493-d2149122b763/3596973519320.jpg"
   },
   {
    "id": "2a6a7bc0f6df80d4a0effcbc0087606e",
@@ -1504,7 +1525,7 @@
    "listenedOn": "2017-06-23",
    "released": "2017-06-23",
    "link": "https://music.apple.com/fr/album/evolve/1411625594",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/11/7a/b8/117ab805-6811-8929-18b9-0fad7baf0c25/17UMGIM98210.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music126/v4/11/7a/b8/117ab805-6811-8929-18b9-0fad7baf0c25/17UMGIM98210.rgb.jpg"
   },
   {
    "id": "2a6a7bc0f6df8041b887d89b2eba68b0",
@@ -1520,7 +1541,7 @@
    "listenedOn": "2017-06-09",
    "released": "2017-06-09",
    "link": "https://music.apple.com/fr/album/pacifique/1440881726",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ca/33/af/ca33af10-47b5-c3f3-4957-fb4bb7e0065a/00602557636116.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/ca/33/af/ca33af10-47b5-c3f3-4957-fb4bb7e0065a/00602557636116.rgb.jpg"
   },
   {
    "id": "2a6a7bc0f6df805a9dc5cded1a31ae9c",
@@ -1535,7 +1556,7 @@
    "listenedOn": "2015-06-08",
    "released": "2015-06-08",
    "link": "https://music.apple.com/fr/album/feu/1440826417",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/fc/88/29/fc8829db-b4de-a366-70e0-3cf6cb53a81b/15UMGIM20685.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music116/v4/fc/88/29/fc8829db-b4de-a366-70e0-3cf6cb53a81b/15UMGIM20685.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80acbf86dce9af8b0f84",
@@ -1550,7 +1571,7 @@
    "listenedOn": "2014-09-29",
    "released": "2014-09-29",
    "link": "https://music.apple.com/fr/album/compl%C3%A8tement-fou/1447192212",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8d/5c/bd/8d5cbdbc-ded2-02f7-7c63-4d82771a868a/5060281619419_cover.jpg/600x600bb.jpg"
+   "cover": "https://m.media-amazon.com/images/I/814HLp8A3bL._SL1500_.jpg"
   },
   {
    "id": "2a6a7bc0f6df80aa9373fc9cf9279394",
@@ -1566,7 +1587,7 @@
    "listenedOn": "2014-09-18",
    "released": "2014-09-18",
    "link": "https://music.apple.com/fr/album/smoke-mirrors-deluxe/1440831203",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b3/a8/b0/b3a8b05f-7dfe-f557-6147-57e74dfdbebe/15UMGIM53209.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/b3/a8/b0/b3a8b05f-7dfe-f557-6147-57e74dfdbebe/15UMGIM53209.rgb.jpg"
   },
   {
    "id": "2dca7bc0f6df808daf3bf2ead2f4262d",
@@ -1581,7 +1602,7 @@
    "listenedOn": "2013-12-13",
    "released": "2013-12-13",
    "link": "https://music.apple.com/fr/album/pretty-hurts/939775882?i=939777955",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/91/d3/48/91d3485b-29d7-82ee-bd58-300fa1d6605b/886444935265.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/cb/d0/1b/cbd01b16-7759-38ec-15a2-8a98228319ff/886444935265.jpg"
   },
   {
    "id": "2a4a7bc0f6df802b9846cb7dc3059076",
@@ -1596,7 +1617,7 @@
    "listenedOn": "2013-08-19",
    "released": "2013-08-19",
    "link": "https://music.apple.com/fr/album/racine-carr%C3%A9e/1440856001",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/44/13/e0/4413e0be-302b-fe2a-5c88-5c02389f67df/13UAAIM66791.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music126/v4/44/13/e0/4413e0be-302b-fe2a-5c88-5c02389f67df/13UAAIM66791.rgb.jpg"
   },
   {
    "id": "2a4a7bc0f6df806a963ad6a9d2d0bc0e",
@@ -1611,7 +1632,7 @@
    "listenedOn": "2013-05-17",
    "released": "2013-05-17",
    "link": "https://music.apple.com/fr/album/random-access-memories/617154241",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg"
   },
   {
    "id": "2a6a7bc0f6df8091a38ed49d7911d861",
@@ -1627,7 +1648,7 @@
    "listenedOn": "2012-01-01",
    "released": "2012-01-01",
    "link": "https://music.apple.com/fr/album/night-visions/1440829989",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/c1/1a/fa/c11afaa1-26fc-9829-a6cf-9d1dd228ec06/12UMGIM46901.rgb.jpg/600x600bb.jpg"
+   "cover": "https://vinylcollector.store/cdn/shop/products/71x_T7Cjx8L._AC_SL1400.jpg?v=1657115985&width=1200"
   },
   {
    "id": "2a4a7bc0f6df808f9f20f906ba70cb84",
@@ -1642,7 +1663,7 @@
    "listenedOn": "2012-01-01",
    "released": "2012-01-01",
    "link": "https://music.apple.com/fr/album/tetra/1440862752",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/95/25/4f/95254fd9-cd0e-f439-1303-8a170156cf02/00602537156153.rgb.jpg/600x600bb.jpg"
+   "cover": "https://m.media-amazon.com/images/I/71N4r1LnhsL._SL1400_.jpg"
   },
   {
    "id": "2a4a7bc0f6df80149a43cfedc8b0270b",
@@ -1657,7 +1678,7 @@
    "listenedOn": "2011-01-24",
    "released": "2011-01-24",
    "link": "https://music.apple.com/fr/album/21/403037872",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f8/df/0a/f8df0ac9-ae76-9dae-86d3-4e913fc54fb1/634904152062.png/600x600bb.jpg"
+   "cover": "https://m.media-amazon.com/images/I/61lMwNQGYbL._SL1200_.jpg"
   },
   {
    "id": "2a4a7bc0f6df806c8b69ddc36d71d6b7",
@@ -1672,7 +1693,7 @@
    "listenedOn": "2006-10-30",
    "released": "2006-10-30",
    "link": "https://music.apple.com/fr/album/back-to-black/1422677780",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/5a/72/3f/5a723fec-965d-3483-89f8-d66b79f88419/15UMGIM24224.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/5a/72/3f/5a723fec-965d-3483-89f8-d66b79f88419/15UMGIM24224.rgb.jpg"
   },
   {
    "id": "2a6a7bc0f6df80ca903ec3dc1266eb56",
@@ -1687,7 +1708,7 @@
    "listenedOn": "2006-01-01",
    "released": "2006-01-01",
    "link": "https://music.apple.com/fr/album/life-in-cartoon-motion/1443261504",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/90/9f/05909fe0-df48-dc99-50ab-ab3c98e40980/07UMGIM00947.rgb.jpg/600x600bb.jpg"
+   "cover": "https://m.media-amazon.com/images/I/81q1BfHVVEL._SL1400_.jpg"
   },
   {
    "id": "2a4a7bc0f6df806985b7e2aaadab50eb",
@@ -1702,7 +1723,7 @@
    "listenedOn": "2001-03-12",
    "released": "2001-03-12",
    "link": "https://music.apple.com/fr/album/discovery/697194953",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg"
   },
   {
    "id": "2a8a7bc0f6df80abaabed2640e36b8b1",
@@ -1717,7 +1738,8 @@
    "listenedOn": "1999-11-13",
    "released": "1992-09-21",
    "link": "https://music.apple.com/fr/album/abba-gold-greatest-hits/1422648512",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/60/f8/a6/60f8a6bc-e875-238d-f2f8-f34a6034e6d2/14UMGIM07615.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/60/f8/a6/60f8a6bc-e875-238d-f2f8-f34a6034e6d2/14UMGIM07615.rgb.jpg",
+   "review": "Je sais que c’est une compilation, que c’est uniquement un récap de leurs plus grands hits (sauf Angel Eyes sur la version classique 😡). Mais sur les 19 titres, 11 sont dans mes classiques et rien que pour ça ça mérite d’être un super album compilation."
   },
   {
    "id": "2e9a7bc0f6df806389c9c4060766694c",
@@ -1732,7 +1754,7 @@
    "listenedOn": null,
    "released": "2025-11-07",
    "link": "https://music.apple.com/fr/album/all-the-flowers-have-bloomed/1838668078",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e7/73/f4/e773f4c5-892f-2206-abc4-0aad3cb32500/5063807111299_cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/e7/73/f4/e773f4c5-892f-2206-abc4-0aad3cb32500/5063807111299_cover.jpg"
   },
   {
    "id": "2dba7bc0f6df808aa124d7b939515194",
@@ -1747,7 +1769,7 @@
    "listenedOn": null,
    "released": "1969-01-01",
    "link": "https://music.apple.com/fr/album/an-electric-storm/1443189179",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/64/83/3f/64833f46-3eea-1572-db5c-0242b6327ef5/00602498431979.rgb.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music125/v4/64/83/3f/64833f46-3eea-1572-db5c-0242b6327ef5/00602498431979.rgb.jpg"
   },
   {
    "id": "2dba7bc0f6df8024b242eb43d133d3bf",
@@ -1793,7 +1815,7 @@
    "listenedOn": null,
    "released": "2023-02-14",
    "link": "https://music.apple.com/fr/album/desire-i-want-to-turn-into-you-everasking-edition/1732294271",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/37/74/df/3774df30-e827-1f2b-507e-abd6a8c641de/198391271656.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/37/74/df/3774df30-e827-1f2b-507e-abd6a8c641de/198391271656.jpg"
   },
   {
    "id": "2a6a7bc0f6df80a3b84beb8e8e3459db",
@@ -1808,7 +1830,7 @@
    "listenedOn": null,
    "released": "2025-11-28",
    "link": null,
-   "cover": null
+   "cover": "https://vinylcollector.store/cdn/shop/files/JessieJCover.jpg?v=1758728992&width=2000"
   },
   {
    "id": "2a8a7bc0f6df80ffa604df67a1ea0d74",
@@ -1821,7 +1843,7 @@
    "listenedOn": null,
    "released": "2025-08-29",
    "link": "https://music.apple.com/fr/album/essex-honey/1825903903",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/15/b5/61/15b56142-10d6-f9d3-f29d-e0e0d123061d/196873161457.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/15/b5/61/15b56142-10d6-f9d3-f29d-e0e0d123061d/196873161457.jpg"
   },
   {
    "id": "37ca7bc0f6df80aa8df5c61c8d55638a",
@@ -1866,7 +1888,7 @@
    "listenedOn": null,
    "released": "2026-05-08",
    "link": "https://music.apple.com/fr/album/grandmas-gospel-favorites/1880392609",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2f/f9/5a/2ff95a40-d9df-40a9-3ed7-f7db23373b11/4099964238419.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/2f/f9/5a/2ff95a40-d9df-40a9-3ed7-f7db23373b11/4099964238419.jpg"
   },
   {
    "id": "373a7bc0f6df8064923bf37e753dfc76",
@@ -1912,7 +1934,7 @@
    "listenedOn": null,
    "released": "2026-05-22",
    "link": "https://music.apple.com/fr/album/jeune-laide/1887504127",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e0/f0/a3/e0f0a36c-2bad-abee-cd53-de41d073385b/3596975072694_cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/e0/f0/a3/e0f0a36c-2bad-abee-cd53-de41d073385b/3596975072694_cover.jpg"
   },
   {
    "id": "2f8a7bc0f6df80219518dffcd55d8f74",
@@ -2003,7 +2025,7 @@
    "listenedOn": null,
    "released": "2025-12-05",
    "link": "https://music.apple.com/fr/album/presque-punk/1848316166",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/59/0d/dc/590ddcef-9897-5220-f6da-dc77da7ed8b0/3596974941823_cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/59/0d/dc/590ddcef-9897-5220-f6da-dc77da7ed8b0/3596974941823_cover.jpg"
   },
   {
    "id": "368a7bc0f6df8090bc2dfa9ea61e7db7",
@@ -2019,7 +2041,7 @@
    "listenedOn": null,
    "released": "2026-08-14",
    "link": "https://music.apple.com/fr/album/ritual/1892426976",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4e/f9/e9/4ef9e917-0bb7-7988-b5ba-781e15cdaeb2/196874146361.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/4e/f9/e9/4ef9e917-0bb7-7988-b5ba-781e15cdaeb2/196874146361.jpg"
   },
   {
    "id": "2d6a7bc0f6df80769649d44da19547c1",
@@ -2077,7 +2099,7 @@
    "listenedOn": null,
    "released": "2026-05-08",
    "link": "https://music.apple.com/fr/album/the-afterparty/1857952252",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/84/a4/c6/84a4c65d-db62-65ed-9aed-cdb0a875c408/198704887093_Cover.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/84/a4/c6/84a4c65d-db62-65ed-9aed-cdb0a875c408/198704887093_Cover.jpg"
   },
   {
    "id": "379a7bc0f6df802abca0ca5ff5252fcf",
@@ -2107,7 +2129,7 @@
    "listenedOn": null,
    "released": "2026-02-27",
    "link": "https://music.apple.com/fr/album/the-mountain/1837237742",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/86/b5/3f/86b53fc7-cc73-c735-17fb-549fc459edca/199538459005.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/7a/74/e7/7a74e759-bf28-c96e-0084-b39c1a42a2d8/199538459005.jpg"
   },
   {
    "id": "2a8a7bc0f6df807897a9c6f81784bd29",
@@ -2139,7 +2161,7 @@
    "listenedOn": null,
    "released": "2010-03-08",
    "link": "https://music.apple.com/fr/album/tons-of-friends/472566837",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/3d/31/5d/mzi.dzhcyljd.jpg/600x600bb.jpg"
+   "cover": "https://a5.mzstatic.com/us/r1000/0/Music/3d/31/5d/mzi.dzhcyljd.jpg"
   },
   {
    "id": "2f7a7bc0f6df80c2b83ae7e2aaccc449",
