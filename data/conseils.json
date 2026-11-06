@@ -1,6 +1,19 @@
 {
- "updatedAt": "2026-11-06T22:25:14.105Z",
+ "updatedAt": "2026-11-06T22:44:58.514Z",
  "fromArtists": [
+  {
+   "appleId": "1572940891",
+   "artistId": 602767352,
+   "genre": "Alternative",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/46/9d/e2/469de216-6c4f-eb7f-7240-396f167bfe07/21UMGIM51680.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/1572940891",
+   "released": "2021-08-20",
+   "title": "Solar Power",
+   "artistName": "Lorde",
+   "tracks": 13,
+   "artist": "Lorde",
+   "heardCount": 3
+  },
   {
    "appleId": "201274359",
    "artistId": 1419227,
@@ -182,45 +195,6 @@
    "tracks": 12,
    "artist": "Slayyyter",
    "heardCount": 2
-  },
-  {
-   "appleId": "1572940891",
-   "artistId": 602767352,
-   "genre": "Alternative",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/46/9d/e2/469de216-6c4f-eb7f-7240-396f167bfe07/21UMGIM51680.rgb.jpg/600x600bb.jpg",
-   "url": "https://music.apple.com/fr/album/1572940891",
-   "released": "2021-08-20",
-   "title": "Solar Power",
-   "artistName": "Lorde",
-   "tracks": 13,
-   "artist": "Lorde",
-   "heardCount": 2
-  },
-  {
-   "appleId": "1440818584",
-   "artistId": 602767352,
-   "genre": "Alternative",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/96/a5/09/96a50916-169b-724c-b722-b8c474406352/13UAAIM68691.rgb.jpg/600x600bb.jpg",
-   "url": "https://music.apple.com/fr/album/1440818584",
-   "released": "2013-09-27",
-   "title": "Pure Heroine",
-   "artistName": "Lorde",
-   "tracks": 10,
-   "artist": "Lorde",
-   "heardCount": 2
-  },
-  {
-   "appleId": "1828240083",
-   "artistId": 13633118,
-   "genre": "Hip-hop/Rap",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/58/2c/4b582c0a-8fb6-8ea8-9a12-e2834055d737/602438458547.jpg/600x600bb.jpg",
-   "url": "https://music.apple.com/fr/album/1828240083",
-   "released": "2015-06-01",
-   "title": "Rap Machine",
-   "artistName": "disiz",
-   "tracks": 18,
-   "artist": "disiz",
-   "heardCount": 4
   },
   {
    "appleId": "696884422",
@@ -501,24 +475,24 @@
    "why": "Proche de Beyoncé (5★), que tu as très bien noté."
   },
   {
-   "title": "Paradis",
-   "artist": "Ben Mazué",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/58f7091a000c3495abd2898d445ca4e4/1000x1000-000000-80-0-0.jpg",
-   "released": "2020-11-06",
-   "url": "https://www.deezer.com/album/180589512",
-   "genre": "Pop",
-   "tracks": 14,
-   "why": "Proche d’Eddy de Pretto (5★) et Zaho de Sagazan (5★), que tu as très bien notés."
-  },
-  {
-   "title": "Kiss The Beast",
-   "artist": "Sébastien Tellier",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/363fdd0b2993f12535634dc7d2c3168c/1000x1000-000000-80-0-0.jpg",
-   "released": "2026-01-30",
-   "url": "https://www.deezer.com/album/824175871",
+   "title": "Native",
+   "artist": "OneRepublic",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/75cbabada297707bac115ea3a1d50bb5/1000x1000-000000-80-0-0.jpg",
+   "released": "2013-03-25",
+   "url": "https://www.deezer.com/album/6446668",
    "genre": "Pop",
    "tracks": 12,
-   "why": "Proche d’Yelle (5★), que tu as très bien noté."
+   "why": "Proche d’Imagine Dragons (5★), que tu as très bien noté."
+  },
+  {
+   "title": "Janet",
+   "artist": "Janet Jackson",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/4104f417dff07ee2b6c49b798f8b23ad/1000x1000-000000-80-0-0.jpg",
+   "released": "2000-07-06",
+   "url": "https://www.deezer.com/album/331659",
+   "genre": "R&B",
+   "tracks": 28,
+   "why": "Proche de Beyoncé (5★), que tu as très bien noté."
   },
   {
    "title": "Carrément carrément",
@@ -531,13 +505,13 @@
    "why": "Proche d’Yelle (5★), que tu as très bien noté."
   },
   {
-   "title": "NQNTMQMQMB",
+   "title": "PANDEMONIUM",
    "artist": "Vald",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/b5c2b786e037c5473962a74c114b3df8/1000x1000-000000-80-0-0.jpg",
-   "released": "2016-08-12",
-   "url": "https://www.deezer.com/album/13791241",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/26848812127dccdccf8592fc7c70eb57/1000x1000-000000-80-0-0.jpg",
+   "released": "2025-03-28",
+   "url": "https://www.deezer.com/album/731836591",
    "genre": "Rap/Hip Hop",
-   "tracks": 42,
+   "tracks": 17,
    "why": "Proche d’Orelsan (5★) et Nekfeu (5★), que tu as très bien notés."
   }
  ],

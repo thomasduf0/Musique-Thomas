@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T22:25:14.103Z",
+ "updatedAt": "2026-11-06T22:44:58.513Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -2029,6 +2029,25 @@
    ]
   },
   {
+   "id": "410a7bc0f6df8133bd87f36c006fb505",
+   "album": "Rap Machine",
+   "artist": "disiz",
+   "genres": [
+    "Hip-hop/Rap"
+   ],
+   "lang": "Français",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2016-11-06",
+   "released": "2015-06-01",
+   "link": "https://open.spotify.com/album/2ihJATkcVvKTn2tecQeb6W",
+   "cover": "https://i.scdn.co/image/ab67616d0000b273406233bf7da86585d5c7b96a",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/58/2c/4b582c0a-8fb6-8ea8-9a12-e2834055d737/602438458547.jpg/600x600bb.jpg"
+  },
+  {
    "id": "2a6a7bc0f6df805a9dc5cded1a31ae9c",
    "album": "Feu",
    "artist": "Nekfeu",
@@ -2102,6 +2121,25 @@
     "Pop"
    ],
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d4/7b/13/d47b1359-6270-4669-83da-1dec4e140f95/886444385855.jpg/600x600bb.jpg"
+  },
+  {
+   "id": "410a7bc0f6df81acbf7bcef0b6e3b1d3",
+   "album": "Pure Heroine",
+   "artist": "Lorde",
+   "genres": [
+    "Alternative"
+   ],
+   "lang": "Anglais",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2013-11-06",
+   "released": "2013-09-27",
+   "link": "https://open.spotify.com/album/0rmhjUgoVa17LZuS8xWQ3v",
+   "cover": "https://i.scdn.co/image/ab67616d0000b273187331e276c898d39764cc98",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/96/a5/09/96a50916-169b-724c-b722-b8c474406352/13UAAIM68691.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df802b9846cb7dc3059076",
