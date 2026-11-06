@@ -35,6 +35,9 @@ body {
 .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: 12px; color: var(--accent); margin: 0 0 10px; font-weight: 600; }
 h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(38px, 7vw, 72px); line-height: 1; margin: 0; letter-spacing: -.02em; }
 h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+.hero-top { display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; margin-bottom: 30px; }
+.listen-btn { margin-top: 0; font-size: 16px; padding: 13px 22px; border-radius: 999px; box-shadow: 0 8px 24px rgba(255,122,69,.25); transition: transform .15s; }
+.listen-btn:hover { transform: translateY(-2px); }
 .lede { color: var(--muted); max-width: 520px; margin: 14px 0 28px; font-size: 16px; }
 
 .kpis { display: flex; flex-wrap: wrap; gap: 28px 44px; margin: 0; }
@@ -113,6 +116,16 @@ h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
   font-weight: 600; padding: 10px 16px; border-radius: 10px; font-size: 14px;
 }
 
+/* ---------- Conseils ---------- */
+.reco { padding-bottom: 40px; }
+.reco h2 { font-family: var(--serif); font-size: 26px; margin: 26px 0 4px; }
+.reco .sub { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+.reco h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 22px 0 12px; font-weight: 600; }
+.card .why { color: var(--muted); font-size: 12.5px; margin-top: 4px; line-height: 1.35; }
+.why-box { background: var(--card); border-left: 3px solid var(--gold); border-radius: 8px; padding: 12px 14px; margin: 16px 0; font-size: 14px; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+
 /* ---------- Stats ---------- */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; padding: 10px 0 40px; }
 .panel { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
@@ -131,6 +144,7 @@ h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
 }
 @media (max-width: 640px) {
   .hero { padding: 40px 0 26px; }
+  .listen-btn { font-size: 15px; padding: 11px 18px; }
   .kpis { gap: 18px 28px; }
   .kpis dd { font-size: 26px; }
   .grid { grid-template-columns: repeat(2, 1fr); gap: 18px 14px; }

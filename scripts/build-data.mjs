@@ -11,11 +11,13 @@ import { readFile, writeFile, mkdir, readdir, unlink } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
+import { enrich } from "./enrich.mjs";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "data", "albums.json");
 const SEED = path.join(ROOT, "scripts", "seed-rows.json");
+const RECO = path.join(ROOT, "data", "conseils.json");
 
 const NOTION_TOKEN = process.env.NOTION_TOKEN;
 const DATA_SOURCE_ID = process.env.NOTION_DATA_SOURCE_ID || "2a4a7bc0-f6df-80c3-bd83-000b2fd1b71e";
@@ -240,6 +242,17 @@ if (source === "seed") {
 if (source !== "seed") await saveNotionFiles(rows);
 for (const r of rows) { delete r.edited; delete r.coverFile; if (!r.review) delete r.review; }
 rows = await addCovers(rows, previous);
+
+// Genres et pochettes Apple Music, et albums conseillés
+let reco = null;
+try {
+  reco = await enrich(rows, {
+    cachePath: path.join(ROOT, "data", "enrich.json"),
+    selectionPath: path.join(ROOT, "data", "selection.json"),
+  });
+} catch (e) {
+  console.warn("Enrichissement Apple Music indisponible :", e.message);
+}
 rows.sort((a, b) => (b.listenedOn || "").localeCompare(a.listenedOn || "") || a.album.localeCompare(b.album));
 
 await mkdir(path.dirname(OUT), { recursive: true });
@@ -247,4 +260,5 @@ await writeFile(
   OUT,
   JSON.stringify({ updatedAt: new Date().toISOString(), source, albums: rows }, null, 1) + "\n",
 );
+if (reco) await writeFile(RECO, JSON.stringify({ updatedAt: new Date().toISOString(), ...reco }, null, 1) + "\n");
 console.log(`${rows.length} albums écrits dans data/albums.json (source : ${source}, pochettes : ${rows.filter((r) => r.cover).length})`);

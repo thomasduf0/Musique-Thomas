@@ -1,8 +1,8 @@
 (() => {
   const $ = (s) => document.querySelector(s);
-  const state = { view: "all", albums: [] };
+  const state = { view: "all", albums: [], reco: null };
   const els = {
-    grid: $("#grid"), stats: $("#stats"), filters: $("#filters"), count: $("#count"),
+    grid: $("#grid"), stats: $("#stats"), reco: $("#reco"), filters: $("#filters"), count: $("#count"),
     q: $("#q"), genre: $("#genre"), lang: $("#lang"), rating: $("#rating"), sort: $("#sort"),
   };
 
@@ -14,10 +14,20 @@
 
   // Couleur de repli stable par album (si pas de pochette)
   function hue(str) { let h = 0; for (const c of str) h = (h * 31 + c.charCodeAt(0)) % 360; return h; }
+  // Les pochettes Apple « originales » (a5.mzstatic.com/us/r1000/…) ne sont plus servies : vignette 600×600
+  const fixCover = (u) => {
+    const m = (u || "").match(/^https?:\/\/a\d+\.mzstatic\.com\/us\/r\d+\/\d+\/(.+)$/);
+    return m ? `https://is1-ssl.mzstatic.com/image/thumb/${m[1]}/600x600bb.jpg` : u;
+  };
+  window.__coverFail = (img) => {
+    const alt = img.dataset.alt;
+    if (alt && img.src !== alt) { img.dataset.alt = ""; img.src = alt; } else img.remove();
+  };
   function coverHTML(a, big = false) {
     const h = hue(a.artist + a.album);
     const ph = `<div class="ph" style="background:linear-gradient(140deg,hsl(${h} 55% 38%),hsl(${(h + 50) % 360} 60% 18%))">${esc(a.album)}<small>${esc(a.artist)}</small></div>`;
-    const img = a.cover ? `<img src="${esc(a.cover)}" alt="Pochette de ${esc(a.album)}" loading="lazy" onerror="this.remove()">` : "";
+    const src = fixCover(a.cover) || a.coverAlt;
+    const img = src ? `<img src="${esc(src)}" data-alt="${esc(a.coverAlt && a.coverAlt !== src ? a.coverAlt : "")}" alt="Pochette de ${esc(a.album)}" loading="lazy" onerror="__coverFail(this)">` : "";
     const badge = !big && a.rating ? `<span class="badge">${"★".repeat(a.rating)}</span>` : "";
     return `<div class="cover">${ph}${img}${badge}</div>`;
   }
@@ -36,10 +46,11 @@
     const by = els.sort.value;
     const cmp = {
       listened: (a, b) => (b.listenedOn || "").localeCompare(a.listenedOn || ""),
+      "listened-asc": (a, b) => (a.listenedOn || "9999").localeCompare(b.listenedOn || "9999"),
       rating: (a, b) => (b.rating || 0) - (a.rating || 0) || (b.listenedOn || "").localeCompare(a.listenedOn || ""),
       released: (a, b) => (b.released || "").localeCompare(a.released || ""),
       artist: (a, b) => a.artist.localeCompare(b.artist, "fr") || a.album.localeCompare(b.album, "fr"),
-    }[state.view === "todo" && by === "listened" ? "released" : by];
+    }[state.view === "todo" && by.startsWith("listened") ? "released" : by];
     return list.sort(cmp);
   }
 
@@ -72,9 +83,74 @@
             ${a.listened ? `<dt>Écouté le</dt><dd>${fmtDate(a.listenedOn)}</dd>` : ""}
             ${a.lang ? `<dt>Langue</dt><dd>${esc(a.lang)}</dd>` : ""}
           </dl>
-          <div class="chips">${a.genres.map((g) => `<span class="chip">${esc(g)}</span>`).join("")}</div>
+          <div class="chips" title="Genre Apple Music">${a.genres.map((g) => `<span class="chip">${esc(g)}</span>`).join("")}</div>
           ${a.review ? `<div class="review">${esc(a.review)}</div>` : ""}
           ${a.link ? `<a class="btn" href="${esc(a.link)}" target="_blank" rel="noopener">${linkLabel} ↗</a>` : ""}
+        </div>
+      </div>`;
+    $("#detail").showModal();
+  }
+
+  // ---------- Conseillés pour Thomas ----------
+  const spotifySearch = (r) => `https://open.spotify.com/search/${encodeURIComponent(r.artist + " " + r.title)}`;
+  function recoCard(r, i, why) {
+    const a = { album: r.title, artist: r.artist, cover: r.cover };
+    return `<button class="card" data-reco="${i}">
+        ${coverHTML(a)}
+        <h3>${esc(r.title)}</h3>
+        <p>${esc(r.artist)}${r.released ? " · " + esc(String(r.released).slice(0, 4)) : ""}</p>
+        ${why ? `<p class="why">${esc(why)}</p>` : ""}
+      </button>`;
+  }
+  function recoList() {
+    const R = state.reco || { fromArtists: [], picks: [] };
+    return [...R.fromArtists.map((r) => ({ ...r, kind: "artist" })), ...R.picks.map((r) => ({ ...r, kind: "pick" }))];
+  }
+  function renderReco() {
+    const R = state.reco;
+    if (!R) { els.reco.innerHTML = `<p class="empty">Les conseils arrivent à la prochaine synchro (dans l'heure).</p>`; return; }
+    const list = recoList();
+    const groups = new Map();
+    list.forEach((r, i) => {
+      if (r.kind !== "artist") return;
+      const g = groups.get(r.artist) || { n: r.heardCount, items: [] };
+      g.items.push([r, i]); groups.set(r.artist, g);
+    });
+    const artistHTML = [...groups.entries()]
+      .sort((a, b) => b[1].n - a[1].n || a[0].localeCompare(b[0], "fr"))
+      .map(([name, g]) => `<h4>${esc(name)} · ${g.n} albums écoutés</h4><div class="grid">${g.items
+        .sort((a, b) => String(b[0].released || "").localeCompare(String(a[0].released || "")))
+        .map(([r, i]) => recoCard(r, i)).join("")}</div>`).join("");
+    const picksHTML = list.map((r, i) => [r, i]).filter(([r]) => r.kind === "pick").map(([r, i]) => recoCard(r, i, r.why)).join("");
+    els.reco.innerHTML = `
+      <h2>Ça pourrait te plaire</h2>
+      <p class="sub">Ma sélection, d'après tes notes et tes écoutes.</p>
+      <div class="grid">${picksHTML}</div>
+      <h2>Tes artistes, albums pas encore écoutés</h2>
+      <p class="sub">Albums studio des artistes que tu as écoutés au moins deux fois (sans rééditions, live, compilations ni EP).</p>
+      ${artistHTML || `<p class="empty">Rien pour l'instant.</p>`}`;
+  }
+  function openReco(i) {
+    const r = recoList()[i];
+    if (!r) return;
+    const why = r.kind === "pick" ? r.why : `Tu as écouté ${r.heardCount} albums de ${r.artist}, mais pas celui-ci.`;
+    $("#detail-body").innerHTML = `
+      <div class="d-wrap">
+        ${coverHTML({ album: r.title, artist: r.artist, cover: r.cover }, true)}
+        <div class="d-info">
+          <h2>${esc(r.title)}</h2>
+          <p class="d-artist">${esc(r.artist)}</p>
+          <span class="chip">Conseillé</span>
+          <dl class="meta">
+            ${r.released ? `<dt>Sortie</dt><dd>${String(r.released).length > 4 ? fmtDate(r.released) : esc(r.released)}</dd>` : ""}
+            ${r.genre ? `<dt>Genre</dt><dd>${esc(r.genre)}</dd>` : ""}
+            ${r.tracks ? `<dt>Titres</dt><dd>${r.tracks}</dd>` : ""}
+          </dl>
+          <div class="why-box">${esc(why)}</div>
+          <div class="btns">
+            <a class="btn" href="${esc(spotifySearch(r))}" target="_blank" rel="noopener">Chercher sur Spotify ↗</a>
+            ${r.url ? `<a class="btn ghost" href="${esc(r.url)}" target="_blank" rel="noopener">Apple Music ↗</a>` : ""}
+          </div>
         </div>
       </div>`;
     $("#detail").showModal();
@@ -116,21 +192,20 @@
   }
 
   function render() {
-    const isStats = state.view === "stats";
-    els.filters.hidden = isStats; els.count.hidden = isStats; els.grid.hidden = isStats; els.stats.hidden = !isStats;
+    const isStats = state.view === "stats", isReco = state.view === "reco", other = isStats || isReco;
+    els.filters.hidden = other; els.count.hidden = other; els.grid.hidden = other;
+    els.stats.hidden = !isStats; els.reco.hidden = !isReco;
+    if (isReco) return renderReco();
     els.rating.disabled = state.view === "todo" || state.view === "fav";
     isStats ? renderStats() : renderGrid();
   }
 
   function renderKpis(data) {
     const heard = data.filter((a) => a.listened);
-    const rated = heard.filter((a) => a.rating);
-    const avg = rated.reduce((s, a) => s + a.rating, 0) / (rated.length || 1);
     const k = [
       ["Albums écoutés", heard.length],
       ["Coups de cœur", heard.filter((a) => a.rating === 5).length],
       ["Artistes", new Set(heard.map((a) => a.artist)).size],
-      ["Note moyenne", avg.toFixed(1).replace(".", ",") + "★"],
       ["À écouter", data.length - heard.length],
     ];
     $("#kpis").innerHTML = k.map(([t, v]) => `<div><dt>${t}</dt><dd>${v}</dd></div>`).join("");
@@ -165,9 +240,14 @@
   }));
   ["input", "change"].forEach((ev) => els.filters.addEventListener(ev, render));
   els.grid.addEventListener("click", (e) => { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); });
+  els.reco.addEventListener("click", (e) => { const c = e.target.closest(".card"); if (c) openReco(+c.dataset.reco); });
   $("#detail").addEventListener("click", (e) => { if (e.target.id === "detail") e.target.close(); });
 
   // ---------- Chargement ----------
+  fetch("data/conseils.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d) => { if (d) { state.reco = d; if (state.view === "reco") render(); } })
+    .catch(() => {});
   fetch("data/albums.json", { cache: "no-cache" })
     .then((r) => r.json())
     .then((data) => {

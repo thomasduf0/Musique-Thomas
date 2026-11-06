@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Les écoutes de Thomas</title>
+  <title>Journal d'écoute</title>
   <meta name="description" content="Récap de mes écoutes d'albums : notes, coups de cœur et albums à écouter.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +14,10 @@
 <body>
   <header class="hero">
     <div class="wrap">
-      <p class="eyebrow">Journal d'écoute</p>
-      <h1>Les écoutes <em>de Thomas</em></h1>
-      <p class="lede">Chaque album écouté, noté de 1 à 5 étoiles, avec mes impressions.</p>
+      <div class="hero-top">
+        <h1>Journal d'écoute</h1>
+        <a class="btn listen-btn" href="ajouter.html">🎧 J'ai écouté</a>
+      </div>
       <dl class="kpis" id="kpis"></dl>
     </div>
   </header>
@@ -25,6 +26,7 @@
     <button role="tab" data-view="all" aria-selected="true">Écoutés</button>
     <button role="tab" data-view="fav" aria-selected="false">Coups de cœur</button>
     <button role="tab" data-view="todo" aria-selected="false">À écouter</button>
+    <button role="tab" data-view="reco" aria-selected="false">Conseillés pour Thomas</button>
     <button role="tab" data-view="stats" aria-selected="false">Stats</button>
   </nav>
 
@@ -39,7 +41,8 @@
         <option value="3">★★★</option><option value="2">★★</option><option value="1">★</option>
       </select>
       <select id="sort" aria-label="Tri">
-        <option value="listened">Dernières écoutes</option>
+        <option value="listened">Date d'écoute : récentes d'abord</option>
+        <option value="listened-asc">Date d'écoute : anciennes d'abord</option>
         <option value="rating">Meilleures notes</option>
         <option value="released">Date de sortie</option>
         <option value="artist">Artiste A→Z</option>
@@ -48,6 +51,7 @@
 
     <p id="count" class="count"></p>
     <section id="grid" class="grid" aria-live="polite"></section>
+    <section id="reco" class="reco" hidden></section>
     <section id="stats" class="stats" hidden></section>
   </main>
 
