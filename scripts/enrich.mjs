@@ -88,9 +88,49 @@ const info = (x) => ({
   tracks: x.trackCount,
 });
 
-async function search(artist, album) {
-  const term = encodeURIComponent(`${artist} ${album}`.slice(0, 120));
-  const res = await itunes(`search?term=${term}&entity=album&limit=15`);
+// La recherche d'albums d'Apple est peu fiable : on passe par l'artiste puis sa discographie.
+const ART = "https://is1-ssl.mzstatic.com/image/thumb/";
+const pack = (x) => [x.collectionId, x.collectionName, x.trackCount, (x.releaseDate || "").slice(0, 10), x.primaryGenreName || null,
+  (x.artworkUrl100 || "").replace(ART, "").replace(/\/\d+x\d+bb\.\w+$/, ""), x.artistId, x.artistName];
+const unpack = ([collectionId, collectionName, trackCount, releaseDate, primaryGenreName, art, artistId, artistName]) => ({
+  wrapperType: "collection", collectionId, collectionName, trackCount, releaseDate, primaryGenreName, artistId, artistName,
+  artworkUrl100: art ? `${ART}${art}/100x100bb.jpg` : null,
+  collectionViewUrl: `https://music.apple.com/fr/album/${collectionId}`,
+});
+
+async function artistIdFor(name, cache) {
+  const k = norm(name);
+  if (k in cache.artistIds) return cache.artistIds[k];
+  const known = Object.values(cache.albums).find((e) => e.artistId && norm(e.key.split("|")[0]) === k);
+  if (known) return (cache.artistIds[k] = known.artistId);
+  const res = await itunes(`search?term=${encodeURIComponent(name)}&entity=musicArtist&limit=10`);
+  const flat = (s) => norm(s).replace(/[^a-z0-9]+/g, "");
+  const hit = res.find((x) => flat(x.artistName) === flat(name)) || res.find((x) => flat(x.artistName).includes(flat(name)));
+  return (cache.artistIds[k] = hit ? hit.artistId : null);
+}
+
+async function discography(aid, cache) {
+  const d = cache.disco[aid];
+  if (d && Date.now() - d.at < WEEK) return d.list.map(unpack);
+  try {
+    const res = await itunes(`lookup?id=${aid}&entity=album&limit=200`);
+    const own = res.filter((x) => x.wrapperType === "collection" && x.artistId === aid && !/ - (single|ep)$/i.test(x.collectionName));
+    cache.disco[aid] = { at: Date.now(), list: own.map(pack) };
+    return own;
+  } catch (e) {
+    if (d) return d.list.map(unpack);
+    throw e;
+  }
+}
+
+async function findAlbum(artist, album, cache) {
+  const aid = await artistIdFor(artist, cache);
+  if (aid) {
+    const hit = bestMatch(await discography(aid, cache), artist, album) ||
+      bestMatch((await discography(aid, cache)).map((x) => ({ ...x, artistName: artist })), artist, album);
+    if (hit) return info(hit);
+  }
+  const res = await itunes(`search?term=${encodeURIComponent(`${artist} ${album}`.slice(0, 120))}&entity=album&limit=15`);
   const hit = bestMatch(res, artist, album);
   return hit ? info(hit) : null;
 }
@@ -137,7 +177,9 @@ function studioAlbums(results, artistId) {
 export async function enrich(rows, { cachePath, selectionPath }) {
   const cache = existsSync(cachePath) ? JSON.parse(await readFile(cachePath, "utf8")) : {};
   cache.albums ||= {};
-  cache.artists ||= {};
+  delete cache.artists; // ancien format
+  cache.artistIds ||= {};
+  cache.disco ||= {};
   cache.picks ||= {};
   const keyOf = (r) => `${r.artist}|${r.album}|${r.link || ""}`;
 
@@ -158,7 +200,7 @@ export async function enrich(rows, { cachePath, selectionPath }) {
   for (const r of todo) {
     if (!stale(cache.albums[r.id], keyOf(r))) continue;
     try {
-      const hit = await search(r.artist, r.album);
+      const hit = await findAlbum(r.artist, r.album, cache);
       cache.albums[r.id] = { key: keyOf(r), ...(hit || { notFound: true, at: Date.now() }) };
     } catch (e) { console.warn("Recherche Apple Music :", r.album, e.message); break; }
   }
@@ -194,14 +236,10 @@ export async function enrich(rows, { cachePath, selectionPath }) {
   for (const a of artists.values()) {
     if (a.count < 2 || !a.ids.size) continue;
     const aid = [...a.ids.entries()].sort((p, q) => q[1] - p[1])[0][0];
-    let entry = cache.artists[aid];
-    if (!entry || Date.now() - entry.at > WEEK) {
-      try {
-        const res = await itunes(`lookup?id=${aid}&entity=album&limit=200`);
-        entry = cache.artists[aid] = { at: Date.now(), albums: studioAlbums(res, aid).map(info) };
-      } catch (e) { console.warn("Discographie :", a.name, e.message); if (!entry) continue; }
-    }
-    for (const x of entry.albums) {
+    let list;
+    try { list = studioAlbums(await discography(aid, cache), aid).map(info); }
+    catch (e) { console.warn("Discographie :", a.name, e.message); continue; }
+    for (const x of list) {
       if (knownApple.has(x.appleId) || known.has(`${norm(a.name)}|${baseTitle(x.title)}`)) continue;
       fromArtists.push({ ...x, artist: a.name, heardCount: a.count });
     }
@@ -215,7 +253,7 @@ export async function enrich(rows, { cachePath, selectionPath }) {
     const k = `${p.artist}|${p.album}`;
     if (knownTitles.has(baseTitle(p.album)) && known.has(`${norm(p.artist)}|${baseTitle(p.album)}`)) continue; // déjà dans la base
     if (!cache.picks[k] || (cache.picks[k].notFound && Date.now() - (cache.picks[k].at || 0) > RETRY)) {
-      try { cache.picks[k] = (await search(p.artist, p.album)) || { notFound: true, at: Date.now() }; }
+      try { cache.picks[k] = (await findAlbum(p.artist, p.album, cache)) || { notFound: true, at: Date.now() }; }
       catch (e) { console.warn("Sélection :", p.album, e.message); }
     }
     const x = cache.picks[k] || {};
