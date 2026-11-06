@@ -243,13 +243,32 @@ if (source !== "seed") await saveNotionFiles(rows);
 for (const r of rows) { delete r.edited; delete r.coverFile; if (!r.review) delete r.review; }
 rows = await addCovers(rows, previous);
 
+// Conseils marqués « Pas intéressé » sur le site (stockés dans la fonction Cloudflare)
+const flatK = (s) => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  .replace(/[\(\[][^\)\]]*[\)\]]/g, "").replace(/[^a-z0-9]+/g, "");
+const recoKey = (artist, title) => `${flatK(artist)}|${flatK(title)}`;
+let dismissed = new Set();
+try {
+  const api = await workerApi();
+  if (api) {
+    const d = await fetch(`${api}/dismissed`).then((r) => (r.ok ? r.json() : { dismissed: [] }));
+    dismissed = new Set((d.dismissed || []).map((x) => x.key));
+  }
+} catch (e) { console.warn("Liste « Pas intéressé » indisponible :", e.message); }
+
 // Genres et pochettes Apple Music, et albums conseillés
 let reco = null;
 try {
   reco = await enrich(rows, {
     cachePath: path.join(ROOT, "data", "enrich.json"),
     selectionPath: path.join(ROOT, "data", "selection.json"),
+    isDismissed: (artist, title) => dismissed.has(recoKey(artist, title)),
   });
+  if (reco) {
+    const keep = (r) => !dismissed.has(recoKey(r.artist, r.title));
+    reco.fromArtists = reco.fromArtists.filter(keep);
+    reco.picks = reco.picks.filter(keep);
+  }
 } catch (e) {
   console.warn("Enrichissement Apple Music indisponible :", e.message);
 }

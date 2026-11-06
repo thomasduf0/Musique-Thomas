@@ -5,6 +5,8 @@ Adresse : <https://thomasduf0.github.io/Musique-Thomas/>
 
 - **Accès** : tout le site demande le mot de passe (`ADMIN_PASSWORD`, le même que la page d'ajout), vérifié par la fonction Cloudflare. C'est un écran d'accès : les fichiers `data/*.json` restent lisibles par qui connaît leur adresse, et le dépôt est public.
 - **Fiche album** : bouton **Modifier** pour changer la note ou ajouter un commentaire de 2e (3e…) écoute, enregistré à la suite de l'avis dans Notion ; pour un album à écouter, il permet de le marquer comme écouté. La flèche en bas à droite ouvre l'album sur Spotify.
+- **Pas intéressé** : sur chaque conseil (carte ou fiche). Le conseil disparaît et n'est plus jamais proposé ; la liste est gardée dans la fonction Cloudflare (`/dismissed`) et la sélection de la semaine est complétée par un autre album.
+- **✓ Écouté** : sur chaque album à écouter. Ouvre le formulaire note, date, avis, langue et genres, comme sur la page d'ajout.
 - **Page artiste** : un clic sur le nom d'un artiste affiche tous ses albums (écoutés, à écouter, conseillés).
 - **À jour tout de suite** : après connexion, le site relit Notion en direct (`/export`) et applique les changements sans attendre la publication horaire.
 

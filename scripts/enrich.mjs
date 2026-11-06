@@ -196,12 +196,13 @@ function rng(seed) { // mulberry32
     t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
 }
 
-async function weeklyPicks(rows, cache, excludeArtists, count = 16) {
+async function weeklyPicks(rows, cache, excludeArtists, count = 16, isDismissed = () => false) {
   const [year, week] = isoWeek();
   const weekKey = `${year}-W${String(week).padStart(2, "0")}`;
   cache.weekly ||= {};
   cache.dz ||= { ids: {}, related: {} };
-  if (cache.weekly.week === weekKey && cache.weekly.picks?.length) return cache.weekly.picks;
+  // Même tirage toute la semaine ; s'il contient un album écarté, on le refait (même ordre, l'album écarté en moins)
+  if (cache.weekly.week === weekKey && cache.weekly.picks?.length && !cache.weekly.picks.some((p) => isDismissed(p.artist, p.title))) return cache.weekly.picks;
 
   // Artistes « graines » : ceux que tu as le mieux notés (4★ = 1 point, 5★ = 2 points)
   const seeds = new Map();
@@ -263,7 +264,7 @@ async function weeklyPicks(rows, cache, excludeArtists, count = 16) {
         if (a.record_type !== "album") return false;
         const parens = (a.title.match(/[\(\[][^\)\]]*[\)\]]/g) || []).join(" ");
         if (REISSUE_IN_PARENS.test(parens) || NOT_A_STUDIO_ALBUM.test(a.title)) return false;
-        return !knownTitles.has(`${flat(c.name)}|${baseTitle(a.title)}`);
+        return !knownTitles.has(`${flat(c.name)}|${baseTitle(a.title)}`) && !isDismissed(c.name, a.title);
       });
       if (!albums.length) continue;
       const best = albums.sort((a, b) => (b.fans || 0) - (a.fans || 0))[0];
@@ -282,7 +283,7 @@ async function weeklyPicks(rows, cache, excludeArtists, count = 16) {
 }
 
 // ---------- Programme principal ----------
-export async function enrich(rows, { cachePath, selectionPath }) {
+export async function enrich(rows, { cachePath, selectionPath, isDismissed = () => false }) {
   const cache = existsSync(cachePath) ? JSON.parse(await readFile(cachePath, "utf8")) : {};
   cache.albums ||= {};
   delete cache.artists; // ancien format
@@ -355,7 +356,7 @@ export async function enrich(rows, { cachePath, selectionPath }) {
 
   // 4. Sélection de la semaine (Deezer), sinon sélection faite à la main
   try {
-    const weekly = await weeklyPicks(rows, cache, [...artists.values()].filter((a) => a.count >= 2).map((a) => a.name));
+    const weekly = await weeklyPicks(rows, cache, [...artists.values()].filter((a) => a.count >= 2).map((a) => a.name), 16, isDismissed);
     if (weekly.length) {
       await writeFile(cachePath, JSON.stringify(cache) + "\n");
       console.log(`Apple Music : ${calls} requêtes · sélection de la semaine ${cache.weekly?.week || "?"} : ${weekly.length} albums`);

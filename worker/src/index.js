@@ -8,6 +8,8 @@
 //   GET  /spotify/login?password=…   relie ton compte Spotify (une seule fois)
 //   GET  /spotify/callback           retour de Spotify après autorisation
 //   GET  /status                     état de la connexion Spotify et dernière vérification
+//   GET  /dismissed                  conseils marqués « Pas intéressé » (lecture publique)
+//   POST /dismissed                  ajoute (ou retire avec undo) un conseil « Pas intéressé » (mot de passe requis)
 // Tâche planifiée (toutes les heures) : coche « Écouté » quand toutes les pistes d'un album
 // « à écouter » ont été jouées sur Spotify.
 
@@ -24,7 +26,7 @@ function cors(env, req) {
   const allowed = origin === env.ALLOWED_ORIGIN || origin.startsWith("http://localhost");
   return {
     "Access-Control-Allow-Origin": allowed ? origin : env.ALLOWED_ORIGIN,
-    "Access-Control-Allow-Methods": "GET, POST, PATCH, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, X-Password",
     "Vary": "Origin",
   };
@@ -400,6 +402,9 @@ async function handle(req, env) {
       return json({ error: e.message }, 502, h);
     }
   }
+  if (req.method === "GET" && url.pathname === "/dismissed") {
+    return json({ dismissed: JSON.parse((await env.STATE.get("reco:dismissed")) || "[]") }, 200, h);
+  }
   if (req.method === "GET" && url.pathname === "/export/reviews") {
     try {
       const items = (url.searchParams.get("ids") || "").split(",").filter(Boolean).slice(0, 100)
@@ -481,6 +486,8 @@ async function handle(req, env) {
     if (m && req.method === "PATCH") {
       const a = await req.json();
       const props = notionProps({
+        lang: a.lang,
+        genres: a.genres,
         listened: a.listened,
         listenedOn: a.listened === false ? null : a.listened ? a.listenedOn || parisDate() : undefined,
         rating: a.rating,
@@ -490,6 +497,15 @@ async function handle(req, env) {
       await env.STATE.delete("cache:export");
       const published = await triggerSiteUpdate(env);
       return json({ ok: true, published }, 200, h);
+    }
+
+    if (url.pathname === "/dismissed" && req.method === "POST") {
+      const { key, artist = "", title = "", undo = false } = await req.json();
+      if (!key || typeof key !== "string" || key.length > 300) return json({ error: "Conseil inconnu" }, 400, h);
+      let list = JSON.parse((await env.STATE.get("reco:dismissed")) || "[]").filter((x) => x.key !== key);
+      if (!undo) list.push({ key, artist: String(artist).slice(0, 200), title: String(title).slice(0, 200), at: parisDate() });
+      await env.STATE.put("reco:dismissed", JSON.stringify(list.slice(-2000)));
+      return json({ ok: true, count: list.length }, 200, h);
     }
 
     if (url.pathname === "/heard" && req.method === "GET") {

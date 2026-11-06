@@ -1,7 +1,7 @@
 (() => {
   const $ = (s) => document.querySelector(s);
   const API = (window.MUSIQUE_API || "").replace(/\/$/, "");
-  const state = { view: "all", albums: [], reco: null, artist: null, current: null };
+  const state = { view: "all", albums: [], reco: null, artist: null, current: null, dismissed: new Set() };
   const els = {
     grid: $("#grid"), stats: $("#stats"), reco: $("#reco"), artist: $("#artist"), filters: $("#filters"), count: $("#count"),
     q: $("#q"), genre: $("#genre"), lang: $("#lang"), rating: $("#rating"), sort: $("#sort"),
@@ -14,13 +14,25 @@
   const fmtRelease = (d) => (d && /-01-01$/.test(d) ? d.slice(0, 4) : fmtDate(d));
   const stars = (n) => n ? `<span class="stars">${"★".repeat(n)}<span class="off">${"★".repeat(5 - n)}</span></span>` : `<span class="chip">Non noté</span>`;
   const norm = (s) => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+  // Clé d'un conseil (identique à scripts/build-data.mjs)
+  const flatK = (s) => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+    .replace(/[\(\[][^\)\]]*[\)\]]/g, "").replace(/[^a-z0-9]+/g, "");
+  const recoKey = (r) => `${flatK(r.artist)}|${flatK(r.title)}`;
+  const GENRES = ["Pop", "Hip-hop/Rap", "Electro", "Rock", "Country", "Funk", "Alternative", "Gospel"];
+  const LANGS = ["Français", "Anglais", "Espagnol"];
   const today = () => new Intl.DateTimeFormat("fr-CA", { timeZone: "Europe/Paris" }).format(new Date());
 
-  function toast(msg, err = false) {
+  function toast(msg, err = false, undo = null) {
     const t = $("#toast"), d = $("#detail");
     (d.open ? d : document.body).appendChild(t); // au-dessus de la fiche ouverte
-    t.textContent = msg; t.className = "toast show" + (err ? " err" : "");
-    clearTimeout(toast.t); toast.t = setTimeout(() => (t.className = "toast"), 4000);
+    t.textContent = msg; t.className = "toast show" + (err ? " err" : "") + (undo ? " has-action" : "");
+    if (undo) {
+      const b = document.createElement("button");
+      b.type = "button"; b.textContent = "Annuler";
+      b.onclick = () => { t.className = "toast"; undo(); };
+      t.append(" ", b);
+    }
+    clearTimeout(toast.t); toast.t = setTimeout(() => (t.className = "toast"), undo ? 7000 : 4000);
   }
 
   // ---------- Mot de passe (le même que la page d'ajout) ----------
@@ -135,6 +147,7 @@
         <h3>${esc(a.album)}</h3>
         <p>${artistLink(a.artist)}</p>
         <p>${a.listened ? "Écouté le " + fmtDate(a.listenedOn) : "À écouter · sortie " + fmtRelease(a.released)}</p>
+        ${a.listened ? "" : `<span class="pill-btn" role="button" tabindex="0" data-heard="${a.id}">✓ Écouté</span>`}
       </button>`;
 
   function renderGrid() {
@@ -177,7 +190,7 @@
   }
   const linkLabel = (l) => l?.includes("spotify") ? "Écouter sur Spotify" : l?.includes("qobuz") ? "Écouter sur Qobuz" : "Écouter sur Apple Music";
 
-  function openDetail(id) {
+  function openDetail(id, edit = false) {
     const a = state.albums.find((x) => x.id === id);
     if (!a) return;
     state.current = a;
@@ -195,7 +208,7 @@
           </dl>
           <div class="chips" title="Genre Apple Music">${a.genres.map((g) => `<span class="chip">${esc(g)}</span>`).join("")}</div>
           ${reviewHTML(a.review)}
-          <button class="btn ghost edit-btn" type="button" data-edit>Modifier</button>
+          <button class="btn ${a.listened ? "ghost " : ""}edit-btn" type="button" data-edit>${a.listened ? "Modifier" : "✓ Écouté"}</button>
           ${editForm(a)}
         </div>
       </div>
@@ -203,6 +216,13 @@
     const d = $("#detail");
     if (!d.open) d.showModal();
     tilt(d.querySelector(".d-left .cover"));
+    if (edit) openEdit();
+  }
+  function openEdit() {
+    const form = $("#detail-body .edit"), btn = $("#detail-body [data-edit]");
+    if (!form) return;
+    form.hidden = false; btn.hidden = true;
+    form.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
 
   const rateHTML = (n) => `<div class="rate" data-rating="${n || 0}" aria-label="Note">${[1, 2, 3, 4, 5].map((v) =>
@@ -217,11 +237,16 @@
         <div class="btns"><button class="btn">Enregistrer</button><button class="btn ghost" type="button" data-cancel>Annuler</button></div>
       </form>`;
     }
+    const mine = a.myGenres || [];
+    const langs = [...new Set([...LANGS, a.lang].filter(Boolean))];
     return `<form class="edit" hidden>
-      <p class="edit-title">Marquer comme écouté</p>
+      <p class="edit-title">Je l'ai écouté</p>
       <div class="field"><span>Ma note</span>${rateHTML(0)}</div>
       <label>Date d'écoute<input name="date" type="date" value="${today()}"></label>
       <label>Mon avis<textarea name="review" rows="4" placeholder="Facultatif"></textarea></label>
+      <label>Langue<select name="lang"><option value="">—</option>${langs.map((l) => `<option${l === a.lang ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></label>
+      <fieldset class="genres"><legend>Genres</legend>${GENRES.map((g) =>
+        `<label><input type="checkbox" name="genre" value="${g}"${mine.includes(g) ? " checked" : ""}><span>${g}</span></label>`).join("")}</fieldset>
       <div class="btns"><button class="btn">Enregistrer</button><button class="btn ghost" type="button" data-cancel>Annuler</button></div>
     </form>`;
   }
@@ -230,7 +255,9 @@
     const art = e.target.closest("[data-artist]");
     if (art) { $("#detail").close(); return showArtist(art.dataset.artist); }
     const form = $("#detail-body .edit");
-    if (e.target.closest("[data-edit]")) { form.hidden = false; e.target.closest("[data-edit]").hidden = true; form.querySelector("textarea")?.focus(); return; }
+    if (e.target.closest("[data-edit]")) { openEdit(); return; }
+    const nope = e.target.closest("[data-nope]");
+    if (nope) { dismiss(+nope.dataset.nope); $("#detail").close(); return; }
     if (e.target.closest("[data-cancel]")) { form.hidden = true; $("#detail-body [data-edit]").hidden = false; return; }
     const star = e.target.closest(".rate button");
     if (star) {
@@ -252,7 +279,8 @@
       if (rating !== (a.rating || null)) body.rating = rating;
       if (text) review = `${nextListen(a.review)}e écoute (${fmtDate(date)})\n${text}`;
     } else {
-      Object.assign(body, { listened: true, listenedOn: date, rating });
+      const genres = [...form.querySelectorAll("input[name=genre]:checked")].map((c) => c.value);
+      Object.assign(body, { listened: true, listenedOn: date, rating, lang: form.lang.value || null, genres });
       review = text;
     }
     if (review) body.review = review;
@@ -261,7 +289,7 @@
     try {
       await api(`/albums/${a.id}`, { method: "PATCH", body: JSON.stringify(body) });
       if ("rating" in body) a.rating = body.rating;
-      if (body.listened) { a.listened = true; a.listenedOn = date; }
+      if (body.listened) { a.listened = true; a.listenedOn = date; a.lang = body.lang; a.myGenres = body.genres; }
       if (review) a.review = a.review ? `${a.review}\n${review}` : review;
       renderKpis(state.albums); render(); openDetail(a.id);
       toast("Enregistré dans Notion ✓");
@@ -293,11 +321,38 @@
         <h3>${esc(r.title)}</h3>
         <p>${artistLink(r.artist)}${r.released ? " · " + esc(String(r.released).slice(0, 4)) : ""}</p>
         ${why ? `<p class="why">${esc(why)}</p>` : ""}
+        <span class="pill-btn ghost" role="button" tabindex="0" data-nope="${i}">Pas intéressé</span>
       </button>`;
   }
   function recoList() {
     const R = state.reco || { fromArtists: [], picks: [] };
-    return [...R.fromArtists.map((r) => ({ ...r, kind: "artist" })), ...R.picks.map((r) => ({ ...r, kind: "pick" }))];
+    return [...R.fromArtists.map((r) => ({ ...r, kind: "artist" })), ...R.picks.map((r) => ({ ...r, kind: "pick" }))]
+      .filter((r) => !state.dismissed.has(recoKey(r)));
+  }
+
+  // « Pas intéressé » : enregistré dans la fonction Cloudflare (et dans ce navigateur en attendant)
+  const saveDismissed = () => store.set("musique:dismissed", JSON.stringify([...state.dismissed]));
+  async function dismiss(i) {
+    const r = recoList()[i];
+    if (!r) return;
+    const key = recoKey(r);
+    state.dismissed.add(key); saveDismissed(); render();
+    const send = (undo) => api("/dismissed", { method: "POST", body: JSON.stringify({ key, artist: r.artist, title: r.title, undo }) });
+    toast(`« ${r.title} » ne te sera plus proposé`, false, async () => {
+      state.dismissed.delete(key); saveDismissed(); render();
+      try { await send(true); } catch {}
+    });
+    try { await send(false); } catch (err) { if (err.auth) toast(err.message, true); }
+  }
+  async function loadDismissed() {
+    try { JSON.parse(store.get("musique:dismissed") || "[]").forEach((k) => state.dismissed.add(k)); } catch {}
+    if (!API) return;
+    try {
+      const d = await fetch(API + "/dismissed").then((r) => (r.ok ? r.json() : Promise.reject()));
+      (d.dismissed || []).forEach((x) => state.dismissed.add(x.key));
+      saveDismissed();
+      if (state.view === "reco" || state.artist) render();
+    } catch { /* la liste locale suffit */ }
   }
   function renderReco() {
     const R = state.reco;
@@ -341,7 +396,10 @@
             ${r.tracks ? `<dt>Titres</dt><dd>${r.tracks}</dd>` : ""}
           </dl>
           <div class="why-box">${esc(why)}</div>
-          ${r.url ? `<a class="btn ghost" href="${esc(r.url)}" target="_blank" rel="noopener">${r.url.includes("deezer") ? "Deezer" : "Apple Music"} ↗</a>` : ""}
+          <div class="btns">
+            ${r.url ? `<a class="btn ghost" href="${esc(r.url)}" target="_blank" rel="noopener">${r.url.includes("deezer") ? "Deezer" : "Apple Music"} ↗</a>` : ""}
+            <button class="btn ghost" type="button" data-nope="${i}">Pas intéressé</button>
+          </div>
         </div>
       </div>
       ${goLink(spotifySearch(r), "Chercher sur Spotify")}`;
@@ -446,10 +504,10 @@
       const a = byId.get(x.id);
       if (!x.listened && heardKeys.has(norm(`${x.artist}|${x.album}`))) continue;
       if (a) {
-        Object.assign(a, { listened: x.listened, listenedOn: x.listenedOn, rating: x.rating, lang: x.lang, link: x.link || a.link, released: x.released || a.released, album: x.album });
+        Object.assign(a, { myGenres: x.genres || a.myGenres, listened: x.listened, listenedOn: x.listenedOn, rating: x.rating, lang: x.lang, link: x.link || a.link, released: x.released || a.released, album: x.album });
         next.push(a);
       } else {
-        next.push({ id: x.id, album: x.album, artist: x.artist, genres: x.genres || [], lang: x.lang, rating: x.rating,
+        next.push({ id: x.id, album: x.album, artist: x.artist, genres: x.genres || [], myGenres: x.genres || [], lang: x.lang, rating: x.rating,
           listened: x.listened, listenedOn: x.listenedOn, released: x.released, link: x.link, cover: x.cover || x.coverFile || null });
       }
     }
@@ -481,6 +539,10 @@
   }));
   ["input", "change"].forEach((ev) => els.filters.addEventListener(ev, render));
   function onCards(e) {
+    const nope = e.target.closest("[data-nope]");
+    if (nope) return dismiss(+nope.dataset.nope);
+    const heard = e.target.closest("[data-heard]");
+    if (heard) return openDetail(heard.dataset.heard, true);
     const art = e.target.closest("[data-artist]");
     if (art) return showArtist(art.dataset.artist);
     if (e.target.closest("[data-back]")) {
@@ -494,12 +556,13 @@
   }
   [els.grid, els.reco, els.artist].forEach((el) => {
     el.addEventListener("click", onCards);
-    el.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.matches("[data-artist]")) { e.preventDefault(); onCards(e); } });
+    el.addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && e.target.matches("[data-artist], [data-nope], [data-heard]")) { e.preventDefault(); onCards(e); } });
   });
   $("#detail").addEventListener("click", (e) => { if (e.target.id === "detail") e.target.close(); });
 
   // ---------- Chargement ----------
   function load() {
+    loadDismissed();
     fetch("data/conseils.json", { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => { if (d) { state.reco = d; if (state.view === "reco" || state.artist) render(); } })
