@@ -1,7 +1,23 @@
 {
- "updatedAt": "2026-11-06T16:36:00.593Z",
+ "updatedAt": "2026-11-06T17:01:57.316Z",
  "source": "cloudflare",
  "albums": [
+  {
+   "id": "372a7bc0f6df80a3abcececbde56314c",
+   "album": "Music, Fashion, Film",
+   "artist": "Charli XCX",
+   "genres": [
+    "Pop",
+    "Rock"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2026-11-06",
+   "released": "2026-07-24",
+   "link": "https://open.spotify.com/album/4bR7pd6TVS53l24qFV4wI8",
+   "cover": null
+  },
   {
    "id": "3a1a7bc0f6df80dabb69c174774f87ca",
    "album": "Loud",
@@ -15,8 +31,8 @@
    "listened": true,
    "listenedOn": "2026-07-18",
    "released": "2010-11-12",
-   "link": "https://music.apple.com/fr/album/loud-deluxe/1440895867",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/c6/b1/6c/c6b16cd1-5580-a214-8745-c4f6faa490d6/16UMGIM59220.rgb.jpg",
+   "link": "https://open.spotify.com/album/7vN82vd1Vq44fjlhjfvHJp",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/c6/b1/6c/c6b16cd1-5580-a214-8745-c4f6faa490d6/16UMGIM59220.rgb.jpg/600x600bb.jpg",
    "review": "On oublie a quel point cet album est bien, c’est dingue"
   },
   {
@@ -24,16 +40,19 @@
    "album": "Inferno",
    "artist": "Boards of Canada",
    "genres": [
-    "Electro"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 1,
    "listened": true,
    "listenedOn": "2026-07-16",
    "released": "2026-05-29",
-   "link": "https://music.apple.com/fr/album/inferno/1890015523",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/18/f7/ee/18f7ee40-b891-3d7f-e0b3-e4e2470cbdac/5056818808906.png",
-   "review": "C’est objectivement bien mais ça m’a juste créé une crise d’angoisse"
+   "link": "https://open.spotify.com/album/0mu3EvWYfNwBfISSg0q03p",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/18/f7/ee/18f7ee40-b891-3d7f-e0b3-e4e2470cbdac/5056818808906.png/600x600bb.jpg",
+   "review": "C’est objectivement bien mais ça m’a juste créé une crise d’angoisse",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "3a1a7bc0f6df80c1bab2f5e9cf07c49a",
@@ -47,24 +66,28 @@
    "listened": true,
    "listenedOn": "2026-07-15",
    "released": "2026-07-03",
-   "link": "https://music.apple.com/fr/album/confessions-ii/1892545087",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/eb/8f/5d/eb8f5dcf-aec1-1f58-fbea-dc0bb086f1c8/093624819837.jpg"
+   "link": "https://open.spotify.com/album/1CWY6mfnuLlF4BKRLFcUDQ",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/eb/8f/5d/eb8f5dcf-aec1-1f58-fbea-dc0bb086f1c8/093624819837.jpg/600x600bb.jpg"
   },
   {
    "id": "378a7bc0f6df80a0b51eee4b2fee3421",
    "album": "MA CLAQUE",
    "artist": "KALIKA",
    "genres": [
-    "Pop"
+    "Alternative"
    ],
    "lang": "Français",
    "rating": 1,
    "listened": true,
    "listenedOn": "2026-06-07",
    "released": "2026-05-29",
-   "link": "https://open.qobuz.com/album/r080gbqzwcf05",
+   "link": "https://open.spotify.com/album/2YKDBOPbMvUi8cKBAv995n",
    "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/4c/54/31/20010060/1520-1/tsp20260310100059/Ma-claque.jpg",
-   "review": "J’ai même pas fini l’écoute. C’est vide…"
+   "review": "J’ai même pas fini l’écoute. C’est vide…",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6b/92/95/6b929576-4a07-776d-592a-06be4357d3a7/3596975057691_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "378a7bc0f6df80edb892d0b454d2562f",
@@ -79,7 +102,7 @@
    "listened": true,
    "listenedOn": "2026-06-07",
    "released": "2026-03-27",
-   "link": "https://open.qobuz.com/album/yzlb2qe94okba",
+   "link": "https://open.spotify.com/album/4RrsgnUbZIFTw42Apa8lXO",
    "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/9b/d2/2e/19845787/1540-1/tsp20260206130259/O.jpg"
   },
   {
@@ -94,7 +117,7 @@
    "listened": true,
    "listenedOn": "2026-06-06",
    "released": "2026-06-05",
-   "link": "https://open.qobuz.com/album/w7l5yz1yb621d",
+   "link": "https://open.spotify.com/album/4vSNQ69cqRe2WgsdPXH3mv",
    "cover": "https://i.scdn.co/image/ab67616d00001e0200a2e7fd71815224583d7a1e",
    "review": "Je suis sur que c’est super en live\nMais je prends pas beaucoup de plaisir à écouter ça dans mon casque 😕"
   },
@@ -103,15 +126,19 @@
    "album": "Ambiguous Desire",
    "artist": "Arlo Parks",
    "genres": [
-    "Pop"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2026-06-02",
    "released": "2026-04-03",
-   "link": "https://music.apple.com/fr/album/ambiguous-desire/1862570378",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/86/10/2a/86102a67-2d84-24f7-dd60-4c7a6846ed05/5400863205140_cover.jpg"
+   "link": "https://open.spotify.com/album/2l7Qtf3Mffx6ZIDTpyaMtS",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/86/10/2a/86102a67-2d84-24f7-dd60-4c7a6846ed05/5400863205140_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a5/42/78/a54278b5-c648-b195-d96c-746cff132796/5400863219383_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "373a7bc0f6df80669101e4f2b077b29a",
@@ -125,8 +152,8 @@
    "listened": true,
    "listenedOn": "2026-06-02",
    "released": "2026-05-29",
-   "link": "https://music.apple.com/fr/album/detour/6771896253",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/d3/0c/8f/d30c8f09-66db-8c4e-2583-32c4eb0de432/820233450478.jpg"
+   "link": "https://open.spotify.com/album/1sWzJ2hL5b64u7n9a8owqc",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d3/0c/8f/d30c8f09-66db-8c4e-2583-32c4eb0de432/820233450478.jpg/600x600bb.jpg"
   },
   {
    "id": "2eea7bc0f6df808290b5f1b4ff3dc0a0",
@@ -140,8 +167,8 @@
    "listened": true,
    "listenedOn": "2026-06-02",
    "released": "2025-05-09",
-   "link": "https://music.apple.com/fr/album/fancy-that/1806614239",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/12/db/5a/12db5a38-94c1-42bc-b36b-7204b7aa4eac/5021732768650.jpg"
+   "link": "https://open.spotify.com/album/3o81FH5FTYVtoBQOZr3T7y",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/12/db/5a/12db5a38-94c1-42bc-b36b-7204b7aa4eac/5021732768650.jpg/600x600bb.jpg"
   },
   {
    "id": "2eaa7bc0f6df8045bbedebce0e4dff82",
@@ -155,8 +182,11 @@
    "listened": true,
    "listenedOn": "2026-06-02",
    "released": "2026-03-06",
-   "link": "https://music.apple.com/fr/album/kiss-all-the-time-disco-occasionally/1870984032",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/07/41/6a/07416a78-38b9-2d47-7ce8-8a52a44c510f/196874010112.jpg"
+   "link": "https://open.spotify.com/album/69BqE1V8Bzb9GCyeP1fFeR",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/07/41/6a/07416a78-38b9-2d47-7ce8-8a52a44c510f/196874010112.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "372a7bc0f6df80d3a7f3e971ff7544a7",
@@ -170,8 +200,8 @@
    "listened": true,
    "listenedOn": "2026-06-01",
    "released": "2026-04-24",
-   "link": "https://music.apple.com/fr/album/spleen-social-club/1885922024",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/d8/48/f0/d848f0f1-dc65-de92-de86-3feac44581ab/4099964239065.jpg"
+   "link": "https://open.spotify.com/album/6AmYibqw0Cw5uu2yczwmR4",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d8/48/f0/d848f0f1-dc65-de92-de86-3feac44581ab/4099964239065.jpg/600x600bb.jpg"
   },
   {
    "id": "2f7a7bc0f6df809789c8ce863b94fbbc",
@@ -185,25 +215,31 @@
    "listened": true,
    "listenedOn": "2026-06-01",
    "released": "2026-03-27",
-   "link": "https://music.apple.com/fr/album/this-music-may-contain-hope/1871085677",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/50/05/10/5005106d-bb8a-32db-1172-f18405cf4a46/820200038890.jpg"
+   "link": "https://open.spotify.com/album/3ZN01xzenGMhWHdC5kfAe9",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/50/05/10/5005106d-bb8a-32db-1172-f18405cf4a46/820200038890.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "36da7bc0f6df80c5938cd5505b2530fc",
    "album": "COME CLOSER",
    "artist": "TOMORA",
    "genres": [
-    "Electro",
-    "Pop"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2026-05-27",
    "released": "2026-04-17",
-   "link": "https://music.apple.com/fr/album/come-closer/1871184398",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/46/10/7f/46107fb0-ccff-4370-49f4-3ddd29b2729c/25UM2IM08119.rgb.jpg",
-   "review": "J’ai bien aimé mais je trouve que tout se ressemble un peu\nJe pense pas réécouter"
+   "link": "https://open.spotify.com/album/5C40IE0VAEHNZJcpwUxoNY",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/46/10/7f/46107fb0-ccff-4370-49f4-3ddd29b2729c/25UM2IM08119.rgb.jpg/600x600bb.jpg",
+   "review": "J’ai bien aimé mais je trouve que tout se ressemble un peu\nJe pense pas réécouter",
+   "myGenres": [
+    "Electro",
+    "Pop"
+   ]
   },
   {
    "id": "36da7bc0f6df80b4bc39d49d3c30c28a",
@@ -217,8 +253,8 @@
    "listened": true,
    "listenedOn": "2026-05-27",
    "released": "2025-11-28",
-   "link": "https://music.apple.com/fr/album/la-dame/1856597410",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/8f/ea/08/8fea08e9-2f01-c650-a23d-8070c8266479/artwork.jpg"
+   "link": "https://open.spotify.com/album/1XmeiDJ7WhLJhhKHSMBAH5",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8f/ea/08/8fea08e9-2f01-c650-a23d-8070c8266479/artwork.jpg/600x600bb.jpg"
   },
   {
    "id": "2eca7bc0f6df80f99a54c242d8f2d39d",
@@ -232,8 +268,8 @@
    "listened": true,
    "listenedOn": "2026-05-27",
    "released": "2026-03-27",
-   "link": "https://music.apple.com/fr/album/sexistential/1852752613",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/41/3d/16/413d16f4-c9a1-9c4b-11c2-cae616a49f9d/889030046772.png"
+   "link": "https://open.spotify.com/album/6RYCig4T2bEZu2gnM0OxRL",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/41/3d/16/413d16f4-c9a1-9c4b-11c2-cae616a49f9d/889030046772.png/600x600bb.jpg"
   },
   {
    "id": "36ca7bc0f6df807d928efcea7c9a3ceb",
@@ -247,8 +283,8 @@
    "listened": true,
    "listenedOn": "2026-05-26",
    "released": "2026-03-13",
-   "link": "https://music.apple.com/fr/album/des-pieds-et-des-mains/1866875474",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/22/f3/fb/22f3fbff-5f3e-2db4-7871-3ffb78924761/3663729419293_cover.jpg"
+   "link": "https://open.spotify.com/album/5bx1CGjjFfQpIoOBAUjKps",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/22/f3/fb/22f3fbff-5f3e-2db4-7871-3ffb78924761/3663729419293_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "368a7bc0f6df806a9c6dcf793fec5ae1",
@@ -263,7 +299,7 @@
    "listened": true,
    "listenedOn": "2026-05-22",
    "released": "2017-06-30",
-   "link": "https://music.apple.com/fr/album/funk-wav-bounces-vol-1/1233842167",
+   "link": "https://open.spotify.com/album/2HaqChIDc5go3qxVunBDK0",
    "cover": "https://m.media-amazon.com/images/I/81mIaRSDd6L.jpg"
   },
   {
@@ -278,8 +314,11 @@
    "listened": true,
    "listenedOn": "2026-02-27",
    "released": "2026-02-27",
-   "link": "https://music.apple.com/fr/album/the-romantic/1866732792",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/ed/46/bf/ed46bf4e-7cb9-965a-54f3-03059977fe6c/075679589293.jpg"
+   "link": "https://open.spotify.com/album/7vI4iTxDmgEN63liQHPEX1",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ed/46/bf/ed46bf4e-7cb9-965a-54f3-03059977fe6c/075679589293.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "30ba7bc0f6df80ebbf69f3b12f96ef75",
@@ -294,8 +333,8 @@
    "listened": true,
    "listenedOn": "2026-02-18",
    "released": "2025-06-03",
-   "link": "https://music.apple.com/fr/album/doula-des-couloirs-des-porti%C3%A8res/1811640308",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/f2/ab/26/f2ab26bf-d622-457e-c61f-ec16fa4d658c/cover.jpg"
+   "link": "https://open.spotify.com/album/7IVZQAZQiJ1JoDAjsjfbYU",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f2/ab/26/f2ab26bf-d622-457e-c61f-ec16fa4d658c/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "30ba7bc0f6df806d94f0cd8598d37245",
@@ -310,24 +349,27 @@
    "listened": true,
    "listenedOn": "2026-02-18",
    "released": "2025-11-25",
-   "link": "https://music.apple.com/fr/album/doula-hypercouleurs/1854376822",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/ba/dd/be/baddbefd-e377-ce80-26d5-208923369ac7/cover.jpg"
+   "link": "https://open.spotify.com/album/5MQ0mnvWM2yRD84eKzUCZv",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ba/dd/be/baddbefd-e377-ce80-26d5-208923369ac7/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a7a7bc0f6df801a965dd45bba677a86",
    "album": "A Love For Strangers",
    "artist": "Chet Faker",
    "genres": [
-    "Pop",
-    "Alternative"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2026-02-13",
    "released": "2026-02-13",
-   "link": "https://music.apple.com/fr/album/a-love-for-strangers/1846189472",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/43/bb/e3/43bbe3fa-920a-4119-9bdf-26ce35781286/4099964177046.jpg"
+   "link": "https://open.spotify.com/album/2TU0EWGL5Xj54K2254HToc",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/43/bb/e3/43bbe3fa-920a-4119-9bdf-26ce35781286/4099964177046.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Alternative"
+   ]
   },
   {
    "id": "2aaa7bc0f6df8094993ec8a9a3468828",
@@ -341,41 +383,50 @@
    "listened": true,
    "listenedOn": "2026-02-13",
    "released": "2026-02-13",
-   "link": "https://music.apple.com/fr/album/wuthering-heights/1852566184",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/a8/e6/66/a8e6669b-9028-900c-adb9-05d4ddee4625/075679591906.jpg",
-   "review": "13/02 : Je mets 4/5 mais il va me falloir une 2 écoute"
+   "link": "https://open.spotify.com/album/4oniyB3TRFhjglVSqVgy9e",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a8/e6/66/a8e6669b-9028-900c-adb9-05d4ddee4625/075679591906.jpg/600x600bb.jpg",
+   "review": "13/02 : Je mets 4/5 mais il va me falloir une 2 écoute",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2dba7bc0f6df80d2bb38ca83666a5f9e",
    "album": "Sex Dreams and Denim Jeans",
    "artist": "Uffie",
    "genres": [
-    "Electro"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2026-02-10",
    "released": "2010-06-14",
-   "link": "https://music.apple.com/fr/album/sex-dreams-and-denim-jeans/373547935",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/e6/7a/1b/e67a1b69-382a-035a-9713-c268a2b500e5/mzi.mpjvrepn.jpg",
-   "review": "On sent de qui s’est inspirée Charli xcx"
+   "link": "https://open.spotify.com/album/53mU2L8Ngi8zFAD9JoXNqx",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e6/7a/1b/e67a1b69-382a-035a-9713-c268a2b500e5/mzi.mpjvrepn.jpg/600x600bb.jpg",
+   "review": "On sent de qui s’est inspirée Charli xcx",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2e3a7bc0f6df80119082f4722acdd199",
    "album": "Magnetofille",
    "artist": "Pi Ja Ma",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 3,
    "listened": true,
    "listenedOn": "2026-01-30",
    "released": "2026-01-30",
-   "link": "https://music.apple.com/fr/album/magnetofille/1849396048",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/ce/2a/c6/ce2ac64b-f2cd-493b-7819-82d77be57737/Cover.jpg",
-   "review": "C’est agréable, j’ai ajouté quelques musiques à ma bibliothèque mais je ne pense pas réécouter."
+   "link": "https://open.spotify.com/album/7sVfy4G7MxQJf2kORukilo",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ce/2a/c6/ce2ac64b-f2cd-493b-7819-82d77be57737/Cover.jpg/600x600bb.jpg",
+   "review": "C’est agréable, j’ai ajouté quelques musiques à ma bibliothèque mais je ne pense pas réécouter.",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2f7a7bc0f6df8027b115f557ad648e9f",
@@ -389,8 +440,8 @@
    "listened": true,
    "listenedOn": "2026-01-27",
    "released": "2026-01-16",
-   "link": "https://music.apple.com/fr/album/encore/1862456576",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/08/42/07/084207f8-89c4-b582-6227-dc5b1fa8778e/cover.jpg"
+   "link": "https://open.spotify.com/album/3yrsYTwk6gvhzmURobQBvX",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/08/42/07/084207f8-89c4-b582-6227-dc5b1fa8778e/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80819135dfc064e65d1b",
@@ -404,26 +455,34 @@
    "listened": true,
    "listenedOn": "2026-01-15",
    "released": "2023-09-08",
-   "link": "https://music.apple.com/fr/album/guts/1694386825",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music126/v4/9b/d8/9c/9bd89c9e-b44d-ad25-1516-b9b30f64fd2a/23UMGIM71510.rgb.jpg",
-   "review": "C’est très rock en fait ? Ambiance un peu années 2000 avec le son de la voix très saturée et les percussions vachement mises en avant\nDisney kid\nC’est agréable à écouter, mais je réecouterai pas car je m’ennuie"
+   "link": "https://open.spotify.com/album/1xJHno7SmdVtZAtXbdbDZp",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/9b/d8/9c/9bd89c9e-b44d-ad25-1516-b9b30f64fd2a/23UMGIM71510.rgb.jpg/600x600bb.jpg",
+   "review": "C’est très rock en fait ? Ambiance un peu années 2000 avec le son de la voix très saturée et les percussions vachement mises en avant\nDisney kid\nC’est agréable à écouter, mais je réecouterai pas car je m’ennuie",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9e/0d/17/9e0d17e0-c068-fbd9-fd85-610cc87c86aa/23UMGIM71511.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2e0a7bc0f6df80169853ef82314023a2",
    "album": "Oil of Every Pearl’s Un-Insides",
    "artist": "SOPHIE",
    "genres": [
-    "Pop",
-    "Electro"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2026-01-15",
    "released": "2018-06-15",
-   "link": "https://music.apple.com/fr/album/oil-of-every-pearls-un-insides/1395045797",
+   "link": "https://open.spotify.com/album/23lnmHhZwyercCJhmyPXYN",
    "cover": "https://media.pitchfork.com/photos/648747aaaed875e699bc73ed/master/pass/Sophie.jpg",
-   "review": "Hyper intéressant à écouter, j’avais déjà une musique dans ma bibliotheque\nÀ voir si j’ai envie d’avoir une 2e écoute mais je pense que ça peut être nécessaire pour apprécier l’album"
+   "review": "Hyper intéressant à écouter, j’avais déjà une musique dans ma bibliotheque\nÀ voir si j’ai envie d’avoir une 2e écoute mais je pense que ça peut être nécessaire pour apprécier l’album",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/b5/d3/b7/b5d3b7c4-2be0-d0a8-5695-ba3af5ea3351/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2e9a7bc0f6df80e7ad54e12811f649b7",
@@ -437,8 +496,8 @@
    "listened": true,
    "listenedOn": "2026-01-15",
    "released": "2023-09-22",
-   "link": "https://music.apple.com/fr/album/starfucker-deluxe/1821173497",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/20/18/df/2018df43-b479-aafc-c137-9dcc1901b246/00829299263534_Cover.jpg",
+   "link": "https://open.spotify.com/album/6tVEJYmmerl7fVMac8vHmu",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/20/18/df/2018df43-b479-aafc-c137-9dcc1901b246/00829299263534_Cover.jpg/600x600bb.jpg",
    "review": "Nécessite absolument une 2e écoute !!!!!"
   },
   {
@@ -446,30 +505,37 @@
    "album": "Media Nocte",
    "artist": "La Mverte",
    "genres": [
-    "Pop"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 1,
    "listened": true,
    "listenedOn": "2026-01-09",
    "released": "2026-01-09",
-   "link": "https://music.apple.com/fr/album/media-nocte/1856260640",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/02/b7/26/02b72696-9606-4b97-2155-ae508a8f7772/15548.jpg"
+   "link": "https://open.spotify.com/album/558Dlrkb6KpeoxreB9mCNI",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/02/b7/26/02b72696-9606-4b97-2155-ae508a8f7772/15548.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2e0a7bc0f6df807cb21cc34e408ed6be",
    "album": "Melodrama",
    "artist": "Lorde",
    "genres": [
-    "Pop"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 5,
    "listened": true,
    "listenedOn": "2026-01-06",
    "released": "2017-06-16",
-   "link": "https://music.apple.com/fr/album/melodrama/1429662346",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/8d/0d/15/8d0d1532-493b-52ec-6a29-a239ced6931b/17UMGIM81023.rgb.jpg"
+   "link": "https://open.spotify.com/album/2B87zXm9bOWvAJdkJBTpzF",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8d/0d/15/8d0d1532-493b-52ec-6a29-a239ced6931b/17UMGIM81023.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/58/11/b1/5811b172-e180-25a6-69e6-4385fbbfb5dc/17UM1IM02207.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2e0a7bc0f6df806e842ddaaaaae04b96",
@@ -484,8 +550,8 @@
    "listened": true,
    "listenedOn": "2026-01-06",
    "released": "2024-06-28",
-   "link": "https://music.apple.com/fr/album/wallsocket-directors-cut/1752550191",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/b5/34/00/b5340016-da8a-3dd1-27ea-7b750271309b/810090095516.png"
+   "link": "https://open.spotify.com/album/2mrk587YCQnJhjZnCCznIv",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b5/34/00/b5340016-da8a-3dd1-27ea-7b750271309b/810090095516.png/600x600bb.jpg"
   },
   {
    "id": "2dfa7bc0f6df8054be2dd52808b9ce93",
@@ -499,8 +565,8 @@
    "listened": true,
    "listenedOn": "2026-01-05",
    "released": "2025-09-26",
-   "link": "https://music.apple.com/fr/album/getting-killed/1818548779",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/0b/b8/f1/0bb8f1d7-1df0-20c0-9539-51d08058eeb1/5400863191436_Cover.jpg",
+   "link": "https://open.spotify.com/album/0eeXb23yMW6EaIgm63xxPC",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0b/b8/f1/0bb8f1d7-1df0-20c0-9539-51d08058eeb1/5400863191436_Cover.jpg/600x600bb.jpg",
    "review": "C’est pas mauvais, mais c’est pas du tout ce que j’écoute\nje n’ai pas terminé l’écoute"
   },
   {
@@ -515,8 +581,11 @@
    "listened": true,
    "listenedOn": "2026-01-05",
    "released": "2025-09-26",
-   "link": "https://music.apple.com/fr/album/the-art-of-loving/1817609404",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/08/e2/21/08e22164-7c0b-1522-818f-e0e74f62dc49/25UMGIM69703.rgb.jpg"
+   "link": "https://open.spotify.com/album/0l8zYqoUeBYg47Gmevq9HZ",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/08/e2/21/08e22164-7c0b-1522-818f-e0e74f62dc49/25UMGIM69703.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2dda7bc0f6df804db124ec60cb6b3dbe",
@@ -530,8 +599,8 @@
    "listened": true,
    "listenedOn": "2026-01-03",
    "released": "2025-06-06",
-   "link": "https://music.apple.com/fr/album/addison/1809015416",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/cf/4a/e3/cf4ae3c9-3420-6021-f059-cc6c87cf11b2/196872958249.jpg"
+   "link": "https://open.spotify.com/album/2ffVa2UhHUDwMHnr685zJ4",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/4a/e3/cf4ae3c9-3420-6021-f059-cc6c87cf11b2/196872958249.jpg/600x600bb.jpg"
   },
   {
    "id": "2dca7bc0f6df80798104d6b171257daf",
@@ -545,24 +614,32 @@
    "listened": true,
    "listenedOn": "2026-01-02",
    "released": "2025-09-26",
-   "link": "https://music.apple.com/fr/album/midnight-sun/1817499239",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/fb/1d/2d/fb1d2d1c-0f79-53ad-ab9b-ac20918b5856/196873177199.jpg",
-   "review": "Hyper groovy et goofy, on danse dessus\nj’ai mis un 3/5 alors qu’il me reste encore deux musiques, mais je pense avoir l’idée générale de l’album\nL’avant-dernière fait tache dans l’album et n’est pas aussi dansante que les autres, le refrain est chouette"
+   "link": "https://open.spotify.com/album/0nte5x6fXd37Nt7jALSmx0",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fb/1d/2d/fb1d2d1c-0f79-53ad-ab9b-ac20918b5856/196873177199.jpg/600x600bb.jpg",
+   "review": "Hyper groovy et goofy, on danse dessus\nj’ai mis un 3/5 alors qu’il me reste encore deux musiques, mais je pense avoir l’idée générale de l’album\nL’avant-dernière fait tache dans l’album et n’est pas aussi dansante que les autres, le refrain est chouette",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/43/77/0f/43770f19-e3ea-98d0-abf1-abe396197cd5/196874161357.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df806f8089e4e97e5390bd",
    "album": "Destinée",
    "artist": "Aya Nakamura",
    "genres": [
-    "Hip-hop/Rap"
+    "Afro pop"
    ],
    "lang": "Français",
    "rating": 3,
    "listened": true,
    "listenedOn": "2025-12-20",
    "released": "2025-11-21",
-   "link": "https://music.apple.com/fr/album/destin%C3%A9e/1852566197",
-   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/94/20/2a/19538068/1507-1/tsp20251029132104/Destinee.jpg"
+   "link": "https://open.spotify.com/album/33V05j22TgtWOJ5OvREj1p",
+   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/94/20/2a/19538068/1507-1/tsp20251029132104/Destinee.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4f/21/52/4f215265-175c-f38f-f6c0-eb78536b70ed/5026854227283.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80879e91c13c504cd4fd",
@@ -576,56 +653,66 @@
    "listened": true,
    "listenedOn": "2025-11-22",
    "released": "2025-11-21",
-   "link": "https://music.apple.com/fr/album/on-sen-rappellera-pas/1846293544",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/1f/49/0d/1f490dc9-1e4d-7a91-f25a-086566f406e6/196873642161.jpg"
+   "link": "https://open.spotify.com/album/2TLKicTW4h5Xpky6AinYq5",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/49/0d/1f490dc9-1e4d-7a91-f25a-086566f406e6/196873642161.jpg/600x600bb.jpg"
   },
   {
    "id": "2a8a7bc0f6df808f9fccdf9211923d84",
    "album": "EUSEXUA",
    "artist": "FKA Twigs",
    "genres": [
-    "Pop",
-    "Electro"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 2,
    "listened": true,
    "listenedOn": "2025-11-11",
    "released": "2025-01-24",
-   "link": "https://music.apple.com/fr/album/eusexua/1767658574",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/ae/c8/24/aec824cf-8748-fb40-12c8-b7fb69a5ffe3/075679634382.jpg",
-   "review": "Super voix\nUn peu répétitif\nJ’ai apprécié le côté expérimental de Durms of Death (que je n’ai pas ajouté pour autant)\nLa thématique de l’album où un le fait que la musique techno, et electro au sens large, puisse être libérateur (= EUSEXUA) me plaît beaucoup mais je le sens pas ici où je trouve que c’est très “accrocheur” sur les premiers morceaux pour donner envie d’écouter la suite qui est trop mélancolique.\nJ’écris ces lignes à la moitié de l’album et je ne pense pas réécouter plus tard\nIl y a un air de l’album de Oklou sur Sticky, Keep It, Hold It mais que je trouve moins bien exercé (j’ai découvert l’album de Oklou il y a peu de temps et ils sont sortis à un mois d’intervalle. Je me sens obligé de les comparer.\nMention spéciale pour Childlike Things que j’ai apprécié (peut-être plus radiophonique ou plus oldies) mais je ne comprends pas ce que ça fout ici les sonorités asiatiques (chinoises ?). Ok “Lost in a world…” mais l’européenne qui considère l’aie comme la bout du monde c’est déjà vu ? J’ai pas compris la musique je pense\nJ’ai skip les 3 dernières musiques\nJe me suis ennuyé\n2 étoiles"
+   "link": "https://open.spotify.com/album/3o1TOhMkU5FFMSJMDhXfdF",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ae/c8/24/aec824cf-8748-fb40-12c8-b7fb69a5ffe3/075679634382.jpg/600x600bb.jpg",
+   "review": "Super voix\nUn peu répétitif\nJ’ai apprécié le côté expérimental de Durms of Death (que je n’ai pas ajouté pour autant)\nLa thématique de l’album où un le fait que la musique techno, et electro au sens large, puisse être libérateur (= EUSEXUA) me plaît beaucoup mais je le sens pas ici où je trouve que c’est très “accrocheur” sur les premiers morceaux pour donner envie d’écouter la suite qui est trop mélancolique.\nJ’écris ces lignes à la moitié de l’album et je ne pense pas réécouter plus tard\nIl y a un air de l’album de Oklou sur Sticky, Keep It, Hold It mais que je trouve moins bien exercé (j’ai découvert l’album de Oklou il y a peu de temps et ils sont sortis à un mois d’intervalle. Je me sens obligé de les comparer.\nMention spéciale pour Childlike Things que j’ai apprécié (peut-être plus radiophonique ou plus oldies) mais je ne comprends pas ce que ça fout ici les sonorités asiatiques (chinoises ?). Ok “Lost in a world…” mais l’européenne qui considère l’aie comme la bout du monde c’est déjà vu ? J’ai pas compris la musique je pense\nJ’ai skip les 3 dernières musiques\nJe me suis ennuyé\n2 étoiles",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a0/88/96/a088960d-68af-40a1-89d1-8e068051c55d/075679643292.jpg/600x600bb.jpg"
   },
   {
    "id": "2a8a7bc0f6df803f99e2c017c08ef0fb",
    "album": "SHISH",
    "artist": "Portugal. The Man",
    "genres": [
-    "Rock"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2025-11-11",
    "released": "2025-11-07",
-   "link": "https://music.apple.com/fr/album/shish/1836273576",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/af/1b/ca/af1bca85-0c0a-3c4b-c58e-9af4be909bf6/199538654530.jpg",
-   "review": "Les transitions sont superbe, c’est très agréable à écouter.\nUn début assez intense puis ça ralentit sur le dernier tiers.\nJ’adore la pochette de l’album, le style oldies avec l’aspect mélancolique de l’album est hyper cohérent.\nJe connais surement mal Portugal. The Man, mais je m’attendais à un album avec plus de codes de la pop et moins un quasi 100% rock.\nTrès bonne écoute tout de même, j’ai aimé de manière objective l’album mais je suis pas sur de vouloir y retourner.\nMention spéciale pour SHISH pour le côté diffusible à la radio ; Kokhanockers pour la répétition de fin qui m’accroche"
+   "link": "https://open.spotify.com/album/7pbhvtNUvp160w3qgtwCCg",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/af/1b/ca/af1bca85-0c0a-3c4b-c58e-9af4be909bf6/199538654530.jpg/600x600bb.jpg",
+   "review": "Les transitions sont superbe, c’est très agréable à écouter.\nUn début assez intense puis ça ralentit sur le dernier tiers.\nJ’adore la pochette de l’album, le style oldies avec l’aspect mélancolique de l’album est hyper cohérent.\nJe connais surement mal Portugal. The Man, mais je m’attendais à un album avec plus de codes de la pop et moins un quasi 100% rock.\nTrès bonne écoute tout de même, j’ai aimé de manière objective l’album mais je suis pas sur de vouloir y retourner.\nMention spéciale pour SHISH pour le côté diffusible à la radio ; Kokhanockers pour la répétition de fin qui m’accroche",
+   "myGenres": [
+    "Rock"
+   ]
   },
   {
    "id": "2a6a7bc0f6df80e88b4afa5e191b6537",
    "album": "Brûler le feu",
    "artist": "Juliette Armanet",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 3,
    "listened": true,
    "listenedOn": "2025-11-10",
    "released": "2021-11-19",
-   "link": "https://music.apple.com/fr/album/br%C3%BBler-le-feu/1588286822",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music125/v4/b3/9d/96/b39d9699-2c9e-5e0c-350d-d7c3749dd155/21UM1IM21498.rgb.jpg"
+   "link": "https://open.spotify.com/album/0Og0gwH68Uw5zgVDpC53xN",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b3/9d/96/b39d9699-2c9e-5e0c-350d-d7c3749dd155/21UM1IM21498.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a6a7bc0f6df80ffb7c5ee00691de750",
@@ -640,7 +727,7 @@
    "listened": true,
    "listenedOn": "2025-11-09",
    "released": "2025-09-19",
-   "link": "https://music.apple.com/fr/album/im-only-f-king-myself/1819085978",
+   "link": "https://open.spotify.com/album/5jUCvcrzCNng7N3iNVY4ts",
    "cover": "https://m.media-amazon.com/images/I/91VeGBlFo+L._SL1500_.jpg"
   },
   {
@@ -655,7 +742,7 @@
    "listened": true,
    "listenedOn": "2025-11-07",
    "released": "2025-11-07",
-   "link": "https://music.apple.com/fr/album/break/1846453824",
+   "link": "https://open.spotify.com/album/0BompZU9zoS3yZTtEdINTK",
    "cover": "covers/2a4a7bc0f6df80c687e5f59c89c187c8-a7b92b727b.jpeg",
    "review": "En soit c’est riche, très intéressant à écouter, j’aime beaucoup sa voix mais c’est trop « rock » pour moi. Je pense qu’il faudrait une touche plus pop pour que j’accroche."
   },
@@ -671,7 +758,7 @@
    "listened": true,
    "listenedOn": "2025-11-07",
    "released": "2025-11-07",
-   "link": "https://music.apple.com/fr/album/la-fuite-en-avant/1850732644",
+   "link": "https://open.spotify.com/album/130L3uMANE28R0eH0GtmZS",
    "cover": "https://m.media-amazon.com/images/I/61NqqluN9DL._SL1024_.jpg"
   },
   {
@@ -686,8 +773,8 @@
    "listened": true,
    "listenedOn": "2025-11-07",
    "released": "2025-11-07",
-   "link": "https://music.apple.com/fr/album/lux/1848167516",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/95/ae/80/95ae8046-a6b9-e493-0def-5ae33d63f43a/196873722672.jpg"
+   "link": "https://open.spotify.com/album/3SUEJULSGgBDG1j4GQhfYY",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/95/ae/80/95ae8046-a6b9-e493-0def-5ae33d63f43a/196873722672.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80cab8c0f6f3108a9a51",
@@ -701,8 +788,12 @@
    "listened": true,
    "listenedOn": "2025-11-07",
    "released": "2025-10-24",
-   "link": "https://music.apple.com/fr/album/west-end-girl/1846342052",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/d7/d9/9e/d7d99eca-a4ec-80c1-afec-379a26af58c6/4099964193565.jpg"
+   "link": "https://open.spotify.com/album/4Dn3Z14YfT2gQVDgLmWUVn",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d7/d9/9e/d7d99eca-a4ec-80c1-afec-379a26af58c6/4099964193565.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/dc/0d/ba/dc0dbabe-8b7a-cfbe-4d84-4d43147a8cb4/4099964220278.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df806b8940c0dfb7a31fd0",
@@ -717,39 +808,47 @@
    "listened": true,
    "listenedOn": "2025-11-06",
    "released": "2025-06-27",
-   "link": "https://music.apple.com/fr/album/virgin/1810905299",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/72/3c/07/723c07a7-4ff6-b052-927d-6997fff13676/25UMGIM60545.rgb.jpg"
+   "link": "https://open.spotify.com/album/28bHj2enHkHVFLwuWmkwlQ",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/3c/07/723c07a7-4ff6-b052-927d-6997fff13676/25UMGIM60545.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8096ba3ded98f3662b18",
    "album": "Everybody Scream",
    "artist": "Florence + the Machine",
    "genres": [
-    "Pop"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2025-10-31",
    "released": "2025-10-31",
-   "link": "https://music.apple.com/fr/album/everybody-scream/1833586446",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/2e/5b/79/2e5b79a5-c166-da6b-3545-abc762f3beb2/25UM1IM19575.rgb.jpg"
+   "link": "https://open.spotify.com/album/0z7l9VEJyFMv8p8wffRDaF",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2e/5b/79/2e5b79a5-c166-da6b-3545-abc762f3beb2/25UM1IM19575.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d0/77/ed/d077ed0d-51ea-76b6-ba24-8aa7d4e248ad/25UM1IM19552.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8047a45eefc27856c8d2",
    "album": "choke enough (Deluxe)",
    "artist": "Oklou",
    "genres": [
-    "Pop",
-    "Electro"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 5,
    "listened": true,
    "listenedOn": "2025-10-30",
    "released": "2025-10-30",
-   "link": "https://music.apple.com/fr/album/choke-enough-deluxe/1845349804",
-   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/6b/83/19/18449259/1507-1/tsp20241121084056/Choke-enough.jpg"
+   "link": "https://open.spotify.com/album/1TaVbSLBnUQwfcld3tDAUI",
+   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/6b/83/19/18449259/1507-1/tsp20241121084056/Choke-enough.jpg",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/af/b0/6d/afb06d49-c6d9-b416-217c-1d5f6d62cf54/5056556170549_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80edb514ee490bfccd95",
@@ -764,8 +863,8 @@
    "listened": true,
    "listenedOn": "2025-10-17",
    "released": "2025-10-17",
-   "link": "https://music.apple.com/fr/album/deadbeat/1836226516",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/80/54/11/80541122-c1c4-50ad-a673-ff79f4cf8aa7/196873555331.jpg"
+   "link": "https://open.spotify.com/album/5WulAOx9ilWy1h8UGZ1gkI",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/80/54/11/80541122-c1c4-50ad-a673-ff79f4cf8aa7/196873555331.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df805ca1c2e22939e81eb3",
@@ -779,8 +878,11 @@
    "listened": true,
    "listenedOn": "2025-10-11",
    "released": "2025-05-16",
-   "link": "https://music.apple.com/fr/album/est-ce-que-quelquun-mentend/1804410805",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/e6/ff/52/e6ff5289-cd43-5552-5bb7-d93b5780dde9/196872973334.jpg"
+   "link": "https://open.spotify.com/album/2yMg4BHzIx08hgwly5JsG5",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e6/ff/52/e6ff5289-cd43-5552-5bb7-d93b5780dde9/196872973334.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df808ca9f2c06d74441eb1",
@@ -794,8 +896,8 @@
    "listened": true,
    "listenedOn": "2025-10-11",
    "released": "2025-08-29",
-   "link": "https://music.apple.com/fr/album/what-no-ones-thinking-ep/1824542297",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/0f/62/ba/0f62baf2-d836-8d1c-d137-2dd98af6dd93/751238075147.png"
+   "link": "https://open.spotify.com/album/0BHmMUXQgkdRV43WMXPxJ8",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0f/62/ba/0f62baf2-d836-8d1c-d137-2dd98af6dd93/751238075147.png/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8054b414cdbfce47c4d9",
@@ -809,23 +911,26 @@
    "listened": true,
    "listenedOn": "2025-10-03",
    "released": "2025-10-03",
-   "link": "https://music.apple.com/fr/album/industry-plant/1836468875",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/8b/52/68/8b5268a4-89b2-8753-1939-7a87db9a1667/cover.jpg"
+   "link": "https://open.spotify.com/album/3wx2wcQ53Ilo5NOUU6Mw65",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8b/52/68/8b5268a4-89b2-8753-1939-7a87db9a1667/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80779af5c15b341445df",
    "album": "La symphonie des éclairs (Orchestral Odyssey)",
    "artist": "Zaho de Sagazan",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 4,
    "listened": true,
    "listenedOn": "2025-10-03",
    "released": "2025-10-03",
-   "link": "https://music.apple.com/fr/album/la-symphonie-des-%C3%A9clairs-orchestral-odyssey/1828200469",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/fa/78/e5/fa78e5af-05f6-5871-9dc6-695bb500d609/25UMGIM70758.rgb.jpg"
+   "link": "https://open.spotify.com/album/15FZlljjgimILw4hn7urFj",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fa/78/e5/fa78e5af-05f6-5871-9dc6-695bb500d609/25UMGIM70758.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df804788d7f30a17aff4ff",
@@ -839,8 +944,11 @@
    "listened": true,
    "listenedOn": "2025-10-01",
    "released": "1990-05-27",
-   "link": "https://music.apple.com/fr/album/second-helping/1440846806",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/c2/d6/41/c2d64132-6a94-38ea-3309-3326f4680169/14UMGIM00873.rgb.jpg"
+   "link": "https://open.spotify.com/album/54V1ljNtyzAm053oJqi0SH",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c2/d6/41/c2d64132-6a94-38ea-3309-3326f4680169/14UMGIM00873.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Rock"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80de9e82ee327850fb59",
@@ -854,84 +962,107 @@
    "listened": true,
    "listenedOn": "2025-09-29",
    "released": "2025-08-29",
-   "link": "https://music.apple.com/fr/album/mans-best-friend/1819861154",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/cc/bc/ef/ccbcefb5-cf3a-1c55-0173-c37602827c7a/25UMGIM81699.rgb.jpg"
+   "link": "https://open.spotify.com/album/1aqg30bNvLSWgShZgX4oop",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/bc/ef/ccbcefb5-cf3a-1c55-0173-c37602827c7a/25UMGIM81699.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4d/1e/5f/4d1e5f7c-c5df-1c9b-bc44-4e27339cc848/25UM1IM51069.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80559711cf78ea0c5d43",
    "album": "Vie",
    "artist": "Doja Cat",
    "genres": [
-    "Hip-hop/Rap"
+    "Pop"
    ],
    "lang": "Anglais",
    "rating": 2,
    "listened": true,
    "listenedOn": "2025-09-29",
    "released": "2025-09-26",
-   "link": "https://music.apple.com/fr/album/vie/1834042903",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/a8/c7/ea/a8c7eaf1-d92b-2ce6-74e4-1282b369cd38/196873471068.jpg"
+   "link": "https://open.spotify.com/album/1cqqIH16XzBnDchrXJ9Enf",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a8/c7/ea/a8c7eaf1-d92b-2ce6-74e4-1282b369cd38/196873471068.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e2/a1/17/e2a11795-d6be-b735-f675-213695d73e68/196873471075.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80bca369e6aabd8f1a78",
    "album": "grandir",
    "artist": "marguerite",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 4,
    "listened": true,
    "listenedOn": "2025-09-26",
    "released": "2025-09-26",
-   "link": "https://music.apple.com/fr/album/grandir-ep/1830256075",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/aa/bd/e6/aabde69d-f134-f13d-5c8e-5d555f7797ec/196873387871.jpg"
+   "link": "https://open.spotify.com/album/081gGbY0tkx9wYxbORdgA7",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/aa/bd/e6/aabde69d-f134-f13d-5c8e-5d555f7797ec/196873387871.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a6a7bc0f6df800bba2ce359d9c44b02",
    "album": "THAT'S SHOWBIZ BABY!",
    "artist": "Jade",
    "genres": [
-    "Pop",
-    "Electro"
+    "Pop"
    ],
    "lang": "Anglais",
    "rating": 4,
    "listened": true,
    "listenedOn": "2025-09-15",
    "released": "2025-09-12",
-   "link": "https://music.apple.com/fr/album/thats-showbiz-baby/1813142774",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/ee/25/ef/ee25ef48-9c5a-1899-cb2f-f3884bc5a15a/196873087917.jpg"
+   "link": "https://open.spotify.com/album/4Q1Rf1xZ5OiQcCFnSAHdeE",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ee/25/ef/ee25ef48-9c5a-1899-cb2f-f3884bc5a15a/196873087917.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b2/09/02/b20902b8-9855-fe29-3de5-2de06f4e5098/196873845432.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8069b6f8f6ebea3799ff",
    "album": "BLEU MÉDITERRANÉE",
    "artist": "Ajar",
    "genres": [
-    "Hip-hop/Rap"
+    "Pop"
    ],
    "lang": "Français",
    "rating": 2,
    "listened": true,
    "listenedOn": "2025-09-11",
    "released": "2025-03-21",
-   "link": "https://music.apple.com/fr/album/bleu-m%C3%A9diterran%C3%A9e-ep/1800152236",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/2d/25/5f/2d255fda-1e06-40c5-b7b3-c0d248cdf4c8/199282726477_cover.jpg"
+   "link": "https://open.spotify.com/album/44rKWiq8bILhA7uMF2sSqp",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2d/25/5f/2d255fda-1e06-40c5-b7b3-c0d248cdf4c8/199282726477_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/22/c6/d8/22c6d8ef-7d96-7c73-df6b-4c1cccfd632e/199282726477.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80a6b034da4f3c2ae78c",
    "album": "Déjà Vous",
    "artist": "Yuksek",
    "genres": [
-    "Electro"
+    "Dance"
    ],
    "lang": "Anglais",
    "rating": 2,
    "listened": true,
    "listenedOn": "2025-09-11",
    "released": "2025-06-06",
-   "link": "https://music.apple.com/fr/album/d%C3%A9j%C3%A0-vous-ep/1814186121",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/2f/81/ca/2f81cac3-1539-1d4c-02c2-75a9d0e20382/4062548118308.png"
+   "link": "https://open.spotify.com/album/71vPM5ro3LBizuBvVqSJSS",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2f/81/ca/2f81cac3-1539-1d4c-02c2-75a9d0e20382/4062548118308.png/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/01/5f/a8/015fa84b-7583-f836-392c-e83f8aea9076/4062548117288.png/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80068b16cb232049ff05",
@@ -945,24 +1076,32 @@
    "listened": true,
    "listenedOn": "2025-09-11",
    "released": "2024-06-07",
-   "link": "https://music.apple.com/fr/album/what-happened-to-the-heart/1738227839",
+   "link": "https://open.spotify.com/album/357nWCZmAQtr7nNTHhkIn7",
    "cover": "https://m.media-amazon.com/images/I/91CBhKp88VL._SL1500_.jpg",
-   "review": "J’avais initialement mis 4 étoiles, mais en parcourant ma bibliothèque je me suis rendu compte que j’avais ajouté 0 musiques\nDonc perte de 1 étoile pour AURORA"
+   "review": "J’avais initialement mis 4 étoiles, mais en parcourant ma bibliothèque je me suis rendu compte que j’avais ajouté 0 musiques\nDonc perte de 1 étoile pour AURORA",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/87/e8/9287e838-5fb6-5778-678b-318a84c86736/25UMGIM50213.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80c3a561cc2c06ff6752",
    "album": "What if I break up with u ?",
    "artist": "Iliona",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 3,
    "listened": true,
    "listenedOn": "2025-09-11",
    "released": "2025-06-13",
-   "link": "https://music.apple.com/fr/album/what-if-i-break-up-with-u/1825379829",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/86/e8/a8/86e8a860-1ae9-fe99-4c71-950d733a2b38/cover.jpg"
+   "link": "https://open.spotify.com/album/0vgfY8wimCsmjfQjexRRE2",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/86/e8/a8/86e8a860-1ae9-fe99-4c71-950d733a2b38/cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a3/85/f6/a385f643-c66b-0881-322c-4e48183ffd75/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80eb8ce0f3860ecfe425",
@@ -976,23 +1115,26 @@
    "listened": true,
    "listenedOn": "2025-08-25",
    "released": "2025-01-24",
-   "link": "https://music.apple.com/fr/album/pl%D0%B4ying-pr%D0%B4ying/1775560114",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/fa/65/59/fa6559bf-eb2c-5b76-8678-4b69b8e328e1/cover.jpg"
+   "link": "https://open.spotify.com/album/7jW1d9fLw4vxIa2P1fkcgm",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fa/65/59/fa6559bf-eb2c-5b76-8678-4b69b8e328e1/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80959a7dc4dd323d8200",
    "album": "Guitar",
    "artist": "Mac DeMarco",
    "genres": [
-    "Electro"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2025-08-22",
    "released": "2025-08-22",
-   "link": "https://music.apple.com/fr/album/guitar/1816172823",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/10/1d/52/101d52d0-ab69-03af-2c04-6952fc0906ce/00198704459184_Cover.jpg"
+   "link": "https://open.spotify.com/album/2T7O7QJnesN3l3iPX1NAZY",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/10/1d/52/101d52d0-ab69-03af-2c04-6952fc0906ce/00198704459184_Cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2a4a7bc0f6df800c8121d501b84d9a29",
@@ -1006,7 +1148,7 @@
    "listened": true,
    "listenedOn": "2025-07-29",
    "released": "2025-07-11",
-   "link": "https://music.apple.com/fr/album/swag/1825994646",
+   "link": "https://open.spotify.com/album/5vD5M5VW62LL78Ko8x0CVZ",
    "cover": "covers/2a4a7bc0f6df800c8121d501b84d9a29-35917f0353.jpg"
   },
   {
@@ -1021,8 +1163,12 @@
    "listened": true,
    "listenedOn": "2025-07-22",
    "released": "1969-08-20",
-   "link": "https://music.apple.com/fr/album/abbey-road-remastered/1441164426",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/df/db/61/dfdb615d-47f8-06e9-9533-b96daccc029f/18UMGIM31076.rgb.jpg"
+   "link": "https://open.spotify.com/album/0ETFjACtuP2ADo6LFhL6HN",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/df/db/61/dfdb615d-47f8-06e9-9533-b96daccc029f/18UMGIM31076.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Rock"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/48/53/43/485343e3-dd6a-0034-faec-f4b6403f8108/13UMGIM63890.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df808ca45bebbbbae0f15d",
@@ -1036,8 +1182,11 @@
    "listened": true,
    "listenedOn": "2025-07-22",
    "released": "1994-08-15",
-   "link": "https://music.apple.com/fr/album/grace/1046187510",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/26/d6/e3/26d6e339-a7a9-d61e-1b5f-0852a5515a55/886445517880.jpg"
+   "link": "https://open.spotify.com/album/7yQtjAjhtNi76KRu05XWFS",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/26/d6/e3/26d6e339-a7a9-d61e-1b5f-0852a5515a55/886445517880.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Rock"
+   ]
   },
   {
    "id": "2a4a7bc0f6df8074abc0c632743b0b77",
@@ -1052,8 +1201,8 @@
    "listened": true,
    "listenedOn": "2025-07-22",
    "released": "2016-05-06",
-   "link": "https://music.apple.com/fr/album/lemonade/1460430561",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/db/25/a1/db25a1c0-8a4a-3b4d-226d-7c7704dc92da/886447680711.jpg",
+   "link": "https://open.spotify.com/album/7dK54iZuOxXFarGhXwEXfF",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/db/25/a1/db25a1c0-8a4a-3b4d-226d-7c7704dc92da/886447680711.jpg/600x600bb.jpg",
    "review": "A la première écoute j’ai mis un 4 étoiles.\nEt finalement en me renseignant sur tout le lore de l’album, en regardant le film album : un 5 étoiles est largement mérité."
   },
   {
@@ -1061,15 +1210,18 @@
    "album": "Purple Rain",
    "artist": "Prince",
    "genres": [
-    "Pop"
+    "Bande originale"
    ],
    "lang": "Anglais",
    "rating": 3,
    "listened": true,
    "listenedOn": "2025-07-22",
    "released": "1984-06-19",
-   "link": "https://music.apple.com/fr/album/purple-rain/1746833068",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/00/17/f2/0017f24f-e580-b77a-71a8-1bc7b75881bf/603497822065.jpg"
+   "link": "https://open.spotify.com/album/2umoqwMrmjBBPeaqgYu6J9",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/00/17/f2/0017f24f-e580-b77a-71a8-1bc7b75881bf/603497822065.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80148a02dd68eb0c1d79",
@@ -1083,8 +1235,8 @@
    "listened": true,
    "listenedOn": "2025-07-21",
    "released": "2024-10-28",
-   "link": "https://music.apple.com/fr/album/chromakopia/1776500452",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/7d/bd/e9/7dbde97e-b97d-8cc3-0203-218b687408a9/196872555059.jpg"
+   "link": "https://open.spotify.com/album/0U28P0QVB1QRxpqp5IHOlH",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7d/bd/e9/7dbde97e-b97d-8cc3-0203-218b687408a9/196872555059.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8052b4e2fc87dd2d01d9",
@@ -1098,8 +1250,8 @@
    "listened": true,
    "listenedOn": "2025-07-21",
    "released": "2025-07-21",
-   "link": "https://music.apple.com/fr/album/dont-tap-the-glass/1827715784",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/a0/ae/e6/a0aee657-b365-fed2-249c-0f22efa507d0/196873435435.jpg",
+   "link": "https://open.spotify.com/album/1jzv3jwZbt8lYfEtMjiD1R",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a0/ae/e6/a0aee657-b365-fed2-249c-0f22efa507d0/196873435435.jpg/600x600bb.jpg",
    "review": "Je me souviens avoir apprécié la 1ère écoute, mais pas assez pour en avoir une deuxième. J’écoute donc une 2ème fois en écrivant ces lignes, mais l’album ne m’avait pas assez marqué pour en avoir envie avant."
   },
   {
@@ -1114,7 +1266,7 @@
    "listened": true,
    "listenedOn": "2025-07-20",
    "released": "2010-11-24",
-   "link": "https://music.apple.com/fr/album/body-talk/1440486599",
+   "link": "https://open.spotify.com/album/0le9TO3kU69m6iWHTjNs9Y",
    "cover": "https://upload.wikimedia.org/wikipedia/en/c/cd/Body_Talk_by_Robyn.png",
    "review": "J’écris ces lignes plusieurs mois après l’écoute de cet album : je n’en ai absolument aucun souvenir. Initialement on était à 2 étoiles, on passe à 1 seule."
   },
@@ -1131,8 +1283,8 @@
    "listened": true,
    "listenedOn": "2025-07-20",
    "released": "2024-06-07",
-   "link": "https://music.apple.com/fr/album/brat/1739079974",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/88/4e/63/884e6321-ad41-aab1-f6f0-20efcafcfd55/075679666130.jpg"
+   "link": "https://open.spotify.com/album/2lIZef4lzdvZkiiCzvPKj7",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/88/4e/63/884e6321-ad41-aab1-f6f0-20efcafcfd55/075679666130.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80a2b961d215e9704db8",
@@ -1146,8 +1298,8 @@
    "listened": true,
    "listenedOn": "2025-07-19",
    "released": "2016-08-20",
-   "link": "https://music.apple.com/fr/album/blonde/1146195596",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/bb/45/68/bb4568f3-68cd-619d-fbcb-4e179916545d/BlondCover-Final.jpg"
+   "link": "https://open.spotify.com/album/3mH6qwIy9crq0I9YQbOuDf",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/45/68/bb4568f3-68cd-619d-fbcb-4e179916545d/BlondCover-Final.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8004aab1dcc5d4fd962c",
@@ -1161,8 +1313,8 @@
    "listened": true,
    "listenedOn": "2025-07-19",
    "released": "2025-07-18",
-   "link": "https://music.apple.com/fr/album/sex-hysteria/1817707266",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/93/4a/2a/934a2a00-c2e1-6d61-483c-762f86394042/196873058115.jpg"
+   "link": "https://open.spotify.com/album/1slf6g1SethO2KrA4cxgjq",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/93/4a/2a/934a2a00-c2e1-6d61-483c-762f86394042/196873058115.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df802f969af59647495d84",
@@ -1176,8 +1328,8 @@
    "listened": true,
    "listenedOn": "2025-07-19",
    "released": "2022-12-09",
-   "link": "https://music.apple.com/fr/album/sos/1657869377",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/bd/3b/a9/bd3ba9fb-9609-144f-bcfe-ead67b5f6ab3/196589564931.jpg"
+   "link": "https://open.spotify.com/album/07w0rG5TETcyihsEIZR3qG",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/3b/a9/bd3ba9fb-9609-144f-bcfe-ead67b5f6ab3/196589564931.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80bda698f7f921c90656",
@@ -1191,7 +1343,7 @@
    "listened": true,
    "listenedOn": "2025-07-04",
    "released": "2025-07-04",
-   "link": "https://music.apple.com/fr/album/1804117398",
+   "link": "https://open.spotify.com/album/20vUlVo1pWLuhaoMUPQYur",
    "cover": "https://vinyltap.co.uk/cdn/shop/files/887ead5805c791b1f101f4d482398027_3b135edc-744a-4ad5-a929-717db3ac2d98.jpg?v=1751587705"
   },
   {
@@ -1206,7 +1358,7 @@
    "listened": true,
    "listenedOn": "2025-03-07",
    "released": "2025-03-07",
-   "link": "https://music.apple.com/fr/album/mayhem/1792666546",
+   "link": "https://open.spotify.com/album/2MHUaRi9OCyTN02SoyRRBJ",
    "cover": "https://i.scdn.co/image/ab67616d0000b273b0860cf0a98e09663c82290c"
   },
   {
@@ -1221,8 +1373,8 @@
    "listened": true,
    "listenedOn": "2025-01-31",
    "released": "2025-01-31",
-   "link": "https://music.apple.com/fr/album/la-favorite/1785943259",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/35/f3/a5/35f3a584-14ac-79d2-899e-cd43b32d44d9/3596974755529_cover.jpg"
+   "link": "https://open.spotify.com/album/60cnL4NlNjkEQWRgPYlrmG",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/f3/a5/35f3a584-14ac-79d2-899e-cd43b32d44d9/3596974755529_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8041b47dfd158d0d0013",
@@ -1236,7 +1388,7 @@
    "listened": true,
    "listenedOn": "2024-11-01",
    "released": "2024-11-01",
-   "link": "https://music.apple.com/fr/album/mega-bbl/1813911411",
+   "link": "https://open.spotify.com/album/5kULRFcbbkP6NHNBpi6T6p",
    "cover": "covers/2a4a7bc0f6df8041b47dfd158d0d0013-e687144304.jpg"
   },
   {
@@ -1251,8 +1403,8 @@
    "listened": true,
    "listenedOn": "2024-05-17",
    "released": "2024-05-17",
-   "link": "https://music.apple.com/fr/album/hit-me-hard-and-soft/1739659134",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg"
+   "link": "https://open.spotify.com/album/7aJuG4TFXa2hmE4z1yxc3n",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80cc8fe3cd29fc1b0d8d",
@@ -1267,38 +1419,46 @@
    "listened": true,
    "listenedOn": "2024-03-29",
    "released": "2024-03-29",
-   "link": "https://music.apple.com/fr/album/cowboy-carter/1738363766",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/bd/f6/83/bdf683a5-28de-08cb-cb91-2940c1e6270b/196871853729.jpg"
+   "link": "https://open.spotify.com/album/6BzxX6zkDsYKFJ04ziU5xQ",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bd/f6/83/bdf683a5-28de-08cb-cb91-2940c1e6270b/196871853729.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df802fa3fcc5c59e28349f",
    "album": "Crash Cœur",
    "artist": "Eddy de Pretto",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 5,
    "listened": true,
    "listenedOn": "2023-11-17",
    "released": "2023-11-17",
-   "link": "https://music.apple.com/fr/album/crash-c%C5%93ur/1709076220",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music116/v4/9f/ab/57/9fab57c0-8d23-11c7-5e53-8589210f987b/23UM1IM11067.rgb.jpg"
+   "link": "https://open.spotify.com/album/37b90qQXuhhAzmxQlQLWOK",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9f/ab/57/9fab57c0-8d23-11c7-5e53-8589210f987b/23UM1IM11067.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/a4/cc/48a4ccc6-e8af-6b70-12c0-be66ca478379/25UMGIM50103.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df8003a4f6d826c9cea3c0",
    "album": "La Symphonie Des Éclairs",
    "artist": "Zaho de Sagazan",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 5,
    "listened": true,
    "listenedOn": "2023-09-01",
    "released": "2023-03-21",
-   "link": "https://music.apple.com/fr/album/la-symphonie-des-%C3%A9clairs/1708455052",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music116/v4/e5/99/a8/e599a871-48f7-a131-773e-2bbd8894ea5d/22UM1IM33918.rgb.jpg"
+   "link": "https://open.spotify.com/album/5GoDO8a03bxSSxMCeYKfaW",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e5/99/a8/e599a871-48f7-a131-773e-2bbd8894ea5d/22UM1IM33918.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fa/78/e5/fa78e5af-05f6-5871-9dc6-695bb500d609/25UMGIM70758.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80738e67d9418f923c1d",
@@ -1312,8 +1472,8 @@
    "listened": true,
    "listenedOn": "2023-02-24",
    "released": "2023-02-24",
-   "link": "https://music.apple.com/fr/album/les-royaumes-minuscules-augment%C3%A9s/1743791728",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/75/d2/6e/75d26e43-d094-2a82-695a-09c485f6861c/196589498779.jpg"
+   "link": "https://open.spotify.com/album/3VGubAeKi1fg002fAta5rz",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/75/d2/6e/75d26e43-d094-2a82-695a-09c485f6861c/196589498779.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80a0b2e8eff4fb6f2571",
@@ -1327,8 +1487,8 @@
    "listened": true,
    "listenedOn": "2022-11-11",
    "released": "2022-11-11",
-   "link": "https://music.apple.com/fr/album/gore/1530784231",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/fe/87/5a/fe875a74-5c85-78eb-0b9f-0ee54db5183c/196589529497.jpg"
+   "link": "https://open.spotify.com/album/3bHBzNSc5wHgedsW4m9Ykn",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/fe/87/5a/fe875a74-5c85-78eb-0b9f-0ee54db5183c/196589529497.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8030ba11c5978a4b4586",
@@ -1342,8 +1502,8 @@
    "listened": true,
    "listenedOn": "2022-07-29",
    "released": "2022-07-29",
-   "link": "https://music.apple.com/fr/album/renaissance/1630005298",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/05/05/f3/0505f338-9873-feb4-af7f-27a470405e5f/196589246974.jpg"
+   "link": "https://open.spotify.com/album/6FJxoadUE4JNVwWHghBwnb",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/05/f3/0505f338-9873-feb4-af7f-27a470405e5f/196589246974.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80ac8416fbc0b21a88ba",
@@ -1357,8 +1517,8 @@
    "listened": true,
    "listenedOn": "2022-06-18",
    "released": "2020-10-16",
-   "link": "https://music.apple.com/fr/album/gore/1530784231",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg",
+   "link": "https://open.spotify.com/album/7e9inFYUpFSKmTFbj2xrCS",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg/600x600bb.jpg",
    "review": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg"
   },
   {
@@ -1373,7 +1533,7 @@
    "listened": true,
    "listenedOn": "2022-03-18",
    "released": "2022-03-18",
-   "link": "https://music.apple.com/fr/album/lamour/1609060693",
+   "link": "https://open.spotify.com/album/1mODEcUekiHajtaMk7AMMs",
    "cover": "covers/2a4a7bc0f6df80c1a45dd4319296c79a-50f7c47838.jpg"
   },
   {
@@ -1388,8 +1548,12 @@
    "listened": true,
    "listenedOn": "2021-11-19",
    "released": "2021-11-19",
-   "link": "https://music.apple.com/fr/album/civilisation-%C3%A9dition-ultime/1788305915",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/43/a4/78/43a47870-f087-4e4e-e7b8-b1ca7d04a5dc/3596974281424.jpg"
+   "link": "https://open.spotify.com/album/1M9gSrMf9GN0XPC3PJIby7",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/43/a4/78/43a47870-f087-4e4e-e7b8-b1ca7d04a5dc/3596974281424.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ce/1b/fc/ce1bfc78-00af-78ad-8b5b-cf19ff8e604b/3596974065826.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df80ab917cc73abe34fb54",
@@ -1403,23 +1567,26 @@
    "listened": true,
    "listenedOn": "2021-03-26",
    "released": "2021-03-26",
-   "link": "https://music.apple.com/fr/album/%C3%A0-tous-les-b%C3%A2tards/1631321590",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/b1/3b/2c/b13b2ceb-bdb0-ce71-d3e1-e2450271535e/20UMGIM97711.rgb.jpg"
+   "link": "https://open.spotify.com/album/4RDBA4Eb8n6KDYzX3wBEeY",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b1/3b/2c/b13b2ceb-bdb0-ce71-d3e1-e2450271535e/20UMGIM97711.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a8a7bc0f6df8089af15edfdb7e1555c",
    "album": "Tako Tsubo",
    "artist": "L'Impératrice",
    "genres": [
-    "Pop"
+    "Alternative"
    ],
    "lang": "Français",
    "rating": null,
    "listened": true,
    "listenedOn": "2021-03-26",
    "released": "2021-03-26",
-   "link": "https://music.apple.com/fr/album/tako-tsubo/1545197529",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music125/v4/0a/3e/16/0a3e1678-1579-f661-0941-267e04eb2f0b/3663729117120_cover.jpg"
+   "link": "https://open.spotify.com/album/7gE23KRzNbXeB6nZmQVqa3",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0a/3e/16/0a3e1678-1579-f661-0941-267e04eb2f0b/3663729117120_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80cf8858f9d7c9a23b08",
@@ -1433,8 +1600,8 @@
    "listened": true,
    "listenedOn": "2020-09-04",
    "released": "2020-09-04",
-   "link": "https://music.apple.com/fr/album/l%C3%A8re-du-verseau/1518632290",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music113/v4/fa/df/d2/fadfd281-0c97-72ee-6922-d5dec65ec999/3663729126221_cover.jpg"
+   "link": "https://open.spotify.com/album/5iCfp2KefljOSPdRqpAvyW",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/fa/df/d2/fadfd281-0c97-72ee-6922-d5dec65ec999/3663729126221_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80b1aaf5e8a77440330a",
@@ -1448,8 +1615,8 @@
    "listened": true,
    "listenedOn": "2019-11-07",
    "released": "2019-11-07",
-   "link": "https://music.apple.com/fr/album/brol-la-suite/1482645200",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music123/v4/d8/ac/ff/d8acff60-ced5-db4f-c8aa-1c6ca651856d/19UMGIM90938.rgb.jpg"
+   "link": "https://open.spotify.com/album/2UrPmvaX5X76LIzE6Cfiqu",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/d8/ac/ff/d8acff60-ced5-db4f-c8aa-1c6ca651856d/19UMGIM90938.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80f58a94d9533a68813a",
@@ -1463,8 +1630,8 @@
    "listened": true,
    "listenedOn": "2019-03-29",
    "released": "2019-03-29",
-   "link": "https://music.apple.com/fr/album/when-we-all-fall-asleep-where-do-we-go/1450695723",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg"
+   "link": "https://open.spotify.com/album/0S0KGZnfBGSIssfF54WSJh",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df8064a7b0f96938535136",
@@ -1478,8 +1645,8 @@
    "listened": true,
    "listenedOn": "2018-09-14",
    "released": "2018-09-14",
-   "link": "https://music.apple.com/fr/album/disizilla/1430032818",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music128/v4/d1/66/af/d166affb-4e89-a946-bde3-75bcb4da7815/00602567882107.rgb.jpg"
+   "link": "https://open.spotify.com/album/2vVDeIVO3ja0RdlQf20NOB",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/d1/66/af/d166affb-4e89-a946-bde3-75bcb4da7815/00602567882107.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df8003ae6befe96af331ec",
@@ -1493,8 +1660,8 @@
    "listened": true,
    "listenedOn": "2018-03-02",
    "released": "2018-03-02",
-   "link": "https://music.apple.com/fr/album/cure/1440904486",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/e1/e6/87/e1e68798-a576-f784-ed24-5182fdaa395a/18UMGIM05575.rgb.jpg"
+   "link": "https://open.spotify.com/album/0B7trrXpu1IShSqzJfB2Tw",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/e6/87/e1e68798-a576-f784-ed24-5182fdaa395a/18UMGIM05575.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8031bbb6c2bc011d4391",
@@ -1508,24 +1675,30 @@
    "listened": true,
    "listenedOn": "2017-10-20",
    "released": "2017-10-20",
-   "link": "https://music.apple.com/fr/album/la-f%C3%AAte-est-finie/1788305428",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/b4/3a/b3/b43ab341-83c5-0cd8-9493-d2149122b763/3596973519320.jpg"
+   "link": "https://open.spotify.com/album/5p3gCXAkyB8LeNetSEGalL",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b4/3a/b3/b43ab341-83c5-0cd8-9493-d2149122b763/3596973519320.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "2a6a7bc0f6df80d4a0effcbc0087606e",
    "album": "Evolve",
    "artist": "Imagine Dragons",
    "genres": [
-    "Pop",
-    "Rock"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 5,
    "listened": true,
    "listenedOn": "2017-06-23",
    "released": "2017-06-23",
-   "link": "https://music.apple.com/fr/album/evolve/1411625594",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music126/v4/11/7a/b8/117ab805-6811-8929-18b9-0fad7baf0c25/17UMGIM98210.rgb.jpg"
+   "link": "https://open.spotify.com/album/33pt9HBdGlAbRGBHQgsZsU",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/11/7a/b8/117ab805-6811-8929-18b9-0fad7baf0c25/17UMGIM98210.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Rock"
+   ]
   },
   {
    "id": "2a6a7bc0f6df8041b887d89b2eba68b0",
@@ -1540,8 +1713,8 @@
    "listened": true,
    "listenedOn": "2017-06-09",
    "released": "2017-06-09",
-   "link": "https://music.apple.com/fr/album/pacifique/1440881726",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/ca/33/af/ca33af10-47b5-c3f3-4957-fb4bb7e0065a/00602557636116.rgb.jpg"
+   "link": "https://open.spotify.com/album/0h9tYZeKtjZ8rsfGknVqwF",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ca/33/af/ca33af10-47b5-c3f3-4957-fb4bb7e0065a/00602557636116.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df805a9dc5cded1a31ae9c",
@@ -1555,39 +1728,46 @@
    "listened": true,
    "listenedOn": "2015-06-08",
    "released": "2015-06-08",
-   "link": "https://music.apple.com/fr/album/feu/1440826417",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music116/v4/fc/88/29/fc8829db-b4de-a366-70e0-3cf6cb53a81b/15UMGIM20685.rgb.jpg"
+   "link": "https://open.spotify.com/album/7BgeK3jtk8GDlEwouUY3AG",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/fc/88/29/fc8829db-b4de-a366-70e0-3cf6cb53a81b/15UMGIM20685.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80acbf86dce9af8b0f84",
    "album": "Complètement fou",
    "artist": "Yelle",
    "genres": [
-    "Pop"
+    "Électronique"
    ],
    "lang": "Français",
    "rating": 4,
    "listened": true,
    "listenedOn": "2014-09-29",
    "released": "2014-09-29",
-   "link": "https://music.apple.com/fr/album/compl%C3%A8tement-fou/1447192212",
-   "cover": "https://m.media-amazon.com/images/I/814HLp8A3bL._SL1500_.jpg"
+   "link": "https://open.spotify.com/album/2NSGe4ZvCEuiE1FchjGyFq",
+   "cover": "https://m.media-amazon.com/images/I/814HLp8A3bL._SL1500_.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8d/5c/bd/8d5cbdbc-ded2-02f7-7c63-4d82771a868a/5060281619419_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df80aa9373fc9cf9279394",
    "album": "Smoke + Mirrors",
    "artist": "Imagine Dragons",
    "genres": [
-    "Pop",
-    "Rock"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 5,
    "listened": true,
    "listenedOn": "2014-09-18",
    "released": "2014-09-18",
-   "link": "https://music.apple.com/fr/album/smoke-mirrors-deluxe/1440831203",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/b3/a8/b0/b3a8b05f-7dfe-f557-6147-57e74dfdbebe/15UMGIM53209.rgb.jpg"
+   "link": "https://open.spotify.com/album/6rRFeV6xigfNyPoZ6YqcoW",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/b3/a8/b0/b3a8b05f-7dfe-f557-6147-57e74dfdbebe/15UMGIM53209.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Rock"
+   ]
   },
   {
    "id": "2dca7bc0f6df808daf3bf2ead2f4262d",
@@ -1601,8 +1781,8 @@
    "listened": true,
    "listenedOn": "2013-12-13",
    "released": "2013-12-13",
-   "link": "https://music.apple.com/fr/album/pretty-hurts/939775882?i=939777955",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/cb/d0/1b/cbd01b16-7759-38ec-15a2-8a98228319ff/886444935265.jpg"
+   "link": "https://open.spotify.com/album/2noKUZhXwUhPQMgSr56T4G",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/cb/d0/1b/cbd01b16-7759-38ec-15a2-8a98228319ff/886444935265.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df802b9846cb7dc3059076",
@@ -1616,54 +1796,66 @@
    "listened": true,
    "listenedOn": "2013-08-19",
    "released": "2013-08-19",
-   "link": "https://music.apple.com/fr/album/racine-carr%C3%A9e/1440856001",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music126/v4/44/13/e0/4413e0be-302b-fe2a-5c88-5c02389f67df/13UAAIM66791.rgb.jpg"
+   "link": "https://open.spotify.com/album/6uyslsVGFsHKzdGUosFwBM",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/44/13/e0/4413e0be-302b-fe2a-5c88-5c02389f67df/13UAAIM66791.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df806a963ad6a9d2d0bc0e",
    "album": "Random Access Memories",
    "artist": "Daft Punk",
    "genres": [
-    "Electro"
+    "Dance"
    ],
    "lang": "Anglais",
    "rating": 5,
    "listened": true,
    "listenedOn": "2013-05-17",
    "released": "2013-05-17",
-   "link": "https://music.apple.com/fr/album/random-access-memories/617154241",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg"
+   "link": "https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/86/b1/92/86b192cf-ceb6-6e51-9361-dc4a35e95d22/196589921154.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df8091a38ed49d7911d861",
    "album": "Night Visions",
    "artist": "Imagine Dragons",
    "genres": [
-    "Rock",
-    "Pop"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 5,
    "listened": true,
    "listenedOn": "2012-01-01",
    "released": "2012-01-01",
-   "link": "https://music.apple.com/fr/album/night-visions/1440829989",
-   "cover": "https://vinylcollector.store/cdn/shop/products/71x_T7Cjx8L._AC_SL1400.jpg?v=1657115985&width=1200"
+   "link": "https://open.spotify.com/album/6nxDQi0FeEwccEPJeNySoS",
+   "cover": "https://vinylcollector.store/cdn/shop/products/71x_T7Cjx8L._AC_SL1400.jpg?v=1657115985&width=1200",
+   "myGenres": [
+    "Rock",
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/c1/1a/fa/c11afaa1-26fc-9829-a6cf-9d1dd228ec06/12UMGIM46901.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df808f9f20f906ba70cb84",
    "album": "Tetra",
    "artist": "C2C",
    "genres": [
-    "Electro"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 5,
    "listened": true,
    "listenedOn": "2012-01-01",
    "released": "2012-01-01",
-   "link": "https://music.apple.com/fr/album/tetra/1440862752",
-   "cover": "https://m.media-amazon.com/images/I/71N4r1LnhsL._SL1400_.jpg"
+   "link": "https://open.spotify.com/album/61XR1JvHsYvYxEj595VeLt",
+   "cover": "https://m.media-amazon.com/images/I/71N4r1LnhsL._SL1400_.jpg",
+   "myGenres": [
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/95/25/4f/95254fd9-cd0e-f439-1303-8a170156cf02/00602537156153.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80149a43cfedc8b0270b",
@@ -1677,7 +1869,7 @@
    "listened": true,
    "listenedOn": "2011-01-24",
    "released": "2011-01-24",
-   "link": "https://music.apple.com/fr/album/21/403037872",
+   "link": "https://open.spotify.com/album/5duyQokC4FMcWPYTV9Gpf9",
    "cover": "https://m.media-amazon.com/images/I/61lMwNQGYbL._SL1200_.jpg"
   },
   {
@@ -1685,15 +1877,19 @@
    "album": "Back To Black",
    "artist": "Amy Winehouse",
    "genres": [
-    "Pop"
+    "R&B/Soul"
    ],
    "lang": "Anglais",
    "rating": 4,
    "listened": true,
    "listenedOn": "2006-10-30",
    "released": "2006-10-30",
-   "link": "https://music.apple.com/fr/album/back-to-black/1422677780",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music112/v4/5a/72/3f/5a723fec-965d-3483-89f8-d66b79f88419/15UMGIM24224.rgb.jpg"
+   "link": "https://open.spotify.com/album/097eYvf9NKjFnv4xA9s2oV",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/5a/72/3f/5a723fec-965d-3483-89f8-d66b79f88419/15UMGIM24224.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/cf/3f/09/cf3f0994-980d-d8ed-088d-ae89af256b73/15UMGIM24224.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df80ca903ec3dc1266eb56",
@@ -1707,23 +1903,30 @@
    "listened": true,
    "listenedOn": "2006-01-01",
    "released": "2006-01-01",
-   "link": "https://music.apple.com/fr/album/life-in-cartoon-motion/1443261504",
-   "cover": "https://m.media-amazon.com/images/I/81q1BfHVVEL._SL1400_.jpg"
+   "link": "https://open.spotify.com/album/6oIaXBTIZ2Q9cJKBgrZ2Ox",
+   "cover": "https://m.media-amazon.com/images/I/81q1BfHVVEL._SL1400_.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e2/f0/c5/e2f0c5ea-5ce9-7e52-8abd-fe17e5ed61c6/07UMGIM00357.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df806985b7e2aaadab50eb",
    "album": "Discovery",
    "artist": "Daft Punk",
    "genres": [
-    "Electro"
+    "Dance"
    ],
    "lang": "Anglais",
    "rating": 5,
    "listened": true,
    "listenedOn": "2001-03-12",
    "released": "2001-03-12",
-   "link": "https://music.apple.com/fr/album/discovery/697194953",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg"
+   "link": "https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2a8a7bc0f6df80abaabed2640e36b8b1",
@@ -1737,9 +1940,13 @@
    "listened": true,
    "listenedOn": "1999-11-13",
    "released": "1992-09-21",
-   "link": "https://music.apple.com/fr/album/abba-gold-greatest-hits/1422648512",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music115/v4/60/f8/a6/60f8a6bc-e875-238d-f2f8-f34a6034e6d2/14UMGIM07615.rgb.jpg",
-   "review": "Je sais que c’est une compilation, que c’est uniquement un récap de leurs plus grands hits (sauf Angel Eyes sur la version classique 😡). Mais sur les 19 titres, 11 sont dans mes classiques et rien que pour ça ça mérite d’être un super album compilation."
+   "link": "https://open.spotify.com/album/1kM6xcSYO5ASJaWgygznL7",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/60/f8/a6/60f8a6bc-e875-238d-f2f8-f34a6034e6d2/14UMGIM07615.rgb.jpg/600x600bb.jpg",
+   "review": "Je sais que c’est une compilation, que c’est uniquement un récap de leurs plus grands hits (sauf Angel Eyes sur la version classique 😡). Mais sur les 19 titres, 11 sont dans mes classiques et rien que pour ça ça mérite d’être un super album compilation.",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/dc/f7/90/dcf790c3-7c63-f7b3-e57b-5a8747a8ebbe/14UMGIM11148.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2e9a7bc0f6df806389c9c4060766694c",
@@ -1753,15 +1960,15 @@
    "listened": false,
    "listenedOn": null,
    "released": "2025-11-07",
-   "link": "https://music.apple.com/fr/album/all-the-flowers-have-bloomed/1838668078",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/e7/73/f4/e773f4c5-892f-2206-abc4-0aad3cb32500/5063807111299_cover.jpg"
+   "link": "https://open.spotify.com/album/1GzZOyOEu5fepoX5rySrdO",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e7/73/f4/e773f4c5-892f-2206-abc4-0aad3cb32500/5063807111299_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2dba7bc0f6df808aa124d7b939515194",
    "album": "An Electronic Storm",
    "artist": "White Noise",
    "genres": [
-    "Electro"
+    "Rock"
    ],
    "lang": "Anglais",
    "rating": null,
@@ -1769,37 +1976,47 @@
    "listenedOn": null,
    "released": "1969-01-01",
    "link": "https://music.apple.com/fr/album/an-electric-storm/1443189179",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music125/v4/64/83/3f/64833f46-3eea-1572-db5c-0242b6327ef5/00602498431979.rgb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/64/83/3f/64833f46-3eea-1572-db5c-0242b6327ef5/00602498431979.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2dba7bc0f6df8024b242eb43d133d3bf",
    "album": "Attack Decay Sustain Release",
    "artist": "Simian Mobile Disco",
    "genres": [
-    "Electro"
+    "Techno"
    ],
    "lang": "Anglais",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2007-01-01",
-   "link": "https://music.apple.com/fr/album/attack-decay-sustain-release/1818674591",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2f/97/fc/2f97fcc7-8888-03b6-7f32-d9fc86d99710/745486.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/1BJxYJEWSekuTRYlZvgmfi",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2f/97/fc/2f97fcc7-8888-03b6-7f32-d9fc86d99710/745486.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2f7a7bc0f6df80339afdc958bdf16fba",
    "album": "Cherie on top",
    "artist": "Vickie Cherie",
    "genres": [
-    "Electro"
+    "Alternative"
    ],
    "lang": "Français",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2026-01-23",
-   "link": "https://music.apple.com/fr/album/cherie-on-top-friends-edition/1867453384",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/86/09/a8/8609a871-2078-6682-41ce-d8d9d48b373f/3663729422880_cover.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/15qy0SXvo6cSnwgg7T852D",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/86/09/a8/8609a871-2078-6682-41ce-d8d9d48b373f/3663729422880_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7e/8b/47/7e8b4729-834d-91b1-3dad-8aea74555d66/3663729358714_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2dba7bc0f6df801e85d4e923c6248d78",
@@ -1814,8 +2031,8 @@
    "listened": false,
    "listenedOn": null,
    "released": "2023-02-14",
-   "link": "https://music.apple.com/fr/album/desire-i-want-to-turn-into-you-everasking-edition/1732294271",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music122/v4/37/74/df/3774df30-e827-1f2b-507e-abd6a8c641de/198391271656.jpg"
+   "link": "https://open.spotify.com/album/25ktFe8igqIwv9aRbkdnTS",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/37/74/df/3774df30-e827-1f2b-507e-abd6a8c641de/198391271656.jpg/600x600bb.jpg"
   },
   {
    "id": "2a6a7bc0f6df80a3b84beb8e8e3459db",
@@ -1829,21 +2046,24 @@
    "listened": false,
    "listenedOn": null,
    "released": "2025-11-28",
-   "link": null,
+   "link": "https://open.spotify.com/album/5x8HW0WELQYm5Cp8408sfg",
    "cover": "https://vinylcollector.store/cdn/shop/files/JessieJCover.jpg?v=1758728992&width=2000"
   },
   {
    "id": "2a8a7bc0f6df80ffa604df67a1ea0d74",
    "album": "Essex Honey",
    "artist": "Blood Orange",
-   "genres": [],
+   "genres": [
+    "Alternative"
+   ],
    "lang": "Anglais",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2025-08-29",
-   "link": "https://music.apple.com/fr/album/essex-honey/1825903903",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/15/b5/61/15b56142-10d6-f9d3-f29d-e0e0d123061d/196873161457.jpg"
+   "link": "https://open.spotify.com/album/5RUma3H9uzDLXxwT7JzTel",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/15/b5/61/15b56142-10d6-f9d3-f29d-e0e0d123061d/196873161457.jpg/600x600bb.jpg",
+   "myGenres": []
   },
   {
    "id": "37ca7bc0f6df80aa8df5c61c8d55638a",
@@ -1857,7 +2077,7 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-09-18",
-   "link": "https://music.apple.com/fr/album/estrus/6766440172",
+   "link": "https://open.spotify.com/album/6di14tEch7EQ0jMglRwcf6",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e2/ee/b1/e2eeb1c6-a96a-d768-643c-20e087bce6d8/00823375156413_Cover.jpg/600x600bb.jpg"
   },
   {
@@ -1865,45 +2085,54 @@
    "album": "GILDAA",
    "artist": "Gildaa",
    "genres": [
-    "Alternative"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2026-03-06",
-   "link": null,
-   "cover": null
+   "link": "https://open.spotify.com/album/2Lxn9SgKaLw60lcucWubnn",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/e0/34/97e034b0-c094-6081-9348-1a777c169f25/5400863203580_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Alternative"
+   ]
   },
   {
    "id": "368a7bc0f6df80bfaefcdc471736c637",
    "album": "Grandma’s Gospel Favorites",
    "artist": "Jason Mraz",
    "genres": [
-    "Gospel"
+    "Americana"
    ],
    "lang": "Anglais",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2026-05-08",
-   "link": "https://music.apple.com/fr/album/grandmas-gospel-favorites/1880392609",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/2f/f9/5a/2ff95a40-d9df-40a9-3ed7-f7db23373b11/4099964238419.jpg"
+   "link": "https://open.spotify.com/album/4JOIhYxFRI3zrc5jJPDP69",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2f/f9/5a/2ff95a40-d9df-40a9-3ed7-f7db23373b11/4099964238419.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Gospel"
+   ]
   },
   {
    "id": "373a7bc0f6df8064923bf37e753dfc76",
    "album": "guérir",
    "artist": "marguerite",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2026-10-02",
-   "link": null,
-   "cover": null
+   "link": "https://open.spotify.com/album/5SLhRamBJlp8UHE5VhKj5Y",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0f/dd/3e/0fdd3ed3-08bd-a57c-cc98-381d3d34dbde/196874426579.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2f7a7bc0f6df80469120ee7915f695e5",
@@ -1917,8 +2146,11 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-01-23",
-   "link": "https://music.apple.com/fr/album/hyperlove/1856033810",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/31/05/53/3105532e-eccb-5a95-c16b-a85dd8648027/25UM1IM86335.rgb.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/2h6YTeHoozQEaXrxMXcpBT",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/31/05/53/3105532e-eccb-5a95-c16b-a85dd8648027/25UM1IM86335.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "368a7bc0f6df805f926ae058fc247ad7",
@@ -1933,8 +2165,8 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-05-22",
-   "link": "https://music.apple.com/fr/album/jeune-laide/1887504127",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/e0/f0/a3/e0f0a36c-2bad-abee-cd53-de41d073385b/3596975072694_cover.jpg"
+   "link": "https://open.spotify.com/album/3oavlb7bKt7NljH3CL5uTZ",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e0/f0/a3/e0f0a36c-2bad-abee-cd53-de41d073385b/3596975072694_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2f8a7bc0f6df80219518dffcd55d8f74",
@@ -1948,7 +2180,7 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-02-27",
-   "link": "https://music.apple.com/fr/album/le-c%C5%93ur-et-sa-dictature/1866866053",
+   "link": "https://open.spotify.com/album/4rM6sNDT33rocB4UpauxyM",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/68/63/c0/6863c0df-5350-9230-35da-fdafb1f228a5/196873994161.jpg/600x600bb.jpg"
   },
   {
@@ -1956,31 +2188,18 @@
    "album": "Murmurations",
    "artist": "Simian Mobile Disco",
    "genres": [
-    "Electro"
+    "Dance"
    ],
    "lang": "Anglais",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2018-05-11",
-   "link": "https://music.apple.com/fr/album/murmurations/1350637598",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/f7/1f/d7/f71fd77d-5838-8b1e-33c2-9d0135177393/cover.jpg/600x600bb.jpg"
-  },
-  {
-   "id": "372a7bc0f6df80a3abcececbde56314c",
-   "album": "Music, Fashion, Film",
-   "artist": "Charli XCX",
-   "genres": [
-    "Pop",
-    "Rock"
-   ],
-   "lang": "Anglais",
-   "rating": null,
-   "listened": false,
-   "listenedOn": null,
-   "released": "2026-07-24",
-   "link": null,
-   "cover": null
+   "link": "https://open.spotify.com/album/71SA5J1DSFs5Hofv88gym1",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/f7/1f/d7/f71fd77d-5838-8b1e-33c2-9d0135177393/cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2f7a7bc0f6df8096b51bf0af754c7547",
@@ -1994,8 +2213,12 @@
    "listened": false,
    "listenedOn": null,
    "released": "2025-11-28",
-   "link": "https://music.apple.com/fr/album/ouverture/1815366444",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d7/4a/31/d74a3128-1e92-0da6-09fd-213cac9f46cc/3663729382597_cover.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/0guSJv1emyMm7QYeNW2KK7",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d7/4a/31/d74a3128-1e92-0da6-09fd-213cac9f46cc/3663729382597_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Rock"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/75/2d/e2/752de26b-fe7c-3e32-d822-6b4fa75f324d/3663729366221_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "37ca7bc0f6df800cb97bc38a7693f8c6",
@@ -2009,23 +2232,30 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-07-31",
-   "link": "https://music.apple.com/fr/album/petal/1895420989",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7e/e6/82/7ee682bd-1b17-6adc-be63-b5af1bdff369/26UMGIM51126.rgb.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/2k4FmEtXR0WiDW0Ac2QArT",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7e/e6/82/7ee682bd-1b17-6adc-be63-b5af1bdff369/26UMGIM51126.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/56/f4/96/56f49612-02dd-83f4-44fe-d2118cc70707/26UMGIM51129.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2dba7bc0f6df806db2b7fa7a5f17d72f",
    "album": "Presque punk",
    "artist": "P.R2B",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2025-12-05",
-   "link": "https://music.apple.com/fr/album/presque-punk/1848316166",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/59/0d/dc/590ddcef-9897-5220-f6da-dc77da7ed8b0/3596974941823_cover.jpg"
+   "link": "https://open.spotify.com/album/2tLSulOAVaq89ILmVaFE71",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/59/0d/dc/590ddcef-9897-5220-f6da-dc77da7ed8b0/3596974941823_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "368a7bc0f6df8090bc2dfa9ea61e7db7",
@@ -2040,21 +2270,24 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-08-14",
-   "link": "https://music.apple.com/fr/album/ritual/1892426976",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/4e/f9/e9/4ef9e917-0bb7-7988-b5ba-781e15cdaeb2/196874146361.jpg"
+   "link": "https://open.spotify.com/album/48kNSC9VNag007n2cdI374",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4e/f9/e9/4ef9e917-0bb7-7988-b5ba-781e15cdaeb2/196874146361.jpg/600x600bb.jpg"
   },
   {
    "id": "2d6a7bc0f6df80769649d44da19547c1",
    "album": "Ruby",
    "artist": "Jennie",
-   "genres": [],
+   "genres": [
+    "Pop"
+   ],
    "lang": null,
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2025-12-26",
-   "link": null,
-   "cover": null
+   "link": "https://open.spotify.com/album/1vWMw6pu3err6qqZzI3RhH",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/97/4d/0e/974d0ed9-0c7b-59da-da0f-7a22ebfc1479/196872953367.jpg/600x600bb.jpg",
+   "myGenres": []
   },
   {
    "id": "2f7a7bc0f6df80ed94fcc362caf61742",
@@ -2068,23 +2301,30 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-02-06",
-   "link": "https://music.apple.com/fr/album/sunday-best/1856393193",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c8/f3/42/c8f342f1-a45b-e312-c437-71b32638ddb3/25UM1IM83975.rgb.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/7DEY5qf1aurVCNdfKRU59T",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c8/f3/42/c8f342f1-a45b-e312-c437-71b32638ddb3/25UM1IM83975.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/99/0f/9d/990f9d9d-b3b8-bbe9-e94a-30565790b6bf/25UM1IM83975.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2dba7bc0f6df80dd9dcdff8abe1a2806",
    "album": "Sunshine Factory",
    "artist": "Uffie",
    "genres": [
-    "Electro"
+    "Pop"
    ],
    "lang": "Anglais",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2022-05-20",
-   "link": "https://music.apple.com/fr/album/sunshine-factory/1603453621",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d7/a0/6c/d7a06c1b-8b28-b0fc-88e1-18c71d976482/CHI16_Uffie_SunshineFactory1500.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/2z5wT71mC48vZKFaknZTBa",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d7/a0/6c/d7a06c1b-8b28-b0fc-88e1-18c71d976482/CHI16_Uffie_SunshineFactory1500.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "368a7bc0f6df807e9d9dd3909ded2219",
@@ -2098,23 +2338,26 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-05-08",
-   "link": "https://music.apple.com/fr/album/the-afterparty/1857952252",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music211/v4/84/a4/c6/84a4c65d-db62-65ed-9aed-cdb0a875c408/198704887093_Cover.jpg"
+   "link": "https://open.spotify.com/album/3eqH5aQKPKLKD1kFNBczwl",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/84/a4/c6/84a4c65d-db62-65ed-9aed-cdb0a875c408/198704887093_Cover.jpg/600x600bb.jpg"
   },
   {
    "id": "379a7bc0f6df802abca0ca5ff5252fcf",
    "album": "The Moment (The Score)",
    "artist": "A. G. Cook",
    "genres": [
-    "Electro"
+    "Électronique"
    ],
    "lang": null,
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2026-01-30",
-   "link": "https://open.qobuz.com/album/oc1sldun75rf9",
-   "cover": null
+   "link": "https://open.spotify.com/album/1kznterpTslI3ph0qEcUbp",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/41/b6/65/41b665b2-958d-9451-fb16-a01ec04e38d3/617308009620_Cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2a6a7bc0f6df80a6afe1f4e865022e7a",
@@ -2128,8 +2371,8 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-02-27",
-   "link": "https://music.apple.com/fr/album/the-mountain/1837237742",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music221/v4/7a/74/e7/7a74e759-bf28-c96e-0084-b39c1a42a2d8/199538459005.jpg"
+   "link": "https://open.spotify.com/album/1RvJmGd47lKS4XMXs9j8hD",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7a/74/e7/7a74e759-bf28-c96e-0084-b39c1a42a2d8/199538459005.jpg/600x600bb.jpg"
   },
   {
    "id": "2a8a7bc0f6df807897a9c6f81784bd29",
@@ -2143,25 +2386,31 @@
    "listened": false,
    "listenedOn": null,
    "released": "2024-06-20",
-   "link": null,
-   "cover": null
+   "link": "https://open.spotify.com/album/0hBRqPYPXhr1RkTDG3n4Mk",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d2/f8/99/d2f89987-d2a5-45a5-1746-c0841c7e9843/24UM1IM17286.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2dba7bc0f6df800b9ef3fed00d0ffe01",
    "album": "Tons of Friends",
    "artist": "Crookers",
    "genres": [
-    "Electro",
-    "Pop",
-    "Hip-hop/Rap"
+    "Dance"
    ],
    "lang": "Anglais",
    "rating": null,
    "listened": false,
    "listenedOn": null,
    "released": "2010-03-08",
-   "link": "https://music.apple.com/fr/album/tons-of-friends/472566837",
-   "cover": "https://a5.mzstatic.com/us/r1000/0/Music/3d/31/5d/mzi.dzhcyljd.jpg"
+   "link": "https://open.spotify.com/album/4PTgb4tiMT9djpRGUzbv1Q",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/3d/31/5d/mzi.dzhcyljd.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro",
+    "Pop",
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "2f7a7bc0f6df80c2b83ae7e2aaccc449",
@@ -2175,8 +2424,12 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-03-13",
-   "link": "https://music.apple.com/fr/album/trying-times/1862353780",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f2/44/f7/f244f787-d498-d60d-4a32-3ad34c1f43d6/00198704897474_Cover.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/16tV8wTfqPyA6Cu5dwJJPc",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f2/44/f7/f244f787-d498-d60d-4a32-3ad34c1f43d6/00198704897474_Cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Alternative"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c5/00/19/c500197f-a99c-c3aa-65f2-2a3a78b90630/00198704897481_Cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a9a7bc0f6df80ceb5fcc9e49fe743ca",
@@ -2190,7 +2443,7 @@
    "listened": false,
    "listenedOn": null,
    "released": "2025-12-12",
-   "link": "https://music.apple.com/fr/album/usb/1840941494",
+   "link": "https://open.spotify.com/album/2ClZ9xWAYg1BH8zkR96dJo",
    "cover": null
   },
   {
@@ -2205,8 +2458,11 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-03-06",
-   "link": "https://music.apple.com/fr/album/whatevers-clever/1845189970",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/e0/a1/48e0a157-0f2a-28fc-a864-b274409703d8/075679599575.jpg/600x600bb.jpg"
+   "link": "https://open.spotify.com/album/2ivbRaW10BVYVDTGRGDW6p",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/48/e0/a1/48e0a157-0f2a-28fc-a864-b274409703d8/075679599575.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2f7a7bc0f6df805f8b36f7754a42ba5a",
@@ -2220,7 +2476,7 @@
    "listened": false,
    "listenedOn": null,
    "released": "2026-03-27",
-   "link": "https://music.apple.com/fr/album/wor%24t-girl-in-america/1867530577",
+   "link": "https://open.spotify.com/album/5siV9C6eK0NpAqER2FfCVA",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e7/41/d8/e741d8f3-f8db-d401-5d93-fdfd69d8f17e/196873835891.jpg/600x600bb.jpg"
   }
  ]
