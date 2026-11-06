@@ -3,6 +3,7 @@
 //
 // Routes :
 //   GET  /search?album=…&artist=…   recherche d'albums sur Spotify (mot de passe requis)
+//   GET  /genres?artist=<id Spotify>  genres d'un artiste (ajout depuis la barre de recherche)
 //   POST /albums                     crée une fiche dans la base Notion (mot de passe requis)
 //   PATCH /albums/:pageId            modifie écouté / note / date / avis (mot de passe requis)
 //   GET  /spotify/login?password=…   relie ton compte Spotify (une seule fois)
@@ -149,6 +150,7 @@ async function searchAlbums(env, album, artist, opts = {}) {
     album: a.name,
     artist: a.artists.map((x) => x.name).join(", "),
     mainArtist: a.artists[0]?.name || "",
+    artistId: a.artists[0]?.id || null,
     released: a.release_date_precision === "day" ? a.release_date : a.release_date_precision === "month" ? `${a.release_date}-01` : `${a.release_date}-01-01`,
     tracks: a.total_tracks,
     type: a.album_type,
@@ -461,7 +463,16 @@ async function handle(req, env) {
       const album = url.searchParams.get("album")?.trim(), artist = url.searchParams.get("artist")?.trim();
       const q = url.searchParams.get("q")?.trim(); // recherche libre (barre de recherche du site)
       if (!album && !artist && !q) return json({ error: "Indique un album ou un artiste" }, 400, h);
-      return json({ results: await searchAlbums(env, album, artist, q ? { q } : {}) }, 200, h);
+      // Recherche libre : sans les genres (un appel Spotify de moins, réponse ~2× plus rapide) ;
+      // ils sont demandés à /genres seulement quand un album est ajouté.
+      return json({ results: await searchAlbums(env, album, artist, q ? { q, genres: false } : {}) }, 200, h);
+    }
+
+    if (url.pathname === "/genres" && req.method === "GET") {
+      const id = url.searchParams.get("artist") || "";
+      if (!/^[A-Za-z0-9]{10,30}$/.test(id)) return json({ error: "Artiste inconnu" }, 400, h);
+      const art = await spotify(await appToken(env), `/artists/${id}`);
+      return json({ genres: mapGenres(art?.genres) }, 200, h);
     }
 
     if (url.pathname === "/albums" && req.method === "POST") {

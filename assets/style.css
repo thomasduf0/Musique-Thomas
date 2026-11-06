@@ -97,7 +97,12 @@ h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
 .card:hover .cover, .card:focus-visible .cover { transform: translateY(-4px) rotate(-.6deg); }
 .card:focus-visible { outline: none; }
 .card:focus-visible .cover { outline: 2px solid var(--accent); outline-offset: 3px; }
-.cover img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
+.cover img { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: 0; transition: opacity .3s ease; }
+.cover img.loaded { opacity: 1; }
+/* Tant que la pochette charge : dégradé seul, sans le titre (affiché seulement s'il n'y a pas d'image) */
+.cover.has-img .ph { color: transparent; }
+.cover.has-img .ph small { opacity: 0; }
 .badge { z-index: 2; }
 .ph {
   position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
@@ -257,7 +262,7 @@ h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
   .d-left .cover { width: min(260px, 70vw); }
   .d-info { padding: 20px 22px 76px; }
 }
-@media (prefers-reduced-motion: reduce) { .cover, .d-left .cover { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .cover, .d-left .cover, .cover img { transition: none; } }
 
 /* ---------- Boutons rapides sur les cartes ---------- */
 .pill-btn {

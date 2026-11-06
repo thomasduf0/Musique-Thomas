@@ -90,17 +90,22 @@
     const m = (u || "").match(/^https?:\/\/a\d+\.mzstatic\.com\/us\/r\d+\/\d+\/(.+)$/);
     return m ? `https://is1-ssl.mzstatic.com/image/thumb/${m[1]}/600x600bb.jpg` : u;
   };
+  // Anti-clignotement : une pochette apparaît d'un coup en fondu une fois chargée, sans montrer
+  // le titre du dégradé avant. Une pochette déjà vue s'affiche aussitôt quand sa carte est recréée.
+  const seenCovers = new Set();
+  window.__coverOk = (img) => { seenCovers.add(img.currentSrc || img.src); img.classList.add("loaded"); };
   window.__coverFail = (img) => {
     const alt = img.dataset.alt;
-    if (alt && img.src !== alt) { img.dataset.alt = ""; img.src = alt; } else img.remove();
+    if (alt && img.src !== alt) { img.dataset.alt = ""; img.src = alt; }
+    else { img.closest(".cover")?.classList.remove("has-img"); img.remove(); }
   };
   function coverHTML(a, big = false) {
     const h = hue(a.artist + a.album);
     const ph = `<div class="ph" style="background:linear-gradient(140deg,hsl(${h} 55% 38%),hsl(${(h + 50) % 360} 60% 18%))">${esc(a.album)}<small>${esc(a.artist)}</small></div>`;
     const src = fixCover(a.cover) || a.coverAlt;
-    const img = src ? `<img src="${esc(src)}" data-alt="${esc(a.coverAlt && a.coverAlt !== src ? a.coverAlt : "")}" alt="Pochette de ${esc(a.album)}" loading="lazy" onerror="__coverFail(this)">` : "";
+    const img = src ? `<img src="${esc(src)}" data-alt="${esc(a.coverAlt && a.coverAlt !== src ? a.coverAlt : "")}" alt="Pochette de ${esc(a.album)}"${seenCovers.has(src) ? ` class="loaded"` : ""} loading="lazy" decoding="async" onload="__coverOk(this)" onerror="__coverFail(this)">` : "";
     const badge = !big && a.rating ? `<span class="badge">${"★".repeat(a.rating)}</span>` : "";
-    return `<div class="cover">${ph}${img}${badge}${big ? `<span class="shine"></span>` : ""}</div>`;
+    return `<div class="cover${src ? " has-img" : ""}">${ph}${img}${badge}${big ? `<span class="shine"></span>` : ""}</div>`;
   }
   const artistLink = (name, cls = "a-link") => `<span class="${cls}" role="link" tabindex="0" data-artist="${esc(name)}">${esc(name)}</span>`;
 
@@ -159,10 +164,10 @@
   // On garde les cartes déjà construites : une carte identique n'est pas recréée, donc sa pochette ne recharge pas
   const cardCache = new Map();
   function cardEl(a) {
-    const html = albumCard(a).trim(), c = cardCache.get(a.id);
+    const html = albumCard(a).trim().replace(' class="loaded"', ""), c = cardCache.get(a.id);
     if (c && c.html === html) return c.el;
     const t = document.createElement("template");
-    t.innerHTML = html;
+    t.innerHTML = albumCard(a).trim();
     const el = t.content.firstElementChild;
     cardCache.set(a.id, { html, el });
     return el;
@@ -619,15 +624,24 @@
     else if (e.key === "Enter" && e.target.matches("[data-open]")) e.target.click();
   });
   document.addEventListener("click", (e) => { if (!e.target.closest(".search")) closeSearch(); });
+  // Les genres ne sont plus envoyés avec les résultats : on les demande au moment d'ajouter l'album
+  async function withGenres(r) {
+    const out = { ...r, artist: r.mainArtist || r.artist };
+    if (!out.genres?.length && r.artistId) {
+      try { out.genres = (await api(`/genres?artist=${encodeURIComponent(r.artistId)}`)).genres || []; } catch { out.genres = []; }
+    }
+    return out;
+  }
   sBox.addEventListener("click", async (e) => {
     const open = e.target.closest("[data-open]");
     if (open) { closeSearch(); return openDetail(open.dataset.open); }
     const h = e.target.closest("[data-s-heard]");
-    if (h) { closeSearch(); const r = sSpotify[+h.dataset.sHeard]; return openNew({ ...r, artist: r.mainArtist || r.artist }); }
+    if (h) { h.disabled = true; const r = await withGenres(sSpotify[+h.dataset.sHeard]); closeSearch(); return openNew(r); }
     const t = e.target.closest("[data-s-todo]");
     if (t) {
       const r = sSpotify[+t.dataset.sTodo];
-      const a = await saveNew({ ...r, artist: r.mainArtist || r.artist }, { listened: false }, t);
+      t.disabled = true;
+      const a = await saveNew(await withGenres(r), { listened: false }, t);
       if (a) renderSearch(sInput.value.trim(), sShown.list, false);
     }
   });
