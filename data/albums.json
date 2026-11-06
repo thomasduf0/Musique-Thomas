@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T21:02:07.834Z",
+ "updatedAt": "2026-11-06T21:57:44.229Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -1817,7 +1817,7 @@
     "Alternative"
    ],
    "lang": "Français",
-   "rating": null,
+   "rating": 4,
    "listened": true,
    "listenedOn": "2021-03-26",
    "released": "2021-03-26",

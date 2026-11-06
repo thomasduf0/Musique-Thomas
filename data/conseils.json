@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T21:02:07.835Z",
+ "updatedAt": "2026-11-06T21:57:44.231Z",
  "fromArtists": [
   {
    "appleId": "201274359",
@@ -534,54 +534,34 @@
    "why": "Proche d’Imagine Dragons (5★), que tu as très bien noté."
   },
   {
-   "title": "Val Synth",
-   "artist": "Flora Fishbach",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/dfced078e66f707eb17c42c0fd7a9a08/1000x1000-000000-80-0-0.jpg",
-   "released": "2025-09-12",
-   "url": "https://www.deezer.com/album/775932001",
-   "genre": null,
-   "tracks": 8,
+   "title": "Chaleur Humaine",
+   "artist": "Christine and the Queens",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/d9fcaf9ab19436cce27af945d86eea98/1000x1000-000000-80-0-0.jpg",
+   "released": "2013-04-22",
+   "url": "https://www.deezer.com/album/53514702",
+   "genre": "Alternative",
+   "tracks": 11,
    "why": "Proche d’Yelle (5★), que tu as très bien noté."
   },
   {
-   "title": "LE CLUB C'EST VOUS",
-   "artist": "Bagarre",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/c8aa2726a8f597867c74aa45f2ce6af6/1000x1000-000000-80-0-0.jpg",
-   "released": "2024-03-29",
-   "url": "https://www.deezer.com/album/559193292",
-   "genre": null,
-   "tracks": 12,
-   "why": "Proche d’Yelle (5★), que tu as très bien noté."
-  },
-  {
-   "title": "Héra",
-   "artist": "Georgio",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/946fcd437c998275dafb31f3497172ac/1000x1000-000000-80-0-0.jpg",
-   "released": "2016-11-04",
-   "url": "https://www.deezer.com/album/13897052",
+   "title": "Libre",
+   "artist": "A2H",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/69c0f36fd8c6529894e653737d24479b/1000x1000-000000-80-0-0.jpg",
+   "released": "2016-04-15",
+   "url": "https://www.deezer.com/album/12362094",
    "genre": "Rap/Hip Hop",
-   "tracks": 13,
+   "tracks": 18,
    "why": "Proche de disiz (5★) et Orelsan (5★), que tu as très bien notés."
   },
   {
-   "title": "Destins liés",
-   "artist": "S-Crew",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/e4066e258e4fc78959a8a39675dbb96c/1000x1000-000000-80-0-0.jpg",
-   "released": "2016-06-18",
-   "url": "https://www.deezer.com/album/13373593",
-   "genre": "Rap/Hip Hop",
+   "title": "J.Lo",
+   "artist": "Jennifer Lopez",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/fbd79c70fb988d7e7205a99448f81660/1000x1000-000000-80-0-0.jpg",
+   "released": "2001-01-16",
+   "url": "https://www.deezer.com/album/78360",
+   "genre": "Pop",
    "tracks": 16,
-   "why": "Proche d’Orelsan (5★) et Nekfeu (5★), que tu as très bien notés."
-  },
-  {
-   "title": "V",
-   "artist": "Vald",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/c0755944d17141e4c66ad00a9d1a15a8/1000x1000-000000-80-0-0.jpg",
-   "released": "2022-02-04",
-   "url": "https://www.deezer.com/album/291023182",
-   "genre": "Rap/Hip Hop",
-   "tracks": 16,
-   "why": "Proche d’Orelsan (5★) et Nekfeu (5★), que tu as très bien notés."
+   "why": "Proche de Beyoncé (5★) et Rihanna (5★), que tu as très bien notés."
   },
   {
    "title": "Les Forces Contraires",
@@ -594,74 +574,94 @@
    "why": "Proche d’Yelle (5★) et Lous and the Yakuza (5★), que tu as très bien notés."
   },
   {
-   "title": "Talk A Good Game",
-   "artist": "Kelly Rowland",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/f4cc851b09474ec1a02f366ee7f358e0/1000x1000-000000-80-0-0.jpg",
-   "released": "2013-01-01",
-   "url": "https://www.deezer.com/album/6642276",
+   "title": "Les années lumière",
+   "artist": "Pépite",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/7bcfc8cb9cdb49989b3ab435cd5e5258/1000x1000-000000-80-0-0.jpg",
+   "released": "2024-01-26",
+   "url": "https://www.deezer.com/album/510369621",
+   "genre": "Alternative",
+   "tracks": 11,
+   "why": "Proche d’Yelle (5★), que tu as très bien noté."
+  },
+  {
+   "title": "Destins liés",
+   "artist": "S-Crew",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/e4066e258e4fc78959a8a39675dbb96c/1000x1000-000000-80-0-0.jpg",
+   "released": "2016-06-18",
+   "url": "https://www.deezer.com/album/13373593",
+   "genre": "Rap/Hip Hop",
+   "tracks": 16,
+   "why": "Proche d’Orelsan (5★) et Nekfeu (5★), que tu as très bien notés."
+  },
+  {
+   "title": "Ciara",
+   "artist": "Ciara",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/628bb43f2558d6c2d17fe92405efab61/1000x1000-000000-80-0-0.jpg",
+   "released": "2013-07-05",
+   "url": "https://www.deezer.com/album/6708868",
    "genre": "R&B",
-   "tracks": 12,
+   "tracks": 10,
    "why": "Proche de Beyoncé (5★), que tu as très bien noté."
   },
   {
-   "title": "All This Bad Blood",
-   "artist": "Bastille",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/2c9448000e49a026ea151de606b0d46c/1000x1000-000000-80-0-0.jpg",
-   "released": "2013-11-25",
-   "url": "https://www.deezer.com/album/7113653",
-   "genre": "Alternative",
-   "tracks": 25,
-   "why": "Proche d’Imagine Dragons (5★), que tu as très bien noté."
+   "title": "In My Own Words",
+   "artist": "Ne-Yo",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/ad97c751643e185a348fb13199c49944/1000x1000-000000-80-0-0.jpg",
+   "released": "2006-02-28",
+   "url": "https://www.deezer.com/album/161502",
+   "genre": "R&B",
+   "tracks": 13,
+   "why": "Proche de Beyoncé (5★), que tu as très bien noté."
   },
   {
-   "title": "Chocolat",
-   "artist": "Roméo Elvis",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/35c32b9d794aee8a374b9dfb625d80fe/1000x1000-000000-80-0-0.jpg",
-   "released": "2019-04-12",
-   "url": "https://www.deezer.com/album/93080032",
+   "title": "Héra",
+   "artist": "Georgio",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/946fcd437c998275dafb31f3497172ac/1000x1000-000000-80-0-0.jpg",
+   "released": "2016-11-04",
+   "url": "https://www.deezer.com/album/13897052",
    "genre": "Rap/Hip Hop",
-   "tracks": 19,
+   "tracks": 13,
    "why": "Proche de disiz (5★) et Orelsan (5★), que tu as très bien notés."
   },
   {
-   "title": "Regarde-moi",
-   "artist": "Pierre de Maere",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/9b0f962addf94a55b08be433a20077d6/1000x1000-000000-80-0-0.jpg",
-   "released": "2023-01-27",
-   "url": "https://www.deezer.com/album/372750547",
-   "genre": null,
-   "tracks": 12,
-   "why": "Proche d’Eddy de Pretto (5★) et marguerite (4★), que tu as très bien notés."
-  },
-  {
-   "title": "Oops!... I Did It Again",
-   "artist": "Britney Spears",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/2ee378abaa92e28306850b4b0efe2f03/1000x1000-000000-80-0-0.jpg",
-   "released": "2000-05-16",
-   "url": "https://www.deezer.com/album/1206015",
+   "title": "DRAMA",
+   "artist": "Alice et Moi",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/41290a07709827cf419e557b8859141f/1000x1000-000000-80-0-0.jpg",
+   "released": "2021-05-21",
+   "url": "https://www.deezer.com/album/230718472",
    "genre": "Pop",
-   "tracks": 12,
-   "why": "Proche de Beyoncé (5★) et Rihanna (5★), que tu as très bien notés."
+   "tracks": 16,
+   "why": "Proche d’Yelle (5★), que tu as très bien noté."
   },
   {
-   "title": "A Head Full of Dreams",
-   "artist": "Coldplay",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/5df065fdcbaffd0f83d09789bad9d2db/1000x1000-000000-80-0-0.jpg",
-   "released": "2015-12-04",
-   "url": "https://www.deezer.com/album/11898198",
-   "genre": "Alternative",
-   "tracks": 11,
-   "why": "Proche d’Imagine Dragons (5★), que tu as très bien noté."
-  },
-  {
-   "title": "Girl On Fire",
-   "artist": "Alicia Keys",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/fc44655a4f3058246ce0ab9c020b7141/1000x1000-000000-80-0-0.jpg",
-   "released": "2012-11-23",
-   "url": "https://www.deezer.com/album/6088144",
+   "title": "Survivor",
+   "artist": "Destiny's Child",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/6569bbc2ccd786c051555084ebc9b355/1000x1000-000000-80-0-0.jpg",
+   "released": "2001-01-01",
+   "url": "https://www.deezer.com/album/78534",
    "genre": "Pop",
-   "tracks": 13,
+   "tracks": 18,
    "why": "Proche de Beyoncé (5★), que tu as très bien noté."
+  },
+  {
+   "title": "Paradis",
+   "artist": "Ben Mazué",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/58f7091a000c3495abd2898d445ca4e4/1000x1000-000000-80-0-0.jpg",
+   "released": "2020-11-06",
+   "url": "https://www.deezer.com/album/180589512",
+   "genre": "Pop",
+   "tracks": 14,
+   "why": "Proche d’Eddy de Pretto (5★) et Zaho de Sagazan (5★), que tu as très bien notés."
+  },
+  {
+   "title": "Kiss The Beast",
+   "artist": "Sébastien Tellier",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/363fdd0b2993f12535634dc7d2c3168c/1000x1000-000000-80-0-0.jpg",
+   "released": "2026-01-30",
+   "url": "https://www.deezer.com/album/824175871",
+   "genre": "Pop",
+   "tracks": 12,
+   "why": "Proche d’Yelle (5★), que tu as très bien noté."
   },
   {
    "title": "Carrément carrément",
@@ -674,14 +674,14 @@
    "why": "Proche d’Yelle (5★), que tu as très bien noté."
   },
   {
-   "title": "DRAMA",
-   "artist": "Alice et Moi",
-   "cover": "https://cdn-images.dzcdn.net/images/cover/41290a07709827cf419e557b8859141f/1000x1000-000000-80-0-0.jpg",
-   "released": "2021-05-21",
-   "url": "https://www.deezer.com/album/230718472",
-   "genre": "Pop",
-   "tracks": 16,
-   "why": "Proche d’Yelle (5★), que tu as très bien noté."
+   "title": "Horizon vertical",
+   "artist": "Vald",
+   "cover": "https://cdn-images.dzcdn.net/images/cover/40ceef739f8b292093f438ce5d8aea64/1000x1000-000000-80-0-0.jpg",
+   "released": "2020-12-18",
+   "url": "https://www.deezer.com/album/193664752",
+   "genre": "Rap/Hip Hop",
+   "tracks": 12,
+   "why": "Proche d’Orelsan (5★) et Nekfeu (5★), que tu as très bien notés."
   }
  ],
  "week": "2026-W45"
