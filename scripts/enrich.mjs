@@ -273,7 +273,7 @@ async function weeklyPicks(rows, cache, excludeArtists, count = 16) {
       picks.push({
         title: best.title, artist: c.name, cover: best.cover_xl || best.cover_big || null,
         released: best.release_date || null, url: best.link || `https://www.deezer.com/album/${best.id}`,
-        genre, tracks, why: `Proche de ${via.join(" et ")}, que tu as très bien noté${via.length > 1 ? "s" : ""}.`,
+        genre, tracks, why: `Proche ${/^[aeiouyhâéèêîôû]/i.test(via[0]) ? "d’" : "de "}${via.join(" et ")}, que tu as très bien noté${via.length > 1 ? "s" : ""}.`,
       });
     } catch (e) { console.warn("Deezer :", c.name, e.message); }
   }
