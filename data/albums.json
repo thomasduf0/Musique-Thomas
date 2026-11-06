@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T17:30:53.989Z",
+ "updatedAt": "2026-11-06T17:39:09.492Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -831,14 +831,18 @@
    "listenedOn": "2025-11-07",
    "released": "2025-11-07",
    "link": "https://open.spotify.com/album/130L3uMANE28R0eH0GtmZS",
-   "cover": "https://m.media-amazon.com/images/I/61NqqluN9DL._SL1024_.jpg"
+   "cover": "https://m.media-amazon.com/images/I/61NqqluN9DL._SL1024_.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/54/ea/7b/54ea7be0-f223-48cf-ffd1-0b2dc03ade5d/196873630922.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df806c9254eb29bbc401b9",
    "album": "Lux",
    "artist": "Rosalía",
    "genres": [
-    "Pop"
+    "Alternative et rock latino"
    ],
    "lang": "Espagnol",
    "rating": 5,
@@ -846,7 +850,10 @@
    "listenedOn": "2025-11-07",
    "released": "2025-11-07",
    "link": "https://open.spotify.com/album/3SUEJULSGgBDG1j4GQhfYY",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/95/ae/80/95ae8046-a6b9-e493-0def-5ae33d63f43a/196873722672.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/95/ae/80/95ae8046-a6b9-e493-0def-5ae33d63f43a/196873722672.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80cab8c0f6f3108a9a51",
@@ -1480,7 +1487,11 @@
    "listenedOn": "2025-03-07",
    "released": "2025-03-07",
    "link": "https://open.spotify.com/album/2MHUaRi9OCyTN02SoyRRBJ",
-   "cover": "https://i.scdn.co/image/ab67616d0000b273b0860cf0a98e09663c82290c"
+   "cover": "https://i.scdn.co/image/ab67616d0000b273b0860cf0a98e09663c82290c",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/be/11/d1/be11d187-1aeb-99f3-01c5-597ed65cdb6a/25UMGIM07433.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80c691d9eab81e9cefc2",
@@ -1542,7 +1553,6 @@
    "album": "Cowboy Carter",
    "artist": "Beyoncé",
    "genres": [
-    "Pop",
     "Country"
    ],
    "lang": "Anglais",
@@ -1551,7 +1561,11 @@
    "listenedOn": "2024-03-29",
    "released": "2024-03-29",
    "link": "https://open.spotify.com/album/6BzxX6zkDsYKFJ04ziU5xQ",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bd/f6/83/bdf683a5-28de-08cb-cb91-2940c1e6270b/196871853729.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bd/f6/83/bdf683a5-28de-08cb-cb91-2940c1e6270b/196871853729.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Country"
+   ]
   },
   {
    "id": "2a6a7bc0f6df802fa3fcc5c59e28349f",
@@ -1611,7 +1625,7 @@
    "album": "IOTA",
    "artist": "Lous and the Yakuza",
    "genres": [
-    "Pop"
+    "Hip-hop/Rap"
    ],
    "lang": "Français",
    "rating": 5,
@@ -1619,7 +1633,10 @@
    "listenedOn": "2022-11-11",
    "released": "2022-11-11",
    "link": "https://open.spotify.com/album/3bHBzNSc5wHgedsW4m9Ykn",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/fe/87/5a/fe875a74-5c85-78eb-0b9f-0ee54db5183c/196589529497.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/fe/87/5a/fe875a74-5c85-78eb-0b9f-0ee54db5183c/196589529497.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df8030ba11c5978a4b4586",
@@ -1634,14 +1651,17 @@
    "listenedOn": "2022-07-29",
    "released": "2022-07-29",
    "link": "https://open.spotify.com/album/6FJxoadUE4JNVwWHghBwnb",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/05/f3/0505f338-9873-feb4-af7f-27a470405e5f/196589246974.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/05/05/f3/0505f338-9873-feb4-af7f-27a470405e5f/196589246974.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80ac8416fbc0b21a88ba",
    "album": "Gore",
    "artist": "Lous and the Yakuza",
    "genres": [
-    "Pop"
+    "Hip-hop/Rap"
    ],
    "lang": "Français",
    "rating": 5,
@@ -1650,7 +1670,10 @@
    "released": "2020-10-16",
    "link": "https://open.spotify.com/album/7e9inFYUpFSKmTFbj2xrCS",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg/600x600bb.jpg",
-   "review": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg"
+   "review": "https://a5.mzstatic.com/us/r1000/0/Music124/v4/0e/6b/22/0e6b22a2-b5a9-d9d4-63c0-60b7d3a10759/886448755623.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80c1a45dd4319296c79a",

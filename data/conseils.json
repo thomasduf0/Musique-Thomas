@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T17:30:53.990Z",
+ "updatedAt": "2026-11-06T17:39:09.493Z",
  "fromArtists": [
   {
    "appleId": "956646323",
@@ -338,6 +338,227 @@
    "tracks": 18,
    "artist": "disiz",
    "heardCount": 4
+  },
+  {
+   "appleId": "1574210519",
+   "artistId": 358714030,
+   "genre": "Alternative",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/01/8a/c2/018ac22e-1756-2dd1-03e7-74a55e92ea2c/21UMGIM58932.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/mercury-act-1/1574210519",
+   "released": "2021-09-03",
+   "title": "Mercury - Act 1",
+   "artistName": "Imagine Dragons",
+   "tracks": 14,
+   "artist": "Imagine Dragons",
+   "heardCount": 3
+  },
+  {
+   "appleId": "1437948593",
+   "artistId": 358714030,
+   "genre": "Alternative",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/ae/99/b0/ae99b033-76aa-580c-f6b0-2d374e89763d/18UMGIM65849.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/origins/1437948593",
+   "released": "2018-11-09",
+   "title": "Origins",
+   "artistName": "Imagine Dragons",
+   "tracks": 13,
+   "artist": "Imagine Dragons",
+   "heardCount": 3
+  },
+  {
+   "appleId": "1741841621",
+   "artistId": 358714030,
+   "genre": "Alternative",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/11/ad/84/11ad84d7-2baa-cfe8-6616-02e7045d7ab0/24UMGIM43945.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/loom/1741841621",
+   "released": "2024-06-28",
+   "title": "LOOM",
+   "artistName": "Imagine Dragons",
+   "tracks": 10,
+   "artist": "Imagine Dragons",
+   "heardCount": 3
+  },
+  {
+   "appleId": "696884422",
+   "artistId": 5468295,
+   "genre": "Dance",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/34/8d/c7/348dc71c-d75e-9baf-671a-994e9e74b018/dj.pimdxdmf.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/homework/696884422",
+   "released": "1997-01-20",
+   "title": "Homework",
+   "artistName": "Daft Punk",
+   "tracks": 16,
+   "artist": "Daft Punk",
+   "heardCount": 2
+  },
+  {
+   "appleId": "696478788",
+   "artistId": 5468295,
+   "genre": "Dance",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/eb/83/55/eb8355a8-bbf2-be7c-24a0-1794f18c6018/0724356356252_1401x1401_300dpi.tif/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/human-after-all/696478788",
+   "released": "2005-03-09",
+   "title": "Human After All",
+   "artistName": "Daft Punk",
+   "tracks": 10,
+   "artist": "Daft Punk",
+   "heardCount": 2
+  },
+  {
+   "appleId": "1788305509",
+   "artistId": 293423557,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/57/9f/e1/579fe1eb-2f7b-53cc-a76b-82b42aaad159/3596972480522.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/1788305509",
+   "released": "2011-09-26",
+   "title": "Le Chant des sirènes",
+   "artistName": "Orelsan",
+   "tracks": 16,
+   "artist": "Orelsan",
+   "heardCount": 3
+  },
+  {
+   "appleId": "1788305195",
+   "artistId": 293423557,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/da/d7/ea/dad7ea75-2725-aef7-2a38-39c059e463de/3596971402723.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/1788305195",
+   "released": "2009-02-16",
+   "title": "Perdu d'avance",
+   "artistName": "Orelsan",
+   "tracks": 14,
+   "artist": "Orelsan",
+   "heardCount": 3
+  },
+  {
+   "appleId": "693426070",
+   "artistId": 160360801,
+   "genre": "Dance",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d7/fe/54/d7fe540c-45be-4d85-4abc-b449bcc89300/094639786756.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/pop-up/693426070",
+   "released": "2007-08-31",
+   "title": "Pop Up",
+   "artistName": "Yelle",
+   "tracks": 12,
+   "artist": "Yelle",
+   "heardCount": 2
+  },
+  {
+   "appleId": "1738677692",
+   "artistId": 160360801,
+   "genre": "Variété française",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/b7/5e/29b75e77-283a-76eb-12b3-5e6af7eac4db/5060525431999_cover.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/safari-disco-club/1738677692",
+   "released": "2011-01-17",
+   "title": "Safari Disco Club",
+   "artistName": "Yelle",
+   "tracks": 12,
+   "artist": "Yelle",
+   "heardCount": 2
+  },
+  {
+   "appleId": "600946351",
+   "artistId": 420368335,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/41/36/cb/4136cbae-f6aa-b1fc-5452-6f5e153f28a4/886443853874.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/wolf/600946351",
+   "released": "2013-04-01",
+   "title": "Wolf",
+   "artistName": "Tyler, The Creator",
+   "tracks": 18,
+   "artist": "Tyler The Creator",
+   "heardCount": 2
+  },
+  {
+   "appleId": "433409557",
+   "artistId": 420368335,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/f2/c0/39/f2c039d6-a48b-e9ad-2c95-203269a47179/634904052980.png/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/goblin/433409557",
+   "released": "2011-05-10",
+   "title": "Goblin",
+   "artistName": "Tyler, The Creator",
+   "tracks": 18,
+   "artist": "Tyler The Creator",
+   "heardCount": 2
+  },
+  {
+   "appleId": "1254572564",
+   "artistId": 420368335,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/fd/fd/8c/fdfd8c26-b8f9-4768-41d3-b24773250c65/886446605814.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/flower-boy/1254572564",
+   "released": "2017-07-21",
+   "title": "Flower Boy",
+   "artistName": "Tyler, The Creator",
+   "tracks": 14,
+   "artist": "Tyler The Creator",
+   "heardCount": 2
+  },
+  {
+   "appleId": "1463409338",
+   "artistId": 420368335,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0c/06/05/0c060581-6242-6a2a-a677-20170f2cf8da/886447710180.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/igor/1463409338",
+   "released": "2019-05-17",
+   "title": "IGOR",
+   "artistName": "Tyler, The Creator",
+   "tracks": 12,
+   "artist": "Tyler The Creator",
+   "heardCount": 2
+  },
+  {
+   "appleId": "983056044",
+   "artistId": 420368335,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ae/12/af/ae12aff6-912a-1c97-e5e7-db0f10ed4c52/886445172430.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/cherry-bomb/983056044",
+   "released": "2015-04-13",
+   "title": "Cherry Bomb",
+   "artistName": "Tyler, The Creator",
+   "tracks": 13,
+   "artist": "Tyler The Creator",
+   "heardCount": 2
+  },
+  {
+   "appleId": "1573484415",
+   "artistId": 420368335,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/65/47/0a/65470a4c-a70f-4a0b-f77b-3edb39e9097a/886449377039.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/call-me-if-you-get-lost/1573484415",
+   "released": "2021-06-25",
+   "title": "CALL ME IF YOU GET LOST",
+   "artistName": "Tyler, The Creator",
+   "tracks": 16,
+   "artist": "Tyler The Creator",
+   "heardCount": 2
+  },
+  {
+   "appleId": "1564530719",
+   "artistId": 1065981054,
+   "genre": "Alternative",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2d/f3/c9/2df3c9fd-e0eb-257c-c035-b04f05a66580/21UMGIM36691.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/happier-than-ever/1564530719",
+   "released": "2021-07-30",
+   "title": "Happier Than Ever",
+   "artistName": "Billie Eilish",
+   "tracks": 16,
+   "artist": "Billie Eilish",
+   "heardCount": 2
+  },
+  {
+   "appleId": "1440898929",
+   "artistId": 1065981054,
+   "genre": "Alternative",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/02/1d/30/021d3036-5503-3ed3-df00-882f2833a6ae/17UM1IM17026.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/dont-smile-at-me/1440898929",
+   "released": "2017-08-11",
+   "title": "dont smile at me",
+   "artistName": "Billie Eilish",
+   "tracks": 9,
+   "artist": "Billie Eilish",
+   "heardCount": 2
   }
  ],
  "picks": [
@@ -368,22 +589,43 @@
    "why": "Le deuxième album d'Angèle, plus mûr que Brol (5★ chez toi), toujours aussi pop."
   },
   {
+   "appleId": "1325689459",
+   "artistId": 490658795,
+   "genre": "Alternative",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/62/2c/d5/622cd55d-5c3b-56fb-fae6-664ffca3009f/5060281618511_cover.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/chaleur-humaine/1325689459",
+   "released": "2014-06-02",
    "title": "Chaleur humaine",
+   "artistName": "Christine and the Queens",
+   "tracks": 12,
    "artist": "Christine and the Queens",
-   "why": "Pop électronique en français et en anglais, entre Zaho de Sagazan, Yelle et Eddy de Pretto.",
-   "released": "2014"
+   "why": "Pop électronique en français et en anglais, entre Zaho de Sagazan, Yelle et Eddy de Pretto."
   },
   {
+   "appleId": "1561757697",
+   "artistId": 1178021987,
+   "genre": "Variété française",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/74/30/4b/74304b5f-0f0d-9f0e-6920-22a096fef57a/21UMGIM26469.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/c%C5%93ur/1561757697",
+   "released": "2021-06-11",
    "title": "Cœur",
+   "artistName": "Clara Luciani",
+   "tracks": 11,
    "artist": "Clara Luciani",
-   "why": "Variété française disco et assumée, si Juliette Armanet et Voyou te parlent.",
-   "released": "2021"
+   "why": "Variété française disco et assumée, si Juliette Armanet et Voyou te parlent."
   },
   {
+   "appleId": "1441675499",
+   "artistId": 609909194,
+   "genre": "Hip-hop/Rap",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7d/d3/63/7dd3633b-dd3b-d722-b123-624a116fdb1b/3663729070555_cover.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/jeannine/1441675499",
+   "released": "2018-12-07",
    "title": "Jeannine",
+   "artistName": "Lomepal",
+   "tracks": 18,
    "artist": "Lomepal",
-   "why": "Rap français introspectif et mélodique, dans la lignée d'Orelsan, disiz et Nekfeu.",
-   "released": "2018"
+   "why": "Rap français introspectif et mélodique, dans la lignée d'Orelsan, disiz et Nekfeu."
   },
   {
    "appleId": "1440892810",
@@ -399,16 +641,30 @@
    "why": "Le successeur de Feu (5★ chez toi), plus sombre et plus personnel."
   },
   {
+   "appleId": "1500951604",
+   "artistId": 277293880,
+   "genre": "Pop",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/5d/4d/f9/5d4df96a-e95e-2fe9-404a-5d570513762d/20UMGIM15390.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/1500951604",
+   "released": "2020-05-29",
    "title": "Chromatica",
+   "artistName": "Lady Gaga",
+   "tracks": 17,
    "artist": "Lady Gaga",
-   "why": "Dance-pop pure, le chaînon entre ses débuts et MAYHEM (5★ chez toi).",
-   "released": "2020"
+   "why": "Dance-pop pure, le chaînon entre ses débuts et MAYHEM (5★ chez toi)."
   },
   {
+   "appleId": "1607918350",
+   "artistId": 313845115,
+   "genre": "Pop en espagnol",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/5b/da/8d/5bda8d04-7f2f-4417-12a0-e039dd011152/886449800193.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/1607918350",
+   "released": "2022-03-18",
    "title": "MOTOMAMI",
+   "artistName": "ROSALÍA",
+   "tracks": 16,
    "artist": "Rosalía",
-   "why": "L'album d'avant Lux (5★ chez toi) : plus court, plus brut, plein d'expérimentations.",
-   "released": "2022"
+   "why": "L'album d'avant Lux (5★ chez toi) : plus court, plus brut, plein d'expérimentations."
   },
   {
    "appleId": "91992239",
@@ -437,40 +693,82 @@
    "why": "Son album le plus audacieux, si tu as aimé Loud (5★)."
   },
   {
+   "appleId": "1051331933",
+   "artistId": 262836961,
+   "genre": "Pop",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/62/bc/87/62bc8791-2a12-4b01-8928-d601684a951c/634904074005.png/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/25/1051331933",
+   "released": "2015-11-20",
    "title": "25",
+   "artistName": "Adele",
+   "tracks": 11,
    "artist": "Adele",
-   "why": "Après 21 (5★ chez toi), le même souffle sur des ballades plus amples.",
-   "released": "2015"
+   "why": "Après 21 (5★ chez toi), le même souffle sur des ballades plus amples."
   },
   {
+   "appleId": "1452872588",
+   "artistId": 184932871,
+   "genre": "Pop",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/01/94/ca/0194ca64-6900-d5cd-4159-7bf3a0227be2/09UMGIM31854.rgb.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/the-boy-who-knew-too-much-deluxe-version/1452872588",
+   "released": "2009-01-01",
    "title": "The Boy Who Knew Too Much",
+   "artistName": "MIKA",
+   "tracks": 19,
    "artist": "Mika",
-   "why": "La suite directe de Life in Cartoon Motion (5★ chez toi), dans le même esprit.",
-   "released": "2009"
+   "why": "La suite directe de Life in Cartoon Motion (5★ chez toi), dans le même esprit."
   },
   {
+   "appleId": "1724935208",
+   "artistId": 145072812,
+   "genre": "Électronique",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d1/6c/30/d16c300f-c26c-89f1-9207-23b71c5e6584/5056556135845_cover.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/hyperdrama/1724935208",
+   "released": "2024-04-26",
    "title": "Hyperdrama",
+   "artistName": "Justice",
+   "tracks": 13,
    "artist": "Justice",
-   "why": "French touch, entre Daft Punk et C2C que tu as mis à 5★.",
-   "released": "2024"
+   "why": "French touch, entre Daft Punk et C2C que tu as mis à 5★."
   },
   {
+   "appleId": "1771710012",
+   "artistId": 5500360,
+   "genre": "Rock",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/28/8d/ab/288dabdd-f8de-80f6-1aab-40a24cb1b33f/00892038002190_Cover.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/wolfgang-amadeus-phoenix/1771710012",
+   "released": "2009-05-25",
    "title": "Wolfgang Amadeus Phoenix",
+   "artistName": "Phoenix",
+   "tracks": 10,
    "artist": "Phoenix",
-   "why": "Pop-rock français à guitares et synthés, très mélodique.",
-   "released": "2009"
+   "why": "Pop-rock français à guitares et synthés, très mélodique."
   },
   {
+   "appleId": "1538003494",
+   "artistId": 1031397873,
+   "genre": "Pop",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/6c/11/d6/6c11d681-aa3a-d59e-4c2e-f77e181026ab/190295092665.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/future-nostalgia/1538003494",
+   "released": "2020-03-27",
    "title": "Future Nostalgia",
+   "artistName": "Dua Lipa",
+   "tracks": 13,
    "artist": "Dua Lipa",
-   "why": "Pop disco ultra efficace, pour l'amateur de Lady Gaga, Calvin Harris et Sabrina Carpenter.",
-   "released": "2020"
+   "why": "Pop disco ultra efficace, pour l'amateur de Lady Gaga, Calvin Harris et Sabrina Carpenter."
   },
   {
+   "appleId": "1350021308",
+   "artistId": 140777342,
+   "genre": "R&B/Soul",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/39/ff/8a/39ff8a3b-1e5c-1531-8a4a-88847f956ffe/075679876911.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/dirty-computer/1350021308",
+   "released": "2018-04-27",
    "title": "Dirty Computer",
+   "artistName": "Janelle Monáe",
+   "tracks": 14,
    "artist": "Janelle Monáe",
-   "why": "Pop, funk et R&B entre Prince et Beyoncé, ta référence absolue (4 albums à 5★).",
-   "released": "2018"
+   "why": "Pop, funk et R&B entre Prince et Beyoncé, ta référence absolue (4 albums à 5★)."
   }
  ]
 }
