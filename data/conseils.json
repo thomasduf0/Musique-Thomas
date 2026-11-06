@@ -1,6 +1,32 @@
 {
- "updatedAt": "2026-11-06T18:14:10.619Z",
+ "updatedAt": "2026-11-06T18:33:46.503Z",
  "fromArtists": [
+  {
+   "appleId": "201274359",
+   "artistId": 1419227,
+   "genre": "Pop",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/03/c5/d4/mzi.ldvrmhxt.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/201274359",
+   "released": "2003-06-23",
+   "title": "Dangerously in Love",
+   "artistName": "Beyoncé",
+   "tracks": 15,
+   "artist": "Beyoncé",
+   "heardCount": 5
+  },
+  {
+   "appleId": "296016891",
+   "artistId": 1419227,
+   "genre": "Pop",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/35/0f/55/350f55da-2104-162a-5872-cb35fef30410/mzi.morbeoaw.jpg/600x600bb.jpg",
+   "url": "https://music.apple.com/fr/album/296016891",
+   "released": "2008-11-12",
+   "title": "I AM...SASHA FIERCE",
+   "artistName": "Beyoncé",
+   "tracks": 12,
+   "artist": "Beyoncé",
+   "heardCount": 5
+  },
   {
    "appleId": "956646323",
    "artistId": 432942256,
@@ -221,45 +247,6 @@
    "tracks": 10,
    "artist": "Lorde",
    "heardCount": 2
-  },
-  {
-   "appleId": "201274359",
-   "artistId": 1419227,
-   "genre": "Pop",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/03/c5/d4/mzi.ldvrmhxt.jpg/600x600bb.jpg",
-   "url": "https://music.apple.com/fr/album/201274359",
-   "released": "2003-06-23",
-   "title": "Dangerously in Love",
-   "artistName": "Beyoncé",
-   "tracks": 15,
-   "artist": "Beyoncé",
-   "heardCount": 4
-  },
-  {
-   "appleId": "296016891",
-   "artistId": 1419227,
-   "genre": "Pop",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/35/0f/55/350f55da-2104-162a-5872-cb35fef30410/mzi.morbeoaw.jpg/600x600bb.jpg",
-   "url": "https://music.apple.com/fr/album/296016891",
-   "released": "2008-11-12",
-   "title": "I AM...SASHA FIERCE",
-   "artistName": "Beyoncé",
-   "tracks": 12,
-   "artist": "Beyoncé",
-   "heardCount": 4
-  },
-  {
-   "appleId": "296790269",
-   "artistId": 1419227,
-   "genre": "Hip-hop/Rap",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c6/72/0a/c6720ae2-e9a9-8d60-981b-20857419b50f/mzi.dohxwfay.jpg/600x600bb.jpg",
-   "url": "https://music.apple.com/fr/album/296790269",
-   "released": "2006-09-04",
-   "title": "B'Day",
-   "artistName": "Beyoncé",
-   "tracks": 15,
-   "artist": "Beyoncé",
-   "heardCount": 4
   },
   {
    "appleId": "315325720",

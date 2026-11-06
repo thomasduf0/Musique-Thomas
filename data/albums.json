@@ -1,7 +1,27 @@
 {
- "updatedAt": "2026-11-06T18:14:10.617Z",
+ "updatedAt": "2026-11-06T18:33:46.501Z",
  "source": "cloudflare",
  "albums": [
+  {
+   "id": "410a7bc0f6df810ab899dbfe3f894131",
+   "album": "B'Day",
+   "artist": "Beyoncé",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2026-11-06",
+   "released": "2006-09-01",
+   "link": "https://open.spotify.com/album/1L6sJLS18bJTadBupSYFAp",
+   "cover": "https://i.scdn.co/image/ab67616d0000b2737c4927f7bd6750438f01ba77",
+   "myGenres": [
+    "Pop",
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Features/66/c0/5e/dj.clrmnzsy.jpg/600x600bb.jpg"
+  },
   {
    "id": "373a7bc0f6df8064923bf37e753dfc76",
    "album": "guérir",
@@ -10,7 +30,7 @@
     "Variété française"
    ],
    "lang": "Français",
-   "rating": 4,
+   "rating": 3,
    "listened": true,
    "listenedOn": "2026-11-06",
    "released": "2026-10-02",
