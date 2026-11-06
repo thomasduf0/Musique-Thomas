@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T22:44:58.513Z",
+ "updatedAt": "2026-11-06T22:58:55.204Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -99,6 +99,26 @@
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/b7/5e/29b75e77-283a-76eb-12b3-5e6af7eac4db/5060525431999_cover.jpg/600x600bb.jpg"
   },
   {
+   "id": "410a7bc0f6df818a88bcfddc5b512b8b",
+   "album": "Instinct",
+   "artist": "Angèle",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-10-16",
+   "released": "2026-10-16",
+   "link": "https://open.spotify.com/album/2VmBZ9e83yVxu4CFMpMOjq",
+   "cover": "https://i.scdn.co/image/ab67616d0000b27376bc7fba28c6824eaf828fd6",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bc/39/8c/bc398c3b-f73a-0d32-a375-58b9778af5f3/196874659786.jpg/600x600bb.jpg"
+  },
+  {
    "id": "2f7a7bc0f6df805f8b36f7754a42ba5a",
    "album": "WOR$T GIRL IN AMERICA",
    "artist": "Slayyyter",
@@ -115,6 +135,25 @@
    "myGenres": [
     "Pop"
    ]
+  },
+  {
+   "id": "410a7bc0f6df81a6aae9e2e2710dbb31",
+   "album": "Hazel Eyes",
+   "artist": "Sam Smith",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-08-21",
+   "released": "2026-08-21",
+   "link": "https://open.spotify.com/album/2XTj67uPs9qtSwn9vl33rh",
+   "cover": "https://i.scdn.co/image/ab67616d0000b27345ad5f958b4be2bb914858b8",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/aa/f2/49/aaf2494d-4c5f-83e6-74f8-a86be3c8fcbc/26UMGIM25261.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "37ca7bc0f6df800cb97bc38a7693f8c6",
@@ -2421,6 +2460,23 @@
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/25/76/ff/2576ffeb-f4fe-f1da-3909-a0a0b5a93435/198704737466_Cover.jpg/600x600bb.jpg"
   },
   {
+   "id": "410a7bc0f6df81809223f94511d79c87",
+   "album": "Dopamine Chamber",
+   "artist": "Fontaines D.C.",
+   "genres": [
+    "Alternative"
+   ],
+   "lang": null,
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-10-16",
+   "link": "https://open.spotify.com/album/0JICUfSKOdGqzE9FJSrNci",
+   "cover": "https://i.scdn.co/image/ab67616d0000b273fbecc7ddcbffd09181ce01ba",
+   "myGenres": [],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/600x600bb.jpg"
+  },
+  {
    "id": "2a8a7bc0f6df80ffa604df67a1ea0d74",
    "album": "Essex Honey",
    "artist": "Blood Orange",
@@ -2562,6 +2618,23 @@
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/75/2d/e2/752de26b-fe7c-3e32-d822-6b4fa75f324d/3663729366221_cover.jpg/600x600bb.jpg"
   },
   {
+   "id": "410a7bc0f6df814a8f37e2869a1110af",
+   "album": "Popstar",
+   "artist": "Tinashe",
+   "genres": [
+    "Pop"
+   ],
+   "lang": null,
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-09-25",
+   "link": "https://open.spotify.com/album/06CjF89lLSSiVWXujVVtQs",
+   "cover": "https://i.scdn.co/image/ab67616d0000b273f8dc54881b35310061266cdf",
+   "myGenres": [],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/33/26/5a/33265a39-a36e-9455-716c-0e63a9173b29/075679570758.jpg/600x600bb.jpg"
+  },
+  {
    "id": "2dba7bc0f6df806db2b7fa7a5f17d72f",
    "album": "Presque punk",
    "artist": "P.R2B",
@@ -2613,6 +2686,23 @@
    "link": "https://open.spotify.com/album/1vWMw6pu3err6qqZzI3RhH",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/97/4d/0e/974d0ed9-0c7b-59da-da0f-7a22ebfc1479/196872953367.jpg/600x600bb.jpg",
    "myGenres": []
+  },
+  {
+   "id": "410a7bc0f6df81e9939ccda758a41e07",
+   "album": "Sensation",
+   "artist": "Ronisia",
+   "genres": [
+    "R&B/Soul"
+   ],
+   "lang": null,
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2026-10-30",
+   "link": "https://open.spotify.com/album/7ssHO3Sljdx8vlZQGT4TRM",
+   "cover": "https://i.scdn.co/image/ab67616d0000b273fa7062ed421c48157a79c5f1",
+   "myGenres": [],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/05/c2/7a05c211-7758-e16e-dcc5-d26e5462d45c/196874805756.jpg/600x600bb.jpg"
   },
   {
    "id": "2f7a7bc0f6df80ed94fcc362caf61742",
