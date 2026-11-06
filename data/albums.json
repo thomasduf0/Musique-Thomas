@@ -1,7 +1,25 @@
 {
- "updatedAt": "2026-11-06T17:50:03.123Z",
+ "updatedAt": "2026-11-06T18:03:33.732Z",
  "source": "cloudflare",
  "albums": [
+  {
+   "id": "373a7bc0f6df8064923bf37e753dfc76",
+   "album": "guérir",
+   "artist": "marguerite",
+   "genres": [
+    "Variété française"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-11-06",
+   "released": "2026-10-02",
+   "link": "https://open.spotify.com/album/5SLhRamBJlp8UHE5VhKj5Y",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0f/dd/3e/0fdd3ed3-08bd-a57c-cc98-381d3d34dbde/196874426579.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
+  },
   {
    "id": "372a7bc0f6df80a3abcececbde56314c",
    "album": "Music, Fashion, Film",
@@ -20,6 +38,44 @@
     "Pop",
     "Rock"
    ]
+  },
+  {
+   "id": "410a7bc0f6df8155bac8fbb2c544c5d4",
+   "album": "Pop-Up",
+   "artist": "Yelle",
+   "genres": [
+    "Dance"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2026-11-06",
+   "released": "2007-08-31",
+   "link": "https://open.spotify.com/album/2UiP7sGjSxl52QtlWAXYVy",
+   "cover": "https://i.scdn.co/image/ab67616d0000b2735da1104c8104431eb16f831c",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d7/fe/54/d7fe540c-45be-4d85-4abc-b449bcc89300/094639786756.jpg/600x600bb.jpg"
+  },
+  {
+   "id": "410a7bc0f6df8133844bf58a3e3543c8",
+   "album": "Safari Disco Club",
+   "artist": "Yelle",
+   "genres": [
+    "Variété française"
+   ],
+   "lang": "Français",
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2026-11-06",
+   "released": "2011-01-17",
+   "link": "https://open.spotify.com/album/2XolNg2hRMOlDMUD8vuqzJ",
+   "cover": "https://i.scdn.co/image/ab67616d0000b2732a3613ff2c4649ec2a27b0ce",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/b7/5e/29b75e77-283a-76eb-12b3-5e6af7eac4db/5060525431999_cover.jpg/600x600bb.jpg"
   },
   {
    "id": "3a1a7bc0f6df80dabb69c174774f87ca",
@@ -2318,24 +2374,6 @@
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2f/f9/5a/2ff95a40-d9df-40a9-3ed7-f7db23373b11/4099964238419.jpg/600x600bb.jpg",
    "myGenres": [
     "Gospel"
-   ]
-  },
-  {
-   "id": "373a7bc0f6df8064923bf37e753dfc76",
-   "album": "guérir",
-   "artist": "marguerite",
-   "genres": [
-    "Variété française"
-   ],
-   "lang": "Français",
-   "rating": null,
-   "listened": false,
-   "listenedOn": null,
-   "released": "2026-10-02",
-   "link": "https://open.spotify.com/album/5SLhRamBJlp8UHE5VhKj5Y",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0f/dd/3e/0fdd3ed3-08bd-a57c-cc98-381d3d34dbde/196874426579.jpg/600x600bb.jpg",
-   "myGenres": [
-    "Pop"
    ]
   },
   {

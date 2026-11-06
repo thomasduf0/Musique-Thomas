@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T17:50:03.124Z",
+ "updatedAt": "2026-11-06T18:03:33.734Z",
  "fromArtists": [
   {
    "appleId": "956646323",
@@ -429,32 +429,6 @@
    "tracks": 14,
    "artist": "Orelsan",
    "heardCount": 3
-  },
-  {
-   "appleId": "693426070",
-   "artistId": 160360801,
-   "genre": "Dance",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d7/fe/54/d7fe540c-45be-4d85-4abc-b449bcc89300/094639786756.jpg/600x600bb.jpg",
-   "url": "https://music.apple.com/fr/album/693426070",
-   "released": "2007-08-31",
-   "title": "Pop Up",
-   "artistName": "Yelle",
-   "tracks": 12,
-   "artist": "Yelle",
-   "heardCount": 2
-  },
-  {
-   "appleId": "1738677692",
-   "artistId": 160360801,
-   "genre": "Variété française",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/b7/5e/29b75e77-283a-76eb-12b3-5e6af7eac4db/5060525431999_cover.jpg/600x600bb.jpg",
-   "url": "https://music.apple.com/fr/album/1738677692",
-   "released": "2011-01-17",
-   "title": "Safari Disco Club",
-   "artistName": "Yelle",
-   "tracks": 12,
-   "artist": "Yelle",
-   "heardCount": 2
   },
   {
    "appleId": "600946351",
