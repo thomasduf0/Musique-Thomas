@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T17:15:29.531Z",
+ "updatedAt": "2026-11-06T17:30:53.989Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -7,8 +7,7 @@
    "album": "Music, Fashion, Film",
    "artist": "Charli XCX",
    "genres": [
-    "Pop",
-    "Rock"
+    "Pop"
    ],
    "lang": "Anglais",
    "rating": 5,
@@ -16,15 +15,18 @@
    "listenedOn": "2026-11-06",
    "released": "2026-07-24",
    "link": "https://open.spotify.com/album/4bR7pd6TVS53l24qFV4wI8",
-   "cover": null
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6c/5b/f9/6c5bf92d-304c-2eb9-652f-0417e1b18cfd/075679567253.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Rock"
+   ]
   },
   {
    "id": "3a1a7bc0f6df80dabb69c174774f87ca",
    "album": "Loud",
    "artist": "Rihanna",
    "genres": [
-    "Pop",
-    "Hip-hop/Rap"
+    "Pop"
    ],
    "lang": "Anglais",
    "rating": 5,
@@ -33,7 +35,12 @@
    "released": "2010-11-12",
    "link": "https://open.spotify.com/album/7vN82vd1Vq44fjlhjfvHJp",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/c6/b1/6c/c6b16cd1-5580-a214-8745-c4f6faa490d6/16UMGIM59220.rgb.jpg/600x600bb.jpg",
-   "review": "On oublie a quel point cet album est bien, c’est dingue"
+   "review": "On oublie a quel point cet album est bien, c’est dingue",
+   "myGenres": [
+    "Pop",
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/54/d3/3a/54d33ac8-5990-b669-fe5c-e1316a9ce83b/10UMGIM29115.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "3a1a7bc0f6df80a8af0bfa27b9341299",
@@ -67,7 +74,10 @@
    "listenedOn": "2026-07-15",
    "released": "2026-07-03",
    "link": "https://open.spotify.com/album/1CWY6mfnuLlF4BKRLFcUDQ",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/eb/8f/5d/eb8f5dcf-aec1-1f58-fbea-dc0bb086f1c8/093624819837.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/eb/8f/5d/eb8f5dcf-aec1-1f58-fbea-dc0bb086f1c8/093624819837.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "378a7bc0f6df80a0b51eee4b2fee3421",
@@ -94,8 +104,7 @@
    "album": "Ö",
    "artist": "Fcukers",
    "genres": [
-    "Pop",
-    "Electro"
+    "Dance"
    ],
    "lang": "Anglais",
    "rating": 4,
@@ -103,14 +112,19 @@
    "listenedOn": "2026-06-07",
    "released": "2026-03-27",
    "link": "https://open.spotify.com/album/4RrsgnUbZIFTw42Apa8lXO",
-   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/9b/d2/2e/19845787/1540-1/tsp20260206130259/O.jpg"
+   "cover": "https://static.fnac-static.com/multimedia/Images/FR/NR/9b/d2/2e/19845787/1540-1/tsp20260206130259/O.jpg",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/87/b3/85/87b38597-7032-1783-bcd6-7e77af31df9a/5054429208382.png/600x600bb.jpg"
   },
   {
    "id": "377a7bc0f6df8093bb73ebc51a659964",
    "album": "SOMA",
    "artist": "Skrillex",
    "genres": [
-    "Electro"
+    "Électronique"
    ],
    "lang": "Espagnol",
    "rating": 2,
@@ -119,7 +133,11 @@
    "released": "2026-06-05",
    "link": "https://open.spotify.com/album/4vSNQ69cqRe2WgsdPXH3mv",
    "cover": "https://i.scdn.co/image/ab67616d00001e0200a2e7fd71815224583d7a1e",
-   "review": "Je suis sur que c’est super en live\nMais je prends pas beaucoup de plaisir à écouter ça dans mon casque 😕"
+   "review": "Je suis sur que c’est super en live\nMais je prends pas beaucoup de plaisir à écouter ça dans mon casque 😕",
+   "myGenres": [
+    "Electro"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8b/fe/b1/8bfeb1ad-d9aa-1a45-e8c4-b7e5a4082095/075679573001.jpg/600x600bb.jpg"
   },
   {
    "id": "2eca7bc0f6df80f1b224fe084b360973",
@@ -153,7 +171,10 @@
    "listenedOn": "2026-06-02",
    "released": "2026-05-29",
    "link": "https://open.spotify.com/album/1sWzJ2hL5b64u7n9a8owqc",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d3/0c/8f/d30c8f09-66db-8c4e-2583-32c4eb0de432/820233450478.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d3/0c/8f/d30c8f09-66db-8c4e-2583-32c4eb0de432/820233450478.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2eea7bc0f6df808290b5f1b4ff3dc0a0",
@@ -168,7 +189,10 @@
    "listenedOn": "2026-06-02",
    "released": "2025-05-09",
    "link": "https://open.spotify.com/album/3o81FH5FTYVtoBQOZr3T7y",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/12/db/5a/12db5a38-94c1-42bc-b36b-7204b7aa4eac/5021732768650.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/12/db/5a/12db5a38-94c1-42bc-b36b-7204b7aa4eac/5021732768650.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2eaa7bc0f6df8045bbedebce0e4dff82",
@@ -193,7 +217,7 @@
    "album": "spleen. social club",
    "artist": "aupinard",
    "genres": [
-    "Hip-hop/Rap"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 4,
@@ -201,7 +225,11 @@
    "listenedOn": "2026-06-01",
    "released": "2026-04-24",
    "link": "https://open.spotify.com/album/6AmYibqw0Cw5uu2yczwmR4",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d8/48/f0/d848f0f1-dc65-de92-de86-3feac44581ab/4099964239065.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d8/48/f0/d848f0f1-dc65-de92-de86-3feac44581ab/4099964239065.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0a/2d/4a/0a2d4aa2-afba-6f95-c30f-e158875c1cf6/4099964285321.jpg/600x600bb.jpg"
   },
   {
    "id": "2f7a7bc0f6df809789c8ce863b94fbbc",
@@ -254,7 +282,10 @@
    "listenedOn": "2026-05-27",
    "released": "2025-11-28",
    "link": "https://open.spotify.com/album/1XmeiDJ7WhLJhhKHSMBAH5",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8f/ea/08/8fea08e9-2f01-c650-a23d-8070c8266479/artwork.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8f/ea/08/8fea08e9-2f01-c650-a23d-8070c8266479/artwork.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "2eca7bc0f6df80f99a54c242d8f2d39d",
@@ -269,7 +300,10 @@
    "listenedOn": "2026-05-27",
    "released": "2026-03-27",
    "link": "https://open.spotify.com/album/6RYCig4T2bEZu2gnM0OxRL",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/41/3d/16/413d16f4-c9a1-9c4b-11c2-cae616a49f9d/889030046772.png/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/41/3d/16/413d16f4-c9a1-9c4b-11c2-cae616a49f9d/889030046772.png/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "36ca7bc0f6df807d928efcea7c9a3ceb",
@@ -284,15 +318,17 @@
    "listenedOn": "2026-05-26",
    "released": "2026-03-13",
    "link": "https://open.spotify.com/album/5bx1CGjjFfQpIoOBAUjKps",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/22/f3/fb/22f3fbff-5f3e-2db4-7871-3ffb78924761/3663729419293_cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/22/f3/fb/22f3fbff-5f3e-2db4-7871-3ffb78924761/3663729419293_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "368a7bc0f6df806a9c6dcf793fec5ae1",
    "album": "Funk Wav Bounces Vol. 1",
    "artist": "Calvin Harris",
    "genres": [
-    "Electro",
-    "Pop"
+    "Dance"
    ],
    "lang": "Anglais",
    "rating": 4,
@@ -300,7 +336,12 @@
    "listenedOn": "2026-05-22",
    "released": "2017-06-30",
    "link": "https://open.spotify.com/album/2HaqChIDc5go3qxVunBDK0",
-   "cover": "https://m.media-amazon.com/images/I/81mIaRSDd6L.jpg"
+   "cover": "https://m.media-amazon.com/images/I/81mIaRSDd6L.jpg",
+   "myGenres": [
+    "Electro",
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/e5/50/bde5506f-7295-6c84-727a-4c544a1f40c4/886446500355.jpg/600x600bb.jpg"
   },
   {
    "id": "314a7bc0f6df80488f0ffb802cb957a2",
@@ -325,8 +366,7 @@
    "album": "DOULA (des couloirs des portières)",
    "artist": "Odezenne",
    "genres": [
-    "Pop",
-    "Alternative"
+    "Pop indé"
    ],
    "lang": "Français",
    "rating": 2,
@@ -334,15 +374,18 @@
    "listenedOn": "2026-02-18",
    "released": "2025-06-03",
    "link": "https://open.spotify.com/album/7IVZQAZQiJ1JoDAjsjfbYU",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f2/ab/26/f2ab26bf-d622-457e-c61f-ec16fa4d658c/cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f2/ab/26/f2ab26bf-d622-457e-c61f-ec16fa4d658c/cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Alternative"
+   ]
   },
   {
    "id": "30ba7bc0f6df806d94f0cd8598d37245",
    "album": "DOULA (hypercouleurs)",
    "artist": "Odezenne",
    "genres": [
-    "Pop",
-    "Alternative"
+    "Pop indé"
    ],
    "lang": "Français",
    "rating": 2,
@@ -350,7 +393,12 @@
    "listenedOn": "2026-02-18",
    "released": "2025-11-25",
    "link": "https://open.spotify.com/album/5MQ0mnvWM2yRD84eKzUCZv",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ba/dd/be/baddbefd-e377-ce80-26d5-208923369ac7/cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ba/dd/be/baddbefd-e377-ce80-26d5-208923369ac7/cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Alternative"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f2/ab/26/f2ab26bf-d622-457e-c61f-ec16fa4d658c/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a7a7bc0f6df801a965dd45bba677a86",
@@ -433,7 +481,7 @@
    "album": "ENCORE",
    "artist": "CHATON",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 2,
@@ -441,7 +489,10 @@
    "listenedOn": "2026-01-27",
    "released": "2026-01-16",
    "link": "https://open.spotify.com/album/3yrsYTwk6gvhzmURobQBvX",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/08/42/07/084207f8-89c4-b582-6227-dc5b1fa8778e/cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/08/42/07/084207f8-89c4-b582-6227-dc5b1fa8778e/cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80819135dfc064e65d1b",
@@ -498,7 +549,11 @@
    "released": "2023-09-22",
    "link": "https://open.spotify.com/album/6tVEJYmmerl7fVMac8vHmu",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/20/18/df/2018df43-b479-aafc-c137-9dcc1901b246/00829299263534_Cover.jpg/600x600bb.jpg",
-   "review": "Nécessite absolument une 2e écoute !!!!!"
+   "review": "Nécessite absolument une 2e écoute !!!!!",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ca/f8/75/caf87581-9a87-6fe2-87f7-e29a2cc408a3/829299263534.jpg/600x600bb.jpg"
   },
   {
    "id": "2dba7bc0f6df80e78acbfef96665fbba",
@@ -542,8 +597,7 @@
    "album": "Wallsocket (Director’s Cut)",
    "artist": "underscores",
    "genres": [
-    "Electro",
-    "Rock"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 3,
@@ -551,14 +605,19 @@
    "listenedOn": "2026-01-06",
    "released": "2024-06-28",
    "link": "https://open.spotify.com/album/2mrk587YCQnJhjZnCCznIv",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b5/34/00/b5340016-da8a-3dd1-27ea-7b750271309b/810090095516.png/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b5/34/00/b5340016-da8a-3dd1-27ea-7b750271309b/810090095516.png/600x600bb.jpg",
+   "myGenres": [
+    "Electro",
+    "Rock"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/0a/53/25/0a532591-eb3b-ff46-fbe5-e4957f26f40b/810090093086.png/600x600bb.jpg"
   },
   {
    "id": "2dfa7bc0f6df8054be2dd52808b9ce93",
    "album": "Getting Killed",
    "artist": "Geese",
    "genres": [
-    "Rock"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 2,
@@ -567,7 +626,10 @@
    "released": "2025-09-26",
    "link": "https://open.spotify.com/album/0eeXb23yMW6EaIgm63xxPC",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0b/b8/f1/0bb8f1d7-1df0-20c0-9539-51d08058eeb1/5400863191436_Cover.jpg/600x600bb.jpg",
-   "review": "C’est pas mauvais, mais c’est pas du tout ce que j’écoute\nje n’ai pas terminé l’écoute"
+   "review": "C’est pas mauvais, mais c’est pas du tout ce que j’écoute\nje n’ai pas terminé l’écoute",
+   "myGenres": [
+    "Rock"
+   ]
   },
   {
    "id": "2dfa7bc0f6df808488b2d699b242c895",
@@ -600,7 +662,10 @@
    "listenedOn": "2026-01-03",
    "released": "2025-06-06",
    "link": "https://open.spotify.com/album/2ffVa2UhHUDwMHnr685zJ4",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/4a/e3/cf4ae3c9-3420-6021-f059-cc6c87cf11b2/196872958249.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/4a/e3/cf4ae3c9-3420-6021-f059-cc6c87cf11b2/196872958249.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2dca7bc0f6df80798104d6b171257daf",
@@ -807,8 +872,7 @@
    "album": "Virgin",
    "artist": "Lorde",
    "genres": [
-    "Pop",
-    "Electro"
+    "Pop"
    ],
    "lang": "Anglais",
    "rating": 4,
@@ -816,7 +880,11 @@
    "listenedOn": "2025-11-06",
    "released": "2025-06-27",
    "link": "https://open.spotify.com/album/28bHj2enHkHVFLwuWmkwlQ",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/3c/07/723c07a7-4ff6-b052-927d-6997fff13676/25UMGIM60545.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/3c/07/723c07a7-4ff6-b052-927d-6997fff13676/25UMGIM60545.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ]
   },
   {
    "id": "2a4a7bc0f6df8096ba3ded98f3662b18",
@@ -862,8 +930,7 @@
    "album": "Deadbeat",
    "artist": "Tame Impala",
    "genres": [
-    "Pop",
-    "Electro"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 4,
@@ -871,7 +938,11 @@
    "listenedOn": "2025-10-17",
    "released": "2025-10-17",
    "link": "https://open.spotify.com/album/5WulAOx9ilWy1h8UGZ1gkI",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/80/54/11/80541122-c1c4-50ad-a673-ff79f4cf8aa7/196873555331.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/80/54/11/80541122-c1c4-50ad-a673-ff79f4cf8aa7/196873555331.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ]
   },
   {
    "id": "2a4a7bc0f6df805ca1c2e22939e81eb3",
@@ -911,7 +982,7 @@
    "album": "industry plant",
    "artist": "Miki",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 4,
@@ -919,7 +990,10 @@
    "listenedOn": "2025-10-03",
    "released": "2025-10-03",
    "link": "https://open.spotify.com/album/3wx2wcQ53Ilo5NOUU6Mw65",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8b/52/68/8b5268a4-89b2-8753-1939-7a87db9a1667/cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8b/52/68/8b5268a4-89b2-8753-1939-7a87db9a1667/cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80779af5c15b341445df",
@@ -1115,7 +1189,7 @@
    "album": "PLДYING / PRДYING",
    "artist": "KOMPROMAT",
    "genres": [
-    "Electro"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 3,
@@ -1123,7 +1197,10 @@
    "listenedOn": "2025-08-25",
    "released": "2025-01-24",
    "link": "https://open.spotify.com/album/7jW1d9fLw4vxIa2P1fkcgm",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fa/65/59/fa6559bf-eb2c-5b76-8678-4b69b8e328e1/cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fa/65/59/fa6559bf-eb2c-5b76-8678-4b69b8e328e1/cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80959a7dc4dd323d8200",
@@ -1156,7 +1233,11 @@
    "listenedOn": "2025-07-29",
    "released": "2025-07-11",
    "link": "https://open.spotify.com/album/5vD5M5VW62LL78Ko8x0CVZ",
-   "cover": "covers/2a4a7bc0f6df800c8121d501b84d9a29-35917f0353.jpg"
+   "cover": "covers/2a4a7bc0f6df800c8121d501b84d9a29-35917f0353.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f9/09/36/f9093663-c05f-7f95-0a60-4e95d52fbb22/25UMGIM93915.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80458861f6f63531f026",
@@ -1200,8 +1281,7 @@
    "album": "Lemonade",
    "artist": "Beyoncé",
    "genres": [
-    "Pop",
-    "Hip-hop/Rap"
+    "Pop"
    ],
    "lang": "Anglais",
    "rating": 5,
@@ -1210,7 +1290,12 @@
    "released": "2016-05-06",
    "link": "https://open.spotify.com/album/7dK54iZuOxXFarGhXwEXfF",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/db/25/a1/db25a1c0-8a4a-3b4d-226d-7c7704dc92da/886447680711.jpg/600x600bb.jpg",
-   "review": "A la première écoute j’ai mis un 4 étoiles.\nEt finalement en me renseignant sur tout le lore de l’album, en regardant le film album : un 5 étoiles est largement mérité."
+   "review": "A la première écoute j’ai mis un 4 étoiles.\nEt finalement en me renseignant sur tout le lore de l’album, en regardant le film album : un 5 étoiles est largement mérité.",
+   "myGenres": [
+    "Pop",
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/1d/1f/f1/1d1ff1ea-1720-ae29-9886-0ea89720615c/886447691144.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80ada640f8ccc462806a",
@@ -1283,15 +1368,18 @@
    "released": "2010-11-24",
    "link": "https://open.spotify.com/album/0le9TO3kU69m6iWHTjNs9Y",
    "cover": "https://upload.wikimedia.org/wikipedia/en/c/cd/Body_Talk_by_Robyn.png",
-   "review": "J’écris ces lignes plusieurs mois après l’écoute de cet album : je n’en ai absolument aucun souvenir. Initialement on était à 2 étoiles, on passe à 1 seule."
+   "review": "J’écris ces lignes plusieurs mois après l’écoute de cet album : je n’en ai absolument aucun souvenir. Initialement on était à 2 étoiles, on passe à 1 seule.",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c2/03/29/c20329ef-9858-7c0c-da41-89d8fa303a39/00602527588025.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df805eacd5d410ac0eeadf",
    "album": "BRAT",
    "artist": "Charli XCX",
    "genres": [
-    "Pop",
-    "Electro"
+    "Électronique"
    ],
    "lang": "Anglais",
    "rating": 5,
@@ -1299,14 +1387,18 @@
    "listenedOn": "2025-07-20",
    "released": "2024-06-07",
    "link": "https://open.spotify.com/album/2lIZef4lzdvZkiiCzvPKj7",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/88/4e/63/884e6321-ad41-aab1-f6f0-20efcafcfd55/075679666130.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/88/4e/63/884e6321-ad41-aab1-f6f0-20efcafcfd55/075679666130.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80a2b961d215e9704db8",
    "album": "Blonde",
    "artist": "Frank Ocean",
    "genres": [
-    "Hip-hop/Rap"
+    "Pop"
    ],
    "lang": "Anglais",
    "rating": 2,
@@ -1314,7 +1406,10 @@
    "listenedOn": "2025-07-19",
    "released": "2016-08-20",
    "link": "https://open.spotify.com/album/3mH6qwIy9crq0I9YQbOuDf",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/45/68/bb4568f3-68cd-619d-fbcb-4e179916545d/BlondCover-Final.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/bb/45/68/bb4568f3-68cd-619d-fbcb-4e179916545d/BlondCover-Final.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "2a4a7bc0f6df8004aab1dcc5d4fd962c",
@@ -1329,7 +1424,10 @@
    "listenedOn": "2025-07-19",
    "released": "2025-07-18",
    "link": "https://open.spotify.com/album/1slf6g1SethO2KrA4cxgjq",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/93/4a/2a/934a2a00-c2e1-6d61-483c-762f86394042/196873058115.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/93/4a/2a/934a2a00-c2e1-6d61-483c-762f86394042/196873058115.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df802f969af59647495d84",
@@ -1389,7 +1487,7 @@
    "album": "La Favorite",
    "artist": "Yoa",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 4,
@@ -1397,7 +1495,10 @@
    "listenedOn": "2025-01-31",
    "released": "2025-01-31",
    "link": "https://open.spotify.com/album/60cnL4NlNjkEQWRgPYlrmG",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/f3/a5/35f3a584-14ac-79d2-899e-cd43b32d44d9/3596974755529_cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/35/f3/a5/35f3a584-14ac-79d2-899e-cd43b32d44d9/3596974755529_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df8041b47dfd158d0d0013",
@@ -1412,7 +1513,11 @@
    "listenedOn": "2024-11-01",
    "released": "2024-11-01",
    "link": "https://open.spotify.com/album/5kULRFcbbkP6NHNBpi6T6p",
-   "cover": "covers/2a4a7bc0f6df8041b47dfd158d0d0013-e687144304.jpg"
+   "cover": "covers/2a4a7bc0f6df8041b47dfd158d0d0013-e687144304.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/bf/ca/97bfca44-9e03-06cb-e0bb-65cc94e3d153/25UMGIM62999.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df808d9965fb35335bf1ea",
@@ -1560,7 +1665,11 @@
    "listenedOn": "2022-03-18",
    "released": "2022-03-18",
    "link": "https://open.spotify.com/album/1mODEcUekiHajtaMk7AMMs",
-   "cover": "covers/2a4a7bc0f6df80c1a45dd4319296c79a-50f7c47838.jpg"
+   "cover": "covers/2a4a7bc0f6df80c1a45dd4319296c79a-50f7c47838.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/7c/42/0a/7c420a76-3ccc-cc8e-def0-374fc81c2c78/22UMGIM13515.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df806ab3f2fac4c2ca88b2",
@@ -1586,7 +1695,7 @@
    "album": "A Tous Les Batards",
    "artist": "Eddy de Pretto",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 3,
@@ -1594,7 +1703,11 @@
    "listenedOn": "2021-03-26",
    "released": "2021-03-26",
    "link": "https://open.spotify.com/album/4RDBA4Eb8n6KDYzX3wBEeY",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b1/3b/2c/b13b2ceb-bdb0-ce71-d3e1-e2450271535e/20UMGIM97711.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b1/3b/2c/b13b2ceb-bdb0-ce71-d3e1-e2450271535e/20UMGIM97711.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/3e/c8/f3/3ec8f3c9-9772-d327-80a3-5559604c740b/20UMGIM97711.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2a8a7bc0f6df8089af15edfdb7e1555c",
@@ -1637,7 +1750,7 @@
    "album": "Brol La Suite",
    "artist": "Angèle",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 5,
@@ -1645,7 +1758,10 @@
    "listenedOn": "2019-11-07",
    "released": "2019-11-07",
    "link": "https://open.spotify.com/album/2UrPmvaX5X76LIzE6Cfiqu",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/d8/ac/ff/d8acff60-ced5-db4f-c8aa-1c6ca651856d/19UMGIM90938.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/d8/ac/ff/d8acff60-ced5-db4f-c8aa-1c6ca651856d/19UMGIM90938.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80f58a94d9533a68813a",
@@ -1678,14 +1794,17 @@
    "listenedOn": "2018-09-14",
    "released": "2018-09-14",
    "link": "https://open.spotify.com/album/2vVDeIVO3ja0RdlQf20NOB",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/d1/66/af/d166affb-4e89-a946-bde3-75bcb4da7815/00602567882107.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/d1/66/af/d166affb-4e89-a946-bde3-75bcb4da7815/00602567882107.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "2a6a7bc0f6df8003ae6befe96af331ec",
    "album": "Cure",
    "artist": "Eddy de Pretto",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 4,
@@ -1693,7 +1812,10 @@
    "listenedOn": "2018-03-02",
    "released": "2018-03-02",
    "link": "https://open.spotify.com/album/0B7trrXpu1IShSqzJfB2Tw",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/e6/87/e1e68798-a576-f784-ed24-5182fdaa395a/18UMGIM05575.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/e6/87/e1e68798-a576-f784-ed24-5182fdaa395a/18UMGIM05575.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df8031bbb6c2bc011d4391",
@@ -1737,8 +1859,7 @@
    "album": "Pacifique",
    "artist": "disiz",
    "genres": [
-    "Hip-hop/Rap",
-    "Pop"
+    "Hip-hop/Rap"
    ],
    "lang": "Français",
    "rating": 4,
@@ -1746,7 +1867,11 @@
    "listenedOn": "2017-06-09",
    "released": "2017-06-09",
    "link": "https://open.spotify.com/album/0h9tYZeKtjZ8rsfGknVqwF",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ca/33/af/ca33af10-47b5-c3f3-4957-fb4bb7e0065a/00602557636116.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ca/33/af/ca33af10-47b5-c3f3-4957-fb4bb7e0065a/00602557636116.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap",
+    "Pop"
+   ]
   },
   {
    "id": "2a6a7bc0f6df805a9dc5cded1a31ae9c",
@@ -1761,7 +1886,10 @@
    "listenedOn": "2015-06-08",
    "released": "2015-06-08",
    "link": "https://open.spotify.com/album/7BgeK3jtk8GDlEwouUY3AG",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/fc/88/29/fc8829db-b4de-a366-70e0-3cf6cb53a81b/15UMGIM20685.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/fc/88/29/fc8829db-b4de-a366-70e0-3cf6cb53a81b/15UMGIM20685.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80acbf86dce9af8b0f84",
@@ -1814,14 +1942,18 @@
    "listenedOn": "2013-12-13",
    "released": "2013-12-13",
    "link": "https://open.spotify.com/album/2noKUZhXwUhPQMgSr56T4G",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/cb/d0/1b/cbd01b16-7759-38ec-15a2-8a98228319ff/886444935265.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/cb/d0/1b/cbd01b16-7759-38ec-15a2-8a98228319ff/886444935265.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d4/7b/13/d47b1359-6270-4669-83da-1dec4e140f95/886444385855.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df802b9846cb7dc3059076",
    "album": "Racine Carrée",
    "artist": "Stromae",
    "genres": [
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": 5,
@@ -1829,7 +1961,10 @@
    "listenedOn": "2013-08-19",
    "released": "2013-08-19",
    "link": "https://open.spotify.com/album/6uyslsVGFsHKzdGUosFwBM",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/44/13/e0/4413e0be-302b-fe2a-5c88-5c02389f67df/13UAAIM66791.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/44/13/e0/4413e0be-302b-fe2a-5c88-5c02389f67df/13UAAIM66791.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df806a963ad6a9d2d0bc0e",
@@ -1997,7 +2132,10 @@
    "listenedOn": null,
    "released": "2025-11-07",
    "link": "https://open.spotify.com/album/1GzZOyOEu5fepoX5rySrdO",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e7/73/f4/e773f4c5-892f-2206-abc4-0aad3cb32500/5063807111299_cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e7/73/f4/e773f4c5-892f-2206-abc4-0aad3cb32500/5063807111299_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "2dba7bc0f6df808aa124d7b939515194",
@@ -2083,7 +2221,11 @@
    "listenedOn": null,
    "released": "2025-11-28",
    "link": "https://open.spotify.com/album/5x8HW0WELQYm5Cp8408sfg",
-   "cover": "https://vinylcollector.store/cdn/shop/files/JessieJCover.jpg?v=1758728992&width=2000"
+   "cover": "https://vinylcollector.store/cdn/shop/files/JessieJCover.jpg?v=1758728992&width=2000",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/25/76/ff/2576ffeb-f4fe-f1da-3909-a0a0b5a93435/198704737466_Cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a8a7bc0f6df80ffa604df67a1ea0d74",
@@ -2114,7 +2256,10 @@
    "listenedOn": null,
    "released": "2026-09-18",
    "link": "https://open.spotify.com/album/6di14tEch7EQ0jMglRwcf6",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e2/ee/b1/e2eeb1c6-a96a-d768-643c-20e087bce6d8/00823375156413_Cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e2/ee/b1/e2eeb1c6-a96a-d768-643c-20e087bce6d8/00823375156413_Cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "31ea7bc0f6df80ada27fe1588ba4edbd",
@@ -2193,8 +2338,7 @@
    "album": "Jeune & Laide",
    "artist": "Camille Yembe",
    "genres": [
-    "Hip-hop/Rap",
-    "Pop"
+    "Variété française"
    ],
    "lang": "Français",
    "rating": null,
@@ -2202,7 +2346,11 @@
    "listenedOn": null,
    "released": "2026-05-22",
    "link": "https://open.spotify.com/album/3oavlb7bKt7NljH3CL5uTZ",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e0/f0/a3/e0f0a36c-2bad-abee-cd53-de41d073385b/3596975072694_cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e0/f0/a3/e0f0a36c-2bad-abee-cd53-de41d073385b/3596975072694_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap",
+    "Pop"
+   ]
   },
   {
    "id": "2f8a7bc0f6df80219518dffcd55d8f74",
@@ -2298,8 +2446,7 @@
    "album": "Ritual",
    "artist": "Icona Pop",
    "genres": [
-    "Pop",
-    "Electro"
+    "Dance"
    ],
    "lang": "Anglais",
    "rating": null,
@@ -2307,7 +2454,11 @@
    "listenedOn": null,
    "released": "2026-08-14",
    "link": "https://open.spotify.com/album/48kNSC9VNag007n2cdI374",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4e/f9/e9/4ef9e917-0bb7-7988-b5ba-781e15cdaeb2/196874146361.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4e/f9/e9/4ef9e917-0bb7-7988-b5ba-781e15cdaeb2/196874146361.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop",
+    "Electro"
+   ]
   },
   {
    "id": "2d6a7bc0f6df80769649d44da19547c1",
@@ -2367,7 +2518,7 @@
    "album": "The Afterparty",
    "artist": "Lykke Li",
    "genres": [
-    "Pop"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": null,
@@ -2375,7 +2526,10 @@
    "listenedOn": null,
    "released": "2026-05-08",
    "link": "https://open.spotify.com/album/3eqH5aQKPKLKD1kFNBczwl",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/84/a4/c6/84a4c65d-db62-65ed-9aed-cdb0a875c408/198704887093_Cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/84/a4/c6/84a4c65d-db62-65ed-9aed-cdb0a875c408/198704887093_Cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "379a7bc0f6df802abca0ca5ff5252fcf",
@@ -2400,7 +2554,7 @@
    "album": "The Mountain",
    "artist": "Gorillaz",
    "genres": [
-    "Rock"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": null,
@@ -2408,7 +2562,11 @@
    "listenedOn": null,
    "released": "2026-02-27",
    "link": "https://open.spotify.com/album/1RvJmGd47lKS4XMXs9j8hD",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7a/74/e7/7a74e759-bf28-c96e-0084-b39c1a42a2d8/199538459005.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7a/74/e7/7a74e759-bf28-c96e-0084-b39c1a42a2d8/199538459005.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Rock"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/86/b5/3f/86b53fc7-cc73-c735-17fb-549fc459edca/199538459005.jpg/600x600bb.jpg"
   },
   {
    "id": "2a8a7bc0f6df807897a9c6f81784bd29",
@@ -2472,7 +2630,7 @@
    "album": "USB",
    "artist": "Fred again..",
    "genres": [
-    "Electro"
+    "Électronique"
    ],
    "lang": null,
    "rating": null,
@@ -2480,7 +2638,10 @@
    "listenedOn": null,
    "released": "2025-12-12",
    "link": "https://open.spotify.com/album/2ClZ9xWAYg1BH8zkR96dJo",
-   "cover": null
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/eb/fc/cfebfc00-935d-b7cb-ed55-6ed0bfdb1581/5026854879567.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Electro"
+   ]
   },
   {
    "id": "2a9a7bc0f6df80c7a836ea73861b52a7",
@@ -2513,7 +2674,10 @@
    "listenedOn": null,
    "released": "2026-03-27",
    "link": "https://open.spotify.com/album/5siV9C6eK0NpAqER2FfCVA",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e7/41/d8/e741d8f3-f8db-d401-5d93-fdfd69d8f17e/196873835891.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e7/41/d8/e741d8f3-f8db-d401-5d93-fdfd69d8f17e/196873835891.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   }
  ]
 }
