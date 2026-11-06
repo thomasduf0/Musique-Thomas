@@ -3,15 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
   <title>Journal d'écoute</title>
   <meta name="description" content="Récap de mes écoutes d'albums : notes, coups de cœur et albums à écouter.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=20261106b">
+  <link rel="stylesheet" href="assets/style.css?v=20261106c">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💿</text></svg>">
 </head>
-<body>
+<body class="locked">
+  <div id="gate" class="gate" hidden>
+    <form id="gate-form" class="gate-box">
+      <span class="gate-logo" aria-hidden="true">💿</span>
+      <h1>Journal d'écoute</h1>
+      <p>Site privé : entre le mot de passe pour y accéder.</p>
+      <input id="gate-pw" type="password" placeholder="Mot de passe" autocomplete="current-password" required aria-label="Mot de passe">
+      <button class="btn">Entrer</button>
+      <p id="gate-err" class="gate-err" role="alert"></p>
+    </form>
+  </div>
+
   <header class="hero">
     <div class="wrap">
       <div class="hero-top">
@@ -51,6 +63,7 @@
 
     <p id="count" class="count"></p>
     <section id="grid" class="grid" aria-live="polite"></section>
+    <section id="artist" class="artist-view" hidden></section>
     <section id="reco" class="reco" hidden></section>
     <section id="stats" class="stats" hidden></section>
   </main>
@@ -61,9 +74,11 @@
   </dialog>
 
   <footer class="wrap foot">
-    <p>Données issues de mon Notion · <span id="updated"></span> · <a href="ajouter.html" style="color:inherit">Ajouter un album</a></p>
+    <p>Données issues de mon Notion · <span id="updated"></span> · Hébergé sur github.io</p>
   </footer>
 
-  <script src="assets/app.js?v=20261106b"></script>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/config.js?v=20261106c"></script>
+  <script src="assets/app.js?v=20261106c"></script>
 </body>
 </html>

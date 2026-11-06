@@ -145,11 +145,29 @@
     finally { btn.disabled = false; }
   });
 
+  // Albums : données publiées + état en direct de Notion (sans attendre la synchro horaire)
+  let albumsP = null;
+  function loadAlbums(fresh = false) {
+    if (albumsP && !fresh) return albumsP;
+    albumsP = (async () => {
+      const base = await fetch("data/albums.json", { cache: "no-cache" }).then((r) => r.json()).then((d) => d.albums).catch(() => []);
+      try {
+        const live = (await fetch(API + "/export").then((r) => (r.ok ? r.json() : Promise.reject()))).albums.filter((x) => x.album && x.artist);
+        const byId = new Map(base.map((a) => [a.id, a]));
+        return live.map((x) => {
+          const b = byId.get(x.id) || {};
+          return { ...b, ...x, cover: b.cover || x.cover || x.coverFile || null, genres: b.genres || x.genres || [] };
+        });
+      } catch { return base; }
+    })();
+    return albumsP;
+  }
+
   // ---------- À écouter ----------
   async function loadTodo() {
     try {
-      const data = await fetch("data/albums.json", { cache: "no-cache" }).then((r) => r.json());
-      const todo = data.albums.filter((a) => !a.listened).sort((a, b) => (b.released || "").localeCompare(a.released || ""));
+      const albums = await loadAlbums();
+      const todo = albums.filter((a) => !a.listened).sort((a, b) => (b.released || "").localeCompare(a.released || ""));
       $("#todo").innerHTML = todo.length ? todo.map((a) => `
         <div class="todo-item" data-id="${a.id}">
           ${a.cover ? `<img src="${esc(a.cover)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : `<div class="ph-mini" style="background:var(--line)"></div>`}
@@ -188,8 +206,8 @@
   async function loadToRate() {
     // 1. Écoutés sans note (données du site)
     try {
-      const data = await fetch("data/albums.json", { cache: "no-cache" }).then((r) => r.json());
-      const list = data.albums.filter((a) => a.listened && !a.rating).sort((a, b) => (b.listenedOn || "").localeCompare(a.listenedOn || ""));
+      const albums = await loadAlbums();
+      const list = albums.filter((a) => a.listened && !a.rating).sort((a, b) => (b.listenedOn || "").localeCompare(a.listenedOn || ""));
       $("#to-rate").innerHTML = list.length ? list.map((a) => rowHTML({
         key: a.id, cover: a.cover, album: a.album, artist: a.artist,
         when: a.listenedOn ? "Écouté le " + fmt(a.listenedOn) : "",

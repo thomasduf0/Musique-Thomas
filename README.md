@@ -3,6 +3,11 @@
 Site récap de mes écoutes d'albums, alimenté par ma base Notion « Base de données - Musiques écoutées ».
 Adresse : <https://thomasduf0.github.io/Musique-Thomas/>
 
+- **Accès** : tout le site demande le mot de passe (`ADMIN_PASSWORD`, le même que la page d'ajout), vérifié par la fonction Cloudflare. C'est un écran d'accès : les fichiers `data/*.json` restent lisibles par qui connaît leur adresse, et le dépôt est public.
+- **Fiche album** : bouton **Modifier** pour changer la note ou ajouter un commentaire de 2e (3e…) écoute, enregistré à la suite de l'avis dans Notion ; pour un album à écouter, il permet de le marquer comme écouté. La flèche en bas à droite ouvre l'album sur Spotify.
+- **Page artiste** : un clic sur le nom d'un artiste affiche tous ses albums (écoutés, à écouter, conseillés).
+- **À jour tout de suite** : après connexion, le site relit Notion en direct (`/export`) et applique les changements sans attendre la publication horaire.
+
 - **Écoutés** : tous les albums écoutés, filtrables par genre, langue et note, triables par date d'écoute (dans les deux sens), note, sortie ou artiste. Les genres affichés sont ceux d'Apple Music (en français), pas ceux saisis dans Notion.
 - **J'ai écouté** : bouton en haut de page qui mène à `ajouter.html`.
 - **Coups de cœur** : les albums notés 5★.
