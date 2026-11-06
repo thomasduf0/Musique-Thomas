@@ -12,7 +12,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 
 const COUNTRY = "country=fr&lang=fr_fr";
-const WEEK = 7 * 24 * 3600 * 1000;
+const WEEK = 14 * 24 * 3600 * 1000; // discographies rafraîchies toutes les 2 semaines
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ---------- Utilitaires ----------
@@ -40,21 +40,22 @@ function appleId(link) {
 // ---------- Appels iTunes (limite ≈ 20 requêtes/minute) ----------
 let last = 0;
 let calls = 0;
-const MAX_CALLS = 120; // garde-fou par synchro ; le reste sera fait à la synchro suivante
+const MAX_CALLS = 60; // garde-fou par synchro ; le reste sera fait à la synchro suivante
+let blocked = false;
 async function itunes(query) {
+  if (blocked) throw new Error("Apple Music limite les requêtes, suite à la prochaine synchro");
   if (calls >= MAX_CALLS) throw new Error("quota de la synchro atteint");
-  for (let attempt = 0; attempt < 3; attempt++) {
-    const wait = last + 3100 - Date.now();
-    if (wait > 0) await sleep(wait);
-    last = Date.now();
-    calls++;
-    const res = await fetch(`https://itunes.apple.com/${query}${query.includes("?") ? "&" : "?"}${COUNTRY}`);
-    if (res.status === 403 || res.status === 429) { await sleep(20000 * (attempt + 1)); continue; }
-    if (!res.ok) throw new Error(`iTunes ${res.status}`);
-    return (await res.json()).results || [];
-  }
-  throw new Error("iTunes : trop de requêtes");
+  const wait = last + 3100 - Date.now();
+  if (wait > 0) await sleep(wait);
+  last = Date.now();
+  calls++;
+  const res = await fetch(`https://itunes.apple.com/${query}${query.includes("?") ? "&" : "?"}${COUNTRY}`);
+  if (res.status === 403 || res.status === 429) { blocked = true; throw new Error(`iTunes ${res.status}`); }
+  if (!res.ok) throw new Error(`iTunes ${res.status}`);
+  return (await res.json()).results || [];
 }
+const RETRY = 3 * 24 * 3600 * 1000; // un album introuvable est recherché à nouveau 3 jours plus tard
+const stale = (e, key) => !e || e.key !== key || (e.notFound && Date.now() - (e.at || 0) > RETRY);
 
 function bestMatch(results, artist, album) {
   const a = norm(artist).replace(/[^a-z0-9]+/g, " ").trim();
@@ -132,7 +133,7 @@ export async function enrich(rows, { cachePath, selectionPath }) {
   const keyOf = (r) => `${r.artist}|${r.album}|${r.link || ""}`;
 
   // 1. Albums de la base : correspondance Apple Music
-  const todo = rows.filter((r) => cache.albums[r.id]?.key !== keyOf(r));
+  const todo = rows.filter((r) => stale(cache.albums[r.id], keyOf(r)));
   const byApple = new Map();
   todo.forEach((r) => { const id = appleId(r.link); if (id) (byApple.get(id) || byApple.set(id, []).get(id)).push(r); });
   const ids = [...byApple.keys()];
@@ -146,10 +147,10 @@ export async function enrich(rows, { cachePath, selectionPath }) {
     } catch (e) { console.warn("Recherche Apple Music (lot) :", e.message); }
   }
   for (const r of todo) {
-    if (cache.albums[r.id]?.key === keyOf(r)) continue;
+    if (!stale(cache.albums[r.id], keyOf(r))) continue;
     try {
       const hit = await search(r.artist, r.album);
-      cache.albums[r.id] = { key: keyOf(r), ...(hit || { notFound: true }) };
+      cache.albums[r.id] = { key: keyOf(r), ...(hit || { notFound: true, at: Date.now() }) };
     } catch (e) { console.warn("Recherche Apple Music :", r.album, e.message); break; }
   }
   // Nettoyage des albums supprimés de la base
@@ -204,8 +205,8 @@ export async function enrich(rows, { cachePath, selectionPath }) {
   for (const p of selection) {
     const k = `${p.artist}|${p.album}`;
     if (knownTitles.has(baseTitle(p.album)) && known.has(`${norm(p.artist)}|${baseTitle(p.album)}`)) continue; // déjà dans la base
-    if (!cache.picks[k]) {
-      try { cache.picks[k] = (await search(p.artist, p.album)) || { notFound: true }; }
+    if (!cache.picks[k] || (cache.picks[k].notFound && Date.now() - (cache.picks[k].at || 0) > RETRY)) {
+      try { cache.picks[k] = (await search(p.artist, p.album)) || { notFound: true, at: Date.now() }; }
       catch (e) { console.warn("Sélection :", p.album, e.message); }
     }
     const x = cache.picks[k] || {};
