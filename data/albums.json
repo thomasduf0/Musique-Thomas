@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T17:01:57.316Z",
+ "updatedAt": "2026-11-06T17:15:29.531Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -646,7 +646,7 @@
    "album": "on s’en rappellera pas",
    "artist": "disiz",
    "genres": [
-    "Hip-hop/Rap"
+    "Pop"
    ],
    "lang": "Français",
    "rating": 4,
@@ -654,7 +654,10 @@
    "listenedOn": "2025-11-22",
    "released": "2025-11-21",
    "link": "https://open.spotify.com/album/2TLKicTW4h5Xpky6AinYq5",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/49/0d/1f490dc9-1e4d-7a91-f25a-086566f406e6/196873642161.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/49/0d/1f490dc9-1e4d-7a91-f25a-086566f406e6/196873642161.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ]
   },
   {
    "id": "2a8a7bc0f6df808f9fccdf9211923d84",
@@ -744,7 +747,11 @@
    "released": "2025-11-07",
    "link": "https://open.spotify.com/album/0BompZU9zoS3yZTtEdINTK",
    "cover": "covers/2a4a7bc0f6df80c687e5f59c89c187c8-a7b92b727b.jpeg",
-   "review": "En soit c’est riche, très intéressant à écouter, j’aime beaucoup sa voix mais c’est trop « rock » pour moi. Je pense qu’il faudrait une touche plus pop pour que j’accroche."
+   "review": "En soit c’est riche, très intéressant à écouter, j’aime beaucoup sa voix mais c’est trop « rock » pour moi. Je pense qu’il faudrait une touche plus pop pour que j’accroche.",
+   "myGenres": [
+    "Rock"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/91/1c/f5/911cf54e-1d8f-ef5b-4179-ba31ca457c69/cover.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8092aa97dd1e44796873",
@@ -1236,7 +1243,11 @@
    "listenedOn": "2025-07-21",
    "released": "2024-10-28",
    "link": "https://open.spotify.com/album/0U28P0QVB1QRxpqp5IHOlH",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7d/bd/e9/7dbde97e-b97d-8cc3-0203-218b687408a9/196872555059.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7d/bd/e9/7dbde97e-b97d-8cc3-0203-218b687408a9/196872555059.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b6/ef/ee/b6efeefa-fc99-37d1-ad21-0d769b2a4958/196872796971.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df8052b4e2fc87dd2d01d9",
@@ -1252,7 +1263,11 @@
    "released": "2025-07-21",
    "link": "https://open.spotify.com/album/1jzv3jwZbt8lYfEtMjiD1R",
    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a0/ae/e6/a0aee657-b365-fed2-249c-0f22efa507d0/196873435435.jpg/600x600bb.jpg",
-   "review": "Je me souviens avoir apprécié la 1ère écoute, mais pas assez pour en avoir une deuxième. J’écoute donc une 2ème fois en écrivant ces lignes, mais l’album ne m’avait pas assez marqué pour en avoir envie avant."
+   "review": "Je me souviens avoir apprécié la 1ère écoute, mais pas assez pour en avoir une deuxième. J’écoute donc une 2ème fois en écrivant ces lignes, mais l’album ne m’avait pas assez marqué pour en avoir envie avant.",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9e/2b/93/9e2b93b7-43a9-e814-e0ae-c55a1b7e17d6/196873463513.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df808f9402d6559df23d4d",
@@ -1321,7 +1336,7 @@
    "album": "SOS",
    "artist": "SZA",
    "genres": [
-    "Hip-hop/Rap"
+    "R&B/Soul"
    ],
    "lang": "Anglais",
    "rating": 2,
@@ -1329,7 +1344,11 @@
    "listenedOn": "2025-07-19",
    "released": "2022-12-09",
    "link": "https://open.spotify.com/album/07w0rG5TETcyihsEIZR3qG",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/3b/a9/bd3ba9fb-9609-144f-bcfe-ead67b5f6ab3/196589564931.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/3b/a9/bd3ba9fb-9609-144f-bcfe-ead67b5f6ab3/196589564931.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/62/93/13/6293132e-20ff-67ab-3d1f-96bb6797a6ba/196589564955.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80bda698f7f921c90656",
@@ -1344,7 +1363,11 @@
    "listenedOn": "2025-07-04",
    "released": "2025-07-04",
    "link": "https://open.spotify.com/album/20vUlVo1pWLuhaoMUPQYur",
-   "cover": "https://vinyltap.co.uk/cdn/shop/files/887ead5805c791b1f101f4d482398027_3b135edc-744a-4ad5-a929-717db3ac2d98.jpg?v=1751587705"
+   "cover": "https://vinyltap.co.uk/cdn/shop/files/887ead5805c791b1f101f4d482398027_3b135edc-744a-4ad5-a929-717db3ac2d98.jpg?v=1751587705",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ee/d3/b3/eed3b3fc-4338-c339-59b6-2f8e4df4e59f/196871228282.jpg/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df80dfa9a7fdd6d862902e",
@@ -1396,7 +1419,7 @@
    "album": "HIT ME HARD AND SOFT",
    "artist": "Billie Eilish",
    "genres": [
-    "Pop"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 4,
@@ -1404,7 +1427,10 @@
    "listenedOn": "2024-05-17",
    "released": "2024-05-17",
    "link": "https://open.spotify.com/album/7aJuG4TFXa2hmE4z1yxc3n",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/92/9f/69/929f69f1-9977-3a44-d674-11f70c852d1b/24UMGIM36186.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80cc8fe3cd29fc1b0d8d",
@@ -1593,7 +1619,7 @@
    "album": "L'Ère du Verseau",
    "artist": "Yelle",
    "genres": [
-    "Pop"
+    "Électronique"
    ],
    "lang": "Français",
    "rating": 5,
@@ -1601,7 +1627,10 @@
    "listenedOn": "2020-09-04",
    "released": "2020-09-04",
    "link": "https://open.spotify.com/album/5iCfp2KefljOSPdRqpAvyW",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/fa/df/d2/fadfd281-0c97-72ee-6922-d5dec65ec999/3663729126221_cover.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/fa/df/d2/fadfd281-0c97-72ee-6922-d5dec65ec999/3663729126221_cover.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a4a7bc0f6df80b1aaf5e8a77440330a",
@@ -1623,7 +1652,7 @@
    "album": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
    "artist": "Billie Eilish",
    "genres": [
-    "Pop"
+    "Alternative"
    ],
    "lang": "Anglais",
    "rating": 5,
@@ -1631,7 +1660,10 @@
    "listenedOn": "2019-03-29",
    "released": "2019-03-29",
    "link": "https://open.spotify.com/album/0S0KGZnfBGSIssfF54WSJh",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg/600x600bb.jpg"
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg/600x600bb.jpg",
+   "myGenres": [
+    "Pop"
+   ]
   },
   {
    "id": "2a6a7bc0f6df8064a7b0f96938535136",
@@ -1870,7 +1902,11 @@
    "listenedOn": "2011-01-24",
    "released": "2011-01-24",
    "link": "https://open.spotify.com/album/5duyQokC4FMcWPYTV9Gpf9",
-   "cover": "https://m.media-amazon.com/images/I/61lMwNQGYbL._SL1200_.jpg"
+   "cover": "https://m.media-amazon.com/images/I/61lMwNQGYbL._SL1200_.jpg",
+   "myGenres": [
+    "Pop"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f8/df/0a/f8df0ac9-ae76-9dae-86d3-4e913fc54fb1/634904152062.png/600x600bb.jpg"
   },
   {
    "id": "2a4a7bc0f6df806c8b69ddc36d71d6b7",
