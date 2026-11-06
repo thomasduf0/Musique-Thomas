@@ -119,8 +119,17 @@ function studioAlbums(results, artistId) {
   }
   // Titres qui reprennent un autre album de l'artiste en plus long et sortis après (« Extra-lucide »…)
   const bases = own.map((x) => [baseTitle(x.collectionName), x.releaseDate || ""]);
+  // Réédition sous un autre nom (« Culte » = « Cure » augmenté) : sortie moins de 9 mois après
+  // un autre album de l'artiste, avec nettement plus de titres
+  const full = own.filter((y) => y.trackCount >= 9);
+  const day = 24 * 3600 * 1000;
+  const expanded = (x) => full.some((y) => {
+    const gap = (Date.parse(x.releaseDate) - Date.parse(y.releaseDate)) / day;
+    return y !== x && gap > 0 && gap < 270 && x.trackCount >= y.trackCount + 3;
+  });
   return [...byBase.entries()]
     .filter(([b, x]) => !bases.some(([o, d]) => o !== b && o.length >= 4 && b.includes(o) && d < (x.releaseDate || "")))
+    .filter(([, x]) => !expanded(x))
     .map(([, x]) => x);
 }
 
