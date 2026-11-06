@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Réglages · Journal d'écoute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="assets/theme.js?v=1"></script>
+  <link rel="stylesheet" href="assets/style.css?v=20261106e">
+  <link rel="stylesheet" href="assets/admin.css?v=4">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💿</text></svg>">
+</head>
+<body>
+  <header class="hero small">
+    <div class="wrap">
+      <a class="back" href="./">← Retour au journal</a>
+      <h1>Réglages</h1>
+    </div>
+  </header>
+
+  <main class="wrap admin">
+    <section id="login" class="panel" hidden>
+      <h3>Accès</h3>
+      <form id="login-form" class="row">
+        <input id="password" type="password" placeholder="Mot de passe" autocomplete="current-password" required aria-label="Mot de passe">
+        <button class="btn">Entrer</button>
+      </form>
+    </section>
+
+    <div id="app" hidden>
+      <section class="panel">
+        <h3>Apparence</h3>
+        <div class="seg" role="radiogroup" aria-label="Thème" id="theme">
+          <label><input type="radio" name="theme" value="dark"> Sombre</label>
+          <label><input type="radio" name="theme" value="light"> Clair</label>
+          <label><input type="radio" name="theme" value="auto"> Automatique</label>
+        </div>
+        <p class="hint">« Automatique » suit le réglage de ton appareil. Le choix est retenu sur cet appareil.</p>
+      </section>
+
+      <section class="panel">
+        <h3>Spotify et Notion</h3>
+        <p id="status" class="hint">Vérification…</p>
+        <a class="btn ghost link-btn" href="https://www.notion.so/16ca7bc0f6df8014bdb3c1cd5cc59813" target="_blank" rel="noopener">Ouvrir mon Notion « Suivi d'écoutes » ↗</a>
+      </section>
+
+      <section class="panel" id="rate-panel">
+        <h3>À noter</h3>
+        <p class="hint">Les albums cochés « Écouté » sans note, et ceux que tu as écoutés en entier sur Spotify sans qu'ils soient dans ta base.</p>
+        <div id="to-rate" class="todo"></div>
+        <h4 class="sub-h" id="heard-title" hidden>Écoutés en entier sur Spotify, pas encore dans ta base</h4>
+        <div id="heard" class="todo"></div>
+      </section>
+
+      <section class="panel" id="migrate">
+        <h3>Remplacer les liens par Spotify</h3>
+        <p class="hint">Cherche sur Spotify chaque album de la base qui n'a pas encore de lien Spotify. Rien n'est modifié avant que tu valides : décoche les correspondances fausses.</p>
+        <button class="btn" type="button" id="m-start">Chercher les correspondances</button>
+        <p class="hint" id="m-progress"></p>
+        <div id="m-list" class="mlist"></div>
+        <button class="btn" type="button" id="m-apply" hidden></button>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/config.js?v=20261106e"></script>
+  <script src="assets/admin.js?v=4"></script>
+</body>
+</html>

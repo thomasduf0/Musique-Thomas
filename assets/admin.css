@@ -100,3 +100,7 @@
 .todo-item .rate button { font-size: 20px; padding: 0 2px; }
 .btn.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); }
 .todo-item .when { display: block; }
+
+/* ---------- Réglages ---------- */
+.link-btn { display: inline-block; text-decoration: none; margin-top: 4px; }
+.seg label { color: var(--muted); }

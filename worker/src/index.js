@@ -459,8 +459,9 @@ async function handle(req, env) {
 
     if (url.pathname === "/search" && req.method === "GET") {
       const album = url.searchParams.get("album")?.trim(), artist = url.searchParams.get("artist")?.trim();
-      if (!album && !artist) return json({ error: "Indique un album ou un artiste" }, 400, h);
-      return json({ results: await searchAlbums(env, album, artist) }, 200, h);
+      const q = url.searchParams.get("q")?.trim(); // recherche libre (barre de recherche du site)
+      if (!album && !artist && !q) return json({ error: "Indique un album ou un artiste" }, 400, h);
+      return json({ results: await searchAlbums(env, album, artist, q ? { q } : {}) }, 200, h);
     }
 
     if (url.pathname === "/albums" && req.method === "POST") {

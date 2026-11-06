@@ -1,10 +1,10 @@
 (() => {
   const $ = (s) => document.querySelector(s);
   const API = (window.MUSIQUE_API || "").replace(/\/$/, "");
-  const state = { view: "all", albums: [], reco: null, artist: null, current: null, dismissed: new Set() };
+  const state = { view: "all", albums: [], reco: null, artist: null, current: null, pending: null, dismissed: new Set() };
   const els = {
     grid: $("#grid"), stats: $("#stats"), reco: $("#reco"), artist: $("#artist"), filters: $("#filters"), count: $("#count"),
-    q: $("#q"), genre: $("#genre"), lang: $("#lang"), rating: $("#rating"), sort: $("#sort"),
+    genre: $("#genre"), lang: $("#lang"), rating: $("#rating"), sort: $("#sort"),
   };
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -121,11 +121,10 @@
 
   // ---------- Rendu ----------
   function currentList() {
-    const q = norm(els.q.value), g = els.genre.value, l = els.lang.value, r = +els.rating.value;
+    const g = els.genre.value, l = els.lang.value, r = +els.rating.value;
     let list = state.albums.filter((a) =>
       state.view === "todo" ? !a.listened :
       state.view === "fav" ? a.listened && a.rating === 5 : a.listened);
-    if (q) list = list.filter((a) => norm(a.album + " " + a.artist).includes(q));
     if (g) list = list.filter((a) => a.genres.includes(g));
     if (l) list = list.filter((a) => a.lang === l);
     if (r) list = list.filter((a) => a.rating === r);
@@ -147,7 +146,7 @@
         <h3>${esc(a.album)}</h3>
         <p>${artistLink(a.artist)}</p>
         <p>${a.listened ? "Écouté le " + fmtDate(a.listenedOn) : "À écouter · sortie " + fmtRelease(a.released)}</p>
-        ${a.listened ? "" : `<span class="pill-btn" role="button" tabindex="0" data-heard="${a.id}">✓ Écouté</span>`}
+        ${a.listened ? "" : `<span class="pills"><span class="pill-btn" role="button" tabindex="0" data-heard="${a.id}">✓ Écouté</span></span>`}
       </button>`;
 
   function renderGrid() {
@@ -193,7 +192,7 @@
   function openDetail(id, edit = false) {
     const a = state.albums.find((x) => x.id === id);
     if (!a) return;
-    state.current = a;
+    state.current = a; state.pending = null;
     $("#detail-body").innerHTML = `
       <div class="d-wrap">
         <div class="d-left">${coverHTML(a, true)}</div>
@@ -237,9 +236,12 @@
         <div class="btns"><button class="btn">Enregistrer</button><button class="btn ghost" type="button" data-cancel>Annuler</button></div>
       </form>`;
     }
-    const mine = a.myGenres || [];
+    return heardForm(a, true);
+  }
+  function heardForm(a, hidden) {
+    const mine = a.myGenres || a.genres || [];
     const langs = [...new Set([...LANGS, a.lang].filter(Boolean))];
-    return `<form class="edit" hidden>
+    return `<form class="edit"${hidden ? " hidden" : ""}>
       <p class="edit-title">Je l'ai écouté</p>
       <div class="field"><span>Ma note</span>${rateHTML(0)}</div>
       <label>Date d'écoute<input name="date" type="date" value="${today()}"></label>
@@ -254,6 +256,11 @@
   $("#detail-body").addEventListener("click", (e) => {
     const art = e.target.closest("[data-artist]");
     if (art) { $("#detail").close(); return showArtist(art.dataset.artist); }
+    const rh = e.target.closest("[data-reco-heard]");
+    if (rh) return recoHeard(+rh.dataset.recoHeard, rh);
+    const rt = e.target.closest("[data-reco-todo]");
+    if (rt) return recoTodo(+rt.dataset.recoTodo, rt);
+    if (e.target.closest("[data-cancel]") && state.pending) { $("#detail").close(); return; }
     const form = $("#detail-body .edit");
     if (e.target.closest("[data-edit]")) { openEdit(); return; }
     const nope = e.target.closest("[data-nope]");
@@ -273,6 +280,8 @@
     const a = state.current, form = e.target;
     const rating = +form.querySelector(".rate").dataset.rating || null;
     const text = form.review.value.trim(), date = form.date.value || today();
+    if (state.pending) return saveNew(state.pending, { listened: true, rating, listenedOn: date, review: text,
+      lang: form.lang.value || null, genres: [...form.querySelectorAll("input[name=genre]:checked")].map((c) => c.value) }, form.querySelector("button:not([type])"));
     const body = {};
     let review = "";
     if (a.listened) {
@@ -321,13 +330,21 @@
         <h3>${esc(r.title)}</h3>
         <p>${artistLink(r.artist)}${r.released ? " · " + esc(String(r.released).slice(0, 4)) : ""}</p>
         ${why ? `<p class="why">${esc(why)}</p>` : ""}
-        <span class="pill-btn ghost" role="button" tabindex="0" data-nope="${i}">Pas intéressé</span>
+        <span class="pills">
+          <span class="pill-btn" role="button" tabindex="0" data-reco-heard="${i}">✓ Écouté</span>
+          <span class="pill-btn ghost" role="button" tabindex="0" data-nope="${i}">Pas intéressé</span>
+        </span>
       </button>`;
   }
   function recoList() {
     const R = state.reco || { fromArtists: [], picks: [] };
     return [...R.fromArtists.map((r) => ({ ...r, kind: "artist" })), ...R.picks.map((r) => ({ ...r, kind: "pick" }))]
-      .filter((r) => !state.dismissed.has(recoKey(r)));
+      .filter((r) => !state.dismissed.has(recoKey(r)) && !inBase(r.artist, r.title));
+  }
+  // Déjà dans la base (ajouté depuis le site) : on ne le conseille plus
+  function inBase(artist, title) {
+    const k = recoKey({ artist, title });
+    return state.albums.some((a) => recoKey({ artist: a.artist, title: a.album }) === k);
   }
 
   // « Pas intéressé » : enregistré dans la fonction Cloudflare (et dans ce navigateur en attendant)
@@ -381,7 +398,7 @@
   function openReco(i) {
     const r = recoList()[i];
     if (!r) return;
-    state.current = null;
+    state.current = null; state.pending = null;
     const why = r.kind === "pick" ? r.why : `Tu as écouté ${r.heardCount} albums de ${r.artist}, mais pas celui-ci.`;
     $("#detail-body").innerHTML = `
       <div class="d-wrap">
@@ -397,7 +414,8 @@
           </dl>
           <div class="why-box">${esc(why)}</div>
           <div class="btns">
-            ${r.url ? `<a class="btn ghost" href="${esc(r.url)}" target="_blank" rel="noopener">${r.url.includes("deezer") ? "Deezer" : "Apple Music"} ↗</a>` : ""}
+            <button class="btn" type="button" data-reco-heard="${i}">✓ Écouté</button>
+            <button class="btn ghost" type="button" data-reco-todo="${i}">+ À écouter</button>
             <button class="btn ghost" type="button" data-nope="${i}">Pas intéressé</button>
           </div>
         </div>
@@ -407,6 +425,135 @@
     if (!d.open) d.showModal();
     tilt(d.querySelector(".d-left .cover"));
   }
+
+  // ---------- Ajouter un album à la base (depuis la recherche ou un conseil) ----------
+  const spotifyId = (l) => l?.match(/album\/([A-Za-z0-9]+)/)?.[1];
+  function findInBase(r) {
+    const id = spotifyId(r.link);
+    return state.albums.find((a) => (id && spotifyId(a.link) === id) || recoKey({ artist: a.artist, title: a.album }) === recoKey({ artist: r.artist, title: r.album }));
+  }
+  function openNew(r) {
+    state.current = null; state.pending = r;
+    $("#detail-body").innerHTML = `
+      <div class="d-wrap">
+        <div class="d-left">${coverHTML({ album: r.album, artist: r.artist, cover: r.cover }, true)}</div>
+        <div class="d-info">
+          <h2>${esc(r.album)}</h2>
+          <p class="d-artist">${esc(r.artist)}</p>
+          <dl class="meta">${r.released ? `<dt>Sortie</dt><dd>${fmtRelease(r.released)}</dd>` : ""}</dl>
+          ${heardForm({ album: r.album, genres: r.genres || [] }, false)}
+        </div>
+      </div>
+      ${goLink(r.link, "Écouter sur Spotify")}`;
+    const d = $("#detail");
+    if (!d.open) d.showModal();
+    tilt(d.querySelector(".d-left .cover"));
+  }
+  async function saveNew(r, extra, btn) {
+    if (btn) btn.disabled = true;
+    const body = { album: r.album, artist: r.artist, released: r.released || null, link: r.link || null, cover: r.cover || null,
+      genres: r.genres || [], lang: null, listened: false, ...extra };
+    try {
+      const res = await api("/albums", { method: "POST", body: JSON.stringify(body) });
+      const a = { id: res.id.replace(/-/g, ""), album: body.album, artist: body.artist, genres: body.genres, myGenres: body.genres, lang: body.lang,
+        rating: body.listened ? body.rating || null : null, listened: !!body.listened, listenedOn: body.listened ? body.listenedOn : null,
+        released: body.released, link: body.link, cover: body.cover, review: body.review || undefined };
+      state.albums.push(a); state.pending = null;
+      renderKpis(state.albums); render();
+      if (body.listened) openDetail(a.id); else if ($("#detail").open) $("#detail").close();
+      toast(body.listened ? "Ajouté à tes écoutes ✓" : `« ${a.album} » ajouté à « À écouter » ✓`);
+      return a;
+    } catch (err) {
+      toast(err.message, true); if (btn) btn.disabled = false;
+      return null;
+    }
+  }
+  // Un conseil vient d'Apple Music : on retrouve l'album sur Spotify pour le lien et la pochette
+  async function onSpotify(r) {
+    let best = null;
+    try {
+      const { results } = await api(`/search?album=${encodeURIComponent(r.title)}&artist=${encodeURIComponent(r.artist)}`);
+      const t = flatK(r.title), ar = flatK(r.artist);
+      const same = results.filter((x) => flatK(x.artist).includes(ar) || ar.includes(flatK(x.mainArtist)));
+      best = same.find((x) => flatK(x.album) === t) || same.find((x) => flatK(x.album).startsWith(t) || t.startsWith(flatK(x.album))) || null;
+    } catch {}
+    return best ? { album: best.album, artist: best.mainArtist || r.artist, released: best.released, link: best.link, cover: best.cover || r.cover, genres: best.genres || [] }
+      : { album: r.title, artist: r.artist, released: r.released && String(r.released).length > 4 ? r.released : null, cover: r.cover, genres: [] };
+  }
+  async function recoHeard(i, el) {
+    const r = recoList()[i]; if (!r) return;
+    el.setAttribute("aria-busy", "true"); el.classList.add("busy");
+    openNew(await onSpotify(r));
+  }
+  async function recoTodo(i, el) {
+    const r = recoList()[i]; if (!r) return;
+    el.disabled = true;
+    await saveNew(await onSpotify(r), { listened: false }, el);
+  }
+
+  // ---------- Recherche (en-tête) : ta base + Spotify ----------
+  const sInput = $("#search"), sBox = $("#sresults");
+  let sSeq = 0, sTimer = 0, sSpotify = [];
+  const thumb = (src, alt = "") => src ? `<img src="${esc(fixCover(src))}" alt="${esc(alt)}" loading="lazy" onerror="this.style.visibility='hidden'">` : `<span class="ph-s"></span>`;
+  function closeSearch() { sBox.hidden = true; }
+  function localMatches(q) {
+    const k = norm(q);
+    return state.albums.filter((a) => norm(`${a.album} ${a.artist}`).includes(k) || norm(`${a.artist} ${a.album}`).includes(k))
+      .sort((a, b) => (b.listened - a.listened) || (b.listenedOn || "").localeCompare(a.listenedOn || "")).slice(0, 6);
+  }
+  function renderSearch(q, spotify, loading) {
+    const local = localMatches(q);
+    const ext = (spotify || []).filter((r) => !findInBase(r)).slice(0, 8);
+    sSpotify = ext;
+    sBox.innerHTML = `
+      ${local.length ? `<h4>Dans ton journal</h4>${local.map((a) => `
+        <div class="srow local" role="button" tabindex="0" data-open="${a.id}">
+          ${thumb(a.cover || a.coverAlt)}
+          <div><b>${esc(a.album)}</b><span>${esc(a.artist)}${a.released ? " · " + esc(a.released.slice(0, 4)) : ""}</span></div>
+          <span class="tag${a.listened ? " heard" : ""}">${a.listened ? (a.rating ? "★".repeat(a.rating) : "Écouté") : "À écouter"}</span>
+        </div>`).join("")}` : ""}
+      <h4>Sur Spotify</h4>
+      ${loading ? `<p class="hint">Recherche…</p>` : ext.length ? ext.map((r, i) => `
+        <div class="srow">
+          ${thumb(r.thumb || r.cover)}
+          <div><b>${esc(r.album)}</b><span>${esc(r.artist)}${r.released ? " · " + esc(r.released.slice(0, 4)) : ""}${r.type && r.type !== "album" ? " · " + esc(r.type) : ""}</span></div>
+          <div class="acts">
+            <button class="mini-btn primary" type="button" data-s-heard="${i}">✓ Écouté</button>
+            <button class="mini-btn" type="button" data-s-todo="${i}">+ À écouter</button>
+          </div>
+        </div>`).join("") : `<p class="hint">${spotify ? "Rien de plus sur Spotify." : "Spotify indisponible pour le moment."}</p>`}`;
+    sBox.hidden = false;
+  }
+  async function runSearch() {
+    const q = sInput.value.trim();
+    if (q.length < 2) return closeSearch();
+    const seq = ++sSeq;
+    renderSearch(q, [], true);
+    const e = encodeURIComponent(q);
+    const calls = await Promise.allSettled([api(`/search?q=${e}&album=${e}`), api(`/search?artist=${e}`)]);
+    if (seq !== sSeq) return;
+    const ok = calls.filter((c) => c.status === "fulfilled");
+    const seen = new Set();
+    const all = ok.flatMap((c) => c.value.results || []).filter((r) => !seen.has(r.spotifyId) && seen.add(r.spotifyId));
+    renderSearch(q, ok.length ? all : null, false);
+  }
+  sInput.addEventListener("input", () => { clearTimeout(sTimer); sTimer = setTimeout(runSearch, 350); });
+  sInput.addEventListener("focus", () => { if (sInput.value.trim().length >= 2 && sBox.innerHTML) sBox.hidden = false; });
+  sInput.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeSearch(); sInput.blur(); } if (e.key === "Enter") { clearTimeout(sTimer); runSearch(); } });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".search")) closeSearch(); });
+  sBox.addEventListener("click", async (e) => {
+    const open = e.target.closest("[data-open]");
+    if (open) { closeSearch(); return openDetail(open.dataset.open); }
+    const h = e.target.closest("[data-s-heard]");
+    if (h) { closeSearch(); const r = sSpotify[+h.dataset.sHeard]; return openNew({ ...r, artist: r.mainArtist || r.artist }); }
+    const t = e.target.closest("[data-s-todo]");
+    if (t) {
+      const r = sSpotify[+t.dataset.sTodo];
+      const a = await saveNew({ ...r, artist: r.mainArtist || r.artist }, { listened: false }, t);
+      if (a) runSearch();
+    }
+  });
+  sBox.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.matches("[data-open]")) e.target.click(); });
 
   // ---------- Stats ----------
   function bars(title, entries, max = Infinity) {
@@ -541,6 +688,8 @@
   function onCards(e) {
     const nope = e.target.closest("[data-nope]");
     if (nope) return dismiss(+nope.dataset.nope);
+    const rh = e.target.closest("[data-reco-heard]");
+    if (rh) return recoHeard(+rh.dataset.recoHeard, rh);
     const heard = e.target.closest("[data-heard]");
     if (heard) return openDetail(heard.dataset.heard, true);
     const art = e.target.closest("[data-artist]");
@@ -556,7 +705,7 @@
   }
   [els.grid, els.reco, els.artist].forEach((el) => {
     el.addEventListener("click", onCards);
-    el.addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && e.target.matches("[data-artist], [data-nope], [data-heard]")) { e.preventDefault(); onCards(e); } });
+    el.addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && e.target.matches("[data-artist], [data-nope], [data-heard], [data-reco-heard]")) { e.preventDefault(); onCards(e); } });
   });
   $("#detail").addEventListener("click", (e) => { if (e.target.id === "detail") e.target.close(); });
 

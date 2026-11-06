@@ -11,19 +11,19 @@ Adresse : <https://thomasduf0.github.io/Musique-Thomas/>
 - **À jour tout de suite** : après connexion, le site relit Notion en direct (`/export`) et applique les changements sans attendre la publication horaire.
 
 - **Écoutés** : tous les albums écoutés, filtrables par genre, langue et note, triables par date d'écoute (dans les deux sens), note, sortie ou artiste. Les genres affichés sont ceux d'Apple Music (en français), pas ceux saisis dans Notion.
-- **J'ai écouté** : bouton en haut de page qui mène à `ajouter.html`.
+- **Recherche** (en haut de page) : trouve un album dans ton journal (écouté ou à écouter) ou sur Spotify ; un album Spotify s'ajoute en « ✓ Écouté » (note, date, avis, langue, genres) ou en « + À écouter ».
 - **Coups de cœur** : les albums notés 5★.
 - **À écouter** : les albums pas encore cochés « Écouté ».
 - **Conseillés pour Thomas** : albums studio des artistes écoutés au moins 2 fois et pas encore écoutés (rééditions, deluxe, live, compilations, remix, EP et singles exclus), plus une sélection faite à la main dans `data/selection.json`.
 - **Stats** : répartition des notes, genres, langues, écoutes par mois, artistes les plus écoutés.
-- **Ajouter un album** (`ajouter.html`, protégé par mot de passe) : recherche sur Spotify, puis création de la fiche dans Notion avec la pochette en en-tête et le lien Spotify.
+- **Réglages** (`reglages.html`, roue dentée en haut de page ; `ajouter.html` y redirige) : thème clair, sombre ou automatique, état de Spotify, lien vers Notion, albums « À noter », remplacement des liens par Spotify.
 - **Détection d'écoute complète** : toutes les heures, les albums « à écouter » dont toutes les pistes ont été jouées sur Spotify sont cochés « Écouté » avec la date du jour. Une écoute partielle ne coche rien : on le fait à la main depuis la page d'ajout. La note reste toujours à mettre soi-même.
 
 ## Fonctionnement
 
 | Fichier | Rôle |
 |---|---|
-| `index.html`, `ajouter.html`, `assets/` | Le site (HTML/CSS/JS, sans framework) |
+| `index.html`, `reglages.html`, `assets/` | Le site (HTML/CSS/JS, sans framework) |
 | `assets/config.js` | Adresse de la fonction Cloudflare |
 | `data/albums.json`, `covers/` | Les données affichées et les pochettes importées dans Notion |
 | `scripts/enrich.mjs`, `data/enrich.json` | Genres et pochettes Apple Music (API iTunes, sans clé) et calcul des conseils → `data/conseils.json` ; `enrich.json` sert de cache |
@@ -41,11 +41,11 @@ Tout est déjà configuré (fonction Cloudflare `musique-thomas`, stockage KV `m
 |---|---|
 | `NOTION_TOKEN` | jeton de l'intégration Notion (<https://www.notion.so/profile/integrations>), connectée à la page **Suivi d'écoutes** |
 | `SPOTIFY_CLIENT_ID` / `SPOTIFY_CLIENT_SECRET` | app « Musique Thomas » sur <https://developer.spotify.com/dashboard> → *Settings* |
-| `ADMIN_PASSWORD` | mot de passe au choix pour `ajouter.html` |
+| `ADMIN_PASSWORD` | mot de passe au choix (accès au site) |
 
 Ensuite :
 
-Sur `ajouter.html` : **Relier mon compte Spotify**, puis **Remplacer les liens par Spotify** pour la base existante.
+Sur `reglages.html` : **Relier mon compte Spotify**, puis **Remplacer les liens par Spotify** pour la base existante.
 
 La détection d'écoute complète est lancée chaque heure par la synchro GitHub (appel à `/tick`). Un déclencheur cron Cloudflare (`7 * * * *`) peut la remplacer, mais n'est pas nécessaire.
 
