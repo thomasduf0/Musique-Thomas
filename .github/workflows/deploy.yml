@@ -53,7 +53,7 @@ jobs:
       - name: Préparer le site
         run: |
           mkdir -p _site covers
-          cp -r index.html ajouter.html reglages.html assets data covers _site/
+          cp -r index.html ajouter.html reglages.html manifest.webmanifest sw.js assets data covers _site/
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

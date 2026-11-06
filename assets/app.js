@@ -153,7 +153,19 @@
     const list = currentList();
     const s = list.length > 1 ? "s" : "";
     els.count.textContent = `${list.length} album${s}${state.view === "todo" ? " à écouter" : ""}`;
-    els.grid.innerHTML = list.length ? list.map(albumCard).join("") : `<p class="empty">Aucun album ne correspond à ces filtres.</p>`;
+    if (!list.length) { els.grid.innerHTML = `<p class="empty">Aucun album ne correspond à ces filtres.</p>`; return; }
+    els.grid.replaceChildren(...list.map(cardEl));
+  }
+  // On garde les cartes déjà construites : une carte identique n'est pas recréée, donc sa pochette ne recharge pas
+  const cardCache = new Map();
+  function cardEl(a) {
+    const html = albumCard(a).trim(), c = cardCache.get(a.id);
+    if (c && c.html === html) return c.el;
+    const t = document.createElement("template");
+    t.innerHTML = html;
+    const el = t.content.firstElementChild;
+    cardCache.set(a.id, { html, el });
+    return el;
   }
 
   // ---------- Page artiste ----------
@@ -256,6 +268,11 @@
   $("#detail-body").addEventListener("click", (e) => {
     const art = e.target.closest("[data-artist]");
     if (art) { $("#detail").close(); return showArtist(art.dataset.artist); }
+    if (e.target.closest("[data-reroll]")) return openRandom();
+    const rm = e.target.closest("[data-rmode]");
+    if (rm) return openRandom(rm.dataset.rmode);
+    const oid = e.target.closest("[data-open-id]");
+    if (oid) return openDetail(oid.dataset.openId);
     const rh = e.target.closest("[data-reco-heard]");
     if (rh) return recoHeard(+rh.dataset.recoHeard, rh);
     const rt = e.target.closest("[data-reco-todo]");
@@ -555,6 +572,49 @@
   });
   sBox.addEventListener("keydown", (e) => { if (e.key === "Enter" && e.target.matches("[data-open]")) e.target.click(); });
 
+  // ---------- Écoute aléatoire : un album noté 4★ ou 5★, ou un album « À écouter » ----------
+  const recent = [];
+  function randomPick(mode) {
+    const pool = state.albums.filter((a) =>
+      (mode !== "todo" && a.listened && a.rating >= 4) || (mode !== "fav" && !a.listened));
+    if (!pool.length) return null;
+    const fresh = pool.filter((a) => !recent.includes(a.id));
+    const from = fresh.length ? fresh : pool;
+    const a = from[Math.floor(Math.random() * from.length)];
+    recent.push(a.id); if (recent.length > Math.min(20, pool.length - 1)) recent.shift();
+    return a;
+  }
+  function openRandom(mode = state.randomMode || "all") {
+    state.randomMode = mode;
+    const a = randomPick(mode);
+    state.current = null; state.pending = null;
+    const modes = [["all", "Tout"], ["fav", "Mes 4★ et 5★"], ["todo", "À écouter"]];
+    const why = !a ? "" : a.listened
+      ? `Tu lui as mis ${a.rating}★${a.listenedOn ? `, écouté le ${fmtDate(a.listenedOn)}` : ""}.`
+      : "Dans ta liste « À écouter ».";
+    $("#detail-body").innerHTML = `
+      <div class="d-wrap random">
+        <div class="d-left">${a ? coverHTML(a, true) : ""}</div>
+        <div class="d-info">
+          <p class="eyebrow">🎲 Écoute aléatoire</p>
+          <div class="seg-mini" role="radiogroup" aria-label="Choisir parmi">${modes.map(([v, l]) =>
+            `<button type="button" role="radio" aria-checked="${v === mode}" data-rmode="${v}">${l}</button>`).join("")}</div>
+          ${a ? `<h2>${esc(a.album)}</h2>
+          <p class="d-artist">${artistLink(a.artist, "a-link big")}</p>
+          <div class="why-box">${esc(why)}</div>
+          <div class="btns">
+            <button class="btn" type="button" data-reroll>Autre proposition</button>
+            <button class="btn ghost" type="button" data-open-id="${a.id}">Voir la fiche</button>
+          </div>` : `<p class="empty">Aucun album ne correspond.</p>`}
+        </div>
+      </div>
+      ${a ? goLink(a.link, linkLabel(a.link)) : ""}`;
+    const d = $("#detail");
+    if (!d.open) d.showModal();
+    tilt(d.querySelector(".d-left .cover"));
+  }
+  $("#random-btn").addEventListener("click", () => openRandom());
+
   // ---------- Stats ----------
   function bars(title, entries, max = Infinity) {
     const rows = entries.slice(0, max);
@@ -734,4 +794,5 @@
   }
 
   checkAccess();
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 })();
