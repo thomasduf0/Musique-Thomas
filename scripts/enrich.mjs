@@ -40,7 +40,7 @@ function appleId(link) {
 // ---------- Appels iTunes (limite ≈ 20 requêtes/minute) ----------
 let last = 0;
 let calls = 0;
-const MAX_CALLS = 60; // garde-fou par synchro ; le reste sera fait à la synchro suivante
+const MAX_CALLS = 90; // garde-fou par synchro ; le reste sera fait à la synchro suivante
 let blocked = false;
 async function itunes(query) {
   if (blocked) throw new Error("Apple Music limite les requêtes, suite à la prochaine synchro");
@@ -55,7 +55,7 @@ async function itunes(query) {
   return (await res.json()).results || [];
 }
 const RETRY = 3 * 24 * 3600 * 1000; // un album introuvable est recherché à nouveau 3 jours plus tard
-const stale = (e, key) => !e || e.key !== key || (e.notFound && Date.now() - (e.at || 0) > RETRY);
+const stale = (e, key) => !e || e.key !== key || (e.notFound && (e.v !== 2 || Date.now() - (e.at || 0) > RETRY));
 
 function bestMatch(results, artist, album) {
   const a = norm(artist).replace(/[^a-z0-9]+/g, " ").trim();
@@ -201,7 +201,7 @@ export async function enrich(rows, { cachePath, selectionPath }) {
     if (!stale(cache.albums[r.id], keyOf(r))) continue;
     try {
       const hit = await findAlbum(r.artist, r.album, cache);
-      cache.albums[r.id] = { key: keyOf(r), ...(hit || { notFound: true, at: Date.now() }) };
+      cache.albums[r.id] = { key: keyOf(r), ...(hit || { notFound: true, v: 2, at: Date.now() }) };
     } catch (e) { console.warn("Recherche Apple Music :", r.album, e.message); break; }
   }
   // Nettoyage des albums supprimés de la base
@@ -252,8 +252,8 @@ export async function enrich(rows, { cachePath, selectionPath }) {
   for (const p of selection) {
     const k = `${p.artist}|${p.album}`;
     if (knownTitles.has(baseTitle(p.album)) && known.has(`${norm(p.artist)}|${baseTitle(p.album)}`)) continue; // déjà dans la base
-    if (!cache.picks[k] || (cache.picks[k].notFound && Date.now() - (cache.picks[k].at || 0) > RETRY)) {
-      try { cache.picks[k] = (await findAlbum(p.artist, p.album, cache)) || { notFound: true, at: Date.now() }; }
+    if (!cache.picks[k] || (cache.picks[k].notFound && (cache.picks[k].v !== 2 || Date.now() - (cache.picks[k].at || 0) > RETRY))) {
+      try { cache.picks[k] = (await findAlbum(p.artist, p.album, cache)) || { notFound: true, v: 2, at: Date.now() }; }
       catch (e) { console.warn("Sélection :", p.album, e.message); }
     }
     const x = cache.picks[k] || {};
