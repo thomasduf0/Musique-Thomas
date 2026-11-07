@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T17:51:20.449Z",
+ "updatedAt": "2026-11-07T19:06:30.231Z",
  "source": "cloudflare",
  "events": [
   {
@@ -907,8 +907,8 @@
   {
    "id": "411a7bc0f6df81449548d32d4ac925a0",
    "artist": "Angèle",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-27",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1059,17 +1059,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8199a1acc137a481c536",
-   "artist": "Bigflo & Oli",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df81aa84a2c4e992ba09f9",
    "artist": "Bigflo & Oli",
    "event": null,
@@ -1092,10 +1081,21 @@
    "comment": null
   },
   {
+   "id": "411a7bc0f6df8199a1acc137a481c536",
+   "artist": "Bigflo & Oli",
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-27",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
    "id": "411a7bc0f6df819982bfd887f66f2a17",
    "artist": "Bigflo & Oli",
    "event": "411a7bc0f6df81cbb363d572be854516",
-   "date": null,
+   "date": "2023-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1171,8 +1171,8 @@
   {
    "id": "411a7bc0f6df81ff9440e5359891dbf2",
    "artist": "Caballero & JeanJass",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81cbb363d572be854516",
+   "date": "2023-09-03",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1193,17 +1193,6 @@
   {
    "id": "411a7bc0f6df81aaa952eb007a894c1c",
    "artist": "Cats on Trees",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df81839637d750b8401603",
-   "artist": "Chantal Goya",
    "event": null,
    "date": null,
    "setlist": null,
@@ -1257,10 +1246,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df818abbdefaa22337c8e3",
+   "id": "411a7bc0f6df8196bcced8baf8822090",
    "artist": "Columbine",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81e0a724ff235a58f18e",
+   "date": "2018-11-24",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1268,10 +1257,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8196bcced8baf8822090",
+   "id": "411a7bc0f6df818abbdefaa22337c8e3",
    "artist": "Columbine",
-   "event": "411a7bc0f6df81e0a724ff235a58f18e",
-   "date": "2018-11-24",
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-28",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1369,8 +1358,8 @@
   {
    "id": "411a7bc0f6df8108a0e4e7230c5fe1f0",
    "artist": "DJ Snake",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-29",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1521,6 +1510,17 @@
    "comment": null
   },
   {
+   "id": "411a7bc0f6df80ce8a99faa34c9564e5",
+   "artist": "Gringe",
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-30",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
    "id": "411a7bc0f6df81b29b34d65a278feb69",
    "artist": "Her",
    "event": "411a7bc0f6df81f08e56e4d0db23c23c",
@@ -1585,6 +1585,17 @@
    "mediaType": null,
    "rating": null,
    "comment": "1re partie de Theodora"
+  },
+  {
+   "id": "411a7bc0f6df80cba2a2f8386ae93ef9",
+   "artist": "Izïa",
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-01",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
   },
   {
    "id": "411a7bc0f6df81068692de1fee3f7895",
@@ -1719,7 +1730,7 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df819a9744e6603ea0e24b",
+   "id": "411a7bc0f6df81d9ae57ca983da3d14e",
    "artist": "L'Impératrice",
    "event": null,
    "date": null,
@@ -1730,10 +1741,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81d9ae57ca983da3d14e",
+   "id": "411a7bc0f6df819a9744e6603ea0e24b",
    "artist": "L'Impératrice",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1887,7 +1898,7 @@
    "id": "411a7bc0f6df8137839fda9d4e3b8ddf",
    "artist": "Mandragora",
    "event": null,
-   "date": null,
+   "date": "2023-06-08",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1917,21 +1928,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81638244c5cb09ed809c",
-   "artist": "Marc Lavoine",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df81fd9f6fffbc2b07d3d4",
    "artist": "Marc Rebillet",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-01",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1952,8 +1952,8 @@
   {
    "id": "411a7bc0f6df81ac9d01e87592c332d2",
    "artist": "Marshmello",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-27",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2051,8 +2051,8 @@
   {
    "id": "411a7bc0f6df81a6a1dfecbac5587b03",
    "artist": "Moha La Squale",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-27",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2117,8 +2117,8 @@
   {
    "id": "411a7bc0f6df815b8438df96c561bea0",
    "artist": "Odezenne",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-01",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2150,8 +2150,8 @@
   {
    "id": "411a7bc0f6df8154b24be08658dbfbc6",
    "artist": "Orelsan",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2656,8 +2656,8 @@
   {
    "id": "411a7bc0f6df81e5b6e6eddab80425c1",
    "artist": "Vini Vici",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-29",
    "setlist": null,
    "media": null,
    "mediaType": null,
