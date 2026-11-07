@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T14:34:06.697Z",
+ "updatedAt": "2026-11-07T14:57:24.402Z",
  "source": "cloudflare",
  "events": [
   {
@@ -1341,17 +1341,6 @@
    "artist": "Eddy de Pretto",
    "event": "411a7bc0f6df81a1bb8edc4f555e41c2",
    "date": "2024-03-08",
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df8141b48ad789526de518",
-   "artist": "Eddy de Pretto",
-   "event": null,
-   "date": "2025-08-30",
    "setlist": null,
    "media": null,
    "mediaType": null,

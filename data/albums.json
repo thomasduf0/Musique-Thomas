@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T14:34:05.651Z",
+ "updatedAt": "2026-11-07T14:57:23.251Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -20,6 +20,27 @@
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/11/e9/60/11e9600c-7f3a-424b-1643-97c69f7e8067/16UMGIM03373.rgb.jpg/600x600bb.jpg"
   },
   {
+   "id": "411a7bc0f6df811684e9c742ff82f02c",
+   "album": "Dangerously In Love",
+   "artist": "Beyoncé",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-11-07",
+   "released": "2003-03-10",
+   "link": "https://open.spotify.com/album/06v9eHnqhMK2tbM2Iz3p0Y",
+   "cover": "https://i.scdn.co/image/ab67616d0000b273a9fd4a0405945cd51e8de130",
+   "review": "Vraiment pas mon pref de Queen B",
+   "myGenres": [
+    "Pop",
+    "Hip-hop/Rap"
+   ],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music/03/c5/d4/mzi.ldvrmhxt.jpg/600x600bb.jpg"
+  },
+  {
    "id": "410a7bc0f6df81809223f94511d79c87",
    "album": "Dopamine Chamber",
    "artist": "Fontaines D.C.",
@@ -38,6 +59,21 @@
     "Rock"
    ],
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/24/10/8c/24108c9c-845b-40f3-6175-9effb95e1d5c/191404167373.png/600x600bb.jpg"
+  },
+  {
+   "id": "2f8a7bc0f6df80219518dffcd55d8f74",
+   "album": "LE COEUR ET SA DICTATURE.",
+   "artist": "Zélie",
+   "genres": [
+    "Pop"
+   ],
+   "lang": "Français",
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-11-07",
+   "released": "2026-02-27",
+   "link": "https://open.spotify.com/album/4rM6sNDT33rocB4UpauxyM",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/68/63/c0/6863c0df-5350-9230-35da-fdafb1f228a5/196873994161.jpg/600x600bb.jpg"
   },
   {
    "id": "410a7bc0f6df81e9939ccda758a41e07",
@@ -2604,21 +2640,6 @@
     "Hip-hop/Rap",
     "Pop"
    ]
-  },
-  {
-   "id": "2f8a7bc0f6df80219518dffcd55d8f74",
-   "album": "LE COEUR ET SA DICTATURE.",
-   "artist": "Zélie",
-   "genres": [
-    "Pop"
-   ],
-   "lang": "Français",
-   "rating": null,
-   "listened": false,
-   "listenedOn": null,
-   "released": "2026-02-27",
-   "link": "https://open.spotify.com/album/4rM6sNDT33rocB4UpauxyM",
-   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/68/63/c0/6863c0df-5350-9230-35da-fdafb1f228a5/196873994161.jpg/600x600bb.jpg"
   },
   {
    "id": "2dba7bc0f6df80e49306ee0197e47f11",
