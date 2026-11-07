@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T14:57:24.402Z",
+ "updatedAt": "2026-11-07T15:55:03.305Z",
  "source": "cloudflare",
  "events": [
   {
@@ -406,6 +406,19 @@
    "lng": 1.4806
   },
   {
+   "id": "411a7bc0f6df81a1bb8edc4f555e41c2",
+   "name": "Eddy de Pretto — Toulouse 2024",
+   "type": "Concert",
+   "status": "À vérifier",
+   "start": "2024-03-08",
+   "end": null,
+   "venue": null,
+   "city": "Toulouse",
+   "comment": "Billet cité sans détail : date et salle à compléter (Crash Cœur Tour)",
+   "lat": 43.6045,
+   "lng": 1.444
+  },
+  {
    "id": "411a7bc0f6df8178970edf291d238672",
    "name": "Hoshi — Toulouse",
    "type": "Concert",
@@ -781,19 +794,6 @@
    "comment": "1er semestre 2026, date exacte à préciser",
    "lat": 43.5562,
    "lng": 1.4806
-  },
-  {
-   "id": "411a7bc0f6df81a1bb8edc4f555e41c2",
-   "name": "Eddy de Pretto — Toulouse 2024",
-   "type": "Concert",
-   "status": "À vérifier",
-   "start": null,
-   "end": null,
-   "venue": null,
-   "city": "Toulouse",
-   "comment": "Billet cité sans détail : date et salle à compléter (Crash Cœur Tour)",
-   "lat": 43.6045,
-   "lng": 1.444
   }
  ],
  "acts": [
