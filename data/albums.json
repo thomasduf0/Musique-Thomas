@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T08:04:44.756Z",
+ "updatedAt": "2026-11-07T08:30:37.046Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -2386,6 +2386,23 @@
    "myGenres": [
     "Electro"
    ]
+  },
+  {
+   "id": "411a7bc0f6df817a996acdf23635a39a",
+   "album": "ANTI (Deluxe)",
+   "artist": "Rihanna",
+   "genres": [
+    "Pop"
+   ],
+   "lang": null,
+   "rating": null,
+   "listened": false,
+   "listenedOn": null,
+   "released": "2016-01-28",
+   "link": "https://open.spotify.com/album/4UlGauD7ROb3YbVOFMgW5u",
+   "cover": "https://i.scdn.co/image/ab67616d0000b2736be9bac15995f089579074de",
+   "myGenres": [],
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/11/e9/60/11e9600c-7f3a-424b-1643-97c69f7e8067/16UMGIM03373.rgb.jpg/600x600bb.jpg"
   },
   {
    "id": "2dba7bc0f6df8024b242eb43d133d3bf",
