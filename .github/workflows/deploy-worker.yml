@@ -1,0 +1,48 @@
+name: Déploiement du serveur (Cloudflare)
+
+# Redéploie la fonction Cloudflare dès qu'un fichier du dossier worker/ change sur main.
+# Peut aussi être lancé à la main : onglet Actions → « Déploiement du serveur » → Run workflow.
+on:
+  push:
+    branches: [main]
+    paths: ["worker/**"]
+  workflow_dispatch:
+
+concurrency:
+  group: worker
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vérifier les secrets
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          KV: ${{ secrets.CLOUDFLARE_KV_ID }}
+        run: |
+          missing=""
+          [ -z "$TOKEN" ] && missing="$missing CLOUDFLARE_API_TOKEN"
+          [ -z "$ACCOUNT" ] && missing="$missing CLOUDFLARE_ACCOUNT_ID"
+          [ -z "$KV" ] && missing="$missing CLOUDFLARE_KV_ID"
+          if [ -n "$missing" ]; then
+            echo "::error::Secrets manquants dans GitHub (Settings → Secrets and variables → Actions) :$missing"
+            exit 1
+          fi
+
+      # L'identifiant du stockage KV n'est pas dans le dépôt : on l'insère au moment du déploiement
+      - name: Renseigner l'identifiant KV
+        env:
+          KV: ${{ secrets.CLOUDFLARE_KV_ID }}
+        run: sed -i "s/REMPLACER_PAR_L_ID_KV/$KV/" worker/wrangler.toml
+
+      # Les secrets du serveur (mot de passe, jetons Notion/Spotify…) restent ceux déjà enregistrés chez Cloudflare
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+          command: deploy
