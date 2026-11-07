@@ -43,6 +43,7 @@ jobs:
         continue-on-error: true
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          SETLISTFM_API_KEY: ${{ secrets.SETLISTFM_API_KEY }}
         run: node scripts/build-concerts.mjs
 
       - name: Enregistrer les données et pochettes si elles ont changé

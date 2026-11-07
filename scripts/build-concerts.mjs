@@ -3,6 +3,8 @@
 // - Avec la variable NOTION_TOKEN : lit les deux bases via l'API Notion.
 // - Sinon : lit les données via la fonction Cloudflare (route /export/concerts).
 // - Si aucune source ne répond : garde le fichier existant.
+// Avec la variable SETLISTFM_API_KEY (secret GitHub), les morceaux des setlists liées sont récupérés
+// sur setlist.fm et gardés dans data/setlists.json (une setlist n'est demandée qu'une fois).
 // Les salles sont placées sur la carte grâce à data/venues.json ; une salle absente est cherchée
 // sur OpenStreetMap (Nominatim) puis ajoutée au fichier, qu'on peut corriger à la main.
 //
@@ -16,6 +18,8 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "data", "concerts.json");
 const VENUES = path.join(ROOT, "data", "venues.json");
+const SETLISTS = path.join(ROOT, "data", "setlists.json");
+const SETLISTFM_API_KEY = process.env.SETLISTFM_API_KEY;
 const NOTION_TOKEN = process.env.NOTION_TOKEN;
 const EVENTS_ID = process.env.NOTION_CONCERTS_EVENTS_ID || "66d1893c-9687-400c-8db4-b326d77d49b7";
 const ACTS_ID = process.env.NOTION_CONCERTS_ACTS_ID || "4f702733-8806-49d8-9092-34b497dc969d";
@@ -112,6 +116,42 @@ async function placeEvents(events) {
   if (changed) await writeFile(VENUES, JSON.stringify(venues, null, 1) + "\n");
 }
 
+// ---------- Setlists (setlist.fm) ----------
+async function fetchSetlists(acts) {
+  const cache = existsSync(SETLISTS) ? JSON.parse(await readFile(SETLISTS, "utf8")) : {};
+  if (!SETLISTFM_API_KEY) { console.log("Setlists : pas de clé SETLISTFM_API_KEY, étape ignorée"); return; }
+  let added = 0;
+  for (const url of new Set(acts.map((a) => a.setlist).filter(Boolean))) {
+    if (cache[url]) continue;
+    const sid = (url.match(/-([0-9a-f]{6,10})\.html/) || [])[1];
+    if (!sid) continue;
+    try {
+      const res = await fetch(`https://api.setlist.fm/rest/1.0/setlist/${sid}`, {
+        headers: { "x-api-key": SETLISTFM_API_KEY, Accept: "application/json", "Accept-Language": "fr" },
+      });
+      if (res.status === 429) { await sleep(2000); continue; }
+      if (!res.ok) throw new Error(res.status);
+      const d = await res.json();
+      cache[url] = {
+        tour: d.tour?.name || null,
+        sets: (d.sets?.set || []).map((set) => ({
+          name: set.name || (set.encore ? (set.encore > 1 ? `Rappel ${set.encore}` : "Rappel") : null),
+          songs: (set.song || []).filter((x) => x.name).map((x) => ({
+            name: x.name,
+            ...(x.cover?.name ? { cover: x.cover.name } : {}),
+            ...(x.with?.name ? { with: x.with.name } : {}),
+            ...(x.tape ? { tape: true } : {}),
+          })),
+        })).filter((set) => set.songs.length),
+      };
+      added++;
+    } catch (e) { console.warn("Setlist non récupérée :", url, e.message); }
+    await sleep(600); // 2 requêtes par seconde maximum
+  }
+  if (added) await writeFile(SETLISTS, JSON.stringify(cache, null, 1) + "\n");
+  console.log(`Setlists : ${added} nouvelle(s), ${Object.keys(cache).length} en tout`);
+}
+
 // ---------- Main ----------
 let data, source;
 try {
@@ -128,6 +168,7 @@ try {
 data.events = data.events.filter((e) => e.name);
 data.acts = data.acts.filter((a) => a.artist);
 await placeEvents(data.events);
+await fetchSetlists(data.acts);
 data.events.sort((a, b) => (a.start || "9999").localeCompare(b.start || "9999") || a.name.localeCompare(b.name));
 data.acts.sort((a, b) => a.artist.localeCompare(b.artist, "fr") || (a.date || "").localeCompare(b.date || ""));
 await writeFile(OUT, JSON.stringify({ updatedAt: new Date().toISOString(), source, ...data }, null, 1) + "\n");

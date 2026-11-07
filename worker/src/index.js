@@ -12,6 +12,10 @@
 //   GET  /dismissed                  conseils marqués « Pas intéressé » (lecture publique)
 //   POST /dismissed                  ajoute (ou retire avec undo) un conseil « Pas intéressé » (mot de passe requis)
 //   GET  /export/concerts            concerts et festivals des bases Notion « Événements » et « Passages » (lecture publique)
+//   POST /concerts/events            crée un concert ou un festival (mot de passe requis)
+//   PATCH /concerts/events/:pageId   modifie nom, type, statut, dates, salle, ville (mot de passe requis)
+//   POST /concerts/acts              ajoute un artiste vu (mot de passe requis)
+//   PATCH /concerts/acts/:pageId     modifie artiste, concert rattaché, date, setlist, note (mot de passe requis)
 // Tâche planifiée (toutes les heures) : coche « Écouté » quand toutes les pistes d'un album
 // « à écouter » ont été jouées sur Spotify.
 
@@ -377,6 +381,37 @@ async function exportConcerts(env) {
   return out;
 }
 
+// Propriétés Notion d'un concert / d'un passage (seuls les champs présents sont modifiés)
+const rich = (v) => ({ rich_text: v ? [{ text: { content: String(v).slice(0, 2000) } }] : [] });
+const dateProp = (start, end) => ({ date: start ? { start, end: end && end !== start ? end : null } : null });
+const isDay = (d) => !d || /^\d{4}-\d{2}-\d{2}$/.test(d);
+function eventProps(e) {
+  const p = {};
+  if ("name" in e) p["Nom"] = { title: [{ text: { content: String(e.name || "").slice(0, 200) } }] };
+  if ("type" in e) p["Type"] = { select: { name: e.type === "Festival" ? "Festival" : "Concert" } };
+  if ("status" in e) p["Statut"] = { select: { name: ["Vu", "À venir", "À vérifier"].includes(e.status) ? e.status : "Vu" } };
+  if ("start" in e) p["Date"] = dateProp(e.start, e.end);
+  if ("venue" in e) p["Salle"] = rich(e.venue);
+  if ("city" in e) p["Ville"] = rich(e.city);
+  return p;
+}
+function actProps(a) {
+  const p = {};
+  if ("artist" in a) p["Artiste"] = { title: [{ text: { content: String(a.artist || "").slice(0, 200) } }] };
+  if ("event" in a) p["Événement"] = { relation: a.event ? [{ id: a.event }] : [] };
+  if ("date" in a) p["Date"] = dateProp(a.date);
+  if ("setlist" in a) p["Setlist"] = { url: a.setlist || null };
+  if ("rating" in a) p["Note"] = { number: a.rating ?? null };
+  if ("event" in a) p["À compléter"] = { checkbox: !a.event };
+  return p;
+}
+async function concertWrite(env, fn) {
+  const out = await fn();
+  await env.STATE.delete("cache:concerts");
+  const published = await triggerSiteUpdate(env);
+  return { ok: true, published, ...out };
+}
+
 // Avis (texte des fiches), par lots, mis en cache tant que la fiche n'est pas modifiée
 async function exportReviews(env, items) {
   const out = {};
@@ -552,6 +587,43 @@ async function handle(req, env) {
       if (a.fromHeard) await dropHeard(env, a.fromHeard, false);
       const published = await triggerSiteUpdate(env);
       return json({ ok: true, id: page.id, url: page.url, published }, 201, h);
+    }
+
+    // ---------- Concerts ----------
+    if (url.pathname === "/concerts/events" && req.method === "POST") {
+      const e = await req.json();
+      if (!e.name?.trim()) return json({ error: "Nom du concert obligatoire" }, 400, h);
+      if (!isDay(e.start) || !isDay(e.end)) return json({ error: "Date invalide" }, 400, h);
+      return json(await concertWrite(env, async () => {
+        const page = await notion(env, "/pages", "POST", {
+          parent: { type: "data_source_id", data_source_id: env.NOTION_CONCERTS_EVENTS_ID },
+          properties: eventProps({ type: "Concert", status: "Vu", ...e }),
+        });
+        return { id: page.id.replace(/-/g, "") };
+      }), 201, h);
+    }
+    if (url.pathname === "/concerts/acts" && req.method === "POST") {
+      const a = await req.json();
+      if (!a.artist?.trim()) return json({ error: "Artiste obligatoire" }, 400, h);
+      if (!isDay(a.date)) return json({ error: "Date invalide" }, 400, h);
+      return json(await concertWrite(env, async () => {
+        const page = await notion(env, "/pages", "POST", {
+          parent: { type: "data_source_id", data_source_id: env.NOTION_CONCERTS_ACTS_ID },
+          properties: actProps({ event: null, date: null, ...a }),
+        });
+        return { id: page.id.replace(/-/g, "") };
+      }), 201, h);
+    }
+    const cm = url.pathname.match(/^\/concerts\/(events|acts)\/([0-9a-f-]{32,36})$/);
+    if (cm && req.method === "PATCH") {
+      const body = await req.json();
+      if (!isDay(body.start) || !isDay(body.end) || !isDay(body.date)) return json({ error: "Date invalide" }, 400, h);
+      const properties = cm[1] === "events" ? eventProps(body) : actProps(body);
+      if (!Object.keys(properties).length) return json({ error: "Rien à modifier" }, 400, h);
+      return json(await concertWrite(env, async () => {
+        await notion(env, `/pages/${cm[2]}`, "PATCH", { properties });
+        return {};
+      }), 200, h);
     }
 
     const m = url.pathname.match(/^\/albums\/([0-9a-f-]{32,36})$/);

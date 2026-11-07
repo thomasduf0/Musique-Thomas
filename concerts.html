@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="assets/theme.js?v=1"></script>
-  <link rel="stylesheet" href="assets/style.css?v=20261106f">
-  <link rel="stylesheet" href="assets/concerts.css?v=20261107a">
+  <link rel="stylesheet" href="assets/style.css?v=20261107c">
+  <link rel="stylesheet" href="assets/concerts.css?v=20261107c">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#12100e">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
@@ -31,7 +31,6 @@
 
   <header class="hero">
     <div class="wrap">
-      <!-- Bouton Albums / Concerts : il sera ajouté au même endroit sur la page d'accueil une fois cette page validée -->
       <nav class="switch" aria-label="Section du site">
         <a href="index.html">Albums</a>
         <a href="concerts.html" aria-current="page">Concerts</a>
@@ -54,6 +53,7 @@
     <button role="tab" data-view="list" aria-selected="true">Tous les concerts</button>
     <button role="tab" data-view="map" aria-selected="false">Carte</button>
     <button role="tab" data-view="stats" aria-selected="false">Statistiques</button>
+    <button role="tab" data-view="todo" aria-selected="false">Artistes non complétés <span class="tab-n" id="todo-n"></span></button>
   </nav>
 
   <main class="wrap">
@@ -77,13 +77,23 @@
       <div id="venues" class="c-venues"></div>
     </section>
     <section id="stats" class="stats" hidden></section>
+    <section id="todo" class="c-todo" hidden></section>
   </main>
+
+  <dialog id="detail" class="detail c-detail">
+    <button class="close" aria-label="Fermer" onclick="this.closest('dialog').close()">×</button>
+    <div id="detail-body"></div>
+  </dialog>
+  <datalist id="dl-venues"></datalist>
+  <datalist id="dl-cities"></datalist>
+  <datalist id="dl-artists"></datalist>
 
   <footer class="wrap foot">
     <p>Données issues de mon Notion (page Concerts) · <span id="updated"></span></p>
   </footer>
 
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="assets/config.js?v=20261106f"></script>
-  <script src="assets/concerts.js?v=20261107a"></script>
+  <script src="assets/concerts.js?v=20261107c"></script>
 </body>
 </html>
