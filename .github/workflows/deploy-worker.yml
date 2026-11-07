@@ -37,7 +37,13 @@ jobs:
       - name: Renseigner l'identifiant KV
         env:
           KV: ${{ secrets.CLOUDFLARE_KV_ID }}
-        run: sed -i "s/REMPLACER_PAR_L_ID_KV/$KV/" worker/wrangler.toml
+        run: |
+          KV=$(printf '%s' "$KV" | tr -d '[:space:]')
+          if ! printf '%s' "$KV" | grep -Eq '^[0-9a-f]{32}$'; then
+            echo "::error::CLOUDFLARE_KV_ID doit être l'ID du KV (32 caractères 0-9 a-f), pas son nom. Valeur reçue : ${#KV} caractères."
+            exit 1
+          fi
+          sed -i "s/REMPLACER_PAR_L_ID_KV/$KV/" worker/wrangler.toml
 
       # Les secrets du serveur (mot de passe, jetons Notion/Spotify…) restent ceux déjà enregistrés chez Cloudflare
       - uses: cloudflare/wrangler-action@v3
@@ -45,4 +51,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: worker
+          wranglerVersion: "4"
           command: deploy
