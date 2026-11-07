@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T10:35:43.234Z",
+ "updatedAt": "2026-11-07T10:39:09.636Z",
  "source": "cloudflare",
  "events": [
   {
@@ -549,19 +549,6 @@
    "lng": 1.4521
   },
   {
-   "id": "411a7bc0f6df810585efd8d6e53ab804",
-   "name": "Ino Casablanca — Toulouse",
-   "type": "Concert",
-   "status": "Vu",
-   "start": "2026-03-21",
-   "end": null,
-   "venue": "Zénith Toulouse Métropole",
-   "city": "Toulouse",
-   "comment": null,
-   "lat": 43.5997,
-   "lng": 1.4154
-  },
-  {
    "id": "411a7bc0f6df81d7a8d0efee800a67e3",
    "name": "Theodora — Toulouse",
    "type": "Concert",
@@ -620,7 +607,7 @@
    "status": "À venir",
    "start": "2027-02-24",
    "end": null,
-   "venue": "P.O.P Bercy",
+   "venue": "Accor Arena",
    "city": "Paris",
    "comment": "2 billets (prévente CSE)",
    "lat": 48.8386,
@@ -1424,13 +1411,13 @@
   {
    "id": "411a7bc0f6df8192885dcbabe538a47f",
    "artist": "Ino Casablanca",
-   "event": "411a7bc0f6df810585efd8d6e53ab804",
+   "event": "411a7bc0f6df81d7a8d0efee800a67e3",
    "date": "2026-03-21",
    "setlist": "https://www.setlist.fm/setlist/ino-casablanca/2026/le-zenith-toulouse-france-334960fd.html",
    "media": null,
    "mediaType": null,
    "rating": null,
-   "comment": null
+   "comment": "1re partie de Theodora"
   },
   {
    "id": "411a7bc0f6df8134830fdc9ace7875f4",
