@@ -1,1 +1,872 @@
-{}
+{
+ "https://www.setlist.fm/setlist/zaho-de-sagazan/2023/le-bikini-ramonville-saint-agne-france-4ba1d3f6.html": {
+  "tour": null,
+  "sets": [
+   {
+    "name": null,
+    "songs": [
+     {
+      "name": "La fontaine de sang"
+     },
+     {
+      "name": "Aspiration"
+     },
+     {
+      "name": "Le dernier des voyages"
+     },
+     {
+      "name": "Mon inconnu"
+     },
+     {
+      "name": "Les dormantes"
+     },
+     {
+      "name": "Langage"
+     },
+     {
+      "name": "Dis‐moi que tu m'aimes"
+     },
+     {
+      "name": "La déraison"
+     },
+     {
+      "name": "Je rêve"
+     },
+     {
+      "name": "Tristesse"
+     },
+     {
+      "name": "La symphonie des éclairs"
+     },
+     {
+      "name": "Ne te regarde pas"
+     },
+     {
+      "name": "99 Luftballons",
+      "cover": "Nena"
+     },
+     {
+      "name": "Dansez"
+     }
+    ]
+   },
+   {
+    "name": "Rappel",
+    "songs": [
+     {
+      "name": "Ah que la vie est belle",
+      "cover": "Brigitte Fontaine"
+     }
+    ]
+   }
+  ]
+ },
+ "https://www.setlist.fm/setlist/billx/2022/plaine-de-la-filhole-marmande-france-bb521a2.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/beyonce/2025/stade-de-france-saint-denis-france-435ae32f.html": {
+  "tour": "COWBOY CARTER",
+  "sets": [
+   {
+    "name": "REQUIEM",
+    "songs": [
+     {
+      "name": "AMERIICAN REQUIEM"
+     },
+     {
+      "name": "Blackbird",
+      "cover": "The Beatles"
+     },
+     {
+      "name": "The Star-Spangled Banner",
+      "cover": "John Stafford Smith & Francis Scott Key"
+     },
+     {
+      "name": "Freedom"
+     },
+     {
+      "name": "YA YA / Why Don't You Love Me"
+     },
+     {
+      "name": "OH LOUISIANA",
+      "tape": true
+     }
+    ]
+   },
+   {
+    "name": "REVOLUTION",
+    "songs": [
+     {
+      "name": "PROPAGANDA",
+      "tape": true
+     },
+     {
+      "name": "AMERICA HAS A PROBLEM"
+     },
+     {
+      "name": "SPAGHETTII"
+     },
+     {
+      "name": "Formation"
+     },
+     {
+      "name": "MY HOUSE"
+     },
+     {
+      "name": "Diva"
+     }
+    ]
+   },
+   {
+    "name": "REFUGE",
+    "songs": [
+     {
+      "name": "TRAILER",
+      "tape": true
+     },
+     {
+      "name": "ALLIIGATOR TEARS"
+     },
+     {
+      "name": "JUST FOR FUN"
+     },
+     {
+      "name": "PROTECTOR",
+      "with": "Rumi Carter"
+     },
+     {
+      "name": "The First Time Ever I Saw Your Face",
+      "cover": "Ewan MacColl & Peggy Seeger",
+      "tape": true
+     },
+     {
+      "name": "FLAMENCO"
+     }
+    ]
+   },
+   {
+    "name": "MARFA",
+    "songs": [
+     {
+      "name": "PEEP SHOW",
+      "tape": true
+     },
+     {
+      "name": "DESERT EAGLE"
+     },
+     {
+      "name": "RIIVERDANCE"
+     },
+     {
+      "name": "II HANDS II HEAVEN"
+     },
+     {
+      "name": "TYRANT"
+     },
+     {
+      "name": "THIQUE"
+     },
+     {
+      "name": "LEVII'S JEANS"
+     },
+     {
+      "name": "SWEET ★ HONEY ★ BUCKIIN' / PURE/HONEY / SUMMER RENAISSANCE"
+     }
+    ]
+   },
+   {
+    "name": "TEASE",
+    "songs": [
+     {
+      "name": "OUTLAW (50FT COWBOY)",
+      "tape": true
+     },
+     {
+      "name": "TEXAS HOLD 'EM"
+     },
+     {
+      "name": "Crazy in Love"
+     },
+     {
+      "name": "Single Ladies (Put a Ring on It)"
+     },
+     {
+      "name": "Love on Top"
+     },
+     {
+      "name": "Irreplaceable"
+     },
+     {
+      "name": "If I Were a Boy"
+     },
+     {
+      "name": "DOLLY P",
+      "tape": true
+     },
+     {
+      "name": "Jolene",
+      "cover": "Dolly Parton"
+     },
+     {
+      "name": "Daddy Lessons"
+     },
+     {
+      "name": "BODYGUARD"
+     },
+     {
+      "name": "II MOST WANTED"
+     },
+     {
+      "name": "CUFF IT"
+     },
+     {
+      "name": "Dance for You / SMOKE HOUR II",
+      "tape": true
+     },
+     {
+      "name": "HEATED"
+     }
+    ]
+   },
+   {
+    "name": "RENAISSANCE",
+    "songs": [
+     {
+      "name": "HOLY DAUGHTER",
+      "tape": true
+     },
+     {
+      "name": "DAUGHTER"
+     },
+     {
+      "name": "OPERA",
+      "tape": true
+     },
+     {
+      "name": "I'M THAT GIRL"
+     },
+     {
+      "name": "COZY"
+     },
+     {
+      "name": "ALIEN SUPERSTAR"
+     },
+     {
+      "name": "Déjà Vu",
+      "with": "Blue Ivy Carter",
+      "tape": true
+     }
+    ]
+   },
+   {
+    "name": "RECLAMATION",
+    "songs": [
+     {
+      "name": "LEGACY",
+      "tape": true
+     },
+     {
+      "name": "16 CARRIAGES"
+     },
+     {
+      "name": "AMEN"
+     }
+    ]
+   }
+  ]
+ },
+ "https://www.setlist.fm/setlist/pnl/2022/plaine-de-la-filhole-marmande-france-bb521ba.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/macklemore/2019/plaine-de-la-filhole-marmande-france-2b9160ae.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/mara/2022/double-mixte-villeurbanne-france-bb61df2.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/yelle/2021/le-metronum-toulouse-france-5b8a4f34.html": {
+  "tour": null,
+  "sets": [
+   {
+    "name": null,
+    "songs": [
+     {
+      "name": "Emancipense"
+     },
+     {
+      "name": "Jeune fille garnement"
+     },
+     {
+      "name": "J’veux un chien"
+     },
+     {
+      "name": "Ba$$in"
+     },
+     {
+      "name": "Karaté"
+     },
+     {
+      "name": "Je t’aime encore"
+     },
+     {
+      "name": "Peine de mort"
+     },
+     {
+      "name": "Je veux te voir"
+     },
+     {
+      "name": "Romeo"
+     },
+     {
+      "name": "Florence en Italie"
+     },
+     {
+      "name": "Vue d’en face"
+     },
+     {
+      "name": "Nuit de baise I"
+     },
+     {
+      "name": "Noir"
+     },
+     {
+      "name": "Complètement fou"
+     },
+     {
+      "name": "J'ai bu"
+     },
+     {
+      "name": "OMG!!!"
+     },
+     {
+      "name": "Moteur action (SOPHIE & A. G. Cook Remix)"
+     }
+    ]
+   },
+   {
+    "name": "Encore",
+    "songs": [
+     {
+      "name": "Bouquet final"
+     },
+     {
+      "name": "Un million"
+     }
+    ]
+   }
+  ]
+ },
+ "https://www.setlist.fm/setlist/paul-kalkbrenner/2019/plaine-de-la-filhole-marmande-france-4b917bc6.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/lomepal/2019/plaine-de-la-filhole-marmande-france-3b9160d4.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/romeo-elvis/2019/plaine-de-la-filhole-marmande-france-239160af.html": {
+  "tour": null,
+  "sets": [
+   {
+    "name": null,
+    "songs": [
+     {
+      "name": "Chocolat"
+     },
+     {
+      "name": "Cœur des hommes"
+     },
+     {
+      "name": "Drôle de question",
+      "cover": "Roméo Elvis & Le Motel"
+     },
+     {
+      "name": "1000 degrés",
+      "cover": "Lomepal"
+     },
+     {
+      "name": "Pogo",
+      "cover": "Roméo Elvis & Le Motel"
+     },
+     {
+      "name": "J'ai vu",
+      "cover": "Roméo Elvis & Le Motel"
+     },
+     {
+      "name": "Soleil"
+     },
+     {
+      "name": "Normal"
+     },
+     {
+      "name": "Parano"
+     },
+     {
+      "name": "3 étoiles"
+     }
+    ]
+   },
+   {
+    "name": "Rappel",
+    "songs": [
+     {
+      "name": "Bruxelles arrive"
+     },
+     {
+      "name": "Malade"
+     }
+    ]
+   }
+  ]
+ },
+ "https://www.setlist.fm/setlist/romeo-elvis/2022/plaine-de-la-filhole-marmande-france-3b521ab.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/jamie-xx/2016/plaine-de-la-filhole-marmande-france-23ff944f.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/tryo/2018/site-de-la-baignade-yzeures-sur-creuse-france-33994095.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/systema-solar/2019/plaine-de-la-filhole-marmande-france-43915baf.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/jain/2016/plaine-de-la-filhole-marmande-france-3bff9448.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/jenifer/2019/pruneau-show-agen-france-b5b41aa.html": {
+  "tour": "Nouvelle Page 2 Tournées",
+  "sets": [
+   {
+    "name": null,
+    "songs": [
+     {
+      "name": "Hey Jen"
+     },
+     {
+      "name": "Ma révolution"
+     },
+     {
+      "name": "Un petit tour"
+     },
+     {
+      "name": "Respire"
+     },
+     {
+      "name": "C'est de l'or"
+     },
+     {
+      "name": "Comme c'est bon"
+     },
+     {
+      "name": "J'attends l'amour"
+     },
+     {
+      "name": "Paradis secret"
+     },
+     {
+      "name": "Nostalgique d'hier"
+     },
+     {
+      "name": "Pour nous retrouver"
+     },
+     {
+      "name": "Des je t'aime qui se perdent"
+     },
+     {
+      "name": "Comme un hic / Si c'est une île / Les jours électriques / Sur le fil"
+     },
+     {
+      "name": "Les choses simples"
+     },
+     {
+      "name": "Je danse"
+     },
+     {
+      "name": "Tourner ma page"
+     },
+     {
+      "name": "Le souvenir de ce jour"
+     },
+     {
+      "name": "Post mélancolie"
+     },
+     {
+      "name": "Au soleil"
+     }
+    ]
+   },
+   {
+    "name": "Rappel",
+    "songs": [
+     {
+      "name": "Donne-moi le temps"
+     },
+     {
+      "name": "Notre idylle"
+     }
+    ]
+   }
+  ]
+ },
+ "https://www.setlist.fm/setlist/milky-chance/2017/plaine-de-la-filhole-marmande-france-2be424a6.html": {
+  "tour": "Blossom Tour",
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/feder/2016/plaine-de-la-filhole-marmande-france-3bff9440.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/boris-brejcha/2019/plaine-de-la-filhole-marmande-france-7b9102ac.html": {
+  "tour": null,
+  "sets": []
+ },
+ "https://www.setlist.fm/setlist/aya-nakamura/2019/plaine-de-la-filhole-marmande-france-339160c1.html": {
+  "tour": null,
+  "sets": [
+   {
+    "name": null,
+    "songs": [
+     {
+      "name": "Oula"
+     },
+     {
+      "name": "La Dot"
+     },
+     {
+      "name": "Oumou Sangaré"
+     },
+     {
+      "name": "Gangster"
+     },
+     {
+      "name": "Dans ma bulle"
+     },
+     {
+      "name": "Whine Up"
+     },
+     {
+      "name": "Sucette"
+     },
+     {
+      "name": "Brisé"
+     },
+     {
+      "name": "Faya"
+     },
+     {
+      "name": "Ça fait mal"
+     },
+     {
+      "name": "Pourquoi tu forces"
+     },
+     {
+      "name": "Pompom"
+     },
+     {
+      "name": "Pookie"
+     },
+     {
+      "name": "Copines"
+     },
+     {
+      "name": "Comportement"
+     },
+     {
+      "name": "Djadja"
+     }
+    ]
+   }
+  ]
+ },
+ "https://www.setlist.fm/setlist/izia/2023/le-bikini-ramonville-saint-agne-france-5ba14744.html": {
+  "tour": null,
+  "sets": [
+   {
+    "name": null,
+    "songs": [
+     {
+      "name": "La vie l amour la mort"
+     },
+     {
+      "name": "Sous les pavés"
+     },
+     {
+      "name": "La Vague"
+     },
+     {
+      "name": "Mon cœur"
+     },
+     {
+      "name": "Let Me Alone"
+     },
+     {
+      "name": "Calvi"
+     },
+     {
+      "name": "Esseulés"
+     },
+     {
+      "name": "Sentiers"
+     },
+     {
+      "name": "Chevaucher"
+     },
+     {
+      "name": "Penicilline"
+     },
+     {
+      "name": "Étoile noire"
+     },
+     {
+      "name": "Dehors (c'est la vie)"
+     }
+    ]
+   },
+   {
+    "name": "Rappel",
+    "songs": [
+     {
+      "name": "Idole"
+     },
+     {
+      "name": "Dragon de métal"
+     },
+     {
+      "name": "Tristesse"
+     },
+     {
+      "name": "La vitesse"
+     }
+    ]
+   },
+   {
+    "name": "Rappel 2",
+    "songs": [
+     {
+      "name": "Comment te dire"
+     }
+    ]
+   }
+  ]
+ },
+ "https://www.setlist.fm/setlist/claude/2024/la-cabane-toulouse-france-35185e7.html": {
+  "tour": null,
+  "sets": [
+   {
+    "name": null,
+    "songs": [
+     {
+      "name": "Les accords de Lenny"
+     },
+     {
+      "name": "Addition"
+     },
+     {
+      "name": "Réveille toi"
+     },
+     {
+      "name": "La pression"
+     },
+     {
+      "name": "Ode à Mark"
+     },
+     {
+      "name": "Micro-ondes"
+     },
+     {
+      "name": "Baisodrome"
+     },
+     {
+      "name": "Signes vitaux"
+     },
+     {
+      "name": "La nausée"
+     },
+     {
+      "name": "In extremis"
+     },
+     {
+      "name": "Changement à Mannheim"
+     },
+     {
+      "name": "Soustraction"
+     }
+    ]
+   },
+   {
+    "name": "Rappel",
+    "songs": [
+     {
+      "name": "Contresens"
+     },
+     {
+      "name": "Avec"
+     }
+    ]
+   }
+  ]
+ },
+ "https://www.setlist.fm/setlist/lady-gaga/2025/accor-arena-paris-france-b58756a.html": {
+  "tour": "The MAYHEM Ball",
+  "sets": [
+   {
+    "name": null,
+    "songs": [
+     {
+      "name": "The Art of Personal Chaos",
+      "tape": true
+     }
+    ]
+   },
+   {
+    "name": "Act I: Of Velvet And Vice",
+    "songs": [
+     {
+      "name": "Bloody Mary"
+     },
+     {
+      "name": "Abracadabra"
+     },
+     {
+      "name": "Judas"
+     },
+     {
+      "name": "Aura"
+     },
+     {
+      "name": "Scheiße"
+     },
+     {
+      "name": "Garden of Eden"
+     },
+     {
+      "name": "Poker Face"
+     },
+     {
+      "name": "Abracadabra",
+      "tape": true
+     }
+    ]
+   },
+   {
+    "name": "Act II: And She Fell Into A Gothic Dream",
+    "songs": [
+     {
+      "name": "Perfect Celebrity"
+     },
+     {
+      "name": "Disease"
+     },
+     {
+      "name": "Paparazzi"
+     },
+     {
+      "name": "LoveGame"
+     },
+     {
+      "name": "Alejandro"
+     },
+     {
+      "name": "The Beast"
+     }
+    ]
+   },
+   {
+    "name": "Act III: The Beautiful Nightmare That Knows Her Name",
+    "songs": [
+     {
+      "name": "Killah"
+     },
+     {
+      "name": "Zombieboy"
+     },
+     {
+      "name": "The Dead Dance"
+     },
+     {
+      "name": "LoveDrug"
+     },
+     {
+      "name": "Applause"
+     },
+     {
+      "name": "Just Dance"
+     },
+     {
+      "name": "Wake Her Up!",
+      "tape": true
+     }
+    ]
+   },
+   {
+    "name": "Act IV: Every Chessboard Has Two Queens",
+    "songs": [
+     {
+      "name": "Shadow of a Man"
+     },
+     {
+      "name": "Kill for Love"
+     },
+     {
+      "name": "Summerboy"
+     },
+     {
+      "name": "Born This Way"
+     },
+     {
+      "name": "Million Reasons"
+     },
+     {
+      "name": "Shallow",
+      "cover": "Lady Gaga & Bradley Cooper"
+     },
+     {
+      "name": "Die With a Smile"
+     },
+     {
+      "name": "Is That Alright?"
+     },
+     {
+      "name": "Marry the Night"
+     },
+     {
+      "name": "Vanish Into You"
+     }
+    ]
+   },
+   {
+    "name": "Finale: Eternal Aria of The Monster Heart",
+    "songs": [
+     {
+      "name": "Bad Romance"
+     },
+     {
+      "name": "Credits",
+      "tape": true
+     }
+    ]
+   },
+   {
+    "name": "Rappel",
+    "songs": [
+     {
+      "name": "How Bad Do U Want Me"
+     },
+     {
+      "name": "Before I Cry"
+     }
+    ]
+   }
+  ]
+ }
+}
