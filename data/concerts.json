@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T14:05:25.809Z",
+ "updatedAt": "2026-11-07T14:26:55.521Z",
  "source": "cloudflare",
  "events": [
   {
@@ -601,6 +601,45 @@
    "lng": 1.374
   },
   {
+   "id": "411a7bc0f6df817dbd5bed3bfabb5f95",
+   "name": "Ebony — Toulouse",
+   "type": "Concert",
+   "status": "Envie",
+   "start": "2026-11-07",
+   "end": null,
+   "venue": "La Cabane",
+   "city": "Toulouse",
+   "comment": null,
+   "lat": 43.6031,
+   "lng": 1.4116
+  },
+  {
+   "id": "411a7bc0f6df8159b589c93d2824b888",
+   "name": "Zelie — Toulouse",
+   "type": "Concert",
+   "status": "Envie",
+   "start": "2026-11-20",
+   "end": null,
+   "venue": "La Cabane",
+   "city": "Toulouse",
+   "comment": null,
+   "lat": 43.6031,
+   "lng": 1.4116
+  },
+  {
+   "id": "411a7bc0f6df81d09380edc2868a6d11",
+   "name": "Giedré — Toulouse",
+   "type": "Concert",
+   "status": "Envie",
+   "start": "2026-12-06",
+   "end": null,
+   "venue": "La Cabane",
+   "city": "Toulouse",
+   "comment": null,
+   "lat": 43.6031,
+   "lng": 1.4116
+  },
+  {
    "id": "411a7bc0f6df812e88d4d93ba913527f",
    "name": "Charli XCX — Paris",
    "type": "Concert",
@@ -614,6 +653,19 @@
    "lng": 2.3785
   },
   {
+   "id": "411a7bc0f6df81e0ba1df12f3adcf47d",
+   "name": "RAKOON — Toulouse",
+   "type": "Concert",
+   "status": "Envie",
+   "start": "2027-03-18",
+   "end": null,
+   "venue": "Le Rex",
+   "city": "Toulouse",
+   "comment": null,
+   "lat": 43.6354,
+   "lng": 1.3992
+  },
+  {
    "id": "411a7bc0f6df810b81d9cb4e5dbd0fb8",
    "name": "Angèle — Toulouse 2027",
    "type": "Concert",
@@ -623,6 +675,19 @@
    "venue": "Zénith Toulouse Métropole",
    "city": "Toulouse",
    "comment": "Instinct Tour. Date trouvée en ligne, à vérifier sur le billet",
+   "lat": 43.5997,
+   "lng": 1.4154
+  },
+  {
+   "id": "411a7bc0f6df81a18a5cfe26c6d0e06b",
+   "name": "Pomme — Toulouse",
+   "type": "Concert",
+   "status": "Envie",
+   "start": "2027-12-01",
+   "end": null,
+   "venue": "Zénith Toulouse Métropole",
+   "city": "Toulouse",
+   "comment": null,
    "lat": 43.5997,
    "lng": 1.4154
   },
@@ -785,23 +850,12 @@
    "id": "411a7bc0f6df815298c5d57c92da4ae8",
    "artist": "Ascendant Vierge",
    "event": null,
-   "date": null,
+   "date": "2021-10-21",
    "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
-   "comment": "4e passage selon la liste Keep : à confirmer"
-  },
-  {
-   "id": "411a7bc0f6df81b29975d8fff74b6a04",
-   "artist": "Ascendant Vierge",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": "Vu à Garorock, année à préciser"
+   "comment": null
   },
   {
    "id": "411a7bc0f6df81ec835ed07313df4f2e",
@@ -813,6 +867,17 @@
    "mediaType": null,
    "rating": null,
    "comment": null
+  },
+  {
+   "id": "411a7bc0f6df81b29975d8fff74b6a04",
+   "artist": "Ascendant Vierge",
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-03",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": "Vu à Garorock, année à préciser"
   },
   {
    "id": "411a7bc0f6df81fc9580c195ea37967c",
@@ -881,6 +946,28 @@
    "comment": null
   },
   {
+   "id": "411a7bc0f6df8100aa92f484fa84f392",
+   "artist": "Biga*Ranx",
+   "event": "411a7bc0f6df818cb464ce0e58c38e3f",
+   "date": "2016-07-01",
+   "setlist": "https://www.setlist.fm/setlist/biga-ranx/2016/plaine-de-la-filhole-marmande-france-23ff943b.html",
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df811998c2f9cac7e696c3",
+   "artist": "Biga*Ranx",
+   "event": null,
+   "date": "2022-07-03",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
    "id": "411a7bc0f6df8199a1acc137a481c536",
    "artist": "Bigflo & Oli",
    "event": null,
@@ -925,39 +1012,6 @@
    "comment": "Jour à préciser. Organisateurs du festival, à confirmer"
   },
   {
-   "id": "411a7bc0f6df811998c2f9cac7e696c3",
-   "artist": "Bigga Ranx",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df8100aa92f484fa84f392",
-   "artist": "Bigga Ranx",
-   "event": "411a7bc0f6df818cb464ce0e58c38e3f",
-   "date": "2016-07-01",
-   "setlist": "https://www.setlist.fm/setlist/biga-ranx/2016/plaine-de-la-filhole-marmande-france-23ff943b.html",
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df81bc8297edc029214af1",
-   "artist": "Billx",
-   "event": "411a7bc0f6df81239b0ecb8a6b7774a6",
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": "Jour à préciser"
-  },
-  {
    "id": "411a7bc0f6df8142bf25da552bd50f61",
    "artist": "Billx",
    "event": "411a7bc0f6df81d682d5d362e87fcf67",
@@ -967,6 +1021,17 @@
    "mediaType": null,
    "rating": null,
    "comment": null
+  },
+  {
+   "id": "411a7bc0f6df81bc8297edc029214af1",
+   "artist": "Billx",
+   "event": "411a7bc0f6df81239b0ecb8a6b7774a6",
+   "date": "2023-08-18",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": "Jour à préciser"
   },
   {
    "id": "411a7bc0f6df816eafc3d662b7fa144b",
@@ -1136,8 +1201,8 @@
   {
    "id": "411a7bc0f6df81dea1b4d62bea4b7b6d",
    "artist": "Cut Killer",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1181,23 +1246,12 @@
    "id": "411a7bc0f6df812ead13e3ec10e62140",
    "artist": "Disiz",
    "event": "411a7bc0f6df811c97e8d57bab963454",
-   "date": null,
+   "date": "2022-04-27",
    "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
    "comment": null
-  },
-  {
-   "id": "411a7bc0f6df8130b2bbfac40a688a78",
-   "artist": "Disiz",
-   "event": "411a7bc0f6df8129bef2f5d8b3cda225",
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": "Date exacte à préciser"
   },
   {
    "id": "411a7bc0f6df81b69022c11bbcb2bb59",
@@ -1211,6 +1265,17 @@
    "comment": "Programmation en ligne, à confirmer"
   },
   {
+   "id": "411a7bc0f6df8130b2bbfac40a688a78",
+   "artist": "Disiz",
+   "event": "411a7bc0f6df8129bef2f5d8b3cda225",
+   "date": "2026-04-22",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": "Date exacte à préciser"
+  },
+  {
    "id": "411a7bc0f6df8108a0e4e7230c5fe1f0",
    "artist": "DJ Snake",
    "event": null,
@@ -1222,10 +1287,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8141b48ad789526de518",
-   "artist": "Eddy de Pretto",
-   "event": null,
-   "date": null,
+   "id": "411a7bc0f6df814d8213f45f581ab110",
+   "artist": "Ebony",
+   "event": "411a7bc0f6df817dbd5bed3bfabb5f95",
+   "date": "2026-11-07",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1236,7 +1301,18 @@
    "id": "411a7bc0f6df81e4a584e58d7cc89d03",
    "artist": "Eddy de Pretto",
    "event": "411a7bc0f6df81a1bb8edc4f555e41c2",
-   "date": null,
+   "date": "2024-03-08",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df8141b48ad789526de518",
+   "artist": "Eddy de Pretto",
+   "event": null,
+   "date": "2025-08-30",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1343,6 +1419,17 @@
    "comment": null
   },
   {
+   "id": "411a7bc0f6df816bafd9d83696d8cc25",
+   "artist": "Giedré",
+   "event": "411a7bc0f6df81d09380edc2868a6d11",
+   "date": "2026-12-06",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
    "id": "411a7bc0f6df8104b2baf3c04b937e18",
    "artist": "Green Day",
    "event": "411a7bc0f6df81d682d5d362e87fcf67",
@@ -1356,8 +1443,8 @@
   {
    "id": "411a7bc0f6df81b29b34d65a278feb69",
    "artist": "Her",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81f08e56e4d0db23c23c",
+   "date": "2017-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1418,17 +1505,6 @@
    "mediaType": null,
    "rating": null,
    "comment": "1re partie de Theodora"
-  },
-  {
-   "id": "411a7bc0f6df8134830fdc9ace7875f4",
-   "artist": "Izïa",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
   },
   {
    "id": "411a7bc0f6df81068692de1fee3f7895",
@@ -1621,7 +1697,7 @@
    "id": "411a7bc0f6df81d7ab9ddb915591c4ef",
    "artist": "La P'tite Fumée",
    "event": null,
-   "date": null,
+   "date": "2023-08-19",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2146,6 +2222,17 @@
    "comment": null
   },
   {
+   "id": "411a7bc0f6df81be954ddeb632b972fe",
+   "artist": "Pomme",
+   "event": "411a7bc0f6df81a18a5cfe26c6d0e06b",
+   "date": "2027-12-01",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
    "id": "411a7bc0f6df8109b7c9cb42dff3237c",
    "artist": "Pongo",
    "event": "411a7bc0f6df815fa07aff168255697d",
@@ -2173,6 +2260,17 @@
    "event": "411a7bc0f6df81cf9c3bef02305bdc95",
    "date": "2022-04-17",
    "setlist": "https://www.setlist.fm/setlist/rakoon/2022/double-mixte-villeurbanne-france-3b61df7.html",
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df81719c2df2111d5940d7",
+   "artist": "Rakoon",
+   "event": "411a7bc0f6df81e0ba1df12f3adcf47d",
+   "date": "2027-03-18",
+   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
@@ -2226,12 +2324,12 @@
    "id": "411a7bc0f6df81509fd2c1dce456f740",
    "artist": "Sally",
    "event": null,
-   "date": null,
+   "date": "2021-10-21",
    "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
-   "comment": "À vérifier : concert ou autre spectacle ?"
+   "comment": null
   },
   {
    "id": "411a7bc0f6df810e93fef300f9fe9652",
@@ -2278,10 +2376,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81299b46e2286f618b9d",
+   "id": "411a7bc0f6df8158a29ef41f045b643b",
    "artist": "Silly Boy Blue",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8188bbc7f30110c6790c",
+   "date": "2021-07-16",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2289,10 +2387,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8158a29ef41f045b643b",
+   "id": "411a7bc0f6df81299b46e2286f618b9d",
    "artist": "Silly Boy Blue",
-   "event": "411a7bc0f6df8188bbc7f30110c6790c",
-   "date": "2021-07-16",
+   "event": null,
+   "date": "2021-10-21",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2613,6 +2711,17 @@
    "event": "411a7bc0f6df81be85cbc0dfb20885f3",
    "date": "2023-11-11",
    "setlist": "https://www.setlist.fm/setlist/zaho-de-sagazan/2023/le-bikini-ramonville-saint-agne-france-4ba1d3f6.html",
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df813699dacb0af00a496f",
+   "artist": "Zelie",
+   "event": "411a7bc0f6df8159b589c93d2824b888",
+   "date": "2026-11-20",
+   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
