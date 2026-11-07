@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T11:00:59.166Z",
+ "updatedAt": "2026-11-07T11:55:34.564Z",
  "source": "cloudflare",
  "events": [
   {
@@ -1697,7 +1697,7 @@
   {
    "id": "411a7bc0f6df8168b2ebfbc62f55ce7f",
    "artist": "Lysistrata",
-   "event": null,
+   "event": "411a7bc0f6df81f08e56e4d0db23c23c",
    "date": "2017-07-02",
    "setlist": null,
    "media": null,
@@ -1906,7 +1906,7 @@
   {
    "id": "411a7bc0f6df8162b831fa4f6dfbe4ca",
    "artist": "Motivés! (Zebda)",
-   "event": null,
+   "event": "411a7bc0f6df81f08e56e4d0db23c23c",
    "date": "2017-07-02",
    "setlist": null,
    "media": null,
@@ -2060,7 +2060,7 @@
   {
    "id": "411a7bc0f6df81c6834acc3c61c4539d",
    "artist": "Petit Biscuit",
-   "event": null,
+   "event": "411a7bc0f6df81f08e56e4d0db23c23c",
    "date": "2017-07-02",
    "setlist": null,
    "media": null,
@@ -2434,7 +2434,7 @@
   {
    "id": "411a7bc0f6df81299ed2c0bce9681192",
    "artist": "Vald",
-   "event": null,
+   "event": "411a7bc0f6df817498e7f6d8cf77039d",
    "date": "2018-08-04",
    "setlist": null,
    "media": null,
