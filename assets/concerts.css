@@ -18,6 +18,7 @@
 }
 .c-card:hover, .c-card:focus-visible { border-color: var(--accent); transform: translateY(-2px); outline: none; }
 .c-sl { color: var(--gold); }
+.c-open { margin-top: 8px; font-size: 13px; }
 .c-card.is-fest { background: linear-gradient(120deg, var(--hero-a), transparent 55%), var(--bg-2); }
 .c-card.is-soon { border-style: dashed; }
 .c-date {

@@ -109,7 +109,11 @@
       if (a.event && !state.byId.has(a.event)) a.event = null;
       (a.event ? state.byEvent.get(a.event) : state.loose).push(a);
     }
-    for (const list of state.byEvent.values()) list.sort((a, b) => (a.date || "9").localeCompare(b.date || "9") || a.artist.localeCompare(b.artist, "fr"));
+    // Tête d'affiche (l'artiste du titre) en premier, puis par jour et par nom
+    for (const [id, list] of state.byEvent) {
+      const head = norm(title(state.byId.get(id)));
+      list.sort((a, b) => (norm(b.artist) === head) - (norm(a.artist) === head) || (a.date || "9").localeCompare(b.date || "9") || a.artist.localeCompare(b.artist, "fr"));
+    }
     state.loose.sort((a, b) => a.artist.localeCompare(b.artist, "fr"));
     for (const e of state.events) {
       const pos = state.venues[`${e.venue || ""}|${e.city || ""}`] || state.venues[`|${e.city || ""}`];
@@ -171,6 +175,8 @@
     const q = norm(els.q.value), y = els.year.value, t = els.type.value, c = els.city.value;
     return state.events.filter((e) => (!y || evYear(e) === y) && (!t || e.type === t) && (!c || e.city === c) && matches(e, q));
   }
+  // Concert (pas festival) : les artistes autres que celui du titre sont des 1res parties
+  const isOpener = (a, e) => e.type !== "Festival" && norm(a.artist) !== norm(title(e)) && (state.byEvent.get(e.id) || []).some((x) => norm(x.artist) === norm(title(e)));
   const hasSongs = (a) => !!state.setlists[a.setlist]?.sets?.length;
   const chipHit = (a, q) => q && q.split(/\s+/).every((w) => norm(a.artist).includes(w));
   const artistChip = (a, q) =>
@@ -196,7 +202,10 @@
     const fest = e.type === "Festival";
     // Artistes affichés quand ils ne sont pas déjà dans le titre
     const showActs = fest || acts.length > 1 || (acts[0] && norm(acts[0].artist) !== norm(title(e)));
-    const lineup = showActs && acts.length ? `<div class="chips">${acts.map((a) => artistChip(a, q)).join("")}</div>` : "";
+    const openers = acts.filter((a) => isOpener(a, e));
+    const lineup = !fest && openers.length && openers.length === acts.length - 1
+      ? `<p class="c-place c-open">1re partie : ${openers.map((a) => esc(a.artist)).join(", ")}</p>`
+      : showActs && acts.length ? `<div class="chips">${acts.map((a) => artistChip(a, q)).join("")}</div>` : "";
     const songs = acts.filter(hasSongs).length;
     return `<button type="button" class="c-card${fest ? " is-fest" : ""}${upcoming(e) ? " is-soon" : ""}" data-id="${e.id}">
       ${dateBlock(e)}
@@ -264,6 +273,7 @@
       <div class="d-act-h">
         <b>${esc(a.artist)}</b>
         ${fest && a.date ? `<span class="muted">${esc(fmt(a.date, { weekday: "long", day: "numeric", month: "long" }))}</span>` : ""}
+        ${!fest && isOpener(a, e) ? `<span class="muted">1re partie</span>` : ""}
         <button type="button" class="mini" data-edit-act="${a.id}">Modifier</button>
       </div>
       ${setlistHTML(a)}
