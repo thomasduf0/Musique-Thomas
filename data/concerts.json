@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T14:29:06.503Z",
+ "updatedAt": "2026-11-07T14:34:06.697Z",
  "source": "cloudflare",
  "events": [
   {
@@ -53,6 +53,19 @@
    "comment": null,
    "lat": 44.4955,
    "lng": 0.172
+  },
+  {
+   "id": "411a7bc0f6df81039f4ee2897aeb52a7",
+   "name": "Grand Pruneau Show 2017",
+   "type": "Festival",
+   "status": "Vu",
+   "start": "2017-08-25",
+   "end": "2017-08-27",
+   "venue": "Pruneau Show",
+   "city": "Agen",
+   "comment": null,
+   "lat": 44.2033,
+   "lng": 0.6164
   },
   {
    "id": "411a7bc0f6df817498e7f6d8cf77039d",
@@ -144,6 +157,19 @@
    "comment": null,
    "lat": 44.2033,
    "lng": 0.6164
+  },
+  {
+   "id": "411a7bc0f6df811ba66ef14288052b89",
+   "name": "Les Curiosités du Bikini vol.45",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2021-10-21",
+   "end": null,
+   "venue": "Le Bikini",
+   "city": "Ramonville",
+   "comment": null,
+   "lat": 43.5562,
+   "lng": 1.4806
   },
   {
    "id": "411a7bc0f6df81749fe5df5971ce4446",
@@ -601,6 +627,19 @@
    "lng": 1.374
   },
   {
+   "id": "411a7bc0f6df81879f80e2e08e17afa9",
+   "name": "NeS — Toulouse",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2026-11-06",
+   "end": null,
+   "venue": "La Cabane",
+   "city": "Toulouse",
+   "comment": null,
+   "lat": 43.6031,
+   "lng": 1.4116
+  },
+  {
    "id": "411a7bc0f6df817dbd5bed3bfabb5f95",
    "name": "Ebony — Toulouse",
    "type": "Concert",
@@ -849,7 +888,7 @@
   {
    "id": "411a7bc0f6df815298c5d57c92da4ae8",
    "artist": "Ascendant Vierge",
-   "event": null,
+   "event": "411a7bc0f6df811ba66ef14288052b89",
    "date": "2021-10-21",
    "setlist": null,
    "media": null,
@@ -959,7 +998,7 @@
   {
    "id": "411a7bc0f6df811998c2f9cac7e696c3",
    "artist": "Biga*Ranx",
-   "event": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
    "date": "2022-07-03",
    "setlist": null,
    "media": null,
@@ -1597,7 +1636,7 @@
   {
    "id": "411a7bc0f6df81b98866c5910a211ee7",
    "artist": "Julian Perretta",
-   "event": null,
+   "event": "411a7bc0f6df81039f4ee2897aeb52a7",
    "date": "2017-08-25",
    "setlist": null,
    "media": null,
@@ -1696,7 +1735,7 @@
   {
    "id": "411a7bc0f6df81d7ab9ddb915591c4ef",
    "artist": "La P'tite Fumée",
-   "event": null,
+   "event": "411a7bc0f6df81239b0ecb8a6b7774a6",
    "date": "2023-08-19",
    "setlist": null,
    "media": null,
@@ -2004,7 +2043,7 @@
   {
    "id": "411a7bc0f6df81108e5edd4f81b8d9a4",
    "artist": "NeS",
-   "event": null,
+   "event": "411a7bc0f6df81879f80e2e08e17afa9",
    "date": "2026-11-06",
    "setlist": null,
    "media": null,
@@ -2323,7 +2362,7 @@
   {
    "id": "411a7bc0f6df81509fd2c1dce456f740",
    "artist": "Sally",
-   "event": null,
+   "event": "411a7bc0f6df811ba66ef14288052b89",
    "date": "2021-10-21",
    "setlist": null,
    "media": null,
@@ -2389,7 +2428,7 @@
   {
    "id": "411a7bc0f6df81299b46e2286f618b9d",
    "artist": "Silly Boy Blue",
-   "event": null,
+   "event": "411a7bc0f6df811ba66ef14288052b89",
    "date": "2021-10-21",
    "setlist": null,
    "media": null,
@@ -2554,7 +2593,7 @@
   {
    "id": "411a7bc0f6df8198b1ece857c0302781",
    "artist": "Vianney",
-   "event": null,
+   "event": "411a7bc0f6df81039f4ee2897aeb52a7",
    "date": "2017-08-26",
    "setlist": null,
    "media": null,
