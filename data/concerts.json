@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T16:56:33.241Z",
+ "updatedAt": "2026-11-07T17:51:20.449Z",
  "source": "cloudflare",
  "events": [
   {
@@ -94,12 +94,38 @@
    "lng": 0.6199
   },
   {
+   "id": "411a7bc0f6df81b6b43bea74d3b48756",
+   "name": "Le Trottoir d'en Face — Le Passage",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2019-06-01",
+   "end": null,
+   "venue": "Rock'Alibi",
+   "city": "Le Passage",
+   "comment": null,
+   "lat": 45.5326,
+   "lng": 5.5125
+  },
+  {
    "id": "411a7bc0f6df8148a235c65da93259d8",
    "name": "Garorock 2019",
    "type": "Festival",
    "status": "Vu",
    "start": "2019-06-27",
    "end": "2019-06-30",
+   "venue": "Plaine de la Filhole",
+   "city": "Marmande",
+   "comment": null,
+   "lat": 44.4955,
+   "lng": 0.172
+  },
+  {
+   "id": "411a7bc0f6df81288ce3c0b9d2fe0e92",
+   "name": "Christine and the Queens — Marmande",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2019-06-28",
+   "end": null,
    "venue": "Plaine de la Filhole",
    "city": "Marmande",
    "comment": null,
@@ -133,6 +159,19 @@
    "lng": 0.6199
   },
   {
+   "id": "411a7bc0f6df8198a045c4bcec892a42",
+   "name": "Yelle — La Rochelle",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2021-07-10",
+   "end": null,
+   "venue": "Francofolies",
+   "city": "La Rochelle",
+   "comment": null,
+   "lat": 46.1523,
+   "lng": -1.1463
+  },
+  {
    "id": "411a7bc0f6df8188bbc7f30110c6790c",
    "name": "Stereoparc 2021",
    "type": "Festival",
@@ -157,6 +196,19 @@
    "comment": null,
    "lat": 44.2033,
    "lng": 0.6164
+  },
+  {
+   "id": "411a7bc0f6df81328f2ec1457238790f",
+   "name": "Ascendant Vierge — Toulouse 2023",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2021-10-21",
+   "end": null,
+   "venue": "Le Bikini",
+   "city": "Ramonville",
+   "comment": "Date exacte à compléter",
+   "lat": 43.5562,
+   "lng": 1.4806
   },
   {
    "id": "411a7bc0f6df811ba66ef14288052b89",
@@ -246,6 +298,19 @@
    "venue": "Le Bikini",
    "city": "Ramonville",
    "comment": "Soirée à 23h55, avec Unklevon (live) et Sophonic",
+   "lat": 43.5562,
+   "lng": 1.4806
+  },
+  {
+   "id": "411a7bc0f6df811c97e8d57bab963454",
+   "name": "Disiz — Toulouse 2022",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2022-04-27",
+   "end": null,
+   "venue": "Le Bikini",
+   "city": "Ramonville",
+   "comment": "Billet cité sans détail : date et salle à compléter (tournée L'Amour)",
    "lat": 43.5562,
    "lng": 1.4806
   },
@@ -372,6 +437,19 @@
    "type": "Concert",
    "status": "Vu",
    "start": "2023-10-05",
+   "end": null,
+   "venue": "Le Bikini",
+   "city": "Ramonville",
+   "comment": null,
+   "lat": 43.5562,
+   "lng": 1.4806
+  },
+  {
+   "id": "411a7bc0f6df81e0976cc1111d1f8a03",
+   "name": "Salut c'est cool — Ramonville",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2023-10-13",
    "end": null,
    "venue": "Le Bikini",
    "city": "Ramonville",
@@ -627,6 +705,19 @@
    "lng": 1.4521
   },
   {
+   "id": "411a7bc0f6df8129bef2f5d8b3cda225",
+   "name": "Disiz — Toulouse 2026",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2026-04-22",
+   "end": null,
+   "venue": "Le Bikini",
+   "city": "Ramonville",
+   "comment": "1er semestre 2026, date exacte à préciser",
+   "lat": 43.5562,
+   "lng": 1.4806
+  },
+  {
    "id": "411a7bc0f6df81f8aea7fcb20b3b1034",
    "name": "Kompromat + Yelle — Poney Club 2026",
    "type": "Concert",
@@ -755,53 +846,14 @@
    "comment": "Les Solitudes Extrêmes Tour. Date trouvée en ligne, à vérifier sur le billet",
    "lat": 43.5997,
    "lng": 1.4154
-  },
-  {
-   "id": "411a7bc0f6df81328f2ec1457238790f",
-   "name": "Ascendant Vierge — Toulouse 2023",
-   "type": "Concert",
-   "status": "À vérifier",
-   "start": null,
-   "end": null,
-   "venue": "Le Bikini",
-   "city": "Ramonville",
-   "comment": "Date exacte à compléter",
-   "lat": 43.5562,
-   "lng": 1.4806
-  },
-  {
-   "id": "411a7bc0f6df811c97e8d57bab963454",
-   "name": "Disiz — Toulouse 2022",
-   "type": "Concert",
-   "status": "À vérifier",
-   "start": null,
-   "end": null,
-   "venue": null,
-   "city": "Toulouse",
-   "comment": "Billet cité sans détail : date et salle à compléter (tournée L'Amour)",
-   "lat": 43.6045,
-   "lng": 1.444
-  },
-  {
-   "id": "411a7bc0f6df8129bef2f5d8b3cda225",
-   "name": "Disiz — Toulouse 2026",
-   "type": "Concert",
-   "status": "Vu",
-   "start": null,
-   "end": null,
-   "venue": "Le Bikini",
-   "city": "Ramonville",
-   "comment": "1er semestre 2026, date exacte à préciser",
-   "lat": 43.5562,
-   "lng": 1.4806
   }
  ],
  "acts": [
   {
    "id": "411a7bc0f6df81cd8588ef225461ce83",
    "artist": "-M-",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-06-30",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1174,8 +1226,8 @@
   {
    "id": "411a7bc0f6df8117ad54f9bf48f300f5",
    "artist": "Christine and the Queens",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81288ce3c0b9d2fe0e92",
+   "date": "2019-06-28",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1229,8 +1281,8 @@
   {
    "id": "411a7bc0f6df81bcb400db9a9c51a23e",
    "artist": "Creeds",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81239b0ecb8a6b7774a6",
+   "date": "2023-08-18",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1746,8 +1798,8 @@
   {
    "id": "411a7bc0f6df815b9846fefc7419f2a1",
    "artist": "Le Trottoir d'en Face",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81b6b43bea74d3b48756",
+   "date": "2019-06-01",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2307,8 +2359,8 @@
   {
    "id": "411a7bc0f6df81a2b0e4e47f5e3b0554",
    "artist": "Rilès",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-06-30",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2375,6 +2427,17 @@
    "artist": "Salut c'est cool",
    "event": "411a7bc0f6df8148a235c65da93259d8",
    "date": "2019-06-27",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df8176a306fb685c217856",
+   "artist": "Salut c'est cool",
+   "event": "411a7bc0f6df81e0976cc1111d1f8a03",
+   "date": "2023-10-13",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2670,8 +2733,8 @@
   {
    "id": "411a7bc0f6df81639f22f3439775bcd6",
    "artist": "Yelle",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8198a045c4bcec892a42",
+   "date": "2021-07-10",
    "setlist": null,
    "media": null,
    "mediaType": null,
