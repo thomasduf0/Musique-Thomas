@@ -24,9 +24,11 @@ const json = (data, status = 200, extra = {}) =>
 
 function cors(env, req) {
   const origin = req.headers.get("Origin") || "";
-  const allowed = origin === env.ALLOWED_ORIGIN || origin.startsWith("http://localhost");
+  // ALLOWED_ORIGIN peut lister plusieurs adresses séparées par des virgules (la 1re est l'adresse principale)
+  const origins = (env.ALLOWED_ORIGIN || "").split(",").map((o) => o.trim()).filter(Boolean);
+  const allowed = origins.includes(origin) || origin.startsWith("http://localhost");
   return {
-    "Access-Control-Allow-Origin": allowed ? origin : env.ALLOWED_ORIGIN,
+    "Access-Control-Allow-Origin": allowed ? origin : origins[0] || "",
     "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, X-Password",
     "Vary": "Origin",

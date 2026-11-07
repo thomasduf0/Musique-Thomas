@@ -7,7 +7,8 @@ compatibility_date = "2026-10-01"
 crons = ["7 * * * *"]
 
 [vars]
-ALLOWED_ORIGIN = "https://thomasduf0.github.io"
+# Adresses autorisées à appeler le serveur (la première est l'adresse principale du site)
+ALLOWED_ORIGIN = "https://musique.thomasdufau.fr,https://thomasduf0.github.io,https://thomasdufau.fr"
 NOTION_DATA_SOURCE_ID = "2a4a7bc0-f6df-80c3-bd83-000b2fd1b71e"
 GITHUB_REPO = "thomasduf0/Musique-Thomas"
 
