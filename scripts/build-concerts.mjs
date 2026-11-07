@@ -126,10 +126,15 @@ async function fetchSetlists(acts) {
     const sid = (url.match(/-([0-9a-f]{6,10})\.html/) || [])[1];
     if (!sid) continue;
     try {
-      const res = await fetch(`https://api.setlist.fm/rest/1.0/setlist/${sid}`, {
-        headers: { "x-api-key": SETLISTFM_API_KEY, Accept: "application/json", "Accept-Language": "fr" },
-      });
-      if (res.status === 429) { await sleep(2000); continue; }
+      // setlist.fm limite le débit (réponses 403 ou 429 quand on va trop vite) : on réessaie en ralentissant
+      let res;
+      for (let attempt = 0; attempt < 4; attempt++) {
+        res = await fetch(`https://api.setlist.fm/rest/1.0/setlist/${sid}`, {
+          headers: { "x-api-key": SETLISTFM_API_KEY, Accept: "application/json", "Accept-Language": "fr" },
+        });
+        if (res.status !== 403 && res.status !== 429) break;
+        await sleep(2000 * (attempt + 1));
+      }
       if (!res.ok) throw new Error(res.status);
       const d = await res.json();
       cache[url] = {
@@ -146,7 +151,7 @@ async function fetchSetlists(acts) {
       };
       added++;
     } catch (e) { console.warn("Setlist non récupérée :", url, e.message); }
-    await sleep(600); // 2 requêtes par seconde maximum
+    await sleep(1200); // on reste sous la limite de setlist.fm
   }
   if (added) await writeFile(SETLISTS, JSON.stringify(cache, null, 1) + "\n");
   console.log(`Setlists : ${added} nouvelle(s), ${Object.keys(cache).length} en tout`);
