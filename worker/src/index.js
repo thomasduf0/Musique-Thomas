@@ -16,6 +16,7 @@
 //   PATCH /concerts/events/:pageId   modifie nom, type, statut, dates, salle, ville (mot de passe requis)
 //   POST /concerts/acts              ajoute un artiste vu (mot de passe requis)
 //   PATCH /concerts/acts/:pageId     modifie artiste, concert rattaché, date, setlist, note (mot de passe requis)
+//   DELETE /concerts/events/:pageId  met un concert et ses artistes à la corbeille Notion, ex. retrait de la wantlist (mot de passe requis)
 // Tâche planifiée (toutes les heures) : coche « Écouté » quand toutes les pistes d'un album
 // « à écouter » ont été jouées sur Spotify.
 
@@ -389,7 +390,7 @@ function eventProps(e) {
   const p = {};
   if ("name" in e) p["Nom"] = { title: [{ text: { content: String(e.name || "").slice(0, 200) } }] };
   if ("type" in e) p["Type"] = { select: { name: e.type === "Festival" ? "Festival" : "Concert" } };
-  if ("status" in e) p["Statut"] = { select: { name: ["Vu", "À venir", "À vérifier"].includes(e.status) ? e.status : "Vu" } };
+  if ("status" in e) p["Statut"] = { select: { name: ["Vu", "À venir", "À vérifier", "Envie"].includes(e.status) ? e.status : "Vu" } };
   if ("start" in e) p["Date"] = dateProp(e.start, e.end);
   if ("venue" in e) p["Salle"] = rich(e.venue);
   if ("city" in e) p["Ville"] = rich(e.city);
@@ -623,6 +624,18 @@ async function handle(req, env) {
       return json(await concertWrite(env, async () => {
         await notion(env, `/pages/${cm[2]}`, "PATCH", { properties });
         return {};
+      }), 200, h);
+    }
+
+    if (cm && cm[1] === "events" && req.method === "DELETE") {
+      // Corbeille Notion (restaurable) : le concert et les artistes qui y sont rattachés
+      return json(await concertWrite(env, async () => {
+        const acts = await notion(env, `/data_sources/${env.NOTION_CONCERTS_ACTS_ID}/query`, "POST", {
+          filter: { property: "Événement", relation: { contains: cm[2] } }, page_size: 100,
+        });
+        for (const a of acts.results) await notion(env, `/pages/${a.id}`, "PATCH", { in_trash: true });
+        await notion(env, `/pages/${cm[2]}`, "PATCH", { in_trash: true });
+        return { removed: acts.results.length + 1 };
       }), 200, h);
     }
 

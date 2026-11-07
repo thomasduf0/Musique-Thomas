@@ -11,7 +11,7 @@
   const els = {
     list: $("#list"), mapView: $("#map-view"), stats: $("#stats"), todo: $("#todo"), filters: $("#filters"), count: $("#count"),
     year: $("#f-year"), type: $("#f-type"), city: $("#f-city"), sort: $("#f-sort"), q: $("#q"),
-    dialog: $("#detail"), body: $("#detail-body"),
+    wish: $("#wish"), dialog: $("#detail"), body: $("#detail-body"),
   };
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -22,7 +22,10 @@
   // Nom affiché : « Hoshi — Toulouse » → « Hoshi » (la ville est déjà indiquée à côté)
   const title = (e) => (e.type === "Festival" ? e.name : e.name.replace(/\s+—\s+.*$/, ""));
   const place = (e) => [e.venue, e.city].filter(Boolean).join(" · ");
-  const upcoming = (e) => !!e && (e.status === "À venir" || (!!e.start && e.start > today()));
+  // Wantlist : concerts qui me tentent, sans billet pour l'instant (statut « Envie » dans Notion)
+  const wish = (e) => !!e && e.status === "Envie";
+  const upcoming = (e) => !!e && !wish(e) && (e.status === "À venir" || (!!e.start && e.start > today()));
+  const real = () => state.events.filter((e) => !wish(e));
   const evYear = (e) => (e.start || "").slice(0, 4);
   const eventOf = (a) => state.byId.get(a.event);
 
@@ -85,7 +88,7 @@
     if (!data) { els.list.innerHTML = `<p class="empty">Impossible de charger les concerts pour le moment.</p>`; return; }
     setData(data);
     const hash = location.hash.slice(1);
-    setView(["list", "map", "stats", "todo"].includes(hash) ? hash : "list");
+    setView(["list", "map", "stats", "todo", "wish"].includes(hash) ? hash : "list");
     // Puis les bases Notion en direct (modifications faites depuis la dernière synchro)
     try {
       const live = await fetch(`${API}/export/concerts`).then((r) => (r.ok ? r.json() : null));
@@ -122,25 +125,26 @@
     }
     fillFilters();
     renderKpis();
-    const n = todoActs().length + state.events.filter((e) => !e.start).length;
+    const n = todoActs().length + real().filter((e) => !e.start).length;
     $("#todo-n").textContent = n || "";
+    $("#wish-n").textContent = state.events.filter(wish).length || "";
   }
 
   function refresh() {
-    ({ list: renderList, map: renderMap, stats: renderStats, todo: renderTodo })[state.view]?.();
+    ({ list: renderList, map: renderMap, stats: renderStats, todo: renderTodo, wish: renderWish })[state.view]?.();
     if (els.dialog.open && state.current) openEvent(state.current, true);
   }
 
-  const seenEvents = () => state.events.filter((e) => !upcoming(e));
+  const seenEvents = () => real().filter((e) => !upcoming(e));
   // Passages vus : tous ceux d'un événement passé, plus ceux pas encore rattachés à un événement
-  const seenActs = () => state.acts.filter((a) => (a.event ? !upcoming(eventOf(a)) : !(a.date && a.date > today())));
+  const seenActs = () => state.acts.filter((a) => (a.event ? !upcoming(eventOf(a)) && !wish(eventOf(a)) : !(a.date && a.date > today())));
   const todoActs = () => state.loose;
 
   function fillFilters() {
     const keep = [els.year.value, els.city.value];
-    const years = [...new Set(state.events.map(evYear).filter(Boolean))].sort().reverse();
+    const years = [...new Set(real().map(evYear).filter(Boolean))].sort().reverse();
     els.year.innerHTML = `<option value="">Toutes les années</option>` + years.map((y) => `<option>${y}</option>`).join("");
-    const cities = [...new Set(state.events.map((e) => e.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fr"));
+    const cities = [...new Set(real().map((e) => e.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fr"));
     els.city.innerHTML = `<option value="">Toutes les villes</option>` + cities.map((c) => `<option>${esc(c)}</option>`).join("");
     [els.year.value, els.city.value] = keep;
     // Suggestions pour les formulaires
@@ -173,7 +177,7 @@
   }
   function filtered() {
     const q = norm(els.q.value), y = els.year.value, t = els.type.value, c = els.city.value;
-    return state.events.filter((e) => (!y || evYear(e) === y) && (!t || e.type === t) && (!c || e.city === c) && matches(e, q));
+    return real().filter((e) => (!y || evYear(e) === y) && (!t || e.type === t) && (!c || e.city === c) && matches(e, q));
   }
   // Concert (pas festival) : les artistes autres que celui du titre sont des 1res parties
   const isOpener = (a, e) => e.type !== "Festival" && norm(a.artist) !== norm(title(e)) && (state.byEvent.get(e.id) || []).some((x) => norm(x.artist) === norm(title(e)));
@@ -194,6 +198,7 @@
       e.type === "Festival" ? `<span class="tag fest">Festival</span>` : "",
       e.status === "À vérifier" ? `<span class="tag warn">À vérifier</span>` : "",
       upcoming(e) ? `<span class="tag soon">À venir</span>` : "",
+      wish(e) ? `<span class="tag wish">Wantlist</span>` : "",
     ].join("");
   }
 
@@ -310,7 +315,7 @@
         <label>Nom<input name="name" value="${esc(e.name)}" required></label>
         <div class="row2">
           <label>Type<select name="type"><option${!fest ? " selected" : ""}>Concert</option><option${fest ? " selected" : ""}>Festival</option></select></label>
-          <label>Statut<select name="status">${["Vu", "À venir", "À vérifier"].map((s) => `<option${e.status === s ? " selected" : ""}>${s}</option>`).join("")}</select></label>
+          <label>Statut<select name="status">${[["Vu", "Vu"], ["À venir", "À venir (billet pris)"], ["À vérifier", "À vérifier"], ["Envie", "Wantlist (pas de billet)"]].map(([v, l]) => `<option value="${v}"${e.status === v ? " selected" : ""}>${l}</option>`).join("")}</select></label>
         </div>
         <div class="row2">
           <label>Date<input name="start" type="date" value="${esc(e.start || "")}"></label>
@@ -406,12 +411,12 @@
 
   // ---------- Artistes non complétés ----------
   function eventOptions() {
-    const evs = state.events.filter((e) => e.start).sort((a, b) => b.start.localeCompare(a.start));
+    const evs = real().filter((e) => e.start).sort((a, b) => b.start.localeCompare(a.start));
     return `<option value="">— Nouveau concert —</option>` + evs.map((e) =>
       `<option value="${e.id}">${esc(fmt(e.start, { day: "numeric", month: "short", year: "numeric" }))} · ${esc(title(e))}${e.city ? " (" + esc(e.city) + ")" : ""}</option>`).join("");
   }
   function renderTodo() {
-    const undated = state.events.filter((e) => !e.start);
+    const undated = real().filter((e) => !e.start);
     const acts = todoActs();
     const opts = eventOptions();
     els.todo.innerHTML = `
@@ -486,6 +491,87 @@
     });
   });
 
+  // ---------- Wantlist ----------
+  const daysTo = (d) => Math.round((new Date(d + "T12:00:00") - new Date(today() + "T12:00:00")) / 864e5);
+  function when(e) {
+    if (!e.start) return "date à préciser";
+    const n = daysTo(e.start);
+    return n > 1 ? `dans ${n} jours` : n === 1 ? "demain" : n === 0 ? "aujourd'hui" : "date passée";
+  }
+  function wishCard(e) {
+    const acts = state.byEvent.get(e.id) || [];
+    const who = acts.map((a) => a.artist).join(", ") || title(e);
+    const past = e.start && e.start < today();
+    return `<div class="w-card${past ? " is-past" : ""}" data-id="${e.id}">
+      ${dateBlock(e)}
+      <div class="c-body">
+        <h3>${esc(who)}</h3>
+        <p class="c-place">${esc(place(e)) || "Lieu à préciser"}</p>
+        <p class="w-when">${when(e)}</p>
+        <div class="w-actions">
+          <button type="button" class="btn" data-w="took">${past ? "J'y suis allé" : "J'ai pris ma place"}</button>
+          <button type="button" class="btn ghost" data-w="edit">Modifier</button>
+          <button type="button" class="btn ghost danger" data-w="remove">Retirer</button>
+        </div>
+      </div>
+    </div>`;
+  }
+  function renderWish() {
+    const list = state.events.filter(wish).sort((a, b) => (a.start || "9").localeCompare(b.start || "9"));
+    els.wish.innerHTML = `
+      <p class="c-hint">Les concerts qui te tentent mais pour lesquels tu n'as pas encore de billet. Ils ne comptent pas dans tes statistiques ; « J'ai pris ma place » les passe dans les concerts à venir.</p>
+      <form class="todo-row w-add" id="wish-form">
+        <label>Artiste<input name="artist" list="dl-artists" required placeholder="Nom de l'artiste"></label>
+        <label>Date<input name="start" type="date"></label>
+        <label>Salle<input name="venue" list="dl-venues" placeholder="Salle ou lieu"></label>
+        <label>Ville<input name="city" list="dl-cities" required placeholder="Ville"></label>
+        <button class="btn">Ajouter à la wantlist</button>
+      </form>
+      ${list.length ? `<div class="c-grid w-grid">${list.map(wishCard).join("")}</div>` : `<p class="empty">Ta wantlist est vide.</p>`}`;
+  }
+  els.wish.addEventListener("change", (ev) => {
+    if (ev.target.name === "venue" && ev.target.value) {
+      const city = ev.target.form.querySelector("[name=city]");
+      if (!city.value) city.value = cityOfVenue(ev.target.value);
+    }
+  });
+  els.wish.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    const form = ev.target, btn = form.querySelector("button"), d = formData(form);
+    busy(btn, async () => {
+      const e = { name: `${d.artist} — ${d.city}`, type: "Concert", status: "Envie", start: d.start || null, end: null, venue: d.venue || null, city: d.city };
+      const id = (await api("/concerts/events", { method: "POST", body: e })).id;
+      state.events.push({ id, ...e, lat: null, lng: null });
+      const actId = (await api("/concerts/acts", { method: "POST", body: { artist: d.artist, event: id, date: e.start } })).id;
+      state.acts.push({ id: actId, artist: d.artist, event: id, date: e.start, setlist: null, rating: null });
+      saved(`${d.artist} ajouté à la wantlist.`);
+    });
+  });
+  els.wish.addEventListener("click", (ev) => {
+    const b = ev.target.closest("[data-w]");
+    if (!b) return;
+    const e = state.byId.get(b.closest(".w-card").dataset.id);
+    if (b.dataset.w === "edit") return openEvent(e.id);
+    if (b.dataset.w === "took") {
+      const status = e.start && e.start <= today() ? "Vu" : "À venir";
+      return busy(b, async () => {
+        await api(`/concerts/events/${e.id}`, { method: "PATCH", body: { status } });
+        e.status = status;
+        saved(status === "Vu" ? `${title(e)} est passé dans tes concerts.` : `Bon concert ! ${title(e)} est passé dans les concerts à venir.`);
+      });
+    }
+    if (b.dataset.w === "remove") {
+      // Deux clics pour éviter un retrait par erreur
+      if (!b.classList.contains("confirm")) { b.classList.add("confirm"); b.textContent = "Confirmer le retrait"; return; }
+      return busy(b, async () => {
+        await api(`/concerts/events/${e.id}`, { method: "DELETE" });
+        state.events = state.events.filter((x) => x.id !== e.id);
+        state.acts = state.acts.filter((a) => a.event !== e.id);
+        saved(`${title(e)} retiré de la wantlist.`);
+      });
+    }
+  });
+
   // ---------- Carte ----------
   function loadLeaflet() {
     if (window.L) return Promise.resolve();
@@ -502,7 +588,7 @@
 
   function venueGroups() {
     const groups = new Map();
-    for (const e of state.events) {
+    for (const e of real()) {
       if (e.lat == null) continue;
       const k = `${e.lat},${e.lng}`;
       if (!groups.has(k)) groups.set(k, { lat: e.lat, lng: e.lng, events: [] });
@@ -640,7 +726,7 @@
     history.replaceState(null, "", v === "list" ? location.pathname : "#" + v);
     const isList = v === "list";
     els.filters.hidden = !isList; els.count.hidden = !isList; els.list.hidden = !isList;
-    els.mapView.hidden = v !== "map"; els.stats.hidden = v !== "stats"; els.todo.hidden = v !== "todo";
+    els.mapView.hidden = v !== "map"; els.stats.hidden = v !== "stats"; els.todo.hidden = v !== "todo"; els.wish.hidden = v !== "wish";
     refresh();
   }
   document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => setView(b.dataset.view)));

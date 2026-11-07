@@ -138,6 +138,20 @@
 .btns { display: flex; flex-wrap: wrap; gap: 8px; }
 .btn.danger { color: #e5484d; border-color: rgba(229,72,77,.5); }
 
+/* Wantlist */
+.tag.wish { background: var(--gold); color: #1f1a15; }
+.w-add { margin: 18px 0 8px; grid-template-columns: 1.4fr 150px 1fr 1fr auto; }
+.w-grid { margin-top: 18px; }
+.w-card {
+  display: grid; grid-template-columns: 74px 1fr; gap: 16px; align-items: start;
+  background: var(--bg-2); border: 1px dashed var(--gold); border-radius: var(--radius); padding: 16px;
+}
+.w-card.is-past { opacity: .6; border-color: var(--line); }
+.w-card h3 { font-size: 17px; font-weight: 600; margin: 0; line-height: 1.25; }
+.w-when { margin: 4px 0 0; color: var(--gold); font-size: 13px; font-weight: 600; }
+.w-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.w-actions .btn { margin: 0; padding: 7px 12px; font-size: 13px; }
+
 /* Artistes non complétés */
 .todo-list { display: grid; gap: 10px; }
 .todo-row {
@@ -169,7 +183,8 @@ form.todo-row[data-ev] { grid-template-columns: minmax(150px, 1.4fr) 150px 1fr 1
   .c-filters { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 960px) {
-  .todo-row, form.todo-row[data-ev] { grid-template-columns: 1fr 1fr; }
+  .todo-row, form.todo-row[data-ev], .w-add { grid-template-columns: 1fr 1fr; }
+  .w-add label:first-child { grid-column: 1 / -1; }
   .todo-who, .todo-ev { grid-column: 1 / -1; }
   .todo-row.has-event .for-new { display: none; }
 }

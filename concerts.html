@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="assets/theme.js?v=1"></script>
-  <link rel="stylesheet" href="assets/style.css?v=20261107d">
-  <link rel="stylesheet" href="assets/concerts.css?v=20261107d">
+  <link rel="stylesheet" href="assets/style.css?v=20261107e">
+  <link rel="stylesheet" href="assets/concerts.css?v=20261107e">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#12100e">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
@@ -53,6 +53,7 @@
     <button role="tab" data-view="list" aria-selected="true">Tous les concerts</button>
     <button role="tab" data-view="map" aria-selected="false">Carte</button>
     <button role="tab" data-view="stats" aria-selected="false">Statistiques</button>
+    <button role="tab" data-view="wish" aria-selected="false">Wantlist <span class="tab-n" id="wish-n"></span></button>
     <button role="tab" data-view="todo" aria-selected="false">Artistes non complétés <span class="tab-n" id="todo-n"></span></button>
   </nav>
 
@@ -77,6 +78,7 @@
       <div id="venues" class="c-venues"></div>
     </section>
     <section id="stats" class="stats" hidden></section>
+    <section id="wish" class="c-wish" hidden></section>
     <section id="todo" class="c-todo" hidden></section>
   </main>
 
@@ -94,6 +96,6 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="assets/config.js?v=20261106f"></script>
-  <script src="assets/concerts.js?v=20261107d"></script>
+  <script src="assets/concerts.js?v=20261107e"></script>
 </body>
 </html>
