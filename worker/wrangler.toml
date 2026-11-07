@@ -10,6 +10,9 @@ crons = ["7 * * * *"]
 # Adresses autorisées à appeler le serveur (la première est l'adresse principale du site)
 ALLOWED_ORIGIN = "https://musique.thomasdufau.fr,https://thomasduf0.github.io,https://thomasdufau.fr"
 NOTION_DATA_SOURCE_ID = "2a4a7bc0-f6df-80c3-bd83-000b2fd1b71e"
+# Bases « Événements » et « Passages » de la page Notion Concerts
+NOTION_CONCERTS_EVENTS_ID = "66d1893c-9687-400c-8db4-b326d77d49b7"
+NOTION_CONCERTS_ACTS_ID = "4f702733-8806-49d8-9092-34b497dc969d"
 GITHUB_REPO = "thomasduf0/Musique-Thomas"
 
 # Stockage du jeton Spotify et du suivi des pistes écoutées.

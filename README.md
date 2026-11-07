@@ -19,7 +19,16 @@ Adresse : <https://thomasduf0.github.io/Musique-Thomas/>
 - **Réglages** (`reglages.html`, roue dentée en haut de page ; `ajouter.html` y redirige) : thème clair, sombre ou automatique, état de Spotify, lien vers Notion, albums « À noter », remplacement des liens par Spotify.
 - **Détection d'écoute complète** : toutes les heures, les albums « à écouter » dont toutes les pistes ont été jouées sur Spotify sont cochés « Écouté » avec la date du jour. Une écoute partielle ne coche rien : on le fait à la main depuis la page d'ajout. La note reste toujours à mettre soi-même.
 
-## Fonctionnement
+## Concerts (page de test : `concerts.html`)
+
+Page séparée en attendant validation, avec le bouton **Albums / Concerts** qui sera ensuite ajouté en haut de la page d'accueil.
+
+- **Tous les concerts** : par année, avec recherche (artiste, salle, ville) et filtres. Les festivals listent les artistes vus jour par jour ; un clic sur un artiste affiche tous ses passages. Les passages sans date ni lieu sont regroupés en bas.
+- **Carte** : les salles où j'ai vu un concert, la taille du point dépend du nombre de sorties. Fond de carte OpenStreetMap / CARTO, bibliothèque Leaflet.
+- **Statistiques** : sorties et artistes par année, artistes vus plusieurs fois, salles, villes, festivals, mois.
+
+Les données viennent de la page Notion **Concerts** (bases « Événements » et « Passages ») : `scripts/build-concerts.mjs` les lit via la fonction Cloudflare (`/export/concerts`) et écrit `data/concerts.json`. Les positions des salles sont dans `data/venues.json` : une nouvelle salle est cherchée automatiquement sur OpenStreetMap lors de la synchro, et on peut corriger une position à la main.
+
 
 | Fichier | Rôle |
 |---|---|
@@ -28,6 +37,7 @@ Adresse : <https://thomasduf0.github.io/Musique-Thomas/>
 | `data/albums.json`, `covers/` | Les données affichées et les pochettes importées dans Notion |
 | `scripts/enrich.mjs`, `data/enrich.json` | Genres et pochettes Apple Music (API iTunes, sans clé) et calcul des conseils → `data/conseils.json` ; `enrich.json` sert de cache |
 | `scripts/build-data.mjs` | Lit les données (via la fonction Cloudflare) et régénère `data/albums.json` |
+| `concerts.html`, `assets/concerts.*`, `scripts/build-concerts.mjs`, `data/concerts.json`, `data/venues.json` | Page Concerts et ses données |
 | `worker/` | Fonction Cloudflare : recherche Spotify, écriture dans Notion, détection d'écoute complète, export des données |
 | `.github/workflows/deploy.yml` | Synchro toutes les heures + publication sur GitHub Pages |
 

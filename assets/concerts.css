@@ -1,0 +1,131 @@
+/* ---------- Page Concerts (s'ajoute à style.css) ---------- */
+
+/* Bouton Albums / Concerts en haut de page */
+.switch {
+  display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 22px;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: 999px;
+}
+.switch a {
+  padding: 8px 18px; border-radius: 999px; color: var(--muted); text-decoration: none; font: 600 14px var(--sans);
+  transition: background .15s, color .15s;
+}
+.switch a:hover { color: var(--text); }
+.switch a[aria-current="page"] { background: var(--accent); color: var(--on-accent); }
+.switch a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Filtres */
+.c-filters { grid-template-columns: repeat(4, 1fr); }
+
+/* Années */
+.c-year { font-family: var(--serif); font-size: 30px; margin: 34px 0 14px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.c-year small { font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--muted); }
+.c-year.soon-h { color: var(--gold); }
+.c-list > .c-year:first-child { margin-top: 12px; }
+
+/* Cartes */
+.c-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
+.c-card {
+  display: grid; grid-template-columns: 74px 1fr; gap: 16px; align-items: start;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px;
+}
+.c-card.is-fest { background: linear-gradient(120deg, var(--hero-a), transparent 55%), var(--bg-2); }
+.c-card.is-soon { border-style: dashed; }
+.c-date {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  background: var(--card); border-radius: 12px; padding: 10px 4px; min-height: 74px;
+}
+.c-date b { font-family: var(--serif); font-size: 26px; line-height: 1; }
+.c-date span { font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 4px; }
+.c-date.unknown b { color: var(--muted); }
+.c-date.unknown span { text-transform: none; letter-spacing: 0; }
+.c-body { min-width: 0; }
+.c-head { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 8px; }
+.c-head h3 { font-size: 17px; font-weight: 600; margin: 0; line-height: 1.25; }
+.c-place { margin: 3px 0 0; color: var(--muted); font-size: 13.5px; }
+.c-note { margin: 10px 0 0; color: var(--muted); font-size: 12.5px; font-style: italic; }
+.c-link { display: inline-block; margin-top: 10px; color: var(--accent); font-size: 13px; font-weight: 600; text-decoration: none; }
+.c-link:hover { text-decoration: underline; }
+.c-body > .chips, .day { margin-top: 12px; }
+.day + .day { margin-top: 10px; }
+.day-l { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); margin-bottom: 6px; }
+
+.tag { font-size: 11px; font-weight: 600; border-radius: 999px; padding: 2px 8px; text-transform: uppercase; letter-spacing: .05em; }
+.tag.fest { background: var(--accent); color: var(--on-accent); }
+.tag.warn { border: 1px solid var(--gold); color: var(--gold); }
+.tag.soon { border: 1px solid var(--muted); color: var(--muted); }
+
+.a-chip {
+  font: 500 13px var(--sans); color: var(--text); background: var(--card); border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
+}
+.a-chip:hover, .a-chip:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+.a-chip.hit { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.a-chip .sl { font-size: 11px; color: var(--gold); }
+.a-chip.hit .sl { color: inherit; }
+
+/* Passages sans date ni lieu */
+.c-loose { margin: 30px 0 40px; border-top: 1px solid var(--line); }
+.c-loose summary { cursor: pointer; list-style: none; }
+.c-loose summary::-webkit-details-marker { display: none; }
+.c-loose summary .c-year::after { content: "▾"; font-size: 18px; color: var(--muted); transition: transform .2s; }
+.c-loose:not([open]) summary .c-year::after { transform: rotate(-90deg); }
+.c-loose .sub { color: var(--muted); font-size: 13.5px; margin: -6px 0 14px; }
+
+/* Carte */
+.c-map-view { display: grid; grid-template-columns: 1fr 320px; gap: 18px; padding: 18px 0 40px; }
+.c-map {
+  height: min(72vh, 640px); min-height: 380px; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line); background: var(--card); z-index: 0;
+}
+.c-venues {
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 10px;
+  max-height: min(72vh, 640px); overflow-y: auto;
+}
+.c-venues h3 { font-family: var(--serif); font-size: 20px; margin: 4px 8px 10px; }
+.c-venues h3 small { font-family: var(--sans); font-size: 13px; color: var(--muted); font-weight: 500; }
+.v-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; text-align: left;
+  background: none; border: 0; color: var(--text); padding: 8px 10px; border-radius: 10px; cursor: pointer; font: inherit;
+}
+.v-row:hover, .v-row:focus-visible { background: var(--card); outline: none; }
+.v-n { font-size: 14px; min-width: 0; }
+.v-n small { display: block; color: var(--muted); font-size: 12px; }
+.v-row b { font-family: var(--serif); font-size: 20px; color: var(--accent); }
+
+/* Bulles de la carte (Leaflet) aux couleurs du site */
+.leaflet-container { font: 13px var(--sans); background: var(--card); }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--bg-2); color: var(--text); box-shadow: 0 10px 30px var(--shadow); }
+.leaflet-popup-content-wrapper { border-radius: 14px; border: 1px solid var(--line); }
+.leaflet-popup-content { margin: 14px 16px; }
+.leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
+.leaflet-tooltip { background: var(--bg-2); color: var(--text); border: 1px solid var(--line); box-shadow: none; }
+.leaflet-tooltip-top::before { border-top-color: var(--line); }
+.leaflet-control-attribution { background: rgba(0,0,0,.4) !important; color: #ccc; }
+.leaflet-control-attribution a { color: #eee; }
+.leaflet-bar a { background: var(--bg-2); color: var(--text); border-color: var(--line); }
+.leaflet-bar a:hover { background: var(--card); }
+.pop b { font-family: var(--serif); font-size: 17px; display: block; }
+.pop > small { color: var(--muted); }
+.pop ul { list-style: none; margin: 10px 0 0; padding: 0; max-height: 220px; overflow-y: auto; }
+.pop li { padding: 5px 0; border-top: 1px solid var(--line); line-height: 1.35; }
+.pop li span { display: block; font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.pop li em { color: var(--gold); font-style: normal; font-size: 12px; }
+
+/* Statistiques */
+.facts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 18px; }
+.fact span { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.fact b { display: block; font-family: var(--serif); font-size: 24px; line-height: 1.15; margin-top: 4px; }
+.fact small { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+
+@media (max-width: 860px) {
+  .c-map-view { grid-template-columns: 1fr; }
+  .c-venues { max-height: none; }
+  .c-filters { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .c-grid { grid-template-columns: 1fr; }
+  .c-card { grid-template-columns: 60px 1fr; gap: 12px; padding: 14px; }
+  .c-date { min-height: 60px; }
+  .c-date b { font-size: 22px; }
+  .c-year { font-size: 24px; }
+}

@@ -11,6 +11,7 @@
 //   GET  /status                     état de la connexion Spotify et dernière vérification
 //   GET  /dismissed                  conseils marqués « Pas intéressé » (lecture publique)
 //   POST /dismissed                  ajoute (ou retire avec undo) un conseil « Pas intéressé » (mot de passe requis)
+//   GET  /export/concerts            concerts et festivals des bases Notion « Événements » et « Passages » (lecture publique)
 // Tâche planifiée (toutes les heures) : coche « Écouté » quand toutes les pistes d'un album
 // « à écouter » ont été jouées sur Spotify.
 
@@ -323,6 +324,59 @@ async function exportAlbums(env) {
   return albums;
 }
 
+// Concerts : bases « Événements » (un concert ou un festival) et « Passages » (un artiste vu lors d'un événement)
+async function queryAll(env, dataSourceId) {
+  const pages = [];
+  let cursor;
+  do {
+    const d = await notion(env, `/data_sources/${dataSourceId}/query`, "POST", { page_size: 100, ...(cursor ? { start_cursor: cursor } : {}) });
+    pages.push(...d.results);
+    cursor = d.has_more ? d.next_cursor : null;
+  } while (cursor);
+  return pages;
+}
+
+async function exportConcerts(env) {
+  const cached = await env.STATE.get("cache:concerts");
+  if (cached) return JSON.parse(cached);
+  const id = (x) => x.replace(/-/g, "");
+  const [evPages, actPages] = await Promise.all([
+    queryAll(env, env.NOTION_CONCERTS_EVENTS_ID),
+    queryAll(env, env.NOTION_CONCERTS_ACTS_ID),
+  ]);
+  const events = evPages.map((page) => {
+    const p = page.properties;
+    return {
+      id: id(page.id),
+      name: plainText(p["Nom"]?.title),
+      type: p["Type"]?.select?.name || "Concert",
+      status: p["Statut"]?.select?.name || "Vu",
+      start: p["Date"]?.date?.start || null,
+      end: p["Date"]?.date?.end || null,
+      venue: plainText(p["Salle"]?.rich_text) || null,
+      city: plainText(p["Ville"]?.rich_text) || null,
+      comment: plainText(p["Commentaire"]?.rich_text) || null,
+    };
+  });
+  const acts = actPages.map((page) => {
+    const p = page.properties;
+    return {
+      id: id(page.id),
+      artist: plainText(p["Artiste"]?.title),
+      event: p["Événement"]?.relation?.[0]?.id ? id(p["Événement"].relation[0].id) : null,
+      date: p["Date"]?.date?.start || null,
+      setlist: p["Setlist"]?.url || null,
+      media: p["Média"]?.url || null,
+      mediaType: p["Type de média"]?.select?.name || null,
+      rating: p["Note"]?.number ?? null,
+      comment: plainText(p["Commentaire"]?.rich_text) || null,
+    };
+  }).filter((a) => a.artist);
+  const out = { events, acts };
+  await env.STATE.put("cache:concerts", JSON.stringify(out), { expirationTtl: 300 });
+  return out;
+}
+
 // Avis (texte des fiches), par lots, mis en cache tant que la fiche n'est pas modifiée
 async function exportReviews(env, items) {
   const out = {};
@@ -405,6 +459,10 @@ async function handle(req, env) {
       await env.STATE.put("status:last_check", JSON.stringify({ at: new Date().toISOString(), error: e.message }));
       return json({ error: e.message }, 502, h);
     }
+  }
+  if (req.method === "GET" && url.pathname === "/export/concerts") {
+    try { return json(await exportConcerts(env), 200, h); }
+    catch (e) { return json({ error: e.message }, 502, h); }
   }
   if (req.method === "GET" && url.pathname === "/dismissed") {
     return json({ dismissed: JSON.parse((await env.STATE.get("reco:dismissed")) || "[]") }, 200, h);
