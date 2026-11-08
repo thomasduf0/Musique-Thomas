@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-08T14:02:12.593Z",
+ "updatedAt": "2026-11-08T14:18:03.758Z",
  "source": "cloudflare",
  "events": [
   {
@@ -1444,17 +1444,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8114827ee08be0b102e1",
-   "artist": "Florent Mothe",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df8177a84ecdecc972a862",
    "artist": "Folamour",
    "event": "411a7bc0f6df8188bbc7f30110c6790c",
@@ -1468,8 +1457,8 @@
   {
    "id": "411a7bc0f6df81dc93f1cea690232121",
    "artist": "Georgio",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-06-30",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1535,7 +1524,7 @@
    "id": "411a7bc0f6df81a9bf5cefd5727f85ec",
    "artist": "Hoshi",
    "event": null,
-   "date": null,
+   "date": "2019-08-30",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1633,8 +1622,8 @@
   {
    "id": "411a7bc0f6df81e8b945c87a5bbfe95c",
    "artist": "James Blake",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-27",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1689,7 +1678,7 @@
    "id": "411a7bc0f6df818fb9abf9cbf9824e6a",
    "artist": "Julien Granel",
    "event": null,
-   "date": null,
+   "date": "2023-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1719,17 +1708,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81d9ae57ca983da3d14e",
-   "artist": "L'Impératrice",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df819a9744e6603ea0e24b",
    "artist": "L'Impératrice",
    "event": "411a7bc0f6df81d682d5d362e87fcf67",
@@ -1741,10 +1719,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8140bba2f7536fbe0df5",
-   "artist": "La Femme",
+   "id": "411a7bc0f6df81d9ae57ca983da3d14e",
+   "artist": "L'Impératrice",
    "event": null,
-   "date": null,
+   "date": "2022-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1763,10 +1741,21 @@
    "comment": null
   },
   {
+   "id": "411a7bc0f6df8140bba2f7536fbe0df5",
+   "artist": "La Femme",
+   "event": null,
+   "date": "2023-09-03",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
    "id": "411a7bc0f6df81c38efdca8bbf7486af",
    "artist": "La P'tite Fumée",
    "event": "411a7bc0f6df817498e7f6d8cf77039d",
-   "date": null,
+   "date": "2018-08-05",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1810,7 +1799,7 @@
    "id": "411a7bc0f6df8154a848e30bd824eca6",
    "artist": "Lilly Palmer",
    "event": null,
-   "date": null,
+   "date": "2023-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1820,8 +1809,8 @@
   {
    "id": "411a7bc0f6df817990fcc3486d1c75b4",
    "artist": "Lilly Wood and the Prick",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-03",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1983,17 +1972,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81dbb4eec401725810cb",
-   "artist": "Mezerg",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df81f7983bd79517e64179",
    "artist": "Mezerg",
    "event": null,
@@ -2003,6 +1981,17 @@
    "mediaType": null,
    "rating": null,
    "comment": "Mezerg apparaît deux fois dans la liste Keep : doublon ?"
+  },
+  {
+   "id": "411a7bc0f6df81dbb4eec401725810cb",
+   "artist": "Mezerg",
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-01",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
   },
   {
    "id": "411a7bc0f6df81eea093c01de61d791f",
@@ -2082,10 +2071,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81ea90b7fffb902cce4b",
+   "id": "411a7bc0f6df81aaba59f59f46fd47dd",
    "artist": "NTO",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8188bbc7f30110c6790c",
+   "date": "2021-07-16",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2093,10 +2082,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81aaba59f59f46fd47dd",
+   "id": "411a7bc0f6df81ea90b7fffb902cce4b",
    "artist": "NTO",
-   "event": "411a7bc0f6df8188bbc7f30110c6790c",
-   "date": "2021-07-16",
+   "event": null,
+   "date": "2022-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2115,17 +2104,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81b1bfd6d17377205866",
-   "artist": "Olympe Chabert",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": "À vérifier : concert ou autre spectacle ?"
-  },
-  {
    "id": "411a7bc0f6df819d98b3d3207ecdcdae",
    "artist": "Olympe Chabert",
    "event": null,
@@ -2134,7 +2112,18 @@
    "media": null,
    "mediaType": null,
    "rating": null,
-   "comment": "À vérifier : concert ou autre spectacle ?"
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df81b1bfd6d17377205866",
+   "artist": "Olympe Chabert",
+   "event": "411a7bc0f6df81cbb363d572be854516",
+   "date": "2023-09-02",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
   },
   {
    "id": "411a7bc0f6df8154b24be08658dbfbc6",
@@ -2189,7 +2178,7 @@
    "media": null,
    "mediaType": null,
    "rating": null,
-   "comment": "Jour à préciser"
+   "comment": null
   },
   {
    "id": "411a7bc0f6df811cba73dd382c039581",
@@ -2222,7 +2211,7 @@
    "media": null,
    "mediaType": null,
    "rating": null,
-   "comment": "Programmation en ligne, à confirmer"
+   "comment": null
   },
   {
    "id": "411a7bc0f6df810ca3dfffcab61a34b5",
@@ -2238,8 +2227,8 @@
   {
    "id": "411a7bc0f6df81068090c105f830847b",
    "artist": "PLK",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-28",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2258,10 +2247,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8191a831c9d1d7aee4b5",
+   "id": "411a7bc0f6df81a493bfeafbdf40bd92",
    "artist": "Polo & Pan",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df813b927decd3881afd6c",
+   "date": "2022-03-09",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2269,10 +2258,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81a493bfeafbdf40bd92",
+   "id": "411a7bc0f6df8191a831c9d1d7aee4b5",
    "artist": "Polo & Pan",
-   "event": "411a7bc0f6df813b927decd3881afd6c",
-   "date": "2022-03-09",
+   "event": "411a7bc0f6df815585e3fcc499adca2c",
+   "date": "2022-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2381,8 +2370,8 @@
   {
    "id": "411a7bc0f6df817b9b75e99bb410a77d",
    "artist": "Royal Blood",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81f08e56e4d0db23c23c",
+   "date": "2017-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2580,7 +2569,7 @@
    "id": "411a7bc0f6df81c8a0fad85345f4346b",
    "artist": "Thylacine",
    "event": null,
-   "date": null,
+   "date": "2022-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2599,17 +2588,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df819aafdcc1702f241d45",
-   "artist": "Vald",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df81299ed2c0bce9681192",
    "artist": "Vald",
    "event": "411a7bc0f6df817498e7f6d8cf77039d",
@@ -2621,10 +2599,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81dda4d2d727d4f52e53",
-   "artist": "Vianney",
+   "id": "411a7bc0f6df819aafdcc1702f241d45",
+   "artist": "Vald",
    "event": null,
-   "date": null,
+   "date": "2019-06-28",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2636,6 +2614,17 @@
    "artist": "Vianney",
    "event": "411a7bc0f6df81039f4ee2897aeb52a7",
    "date": "2017-08-26",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df81dda4d2d727d4f52e53",
+   "artist": "Vianney",
+   "event": null,
+   "date": "2022-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2668,7 +2657,7 @@
    "id": "411a7bc0f6df81678b7adf457957903b",
    "artist": "Vladimir Cauchemar",
    "event": null,
-   "date": null,
+   "date": "2022-07-03",
    "setlist": null,
    "media": null,
    "mediaType": null,
