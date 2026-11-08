@@ -3,7 +3,9 @@
 Site récap de mes écoutes d'albums, alimenté par ma base Notion « Base de données - Musiques écoutées ».
 Adresse : <https://thomasduf0.github.io/Musique-Thomas/>
 
-- **Accès** : tout le site demande le mot de passe (`ADMIN_PASSWORD`, le même que la page d'ajout), vérifié par la fonction Cloudflare. C'est un écran d'accès : les fichiers `data/*.json` restent lisibles par qui connaît leur adresse, et le dépôt est public.
+- **Version publique / mode privé** : sans mot de passe, le site est en consultation seule : albums écoutés et leurs notes (sans les avis), concerts passés (sans la wantlist ni les concerts à venir), statistiques. Le **cadenas** en haut de page ouvre le mode privé (mot de passe `ADMIN_PASSWORD`, case « Rester connecté ») : avis, À écouter, Conseillés, wantlist, concerts à venir, réglages et toutes les modifications. **Se déconnecter** (en haut à droite, ou dans les Réglages) revient à la version publique.
+  - Ce n'est pas qu'un affichage masqué : les fichiers publiés (`data/albums.json`, `data/concerts.json`) ne contiennent que la version publique, et la fonction Cloudflare refuse sans mot de passe les données privées (`/private`, `/export/reviews`, export complet) et toute modification.
+  - Les données complètes sont préparées par la synchro horaire et gardées dans la fonction Cloudflare (`/private`). Il faut pour cela le secret GitHub **`ADMIN_PASSWORD`** (même valeur que dans Cloudflare) ; sans lui, seule la version publique est mise à jour.
 - **Fiche album** : bouton **Modifier** pour changer la note ou ajouter un commentaire de 2e (3e…) écoute, enregistré à la suite de l'avis dans Notion ; pour un album à écouter, il permet de le marquer comme écouté. La flèche en bas à droite ouvre l'album sur Spotify.
 - **Pas intéressé** : sur chaque conseil (carte ou fiche). Le conseil disparaît et n'est plus jamais proposé ; la liste est gardée dans la fonction Cloudflare (`/dismissed`) et la sélection de la semaine est complétée par un autre album.
 - **✓ Écouté** : sur chaque album à écouter. Ouvre le formulaire note, date, avis, langue et genres, comme sur la page d'ajout.
@@ -35,7 +37,8 @@ Les données viennent de la page Notion **Concerts** (bases « Événements » e
 | `index.html`, `reglages.html`, `assets/` | Le site (HTML/CSS/JS, sans framework) |
 | `assets/config.js` | Adresse de la fonction Cloudflare |
 | `data/albums.json`, `covers/` | Les données affichées et les pochettes importées dans Notion |
-| `scripts/enrich.mjs`, `data/enrich.json` | Genres et pochettes Apple Music (API iTunes, sans clé) et calcul des conseils → `data/conseils.json` ; `enrich.json` sert de cache |
+| `scripts/enrich.mjs` | Genres et pochettes Apple Music (API iTunes, sans clé) et calcul des conseils ; conseils et cache envoyés avec les données privées à la fonction Cloudflare |
+| `assets/auth.js` | Version publique / mode privé : cadenas, connexion, déconnexion |
 | `scripts/build-data.mjs` | Lit les données (via la fonction Cloudflare) et régénère `data/albums.json` |
 | `concerts.html`, `assets/concerts.*`, `scripts/build-concerts.mjs`, `data/concerts.json`, `data/venues.json` | Page Concerts et ses données |
 | `worker/` | Fonction Cloudflare : recherche Spotify, écriture dans Notion, détection d'écoute complète, export des données |
@@ -59,7 +62,7 @@ Sur `reglages.html` : **Relier mon compte Spotify**, puis **Remplacer les liens 
 
 La détection d'écoute complète est lancée chaque heure par la synchro GitHub (appel à `/tick`). Un déclencheur cron Cloudflare (`7 * * * *`) peut la remplacer, mais n'est pas nécessaire.
 
-Aucun secret n'est nécessaire côté GitHub : la synchro horaire lit les données via la fonction Cloudflare (`/export`, en lecture seule, uniquement ce qui est déjà publié sur le site). Facultatif : le secret Cloudflare `GITHUB_TOKEN` (jeton GitHub limité au dépôt, permission *Contents : Read and write*) republie le site dans la minute après un ajout, au lieu de l'heure suivante.
+Côté GitHub (*Settings → Secrets and variables → Actions*), le secret **`ADMIN_PASSWORD`** (même mot de passe que dans Cloudflare) permet à la synchro horaire de lire les données complètes et de préparer le mode privé. Facultatif : le secret Cloudflare `GITHUB_TOKEN` (jeton GitHub limité au dépôt, permission *Contents : Read and write*) republie le site dans la minute après un ajout, au lieu de l'heure suivante.
 
 ## En local
 

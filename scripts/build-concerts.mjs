@@ -78,7 +78,8 @@ async function workerApi() {
 }
 
 async function fromWorker(api) {
-  const res = await fetch(`${api}/export/concerts`);
+  const pw = process.env.MUSIQUE_PASSWORD;
+  const res = await fetch(`${api}/export/concerts`, { headers: pw ? { "X-Password": pw } : {} });
   const data = await res.json().catch(() => ({}));
   if (!res.ok || !Array.isArray(data.events)) throw new Error(`Export concerts : ${data.error || res.status}`);
   return data;
@@ -170,8 +171,12 @@ try {
   console.warn("Concerts : source indisponible, fichier existant conservé :", e.message);
   process.exit(0);
 }
-data.events = data.events.filter((e) => e.name);
-data.acts = data.acts.filter((a) => a.artist);
+// Version publique (data/concerts.json est publié et gardé dans le dépôt) : ni wantlist, ni concerts à venir,
+// ni artistes pas encore rattachés à un concert. Le mode privé lit tout en direct via la fonction Cloudflare.
+const today = new Intl.DateTimeFormat("fr-CA", { timeZone: "Europe/Paris" }).format(new Date());
+data.events = data.events.filter((e) => e.name && e.status !== "Envie" && e.status !== "À venir" && !(e.start && e.start > today));
+const kept = new Set(data.events.map((e) => e.id));
+data.acts = data.acts.filter((a) => a.artist && a.event && kept.has(a.event) && !(a.date && a.date > today));
 await placeEvents(data.events);
 await fetchSetlists(data.acts);
 data.events.sort((a, b) => (a.start || "9999").localeCompare(b.start || "9999") || a.name.localeCompare(b.name));

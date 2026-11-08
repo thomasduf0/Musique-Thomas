@@ -9,9 +9,14 @@
 //   GET  /spotify/login?password=…   relie ton compte Spotify (une seule fois)
 //   GET  /spotify/callback           retour de Spotify après autorisation
 //   GET  /status                     état de la connexion Spotify et dernière vérification
-//   GET  /dismissed                  conseils marqués « Pas intéressé » (lecture publique)
+//   GET  /dismissed                  conseils marqués « Pas intéressé » (mot de passe requis)
 //   POST /dismissed                  ajoute (ou retire avec undo) un conseil « Pas intéressé » (mot de passe requis)
-//   GET  /export/concerts            concerts et festivals des bases Notion « Événements » et « Passages » (lecture publique)
+//   GET  /export                     albums (sans mot de passe : uniquement les albums écoutés, version publique du site)
+//   GET  /export/reviews?ids=…       avis des fiches (mot de passe requis)
+//   GET  /export/concerts            concerts et festivals des bases Notion « Événements » et « Passages »
+//                                    (sans mot de passe : sans la wantlist, les concerts à venir ni les artistes à compléter)
+//   GET  /private                    données complètes préparées par la synchro GitHub : albums, avis, conseils (mot de passe requis)
+//   PUT  /private                    enregistre ces données (synchro GitHub, mot de passe requis)
 //   POST /concerts/events            crée un concert ou un festival (mot de passe requis)
 //   PATCH /concerts/events/:pageId   modifie nom, type, statut, dates, salle, ville (mot de passe requis)
 //   POST /concerts/acts              ajoute un artiste vu (mot de passe requis)
@@ -35,7 +40,7 @@ function cors(env, req) {
   const allowed = origins.includes(origin) || origin.startsWith("http://localhost");
   return {
     "Access-Control-Allow-Origin": allowed ? origin : origins[0] || "",
-    "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, X-Password",
     "Vary": "Origin",
   };
@@ -49,6 +54,9 @@ async function safeEqual(a = "", b = "") {
   for (let i = 0; i < x.length; i++) diff |= x[i] ^ y[i];
   return diff === 0 && !!b;
 }
+
+// Mode privé : le mot de passe est envoyé dans l'en-tête X-Password
+const isAdmin = (req, env) => safeEqual(req.headers.get("X-Password") || "", env.ADMIN_PASSWORD);
 
 const parisDate = (d = new Date()) =>
   new Intl.DateTimeFormat("fr-CA", { timeZone: "Europe/Paris", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(d));
@@ -382,6 +390,14 @@ async function exportConcerts(env) {
   return out;
 }
 
+// Version publique des concerts : ni wantlist (« Envie »), ni concerts à venir, ni artistes pas encore rattachés
+function publicConcerts({ events, acts }) {
+  const today = parisDate();
+  const kept = events.filter((e) => e.status !== "Envie" && e.status !== "À venir" && !(e.start && e.start > today));
+  const ids = new Set(kept.map((e) => e.id));
+  return { events: kept, acts: acts.filter((a) => a.event && ids.has(a.event) && !(a.date && a.date > today)) };
+}
+
 // Propriétés Notion d'un concert / d'un passage (seuls les champs présents sont modifiés)
 const rich = (v) => ({ rich_text: v ? [{ text: { content: String(v).slice(0, 2000) } }] : [] });
 const dateProp = (start, end) => ({ date: start ? { start, end: end && end !== start ? end : null } : null });
@@ -478,10 +494,11 @@ async function handle(req, env) {
   const h = cors(env, req);
   if (req.method === "OPTIONS") return new Response(null, { headers: h });
 
-  // Lecture publique (aucune donnée qui ne soit déjà sur le site)
+  // Lecture : sans mot de passe, uniquement ce que montre la version publique du site
   if (req.method === "GET" && url.pathname === "/export") {
     try {
-      const albums = await exportAlbums(env);
+      const all = await exportAlbums(env);
+      const albums = (await isAdmin(req, env)) ? all : all.filter((a) => a.listened);
       return json({ albums, ids: albums.filter((a) => a.listened).map((a) => `${a.id}:${a.edited}`) }, 200, h);
     } catch (e) { return json({ error: e.message }, 502, h); }
   }
@@ -497,19 +514,11 @@ async function handle(req, env) {
     }
   }
   if (req.method === "GET" && url.pathname === "/export/concerts") {
-    try { return json(await exportConcerts(env), 200, h); }
-    catch (e) { return json({ error: e.message }, 502, h); }
-  }
-  if (req.method === "GET" && url.pathname === "/dismissed") {
-    return json({ dismissed: JSON.parse((await env.STATE.get("reco:dismissed")) || "[]") }, 200, h);
-  }
-  if (req.method === "GET" && url.pathname === "/export/reviews") {
     try {
-      const items = (url.searchParams.get("ids") || "").split(",").filter(Boolean).slice(0, 100)
-        .map((s) => { const [id, edited] = s.split(":"); return { id, edited: s.slice(id.length + 1) || edited }; })
-        .filter((x) => /^[0-9a-f]{32}$/.test(x.id));
-      return json({ reviews: await exportReviews(env, items) }, 200, h);
-    } catch (e) { return json({ error: e.message }, 502, h); }
+      const all = await exportConcerts(env);
+      return json((await isAdmin(req, env)) ? all : publicConcerts(all), 200, h);
+    }
+    catch (e) { return json({ error: e.message }, 502, h); }
   }
 
   // Pochette relayée avec l'en-tête CORS : permet au site de la dessiner dans l'image « story »
@@ -558,6 +567,30 @@ async function handle(req, env) {
 
   // Tout le reste exige le mot de passe
   if (!(await safeEqual(req.headers.get("X-Password") || "", env.ADMIN_PASSWORD))) return json({ error: "Mot de passe incorrect" }, 401, h);
+  if (req.method === "GET" && url.pathname === "/dismissed") {
+    return json({ dismissed: JSON.parse((await env.STATE.get("reco:dismissed")) || "[]") }, 200, h);
+  }
+  if (req.method === "GET" && url.pathname === "/export/reviews") {
+    try {
+      const items = (url.searchParams.get("ids") || "").split(",").filter(Boolean).slice(0, 100)
+        .map((s) => { const [id, edited] = s.split(":"); return { id, edited: s.slice(id.length + 1) || edited }; })
+        .filter((x) => /^[0-9a-f]{32}$/.test(x.id));
+      return json({ reviews: await exportReviews(env, items) }, 200, h);
+    } catch (e) { return json({ error: e.message }, 502, h); }
+  }
+  // Données complètes du mode privé (préparées par la synchro GitHub)
+  if (req.method === "GET" && url.pathname === "/private") {
+    const data = await env.STATE.get("private:data");
+    return data ? new Response(data, { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...h } })
+      : json({ error: "Données privées pas encore publiées" }, 404, h);
+  }
+  if (req.method === "PUT" && url.pathname === "/private") {
+    const text = await req.text();
+    try { if (!Array.isArray(JSON.parse(text).albums)) throw new Error(); }
+    catch { return json({ error: "Format invalide" }, 400, h); }
+    await env.STATE.put("private:data", text);
+    return json({ ok: true, size: text.length }, 200, h);
+  }
 
   try {
     if (url.pathname === "/status" && req.method === "GET") {

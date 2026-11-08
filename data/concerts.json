@@ -729,110 +729,6 @@
    "comment": null,
    "lat": 43.6031,
    "lng": 1.4116
-  },
-  {
-   "id": "411a7bc0f6df817dbd5bed3bfabb5f95",
-   "name": "Ebony — Toulouse",
-   "type": "Concert",
-   "status": "Envie",
-   "start": "2026-11-07",
-   "end": null,
-   "venue": "La Cabane",
-   "city": "Toulouse",
-   "comment": null,
-   "lat": 43.6031,
-   "lng": 1.4116
-  },
-  {
-   "id": "411a7bc0f6df8159b589c93d2824b888",
-   "name": "Zelie — Toulouse",
-   "type": "Concert",
-   "status": "Envie",
-   "start": "2026-11-20",
-   "end": null,
-   "venue": "La Cabane",
-   "city": "Toulouse",
-   "comment": null,
-   "lat": 43.6031,
-   "lng": 1.4116
-  },
-  {
-   "id": "411a7bc0f6df81d09380edc2868a6d11",
-   "name": "Giedré — Toulouse",
-   "type": "Concert",
-   "status": "Envie",
-   "start": "2026-12-06",
-   "end": null,
-   "venue": "La Cabane",
-   "city": "Toulouse",
-   "comment": null,
-   "lat": 43.6031,
-   "lng": 1.4116
-  },
-  {
-   "id": "411a7bc0f6df812e88d4d93ba913527f",
-   "name": "Charli XCX — Paris",
-   "type": "Concert",
-   "status": "À venir",
-   "start": "2027-02-24",
-   "end": null,
-   "venue": "Accor Arena",
-   "city": "Paris",
-   "comment": "2 billets (prévente CSE)",
-   "lat": 48.8386,
-   "lng": 2.3785
-  },
-  {
-   "id": "411a7bc0f6df81e0ba1df12f3adcf47d",
-   "name": "RAKOON — Toulouse",
-   "type": "Concert",
-   "status": "Envie",
-   "start": "2027-03-18",
-   "end": null,
-   "venue": "Le Rex",
-   "city": "Toulouse",
-   "comment": null,
-   "lat": 43.6354,
-   "lng": 1.3992
-  },
-  {
-   "id": "411a7bc0f6df810b81d9cb4e5dbd0fb8",
-   "name": "Angèle — Toulouse 2027",
-   "type": "Concert",
-   "status": "À venir",
-   "start": "2027-10-19",
-   "end": null,
-   "venue": "Zénith Toulouse Métropole",
-   "city": "Toulouse",
-   "comment": "Instinct Tour. Date trouvée en ligne, à vérifier sur le billet",
-   "lat": 43.5997,
-   "lng": 1.4154
-  },
-  {
-   "id": "411a7bc0f6df81a18a5cfe26c6d0e06b",
-   "name": "Pomme — Toulouse",
-   "type": "Concert",
-   "status": "Envie",
-   "start": "2027-12-01",
-   "end": null,
-   "venue": "Zénith Toulouse Métropole",
-   "city": "Toulouse",
-   "comment": null,
-   "lat": 43.5997,
-   "lng": 1.4154
-  },
-  {
-   "id": "411a7bc0f6df8121b254e678d04878c9",
-   "name": "Eddy de Pretto — Toulouse 2027",
-   "type": "Concert",
-   "status": "À venir",
-   "start": "2027-12-02",
-   "end": null,
-   "venue": "Zénith Toulouse Métropole",
-   "city": "Toulouse",
-   "comment": "Les Solitudes Extrêmes Tour. Date trouvée en ligne, à vérifier sur le billet",
-   "lat": 43.5997,
-   "lng": 1.4154
   }
  ],
  "acts": [
@@ -912,17 +808,6 @@
    "mediaType": null,
    "rating": null,
    "comment": "Programmation en ligne, à confirmer"
-  },
-  {
-   "id": "411a7bc0f6df81619a43f8050a4ee709",
-   "artist": "Angèle",
-   "event": "411a7bc0f6df810b81d9cb4e5dbd0fb8",
-   "date": "2027-10-19",
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
   },
   {
    "id": "411a7bc0f6df815298c5d57c92da4ae8",
@@ -1178,17 +1063,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81c7ae63f2ad057d9694",
-   "artist": "Charli XCX",
-   "event": "411a7bc0f6df812e88d4d93ba913527f",
-   "date": "2027-02-24",
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df8117ad54f9bf48f300f5",
    "artist": "Christine and the Queens",
    "event": "411a7bc0f6df8148a235c65da93259d8",
@@ -1205,17 +1079,6 @@
    "event": "411a7bc0f6df81c5a046eb8858b73c06",
    "date": "2024-10-23",
    "setlist": "https://www.setlist.fm/setlist/claude/2024/la-cabane-toulouse-france-35185e7.html",
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df81fcacaecad3b54502ba",
-   "artist": "Cléa Vincent",
-   "event": null,
-   "date": null,
-   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
@@ -1343,17 +1206,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df814d8213f45f581ab110",
-   "artist": "Ebony",
-   "event": "411a7bc0f6df817dbd5bed3bfabb5f95",
-   "date": "2026-11-07",
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df81e4a584e58d7cc89d03",
    "artist": "Eddy de Pretto",
    "event": "411a7bc0f6df81a1bb8edc4f555e41c2",
@@ -1374,28 +1226,6 @@
    "mediaType": null,
    "rating": null,
    "comment": "Programmation du samedi trouvée en ligne, à confirmer"
-  },
-  {
-   "id": "411a7bc0f6df811b83bded73adcf5df2",
-   "artist": "Eddy de Pretto",
-   "event": "411a7bc0f6df8121b254e678d04878c9",
-   "date": "2027-12-02",
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df818992caf44c0ddbc29e",
-   "artist": "Étienne de Crécy",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
   },
   {
    "id": "411a7bc0f6df81a7a10bf141bd3f98bb",
@@ -1446,17 +1276,6 @@
    "artist": "Georgio",
    "event": "411a7bc0f6df81d682d5d362e87fcf67",
    "date": "2022-06-30",
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df816bafd9d83696d8cc25",
-   "artist": "Giedré",
-   "event": "411a7bc0f6df81d09380edc2868a6d11",
-   "date": "2026-12-06",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1959,17 +1778,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81f7983bd79517e64179",
-   "artist": "Mezerg",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": "Mezerg apparaît deux fois dans la liste Keep : doublon ?"
-  },
-  {
    "id": "411a7bc0f6df81dbb4eec401725810cb",
    "artist": "Mezerg",
    "event": "411a7bc0f6df81d682d5d362e87fcf67",
@@ -2089,17 +1897,6 @@
    "mediaType": null,
    "rating": null,
    "comment": null
-  },
-  {
-   "id": "411a7bc0f6df819d98b3d3207ecdcdae",
-   "artist": "Olympe Chabert",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": "1re partie d'un artiste (lequel ? date à retrouver)"
   },
   {
    "id": "411a7bc0f6df81b1bfd6d17377205866",
@@ -2267,17 +2064,6 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81be954ddeb632b972fe",
-   "artist": "Pomme",
-   "event": "411a7bc0f6df81a18a5cfe26c6d0e06b",
-   "date": "2027-12-01",
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
    "id": "411a7bc0f6df8109b7c9cb42dff3237c",
    "artist": "Pongo",
    "event": "411a7bc0f6df815fa07aff168255697d",
@@ -2305,17 +2091,6 @@
    "event": "411a7bc0f6df81cf9c3bef02305bdc95",
    "date": "2022-04-17",
    "setlist": "https://www.setlist.fm/setlist/rakoon/2022/double-mixte-villeurbanne-france-3b61df7.html",
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df81719c2df2111d5940d7",
-   "artist": "Rakoon",
-   "event": "411a7bc0f6df81e0ba1df12f3adcf47d",
-   "date": "2027-03-18",
-   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
@@ -2514,17 +2289,6 @@
    "event": "411a7bc0f6df8148a235c65da93259d8",
    "date": "2019-06-30",
    "setlist": "https://www.setlist.fm/setlist/systema-solar/2019/plaine-de-la-filhole-marmande-france-43915baf.html",
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df8169bd65f511179e3c48",
-   "artist": "The Avener",
-   "event": null,
-   "date": null,
-   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
@@ -2767,17 +2531,6 @@
    "event": "411a7bc0f6df81be85cbc0dfb20885f3",
    "date": "2023-11-11",
    "setlist": "https://www.setlist.fm/setlist/zaho-de-sagazan/2023/le-bikini-ramonville-saint-agne-france-4ba1d3f6.html",
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df813699dacb0af00a496f",
-   "artist": "Zelie",
-   "event": "411a7bc0f6df8159b589c93d2824b888",
-   "date": "2026-11-20",
-   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,

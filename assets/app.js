@@ -35,53 +35,25 @@
     clearTimeout(toast.t); toast.t = setTimeout(() => (t.className = "toast"), undo ? 7000 : 4000);
   }
 
-  // ---------- Mot de passe (le même que la page d'ajout) ----------
+  // ---------- Version publique / mode privé (assets/auth.js) ----------
+  // Sans mot de passe : consultation seule, aucune action de modification n'est affichée.
+  const Auth = window.MusiqueAuth;
+  const PRIV = !!Auth?.isPrivate;
   const store = {
     get: (k) => { try { return localStorage.getItem(k) || ""; } catch { return ""; } },
     set: (k, v) => { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch {} },
   };
-  let password = store.get("musique:pw");
 
   async function api(path, opts = {}) {
     const res = await fetch(API + path, {
       ...opts,
-      headers: { "Content-Type": "application/json", "X-Password": password, ...(opts.headers || {}) },
+      headers: { "Content-Type": "application/json", ...Auth.headers(), ...(opts.headers || {}) },
     });
     const data = await res.json().catch(() => ({}));
-    if (res.status === 401) { const e = new Error("Mot de passe incorrect"); e.auth = true; throw e; }
+    if (res.status === 401) { Auth.expired(); const e = new Error("Mot de passe refusé : reconnecte-toi."); e.auth = true; throw e; }
     if (!res.ok) throw new Error(data.error || `Erreur ${res.status}`);
     return data;
   }
-
-  function showGate(msg = "") {
-    $("#gate").hidden = false;
-    $("#gate-err").textContent = msg;
-    setTimeout(() => $("#gate-pw").focus(), 50);
-  }
-  function unlock() {
-    $("#gate").hidden = true;
-    document.body.classList.remove("locked");
-    load();
-  }
-  async function checkAccess() {
-    if (!API || !password) return showGate();
-    try {
-      await api("/status");
-      store.set("musique:ok", "1");
-      unlock();
-    } catch (e) {
-      if (e.auth) { password = ""; store.set("musique:pw", ""); store.set("musique:ok", ""); return showGate("Mot de passe incorrect."); }
-      // Fonction Cloudflare injoignable : on laisse entrer si ce mot de passe a déjà été validé
-      if (store.get("musique:ok")) unlock(); else showGate("Vérification impossible pour le moment, réessaie dans un instant.");
-    }
-  }
-  $("#gate-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    password = $("#gate-pw").value;
-    store.set("musique:pw", password);
-    $("#gate-err").textContent = "Vérification…";
-    checkAccess();
-  });
 
   // ---------- Pochettes ----------
   function hue(str) { let h = 0; for (const c of str) h = (h * 31 + c.charCodeAt(0)) % 360; return h; }
@@ -151,7 +123,7 @@
         <h3>${esc(a.album)}</h3>
         <p>${artistLink(a.artist)}</p>
         <p>${a.listened ? "Écouté le " + fmtDate(a.listenedOn) : "À écouter · sortie " + fmtRelease(a.released)}</p>
-        ${a.listened ? "" : `<span class="pills"><span class="pill-btn" role="button" tabindex="0" data-heard="${a.id}">✓ Écouté</span></span>`}
+        ${a.listened || !PRIV ? "" : `<span class="pills"><span class="pill-btn" role="button" tabindex="0" data-heard="${a.id}">✓ Écouté</span></span>`}
       </button>`;
 
   function renderGrid() {
@@ -223,12 +195,12 @@
             ${a.lang ? `<dt>Langue</dt><dd>${esc(a.lang)}</dd>` : ""}
           </dl>
           <div class="chips" title="Genre Apple Music">${a.genres.map((g) => `<span class="chip">${esc(g)}</span>`).join("")}</div>
-          ${reviewHTML(a.review)}
-          <div class="d-btns">
+          ${PRIV ? reviewHTML(a.review) : ""}
+          ${PRIV ? `<div class="d-btns">
             <button class="btn ${a.listened ? "ghost " : ""}edit-btn" type="button" data-edit>${a.listened ? "Modifier" : "✓ Écouté"}</button>
             ${a.listened ? `<button class="btn ghost edit-btn story-btn" type="button" data-story><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v7M9 11l3-3 3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Story</button>` : ""}
           </div>
-          ${editForm(a)}
+          ${editForm(a)}` : ""}
         </div>
       </div>
       ${goLink(a.link, linkLabel(a.link))}`;
@@ -535,7 +507,6 @@
       toast("Enregistré dans Notion ✓");
     } catch (err) {
       toast(err.message, true); btn.disabled = false;
-      if (err.auth) { password = ""; store.set("musique:pw", ""); }
     }
   });
 
@@ -593,10 +564,11 @@
     try { await send(false); } catch (err) { if (err.auth) toast(err.message, true); }
   }
   async function loadDismissed() {
+    if (!PRIV) return;
     try { JSON.parse(store.get("musique:dismissed") || "[]").forEach((k) => state.dismissed.add(k)); } catch {}
     if (!API) return;
     try {
-      const d = await fetch(API + "/dismissed").then((r) => (r.ok ? r.json() : Promise.reject()));
+      const d = await api("/dismissed");
       (d.dismissed || []).forEach((x) => state.dismissed.add(x.key));
       saveDismissed();
       if (state.view === "reco" || state.artist) render();
@@ -746,17 +718,17 @@
   }
   function renderSearch(q, spotify, loading) {
     const local = localMatches(q);
-    const ext = (spotify || []).filter((r) => !findInBase(r)).slice(0, 8);
+    const ext = PRIV ? (spotify || []).filter((r) => !findInBase(r)).slice(0, 8) : [];
     sSpotify = ext;
     const keepFocus = sBox.contains(document.activeElement) ? [...sBox.querySelectorAll(".srow")].indexOf(document.activeElement.closest(".srow")) : -1;
     sBox.innerHTML = `
-      ${local.length ? `<h4>Dans ton journal</h4>${local.map((a) => `
+      ${local.length ? `<h4>${PRIV ? "Dans ton journal" : "Dans le journal"}</h4>${local.map((a) => `
         <div class="srow local" role="button" tabindex="0" data-open="${a.id}">
           ${thumb(a.cover || a.coverAlt)}
           <div><b>${esc(a.album)}</b><span>${esc(a.artist)}${a.released ? " · " + esc(a.released.slice(0, 4)) : ""}</span></div>
           <span class="tag${a.listened ? " heard" : ""}">${a.listened ? (a.rating ? "★".repeat(a.rating) : "Écouté") : "À écouter"}</span>
         </div>`).join("")}` : ""}
-      <h4>Sur Spotify${loading ? ` <span class="s-spin" aria-label="Recherche en cours"></span>` : ""}</h4>
+      ${!PRIV ? (local.length ? "" : `<p class="hint">Aucun album du journal ne correspond.</p>`) : `<h4>Sur Spotify${loading ? ` <span class="s-spin" aria-label="Recherche en cours"></span>` : ""}</h4>
       ${ext.length ? `<div class="s-ext${loading ? " stale" : ""}">${ext.map((r, i) => `
         <div class="srow" tabindex="-1">
           ${thumb(r.thumb || r.cover)}
@@ -767,7 +739,7 @@
           </div>
         </div>`).join("")}</div>`
         : loading ? `<p class="hint">Recherche…</p>`
-        : `<p class="hint">${spotify ? (local.length ? "Rien de plus sur Spotify." : "Aucun résultat.") : "Spotify indisponible pour le moment."}</p>`}`;
+        : `<p class="hint">${spotify ? (local.length ? "Rien de plus sur Spotify." : "Aucun résultat.") : "Spotify indisponible pour le moment."}</p>`}`}`;
     sBox.hidden = false;
     if (keepFocus >= 0) sBox.querySelectorAll(".srow")[keepFocus]?.focus();
   }
@@ -784,6 +756,7 @@
   async function runSearch() {
     const q = sInput.value.trim();
     if (q.length < 2) return;
+    if (!PRIV) return renderSearch(q, [], false); // version publique : uniquement le journal
     const key = norm(q);
     if (sCache.has(key)) { sShown = { q: key, list: sCache.get(key) }; return renderSearch(q, sShown.list, false); }
     try {
@@ -800,12 +773,14 @@
     clearTimeout(sTimer);
     const q = sInput.value.trim();
     if (q.length < 2) { sAbort?.abort(); return closeSearch(); }
+    if (!PRIV) return renderSearch(q, [], false);
     const key = norm(q), cached = sCache.get(key);
     // Affichage immédiat : ta base + les derniers résultats Spotify (estompés) en attendant les nouveaux
     renderSearch(q, cached || sShown.list || [], !cached);
     if (cached) { sShown = { q: key, list: cached }; return; }
     sTimer = setTimeout(runSearch, 220);
   }
+  if (!PRIV) sInput.placeholder = "Rechercher dans le journal…";
   sInput.addEventListener("input", onType);
   sInput.addEventListener("focus", () => { if (sInput.value.trim().length >= 2 && sBox.innerHTML) sBox.hidden = false; });
   // Navigation au clavier : ↓/↑ parcourent les résultats, Entrée ouvre, Échap ferme
@@ -868,20 +843,21 @@
     return a;
   }
   function openRandom(mode = state.randomMode || "all") {
+    if (!PRIV) mode = "fav"; // version publique : uniquement les albums écoutés notés 4★ ou 5★
     state.randomMode = mode;
     const a = randomPick(mode);
     state.current = null; state.pending = null;
     const modes = [["all", "Tout"], ["fav", "Mes 4★ et 5★"], ["todo", "À écouter"]];
     const why = !a ? "" : a.listened
-      ? `Tu lui as mis ${a.rating}★${a.listenedOn ? `, écouté le ${fmtDate(a.listenedOn)}` : ""}.`
+      ? `${PRIV ? "Tu lui as mis" : "Noté"} ${a.rating}★${a.listenedOn ? `, écouté le ${fmtDate(a.listenedOn)}` : ""}.`
       : "Dans ta liste « À écouter ».";
     $("#detail-body").innerHTML = `
       <div class="d-wrap random">
         <div class="d-left">${a ? coverHTML(a, true) : ""}</div>
         <div class="d-info">
           <p class="eyebrow">🎲 Écoute aléatoire</p>
-          <div class="seg-mini" role="radiogroup" aria-label="Choisir parmi">${modes.map(([v, l]) =>
-            `<button type="button" role="radio" aria-checked="${v === mode}" data-rmode="${v}">${l}</button>`).join("")}</div>
+          ${PRIV ? `<div class="seg-mini" role="radiogroup" aria-label="Choisir parmi">${modes.map(([v, l]) =>
+            `<button type="button" role="radio" aria-checked="${v === mode}" data-rmode="${v}">${l}</button>`).join("")}</div>` : ""}
           ${a ? `<h2>${esc(a.album)}</h2>
           <p class="d-artist">${artistLink(a.artist, "a-link big")}</p>
           <div class="why-box">${esc(why)}</div>
@@ -952,7 +928,7 @@
       ["Albums écoutés", heard.length],
       ["Coups de cœur", heard.filter((a) => a.rating === 5).length],
       ["Artistes", new Set(heard.map((a) => a.artist)).size],
-      ["À écouter", data.length - heard.length],
+      ...(PRIV ? [["À écouter", data.length - heard.length]] : []),
     ];
     $("#kpis").innerHTML = k.map(([t, v]) => `<div><dt>${t}</dt><dd>${v}</dd></div>`).join("");
   }
@@ -984,7 +960,7 @@
   async function liveSync() {
     if (!API) return;
     let data;
-    try { data = await fetch(API + "/export").then((r) => (r.ok ? r.json() : Promise.reject())); } catch { return; }
+    try { data = await fetch(API + "/export", { headers: Auth.headers() }).then((r) => (r.ok ? r.json() : Promise.reject())); } catch { return; }
     const live = (data.albums || []).filter((x) => x.album && x.artist);
     if (!live.length) return;
     const byId = new Map(state.albums.map((a) => [a.id, a]));
@@ -1003,11 +979,12 @@
     }
     state.albums = next;
     refresh();
+    if (!PRIV) return; // les avis ne font pas partie de la version publique
     // Avis : la fonction ne relit que les fiches modifiées depuis la dernière fois
     try {
       const ids = data.ids || [];
       for (let i = 0; i < ids.length; i += 50) {
-        const r = await fetch(`${API}/export/reviews?ids=${encodeURIComponent(ids.slice(i, i + 50).join(","))}`).then((x) => x.json());
+        const r = await api(`/export/reviews?ids=${encodeURIComponent(ids.slice(i, i + 50).join(","))}`);
         for (const [id, text] of Object.entries(r.reviews || {})) {
           const a = state.albums.find((x) => x.id === id);
           if (a) a.review = text || undefined;
@@ -1053,29 +1030,37 @@
   $("#detail").addEventListener("click", (e) => { if (e.target.id === "detail") e.target.close(); });
 
   // ---------- Chargement ----------
-  function load() {
+  // Version publique : data/albums.json (albums écoutés, sans avis).
+  // Mode privé : données complètes (à écouter, avis, conseils) lues avec le mot de passe dans la fonction Cloudflare.
+  async function privateData() {
+    if (!PRIV || !API) return null;
+    try { return await api("/private"); } catch { return null; }
+  }
+  function show(data) {
+    state.albums = data.albums;
+    const genres = [...new Set(data.albums.flatMap((a) => a.genres))].sort((a, b) => a.localeCompare(b, "fr"));
+    const langs = [...new Set(data.albums.map((a) => a.lang).filter(Boolean))].sort();
+    els.genre.insertAdjacentHTML("beforeend", genres.map((g) => `<option>${esc(g)}</option>`).join(""));
+    els.lang.insertAdjacentHTML("beforeend", langs.map((l) => `<option>${esc(l)}</option>`).join(""));
+    $("#updated").textContent = "mis à jour le " + new Date(data.updatedAt).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+    renderKpis(data.albums);
+    render();
+    fillCovers();
+    liveSync();
+  }
+  async function load() {
     loadDismissed();
-    fetch("data/conseils.json", { cache: "no-cache" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => { if (d) { state.reco = d; if (state.view === "reco" || state.artist) render(); } })
-      .catch(() => {});
+    const priv = await privateData();
+    if (priv?.albums?.length) {
+      if (priv.conseils) state.reco = priv.conseils;
+      return show(priv);
+    }
     fetch("data/albums.json", { cache: "no-cache" })
       .then((r) => r.json())
-      .then((data) => {
-        state.albums = data.albums;
-        const genres = [...new Set(data.albums.flatMap((a) => a.genres))].sort((a, b) => a.localeCompare(b, "fr"));
-        const langs = [...new Set(data.albums.map((a) => a.lang).filter(Boolean))].sort();
-        els.genre.insertAdjacentHTML("beforeend", genres.map((g) => `<option>${esc(g)}</option>`).join(""));
-        els.lang.insertAdjacentHTML("beforeend", langs.map((l) => `<option>${esc(l)}</option>`).join(""));
-        $("#updated").textContent = "mis à jour le " + new Date(data.updatedAt).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
-        renderKpis(data.albums);
-        render();
-        fillCovers();
-        liveSync();
-      })
+      .then(show)
       .catch(() => { els.grid.innerHTML = `<p class="empty">Impossible de charger les données.</p>`; });
   }
 
-  checkAccess();
+  load();
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 })();

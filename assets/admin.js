@@ -4,8 +4,9 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const today = () => new Intl.DateTimeFormat("fr-CA", { timeZone: "Europe/Paris" }).format(new Date());
 
-  let password = "";
-  try { password = localStorage.getItem("musique:pw") || ""; } catch {}
+  // Mot de passe du mode privé (assets/auth.js) : le même que sur le reste du site
+  const Auth = window.MusiqueAuth;
+  let password = Auth.password;
 
   function toast(msg, err = false) {
     const t = $("#toast");
@@ -26,9 +27,11 @@
 
   function logout() {
     password = "";
-    try { localStorage.removeItem("musique:pw"); } catch {}
+    Auth.clear();
     $("#app").hidden = true; $("#login").hidden = false;
   }
+  // Bouton « Se déconnecter » : retour à la version publique du journal
+  $("#logout").addEventListener("click", () => { Auth.clear(); location.href = "./"; });
 
   // ---------- Démarrage ----------
   async function start() {
@@ -54,7 +57,8 @@
   $("#login-form").addEventListener("submit", (e) => {
     e.preventDefault();
     password = $("#password").value;
-    try { localStorage.setItem("musique:pw", password); } catch {}
+    Auth.save(password, true);
+    document.documentElement.classList.add("is-private");
     start();
   });
 
@@ -65,7 +69,7 @@
     albumsP = (async () => {
       const base = await fetch("data/albums.json", { cache: "no-cache" }).then((r) => r.json()).then((d) => d.albums).catch(() => []);
       try {
-        const live = (await fetch(API + "/export").then((r) => (r.ok ? r.json() : Promise.reject()))).albums.filter((x) => x.album && x.artist);
+        const live = (await fetch(API + "/export", { headers: Auth.headers() }).then((r) => (r.ok ? r.json() : Promise.reject()))).albums.filter((x) => x.album && x.artist);
         const byId = new Map(base.map((a) => [a.id, a]));
         return live.map((x) => {
           const b = byId.get(x.id) || {};

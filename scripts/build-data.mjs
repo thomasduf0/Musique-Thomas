@@ -1,5 +1,11 @@
 // Génère data/albums.json à partir de la base Notion « Musiques écoutées ».
 //
+// Version publique / privée :
+// - data/albums.json (publié sur le site et gardé dans le dépôt) ne contient que les albums écoutés, sans les avis.
+// - Les données complètes (albums à écouter, avis, conseils, cache Apple Music) sont envoyées à la fonction
+//   Cloudflare (/private), lisibles uniquement avec le mot de passe. Il faut pour cela le secret GitHub
+//   ADMIN_PASSWORD (même valeur que dans Cloudflare), passé au script dans la variable MUSIQUE_PASSWORD.
+//
 // - Avec la variable NOTION_TOKEN : lit la base via l'API Notion (+ le texte de chaque fiche = ton avis).
 // - Sinon, si assets/config.js contient l'adresse de la fonction Cloudflare : lit les données via celle-ci.
 // - Sinon : utilise scripts/seed-rows.json (export initial).
@@ -17,7 +23,14 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "data", "albums.json");
 const SEED = path.join(ROOT, "scripts", "seed-rows.json");
-const RECO = path.join(ROOT, "data", "conseils.json");
+// Fichiers privés : jamais publiés ni enregistrés dans le dépôt (voir .gitignore)
+const PRIV_DIR = path.join(ROOT, ".private");
+const CACHE = path.join(PRIV_DIR, "enrich.json");
+// Anciens emplacements dans le dépôt public, supprimés dès que les données privées sont dans Cloudflare
+const LEGACY_CACHE = path.join(ROOT, "data", "enrich.json");
+const LEGACY_RECO = path.join(ROOT, "data", "conseils.json");
+const PASSWORD = process.env.MUSIQUE_PASSWORD || "";
+const auth = PASSWORD ? { "X-Password": PASSWORD } : {};
 
 const NOTION_TOKEN = process.env.NOTION_TOKEN;
 const DATA_SOURCE_ID = process.env.NOTION_DATA_SOURCE_ID || "2a4a7bc0-f6df-80c3-bd83-000b2fd1b71e";
@@ -200,17 +213,17 @@ async function workerApi() {
 }
 
 async function fromWorker(api, previous) {
-  const res = await fetch(`${api}/export`);
+  const res = await fetch(`${api}/export`, { headers: auth });
   const data = await res.json();
   if (!res.ok) throw new Error(`Export : ${data.error || res.status}`);
   const rows = data.albums;
   // Avis : par lots, la fonction met en cache ceux qui n'ont pas changé
   const prev = new Map(previous.map((a) => [a.id, a]));
   const reviews = {};
-  let pending = data.ids;
+  let pending = PASSWORD ? data.ids : []; // les avis ne sont lisibles qu'avec le mot de passe
   for (let round = 0; round < 10 && pending.length; round++) {
     for (let i = 0; i < pending.length; i += 50) {
-      const r = await fetch(`${api}/export/reviews?ids=${encodeURIComponent(pending.slice(i, i + 50).join(","))}`).then((x) => x.json());
+      const r = await fetch(`${api}/export/reviews?ids=${encodeURIComponent(pending.slice(i, i + 50).join(","))}`, { headers: auth }).then((x) => x.json());
       Object.assign(reviews, r.reviews || {});
     }
     pending = pending.filter((s) => !(s.split(":")[0] in reviews));
@@ -219,9 +232,33 @@ async function fromWorker(api, previous) {
   return rows;
 }
 
+// ---------- Données privées (fonction Cloudflare) ----------
+async function readPrivate(api) {
+  if (!api || !PASSWORD) return null;
+  try {
+    const res = await fetch(`${api}/private`, { headers: auth });
+    return res.ok ? await res.json() : null;
+  } catch { return null; }
+}
+async function writePrivate(api, data) {
+  if (!api || !PASSWORD) return false;
+  try {
+    const res = await fetch(`${api}/private`, { method: "PUT", headers: { ...auth, "Content-Type": "application/json" }, body: JSON.stringify(data) });
+    if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || res.status);
+    return true;
+  } catch (e) { console.warn("Données privées non envoyées à Cloudflare :", e.message); return false; }
+}
+
 // ---------- Main ----------
-const previous = existsSync(OUT) ? JSON.parse(await readFile(OUT, "utf8")).albums || [] : [];
-const API = NOTION_TOKEN ? null : await workerApi();
+if (!PASSWORD) console.warn("::warning::Secret ADMIN_PASSWORD absent : seule la version publique est mise à jour (pas d'avis, d'albums à écouter ni de conseils).");
+const workerUrl = await workerApi();
+const priv = await readPrivate(workerUrl);
+await mkdir(PRIV_DIR, { recursive: true });
+if (priv?.enrich) await writeFile(CACHE, JSON.stringify(priv.enrich) + "\n");
+else if (existsSync(LEGACY_CACHE)) await writeFile(CACHE, await readFile(LEGACY_CACHE));
+const previous = priv?.albums?.length ? priv.albums
+  : existsSync(OUT) ? JSON.parse(await readFile(OUT, "utf8")).albums || [] : [];
+const API = NOTION_TOKEN ? null : workerUrl;
 let source = NOTION_TOKEN ? "notion" : API ? "cloudflare" : "seed";
 let rows;
 try {
@@ -251,7 +288,7 @@ let dismissed = new Set();
 try {
   const api = await workerApi();
   if (api) {
-    const d = await fetch(`${api}/dismissed`).then((r) => (r.ok ? r.json() : { dismissed: [] }));
+    const d = await fetch(`${api}/dismissed`, { headers: auth }).then((r) => (r.ok ? r.json() : { dismissed: [] }));
     dismissed = new Set((d.dismissed || []).map((x) => x.key));
   }
 } catch (e) { console.warn("Liste « Pas intéressé » indisponible :", e.message); }
@@ -260,7 +297,7 @@ try {
 let reco = null;
 try {
   reco = await enrich(rows, {
-    cachePath: path.join(ROOT, "data", "enrich.json"),
+    cachePath: CACHE,
     selectionPath: path.join(ROOT, "data", "selection.json"),
     isDismissed: (artist, title) => dismissed.has(recoKey(artist, title)),
   });
@@ -274,10 +311,23 @@ try {
 }
 rows.sort((a, b) => (b.listenedOn || "").localeCompare(a.listenedOn || "") || a.album.localeCompare(b.album));
 
+const updatedAt = new Date().toISOString();
+
+// Version publique : albums écoutés uniquement, sans avis ni genres saisis à la main
+const publicRows = rows.filter((r) => r.listened).map(({ review, myGenres, ...r }) => r);
 await mkdir(path.dirname(OUT), { recursive: true });
-await writeFile(
-  OUT,
-  JSON.stringify({ updatedAt: new Date().toISOString(), source, albums: rows }, null, 1) + "\n",
-);
-if (reco) await writeFile(RECO, JSON.stringify({ updatedAt: new Date().toISOString(), ...reco }, null, 1) + "\n");
-console.log(`${rows.length} albums écrits dans data/albums.json (source : ${source}, pochettes : ${rows.filter((r) => r.cover).length})`);
+await writeFile(OUT, JSON.stringify({ updatedAt, source, albums: publicRows }, null, 1) + "\n");
+console.log(`${publicRows.length} albums publics écrits dans data/albums.json (source : ${source}, pochettes : ${rows.filter((r) => r.cover).length})`);
+
+// Version privée : tout, envoyée à la fonction Cloudflare
+const cache = existsSync(CACHE) ? JSON.parse(await readFile(CACHE, "utf8")) : {};
+const conseils = reco ? { updatedAt, ...reco } : priv?.conseils || null;
+// (pas d'envoi si la source était indisponible : on ne remplace pas des données complètes par une copie partielle)
+const sent = source !== "seed" && await writePrivate(workerUrl, { updatedAt, source, albums: rows, conseils, enrich: cache });
+if (sent) {
+  console.log(`Données privées envoyées à Cloudflare : ${rows.length} albums, ${rows.filter((r) => r.review).length} avis${conseils ? ", conseils" : ""}`);
+  for (const f of [LEGACY_CACHE, LEGACY_RECO]) if (existsSync(f)) await unlink(f);
+} else if (existsSync(LEGACY_CACHE)) {
+  // Sans mot de passe, le cache reste à son ancien emplacement pour ne pas tout redemander à Apple Music
+  await writeFile(LEGACY_CACHE, JSON.stringify(cache) + "\n");
+}

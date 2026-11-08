@@ -385,3 +385,38 @@ h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
 .story-note { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
 #story-body .btns { justify-content: center; margin-top: 16px; }
 #story-body .btn { text-decoration: none; margin-top: 0; }
+
+/* ---------- Version publique / mode privé ---------- */
+/* .priv : visible uniquement en mode privé (après connexion avec le cadenas) */
+html:not(.is-private) .priv { display: none !important; }
+.lock-btn { cursor: pointer; }
+.top-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+.top-row .switch { margin-bottom: 0; }
+.priv-bar { display: flex; align-items: center; gap: 8px; }
+.priv-chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px;
+  font: 600 13px var(--sans); color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.priv-chip svg { width: 15px; height: 15px; }
+.lock-btn.on {
+  height: 38px; padding: 0 16px; border-radius: 999px; flex: none; white-space: nowrap;
+  background: var(--bg-2); color: var(--text); border: 1px solid var(--line); font: 600 13.5px var(--sans);
+}
+.lock-btn.on:hover, .lock-btn.on:focus-visible { border-color: var(--accent); color: var(--accent); outline: none; }
+@media (max-width: 420px) { .priv-chip { padding: 6px 10px; } .lock-btn.on { padding: 0 13px; } }
+
+.login-dlg { width: min(400px, calc(100vw - 32px)); padding: 0; background: transparent; border: 0; overflow: visible; }
+.login-dlg .gate-box { margin: 0 auto; box-shadow: 0 24px 60px var(--shadow); }
+.login-dlg .gate-logo { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--card); color: var(--accent); }
+.login-dlg .gate-logo svg { width: 24px; height: 24px; }
+.login-dlg h2 { font-family: var(--serif); font-size: 28px; margin: 12px 0 6px; }
+.login-dlg p { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+.login-dlg input[type="password"] { width: 100%; background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; font: 15px var(--sans); }
+.login-dlg input[type="password"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.login-dlg .remember { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 14px 0 4px; font-size: 13.5px; color: var(--muted); cursor: pointer; }
+.login-dlg .remember input { accent-color: var(--accent); width: 16px; height: 16px; }
+.login-dlg .btn { width: 100%; margin-top: 10px; color: #fff; font-size: 15px; }
+.login-dlg .gate-err { min-height: 1.4em; margin: 12px 0 0; color: #ff8a8a; }
+:root[data-theme="light"] .login-dlg .gate-err { color: #c0392b; }
+.login-dlg .close { top: 10px; right: 10px; background: transparent; color: var(--muted); }
+.login-dlg .close:hover { color: var(--text); }

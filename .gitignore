@@ -1,0 +1,3 @@
+# Données privées générées par la synchro (envoyées à la fonction Cloudflare, jamais publiées)
+.private/
+node_modules/

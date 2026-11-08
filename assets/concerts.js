@@ -36,47 +36,21 @@
     clearTimeout(toast.t); toast.t = setTimeout(() => (t.className = "toast"), 4000);
   }
 
-  // ---------- Mot de passe (le même que sur le reste du site) ----------
-  const store = {
-    get: (k) => { try { return localStorage.getItem(k) || ""; } catch { return ""; } },
-    set: (k, v) => { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch {} },
-  };
-  let password = store.get("musique:pw");
+  // ---------- Version publique / mode privé (assets/auth.js) ----------
+  // Sans mot de passe : consultation seule (ni wantlist, ni concerts à venir, ni modifications).
+  const Auth = window.MusiqueAuth;
+  const PRIV = !!Auth?.isPrivate;
   async function api(path, opts = {}) {
     const res = await fetch(API + path, {
       ...opts,
-      headers: { "Content-Type": "application/json", "X-Password": password, ...(opts.headers || {}) },
+      headers: { "Content-Type": "application/json", ...Auth.headers(), ...(opts.headers || {}) },
       body: opts.body ? JSON.stringify(opts.body) : undefined,
     });
     const data = await res.json().catch(() => ({}));
-    if (res.status === 401) { const e = new Error("Mot de passe incorrect"); e.auth = true; throw e; }
+    if (res.status === 401) { Auth.expired(); const e = new Error("Mot de passe refusé : reconnecte-toi."); e.auth = true; throw e; }
     if (!res.ok) throw new Error(data.error || `Erreur ${res.status}`);
     return data;
   }
-  function showGate(msg = "") {
-    $("#gate").hidden = false;
-    $("#gate-err").textContent = msg;
-    setTimeout(() => $("#gate-pw").focus(), 50);
-  }
-  function unlock() { $("#gate").hidden = true; document.body.classList.remove("locked"); load(); }
-  async function checkAccess() {
-    if (!API || !password) return showGate();
-    try {
-      await api("/status");
-      store.set("musique:ok", "1");
-      unlock();
-    } catch (e) {
-      if (e.auth) { password = ""; store.set("musique:pw", ""); store.set("musique:ok", ""); return showGate("Mot de passe incorrect."); }
-      if (store.get("musique:ok")) unlock(); else showGate("Vérification impossible pour le moment, réessaie dans un instant.");
-    }
-  }
-  $("#gate-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    password = $("#gate-pw").value;
-    store.set("musique:pw", password);
-    $("#gate-err").textContent = "Vérification…";
-    checkAccess();
-  });
 
   // ---------- Données ----------
   const getJSON = (u) => fetch(`${u}?t=${Date.now()}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -88,10 +62,10 @@
     if (!data) { els.list.innerHTML = `<p class="empty">Impossible de charger les concerts pour le moment.</p>`; return; }
     setData(data);
     const hash = location.hash.slice(1);
-    setView(["list", "map", "stats", "todo", "wish"].includes(hash) ? hash : "list");
+    setView((PRIV ? ["list", "map", "stats", "todo", "wish"] : ["list", "map", "stats"]).includes(hash) ? hash : "list");
     // Puis les bases Notion en direct (modifications faites depuis la dernière synchro)
     try {
-      const live = await fetch(`${API}/export/concerts`).then((r) => (r.ok ? r.json() : null));
+      const live = await fetch(`${API}/export/concerts`, { headers: Auth.headers() }).then((r) => (r.ok ? r.json() : null));
       if (live?.events) { setData({ ...live, updatedAt: new Date().toISOString() }); refresh(); }
     } catch {}
   }
@@ -164,7 +138,7 @@
       ["Concerts", ev.filter((e) => e.type !== "Festival").length],
       ["Festivals", ev.filter((e) => e.type === "Festival").length],
       ["Villes", new Set(ev.map((e) => e.city).filter(Boolean)).size],
-      ["À venir", state.events.filter(upcoming).length],
+      ...(PRIV ? [["À venir", state.events.filter(upcoming).length]] : []),
     ];
     $("#kpis").innerHTML = k.map(([t, v]) => `<div><dt>${t}</dt><dd>${v}</dd></div>`).join("");
   }
@@ -196,7 +170,7 @@
   function tags(e) {
     return [
       e.type === "Festival" ? `<span class="tag fest">Festival</span>` : "",
-      e.status === "À vérifier" ? `<span class="tag warn">À vérifier</span>` : "",
+      PRIV && e.status === "À vérifier" ? `<span class="tag warn">À vérifier</span>` : "",
       upcoming(e) ? `<span class="tag soon">À venir</span>` : "",
       wish(e) ? `<span class="tag wish">Wantlist</span>` : "",
     ].join("");
@@ -243,7 +217,7 @@
     if (undated.length) html += `<h2 class="c-year">Date à préciser <small>${plural(undated.length, "concert")}</small></h2><div class="c-grid">${undated.map((e) => eventCard(e, q)).join("")}</div>`;
 
     // Artistes encore sans concert (renvoi vers l'onglet dédié)
-    const loose = q ? state.loose.filter((a) => chipHit(a, q)) : [];
+    const loose = q && PRIV ? state.loose.filter((a) => chipHit(a, q)) : [];
     if (loose.length) {
       html += `<h2 class="c-year">Sans date ni lieu <small>${plural(loose.length, "passage")}</small></h2>
         <p class="c-hint">À compléter dans l'onglet <button type="button" class="linkish" data-goto="todo">Artistes non complétés</button>.</p>`;
@@ -279,10 +253,10 @@
         <b>${esc(a.artist)}</b>
         ${fest && a.date ? `<span class="muted">${esc(fmt(a.date, { weekday: "long", day: "numeric", month: "long" }))}</span>` : ""}
         ${!fest && isOpener(a, e) ? `<span class="muted">1re partie</span>` : ""}
-        <button type="button" class="mini" data-edit-act="${a.id}">Modifier</button>
+        ${PRIV ? `<button type="button" class="mini" data-edit-act="${a.id}">Modifier</button>` : ""}
       </div>
       ${setlistHTML(a)}
-      <form class="edit act-edit" data-form-act="${a.id}" hidden>
+      ${PRIV ? `<form class="edit act-edit" data-form-act="${a.id}" hidden>
         <label>Artiste<input name="artist" list="dl-artists" value="${esc(a.artist)}" required></label>
         ${fest ? `<label>Jour<input name="date" type="date" value="${esc(a.date || "")}" min="${esc(e.start || "")}" max="${esc(e.end || e.start || "")}"></label>` : ""}
         <label>Lien de la setlist (setlist.fm)<input name="setlist" type="url" value="${esc(a.setlist || "")}" placeholder="https://www.setlist.fm/setlist/…"></label>
@@ -291,7 +265,7 @@
           <button type="button" class="btn ghost" data-cancel>Annuler</button>
           <button type="button" class="btn ghost danger" data-detach="${a.id}">Retirer de ce concert</button>
         </div>
-      </form>
+      </form>` : ""}
     </div>`;
   }
 
@@ -309,7 +283,7 @@
           <p class="c-place">${esc(place(e)) || "Lieu à préciser"}${e.start ? " · " + esc(fmt(e.start, { weekday: "long", day: "numeric", month: "long", year: "numeric" })) + (e.end && e.end !== e.start ? " → " + esc(fmt(e.end, { day: "numeric", month: "long" })) : "") : ""}</p>
         </div>
       </header>
-      <button type="button" class="btn edit-btn" id="edit-event">Modifier le concert</button>
+      ${PRIV ? `<button type="button" class="btn edit-btn" id="edit-event">Modifier le concert</button>
       <form class="edit" id="event-form" hidden>
         <p class="edit-title">Concert</p>
         <label>Nom<input name="name" value="${esc(e.name)}" required></label>
@@ -326,10 +300,10 @@
           <label>Ville<input name="city" list="dl-cities" value="${esc(e.city || "")}"></label>
         </div>
         <div class="btns"><button class="btn">Enregistrer</button> <button type="button" class="btn ghost" data-cancel>Annuler</button></div>
-      </form>
+      </form>` : ""}
       <h3 class="d-sub">${fest ? "Artistes vus" : acts.length > 1 ? "À l'affiche" : "Artiste"} <small>${acts.length || ""}</small></h3>
       <div class="d-acts">${acts.map((a) => actRow(a, e)).join("") || `<p class="muted">Aucun artiste rattaché.</p>`}</div>
-      <form class="edit add-act" id="add-act">
+      ${PRIV ? `<form class="edit add-act" id="add-act">
         <p class="edit-title">Ajouter un artiste à ce concert</p>
         <div class="row2">
           <label>Artiste<input name="artist" list="dl-artists" required placeholder="Nom de l'artiste"></label>
@@ -337,7 +311,7 @@
         </div>
         <p class="hint">S'il est dans « Artistes non complétés », il y est rattaché au lieu d'être créé une 2e fois.</p>
         <div class="btns"><button class="btn">Ajouter</button></div>
-      </form>
+      </form>` : ""}
     </div>`;
     if (!keep) els.dialog.showModal();
   }
@@ -348,7 +322,7 @@
     if (btn) { btn.disabled = true; btn.textContent = "Enregistrement…"; }
     try { await fn(); }
     catch (err) {
-      if (err.auth) { toast("Mot de passe refusé : reconnecte-toi.", true); return showGate("Mot de passe incorrect."); }
+      if (err.auth) return; // la fenêtre de connexion est déjà ouverte
       toast(err.message || "Enregistrement impossible", true);
     } finally { if (btn?.isConnected) { btn.disabled = false; btn.textContent = label; } }
   }
@@ -721,6 +695,7 @@
 
   // ---------- Navigation ----------
   function setView(v) {
+    if (!PRIV && (v === "wish" || v === "todo")) v = "list";
     state.view = v;
     document.querySelectorAll(".tabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.view === v)));
     history.replaceState(null, "", v === "list" ? location.pathname : "#" + v);
@@ -741,6 +716,6 @@
   });
   els.dialog.addEventListener("close", () => { state.current = null; });
 
-  checkAccess();
+  load();
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 })();
