@@ -1,7 +1,20 @@
 {
- "updatedAt": "2026-11-08T14:25:58.510Z",
+ "updatedAt": "2026-11-08T14:35:28.373Z",
  "source": "cloudflare",
  "events": [
+  {
+   "id": "412a7bc0f6df818f9ee5e519a9c3308f",
+   "name": "Grand Pruneau Show 2015",
+   "type": "Festival",
+   "status": "Vu",
+   "start": "2015-08-29",
+   "end": null,
+   "venue": "Pruneau Show",
+   "city": "Agen",
+   "comment": null,
+   "lat": 44.2033,
+   "lng": 0.6164
+  },
   {
    "id": "411a7bc0f6df818cb464ce0e58c38e3f",
    "name": "Garorock 2016",
@@ -120,19 +133,6 @@
    "lng": 0.172
   },
   {
-   "id": "411a7bc0f6df81288ce3c0b9d2fe0e92",
-   "name": "Christine and the Queens — Marmande",
-   "type": "Concert",
-   "status": "Vu",
-   "start": "2019-06-28",
-   "end": null,
-   "venue": "Plaine de la Filhole",
-   "city": "Marmande",
-   "comment": null,
-   "lat": 44.4955,
-   "lng": 0.172
-  },
-  {
    "id": "411a7bc0f6df8102864ffe45cecf095f",
    "name": "Grand Pruneau Show 2019",
    "type": "Festival",
@@ -196,19 +196,6 @@
    "comment": null,
    "lat": 44.2033,
    "lng": 0.6164
-  },
-  {
-   "id": "411a7bc0f6df81328f2ec1457238790f",
-   "name": "Ascendant Vierge — Toulouse 2023",
-   "type": "Concert",
-   "status": "Vu",
-   "start": "2021-10-21",
-   "end": null,
-   "venue": "Le Bikini",
-   "city": "Ramonville",
-   "comment": "Date exacte à compléter",
-   "lat": 43.5562,
-   "lng": 1.4806
   },
   {
    "id": "411a7bc0f6df811ba66ef14288052b89",
@@ -380,6 +367,19 @@
    "lng": 1.4521
   },
   {
+   "id": "412a7bc0f6df81db81d4f37152106b61",
+   "name": "Mandragora — Blagnac",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2023-06-08",
+   "end": null,
+   "venue": "Poney Club",
+   "city": "Blagnac",
+   "comment": null,
+   "lat": 43.6346,
+   "lng": 1.374
+  },
+  {
    "id": "411a7bc0f6df815d9b86f600ef5d6d29",
    "name": "Rio Loco 2023",
    "type": "Festival",
@@ -508,19 +508,6 @@
    "comment": "Cœur Parapluie Tour, 2 billets",
    "lat": 43.5997,
    "lng": 1.4154
-  },
-  {
-   "id": "411a7bc0f6df8198b8fff519b470208d",
-   "name": "Rio Loco 2024 — Jour 3",
-   "type": "Festival",
-   "status": "Vu",
-   "start": "2024-06-14",
-   "end": null,
-   "venue": "Prairie des Filtres",
-   "city": "Toulouse",
-   "comment": "Billet 1 jour, 2 billets. À l'affiche : Johan Papaconstantino, Al Qasar, Sharouh, Acid Arab & Sofiane Saidi",
-   "lat": 43.5975,
-   "lng": 1.4362
   },
   {
    "id": "411a7bc0f6df81c5a046eb8858b73c06",
@@ -1182,7 +1169,7 @@
   {
    "id": "411a7bc0f6df81aaa952eb007a894c1c",
    "artist": "Cats on Trees",
-   "event": null,
+   "event": "412a7bc0f6df818f9ee5e519a9c3308f",
    "date": "2015-08-29",
    "setlist": null,
    "media": null,
@@ -1875,7 +1862,7 @@
   {
    "id": "411a7bc0f6df8137839fda9d4e3b8ddf",
    "artist": "Mandragora",
-   "event": null,
+   "event": "412a7bc0f6df81db81d4f37152106b61",
    "date": "2023-06-08",
    "setlist": null,
    "media": null,
@@ -2107,12 +2094,12 @@
    "id": "411a7bc0f6df819d98b3d3207ecdcdae",
    "artist": "Olympe Chabert",
    "event": null,
-   "date": "2021-04-08",
+   "date": null,
    "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
-   "comment": null
+   "comment": "1re partie d'un artiste (lequel ? date à retrouver)"
   },
   {
    "id": "411a7bc0f6df81b1bfd6d17377205866",
