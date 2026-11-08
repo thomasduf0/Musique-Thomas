@@ -512,6 +512,19 @@ async function handle(req, env) {
     } catch (e) { return json({ error: e.message }, 502, h); }
   }
 
+  // Pochette relayée avec l'en-tête CORS : permet au site de la dessiner dans l'image « story »
+  if (req.method === "GET" && url.pathname === "/cover") {
+    let src;
+    try { src = new URL(url.searchParams.get("u") || ""); } catch { return new Response("URL invalide", { status: 400 }); }
+    const okHost = src.protocol === "https:" && (src.hostname === "i.scdn.co" || /(^|\.)mzstatic\.com$/.test(src.hostname)
+      || src.hostname === "coverartarchive.org" || src.hostname.endsWith(".archive.org"));
+    if (!okHost) return new Response("Hôte non autorisé", { status: 403 });
+    const res = await fetch(src.toString(), { cf: { cacheTtl: 86400, cacheEverything: true } });
+    const type = res.headers.get("Content-Type") || "";
+    if (!res.ok || !type.startsWith("image/")) return new Response("Pochette introuvable", { status: 502 });
+    return new Response(res.body, { headers: { "Content-Type": type, "Cache-Control": "public, max-age=86400", "Access-Control-Allow-Origin": "*" } });
+  }
+
   // Connexion du compte Spotify (une seule fois, depuis le navigateur)
   if (url.pathname === "/spotify/login") {
     if (!(await safeEqual(url.searchParams.get("password") || "", env.ADMIN_PASSWORD))) return new Response("Mot de passe incorrect", { status: 401 });

@@ -373,3 +373,15 @@ h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
 .switch a:hover { color: var(--text); }
 .switch a[aria-current="page"] { background: var(--accent); color: var(--on-accent); }
 .switch a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Story Instagram */
+.d-btns { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.d-btns .edit-btn { margin-top: 18px; }
+.story-btn { display: inline-flex; align-items: center; gap: 7px; }
+.story { width: min(420px, calc(100vw - 32px)); }
+#story-body { padding: 22px; text-align: center; }
+.story-img { display: block; width: 100%; height: auto; max-height: calc(100vh - 190px); object-fit: contain; border-radius: 14px; background: var(--card); }
+.story-wait { margin: 60px 0; color: var(--muted); }
+.story-note { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+#story-body .btns { justify-content: center; margin-top: 16px; }
+#story-body .btn { text-decoration: none; margin-top: 0; }

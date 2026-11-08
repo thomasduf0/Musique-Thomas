@@ -224,7 +224,10 @@
           </dl>
           <div class="chips" title="Genre Apple Music">${a.genres.map((g) => `<span class="chip">${esc(g)}</span>`).join("")}</div>
           ${reviewHTML(a.review)}
-          <button class="btn ${a.listened ? "ghost " : ""}edit-btn" type="button" data-edit>${a.listened ? "Modifier" : "✓ Écouté"}</button>
+          <div class="d-btns">
+            <button class="btn ${a.listened ? "ghost " : ""}edit-btn" type="button" data-edit>${a.listened ? "Modifier" : "✓ Écouté"}</button>
+            ${a.listened ? `<button class="btn ghost edit-btn story-btn" type="button" data-story><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v7M9 11l3-3 3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Story</button>` : ""}
+          </div>
           ${editForm(a)}
         </div>
       </div>
@@ -240,6 +243,211 @@
     form.hidden = false; btn.hidden = true;
     form.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
+
+  // ---------- Story Instagram (1080 × 1920) ----------
+  // Pochette chargée en « CORS » pour pouvoir exporter le dessin : directe, sinon via le serveur
+  function loadImg(src) {
+    return new Promise((ok, ko) => {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => ok(img); img.onerror = ko;
+      img.src = src;
+    });
+  }
+  async function storyCover(a) {
+    const srcs = [fixCover(a.cover), a.coverAlt].filter(Boolean);
+    for (const s of srcs) {
+      const abs = new URL(s, location.href).href;
+      const tries = abs.startsWith(location.origin) || !API ? [abs] : [abs, `${API}/cover?u=${encodeURIComponent(abs)}`];
+      for (const t of tries) { try { return await loadImg(t); } catch {} }
+    }
+    return null;
+  }
+  // Commentaire de la dernière écoute (ou celui de la 1re s'il n'y en a qu'un)
+  function storyReview(text) {
+    const parts = reviewParts(text).filter((p) => p.lines.join("").trim());
+    const p = parts[parts.length - 1];
+    return p ? p.lines.map((l) => l.replace(/\s+/g, " ").trim()).filter(Boolean) : [];
+  }
+  function wrapLines(ctx, text, maxW, maxLines) {
+    const words = text.split(" "), lines = [];
+    let line = "";
+    for (const w of words) {
+      const t = line ? line + " " + w : w;
+      if (ctx.measureText(t).width <= maxW || !line) line = t;
+      else { lines.push(line); line = w; }
+    }
+    if (line) lines.push(line);
+    if (lines.length > maxLines) {
+      const kept = lines.slice(0, maxLines);
+      let last = kept[maxLines - 1];
+      while (last && ctx.measureText(last + "…").width > maxW) last = last.replace(/\s*\S+$/, "");
+      kept[maxLines - 1] = last + "…";
+      return kept;
+    }
+    return lines;
+  }
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+  async function drawStory(a) {
+    const W = 1080, H = 1920, PAD = 110;
+    const c = document.createElement("canvas"); c.width = W; c.height = H;
+    const ctx = c.getContext("2d");
+    const SERIF = "Fraunces, Georgia, serif", SANS = "Inter, system-ui, sans-serif";
+    await Promise.all(["700 80px Fraunces", "500 40px Inter", "600 40px Inter", "400 40px Inter"]
+      .map((f) => document.fonts?.load(f).catch(() => {})));
+    const img = await storyCover(a);
+    const h = hue(a.artist + a.album);
+
+    // Fond : la pochette agrandie et floutée, assombrie (dégradé si pas de pochette)
+    ctx.fillStyle = "#12100e"; ctx.fillRect(0, 0, W, H);
+    if (img) {
+      // Flou obtenu en réduisant la pochette à quelques pixels puis en l'agrandissant (marche partout, Safari compris)
+      const t = document.createElement("canvas"); t.width = t.height = 14;
+      t.getContext("2d").drawImage(img, 0, 0, 14, 14);
+      ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(t, 1, 1, 12, 12, (W - H) / 2, 0, H, H);
+    } else {
+      const g = ctx.createLinearGradient(0, 0, W, H);
+      g.addColorStop(0, `hsl(${h} 55% 38%)`); g.addColorStop(1, `hsl(${(h + 50) % 360} 60% 14%)`);
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    }
+    const shade = ctx.createLinearGradient(0, 0, 0, H);
+    shade.addColorStop(0, "rgba(10,8,7,.35)"); shade.addColorStop(.45, "rgba(10,8,7,.55)"); shade.addColorStop(1, "rgba(10,8,7,.88)");
+    ctx.fillStyle = shade; ctx.fillRect(0, 0, W, H);
+
+    // Bandeau du haut (hors de la zone couverte par l'interface d'Instagram)
+    ctx.fillStyle = "rgba(243,236,227,.75)";
+    ctx.font = `600 30px ${SANS}`;
+    ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    if ("letterSpacing" in ctx) ctx.letterSpacing = "6px";
+    ctx.fillText("JOURNAL D'ÉCOUTE", W / 2, 300);
+    if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
+
+    // Mise en page : le texte d'abord, la pochette prend la place qui reste (760 px au plus)
+    const TOP = 350, BOTTOM = H - 300, MAXW = W - PAD * 2;
+    let tSize = 76;
+    ctx.font = `700 ${tSize}px ${SERIF}`;
+    let title = wrapLines(ctx, a.album, MAXW, 2);
+    if (title.length > 1) { tSize = 62; ctx.font = `700 ${tSize}px ${SERIF}`; title = wrapLines(ctx, a.album, MAXW, 2); }
+    const titleH = tSize + (title.length - 1) * tSize * 1.12;
+    const headH = 90 + titleH + 66 + (a.rating ? 92 : 0);   // marge, titre, artiste, étoiles
+    const paras = storyReview(a.review);
+    const reviewLines = (fs, max = Infinity) => {
+      ctx.font = `400 ${fs}px ${SANS}`;
+      const out = [];
+      paras.forEach((p, i) => out.push(...wrapLines(ctx, (i === 0 ? "« " : "") + p + (i === paras.length - 1 ? " »" : ""), MAXW - 40, 99)));
+      return out.length > max ? [...out.slice(0, max - 1), wrapLines(ctx, out.slice(max - 1).join(" "), MAXW - 40, 1)[0]] : out;
+    };
+    let rv = { fs: 40, lines: [], h: 0 }, S = 760;
+    if (paras.length) {
+      let ok = false;
+      for (const fs of [40, 36, 33, 30, 27]) {
+        const lines = reviewLines(fs), h = 60 + lines.length * fs * 1.42;
+        const room = BOTTOM - TOP - headH - h;
+        if (room >= 520 || fs === 27) {
+          const fit = room >= 460;
+          const S2 = fit ? Math.min(760, room) : 460;
+          const maxL = fit ? lines.length : Math.max(1, Math.floor((BOTTOM - TOP - headH - 460 - 60) / (fs * 1.42)));
+          const ls = fit ? lines : reviewLines(fs, maxL);
+          rv = { fs, lines: ls, h: 60 + ls.length * fs * 1.42 }; S = S2; ok = true; break;
+        }
+      }
+      if (!ok) S = 460;
+    } else S = Math.min(760, BOTTOM - TOP - headH);
+    const total = S + headH + rv.h;
+    const cx = (W - S) / 2, cy = TOP + Math.max(0, (BOTTOM - TOP - total) / 2);
+
+    // Pochette
+    ctx.save();
+    ctx.shadowColor = "rgba(0,0,0,.55)"; ctx.shadowBlur = 80; ctx.shadowOffsetY = 30;
+    roundRect(ctx, cx, cy, S, S, 28); ctx.fillStyle = "#000"; ctx.fill();
+    ctx.restore();
+    ctx.save();
+    roundRect(ctx, cx, cy, S, S, 28); ctx.clip();
+    if (img) ctx.drawImage(img, cx, cy, S, S);
+    else {
+      const g = ctx.createLinearGradient(cx, cy, cx + S, cy + S);
+      g.addColorStop(0, `hsl(${h} 55% 38%)`); g.addColorStop(1, `hsl(${(h + 50) % 360} 60% 18%)`);
+      ctx.fillStyle = g; ctx.fillRect(cx, cy, S, S);
+      ctx.strokeStyle = "rgba(255,255,255,.14)"; ctx.lineWidth = 2;
+      [.36, .28, .2].forEach((k) => { ctx.beginPath(); ctx.arc(W / 2, cy + S / 2, S * k, 0, Math.PI * 2); ctx.stroke(); });
+      ctx.fillStyle = "rgba(255,255,255,.18)";
+      ctx.beginPath(); ctx.arc(W / 2, cy + S / 2, S * .06, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+
+    // Titre, artiste, note
+    let y = cy + S + 90 + tSize;
+    ctx.fillStyle = "#f3ece3";
+    ctx.font = `700 ${tSize}px ${SERIF}`;
+    title.forEach((l, i) => ctx.fillText(l, W / 2, y + i * tSize * 1.12));
+    y += (title.length - 1) * tSize * 1.12 + 66;
+    ctx.fillStyle = "#ff7a45";
+    ctx.font = `600 42px ${SANS}`;
+    ctx.fillText(wrapLines(ctx, a.artist, MAXW, 1)[0], W / 2, y);
+    if (a.rating) {
+      y += 92;
+      const sw = 78, r = 30, sx = W / 2 - sw * 2, sy = y - 24;
+      for (let i = 0; i < 5; i++) {
+        ctx.beginPath();
+        for (let k = 0; k < 10; k++) {
+          const ang = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? r * .45 : r;
+          ctx.lineTo(sx + i * sw + rr * Math.cos(ang), sy + rr * Math.sin(ang));
+        }
+        ctx.closePath();
+        ctx.fillStyle = i < a.rating ? "#f5c45e" : "rgba(243,236,227,.22)";
+        ctx.fill();
+      }
+    }
+
+    // Commentaire
+    if (rv.lines.length) {
+      y += 60;
+      ctx.font = `400 ${rv.fs}px ${SANS}`;
+      ctx.fillStyle = "rgba(243,236,227,.92)";
+      rv.lines.forEach((l, i) => ctx.fillText(l, W / 2, y + rv.fs + i * rv.fs * 1.42));
+    }
+
+    // Date d'écoute en pied
+    if (a.listenedOn) {
+      ctx.fillStyle = "rgba(243,236,227,.55)";
+      ctx.font = `500 28px ${SANS}`;
+      ctx.fillText(`Écouté le ${fmtDate(a.listenedOn, { day: "numeric", month: "long", year: "numeric" })}`, W / 2, H - 250);
+    }
+    return { canvas: c, coverOk: !!img };
+  }
+
+  async function openStory(a) {
+    if (!a) return;
+    const dlg = $("#story"), box = $("#story-body");
+    box.innerHTML = `<p class="story-wait">Création de l'image…</p>`;
+    if (!dlg.open) dlg.showModal();
+    try {
+      const { canvas, coverOk } = await drawStory(a);
+      const blob = await new Promise((ok) => canvas.toBlob(ok, "image/png"));
+      const name = `story-${flatK(a.artist)}-${flatK(a.album)}.png`.slice(0, 80);
+      const file = new File([blob], name, { type: "image/png" });
+      const url = URL.createObjectURL(blob);
+      const canShare = !!navigator.canShare?.({ files: [file] });
+      box.innerHTML = `
+        <img class="story-img" src="${url}" alt="Aperçu de la story pour ${esc(a.album)}">
+        ${coverOk ? "" : `<p class="story-note">Pochette indisponible : un dégradé la remplace.</p>`}
+        <div class="btns">
+          ${canShare ? `<button class="btn" type="button" data-share>Partager</button>` : ""}
+          <a class="btn${canShare ? " ghost" : ""}" href="${url}" download="${esc(name)}">Télécharger</a>
+        </div>`;
+      box.querySelector("[data-share]")?.addEventListener("click", () =>
+        navigator.share({ files: [file] }).catch((e) => { if (e.name !== "AbortError") toast("Partage impossible : télécharge l'image.", true); }));
+      dlg.addEventListener("close", () => URL.revokeObjectURL(url), { once: true });
+    } catch (e) {
+      box.innerHTML = `<p class="story-wait">Impossible de créer l'image (${esc(e.message || e)}).</p>`;
+    }
+  }
+  $("#story").addEventListener("click", (e) => { if (e.target.id === "story") e.target.close(); });
 
   const rateHTML = (n) => `<div class="rate" data-rating="${n || 0}" aria-label="Note">${[1, 2, 3, 4, 5].map((v) =>
     `<button type="button" data-v="${v}" class="${v <= n ? "on" : ""}" aria-label="${v} étoile${v > 1 ? "s" : ""}">★</button>`).join("")}</div>`;
@@ -284,6 +492,7 @@
     if (rt) return recoTodo(+rt.dataset.recoTodo, rt);
     if (e.target.closest("[data-cancel]") && state.pending) { $("#detail").close(); return; }
     const form = $("#detail-body .edit");
+    if (e.target.closest("[data-story]")) return openStory(state.current);
     if (e.target.closest("[data-edit]")) { openEdit(); return; }
     const nope = e.target.closest("[data-nope]");
     if (nope) { dismiss(+nope.dataset.nope); $("#detail").close(); return; }

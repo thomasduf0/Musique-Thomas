@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="assets/theme.js?v=1"></script>
-  <link rel="stylesheet" href="assets/style.css?v=20261107c">
+  <link rel="stylesheet" href="assets/style.css?v=20261108a">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#12100e">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
@@ -88,12 +88,17 @@
     <div id="detail-body"></div>
   </dialog>
 
+  <dialog id="story" class="detail story">
+    <button class="close" aria-label="Fermer" onclick="this.closest('dialog').close()">×</button>
+    <div id="story-body"></div>
+  </dialog>
+
   <footer class="wrap foot">
     <p>Données issues de mon Notion · <span id="updated"></span></p>
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="assets/config.js?v=20261106f"></script>
-  <script src="assets/app.js?v=20261106f"></script>
+  <script src="assets/config.js?v=20261108a"></script>
+  <script src="assets/app.js?v=20261108a"></script>
 </body>
 </html>
