@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-08T13:14:20.371Z",
+ "updatedAt": "2026-11-08T14:02:12.593Z",
  "source": "cloudflare",
  "events": [
   {
@@ -1059,10 +1059,10 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81aa84a2c4e992ba09f9",
+   "id": "411a7bc0f6df8199a1acc137a481c536",
    "artist": "Bigflo & Oli",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-27",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1072,19 +1072,8 @@
   {
    "id": "411a7bc0f6df81b7869fdd155fb88a14",
    "artist": "Bigflo & Oli",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df8199a1acc137a481c536",
-   "artist": "Bigflo & Oli",
-   "event": "411a7bc0f6df8148a235c65da93259d8",
-   "date": "2019-06-27",
+   "event": "411a7bc0f6df815585e3fcc499adca2c",
+   "date": "2022-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1194,7 +1183,7 @@
    "id": "411a7bc0f6df81aaa952eb007a894c1c",
    "artist": "Cats on Trees",
    "event": null,
-   "date": null,
+   "date": "2015-08-29",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1292,19 +1281,8 @@
   {
    "id": "411a7bc0f6df813dbc0be3136dda3ad7",
    "artist": "Damso",
-   "event": null,
-   "date": null,
-   "setlist": null,
-   "media": null,
-   "mediaType": null,
-   "rating": null,
-   "comment": null
-  },
-  {
-   "id": "411a7bc0f6df819eb130f91bf67aea4b",
-   "artist": "Deluxe",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df815585e3fcc499adca2c",
+   "date": "2022-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1314,8 +1292,19 @@
   {
    "id": "411a7bc0f6df81c89e02d7104056f05b",
    "artist": "Deluxe",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-06-30",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df819eb130f91bf67aea4b",
+   "artist": "Deluxe",
+   "event": "411a7bc0f6df815585e3fcc499adca2c",
+   "date": "2022-09-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1931,7 +1920,7 @@
    "id": "411a7bc0f6df81fd9f6fffbc2b07d3d4",
    "artist": "Marc Rebillet",
    "event": "411a7bc0f6df81d682d5d362e87fcf67",
-   "date": "2022-07-01",
+   "date": "2022-07-03",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1964,7 +1953,7 @@
    "id": "411a7bc0f6df81d1a263f80b70a63a05",
    "artist": "Martin Garrix",
    "event": null,
-   "date": null,
+   "date": "2022-07-03",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1975,7 +1964,7 @@
    "id": "411a7bc0f6df811e9379c7c586aa370d",
    "artist": "Matmatah",
    "event": "411a7bc0f6df817498e7f6d8cf77039d",
-   "date": null,
+   "date": "2018-08-05",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2073,8 +2062,8 @@
   {
    "id": "411a7bc0f6df81a98da8f6deb25be81f",
    "artist": "Naive New Beaters",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-29",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2126,7 +2115,7 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df819d98b3d3207ecdcdae",
+   "id": "411a7bc0f6df81b1bfd6d17377205866",
    "artist": "Olympe Chabert",
    "event": null,
    "date": null,
@@ -2137,10 +2126,10 @@
    "comment": "À vérifier : concert ou autre spectacle ?"
   },
   {
-   "id": "411a7bc0f6df81b1bfd6d17377205866",
+   "id": "411a7bc0f6df819d98b3d3207ecdcdae",
    "artist": "Olympe Chabert",
    "event": null,
-   "date": null,
+   "date": "2021-04-08",
    "setlist": null,
    "media": null,
    "mediaType": null,
