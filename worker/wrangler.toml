@@ -21,6 +21,12 @@ GITHUB_REPO = "thomasduf0/Musique-Thomas"
 binding = "STATE"
 id = "REMPLACER_PAR_L_ID_KV"
 
+# Photos et vidéos des concerts. Le stockage se crée une fois dans Cloudflare :
+# R2 Object Storage → Create bucket → nom « musique-medias »
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "musique-medias"
+
 # Secrets à définir avec « npx wrangler secret put NOM » (jamais dans ce fichier) :
 #   ADMIN_PASSWORD          mot de passe de la page d'ajout
 #   NOTION_TOKEN            jeton de l'intégration Notion

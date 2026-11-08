@@ -22,6 +22,12 @@
 //   POST /concerts/acts              ajoute un artiste vu (mot de passe requis)
 //   PATCH /concerts/acts/:pageId     modifie artiste, concert rattaché, date, setlist, note (mot de passe requis)
 //   DELETE /concerts/events/:pageId  met un concert et ses artistes à la corbeille Notion, ex. retrait de la wantlist (mot de passe requis)
+//   GET  /media                      photos et vidéos de chaque concert (liste publique)
+//   GET  /media/f/<clé>              fichier photo/vidéo stocké dans R2 (public, lecture par plages pour les vidéos)
+//   PUT  /media/put?key=…            envoie un fichier de moins de 90 Mo (mot de passe requis)
+//   POST /media/mpu/create|complete, PUT /media/mpu/part   envoi en plusieurs morceaux des gros fichiers (mot de passe requis)
+//   POST /media/add                  ajoute un média envoyé à la fiche d'un concert (mot de passe requis)
+//   DELETE /media/item?event=…&id=…  supprime un média et ses fichiers (mot de passe requis)
 // Tâche planifiée (toutes les heures) : coche « Écouté » quand toutes les pistes d'un album
 // « à écouter » ont été jouées sur Spotify.
 
@@ -488,6 +494,89 @@ async function dropHeard(env, id, ignore) {
   }
 }
 
+// ---------------------------------------------------------------- photos et vidéos des concerts (Cloudflare R2)
+// Les fichiers sont dans le stockage R2 « MEDIA » ; la liste par concert est dans le KV (media:index).
+const MEDIA_KEY = /^events\/[0-9a-f]{32}\/[0-9a-f-]{36}(\.thumb)?\.(jpg|png|webp|mp4|mov|webm)$/;
+const MEDIA_TYPES = { jpg: "image/jpeg", png: "image/png", webp: "image/webp", mp4: "video/mp4", mov: "video/quicktime", webm: "video/webm" };
+const mediaIndex = async (env) => JSON.parse((await env.STATE.get("media:index")) || "{}");
+
+async function serveMedia(req, env, key) {
+  if (!MEDIA_KEY.test(key)) return new Response("Introuvable", { status: 404 });
+  const range = req.headers.has("Range");
+  const obj = await env.MEDIA.get(key, { range: req.headers, onlyIf: req.headers });
+  if (!obj) return new Response("Introuvable", { status: 404 });
+  const headers = new Headers();
+  obj.writeHttpMetadata(headers);
+  headers.set("Content-Type", headers.get("Content-Type") || MEDIA_TYPES[key.split(".").pop()] || "application/octet-stream");
+  headers.set("ETag", obj.httpEtag);
+  headers.set("Accept-Ranges", "bytes");
+  headers.set("Cache-Control", "public, max-age=31536000, immutable");
+  headers.set("Access-Control-Allow-Origin", "*");
+  if (!("body" in obj)) return new Response(null, { status: 304, headers });
+  if (range && obj.range) {
+    const offset = obj.range.offset ?? (obj.size - obj.range.suffix);
+    const length = obj.range.length ?? (obj.size - offset);
+    headers.set("Content-Range", `bytes ${offset}-${offset + length - 1}/${obj.size}`);
+    headers.set("Content-Length", String(length));
+    return new Response(req.method === "HEAD" ? null : obj.body, { status: 206, headers });
+  }
+  headers.set("Content-Length", String(obj.size));
+  return new Response(req.method === "HEAD" ? null : obj.body, { headers });
+}
+
+async function mediaAdmin(req, env, url, h) {
+  const key = url.searchParams.get("key") || "";
+  const ext = key.split(".").pop();
+  const meta = { httpMetadata: { contentType: MEDIA_TYPES[ext], cacheControl: "public, max-age=31536000, immutable" } };
+  if (url.pathname === "/media/put" && req.method === "PUT") {
+    if (!MEDIA_KEY.test(key)) return json({ error: "Nom de fichier invalide" }, 400, h);
+    const obj = await env.MEDIA.put(key, req.body, meta);
+    return json({ ok: true, size: obj.size }, 200, h);
+  }
+  if (url.pathname === "/media/mpu/create" && req.method === "POST") {
+    if (!MEDIA_KEY.test(key)) return json({ error: "Nom de fichier invalide" }, 400, h);
+    const up = await env.MEDIA.createMultipartUpload(key, meta);
+    return json({ uploadId: up.uploadId }, 200, h);
+  }
+  if (url.pathname === "/media/mpu/part" && req.method === "PUT") {
+    const up = env.MEDIA.resumeMultipartUpload(key, url.searchParams.get("uploadId") || "");
+    const part = await up.uploadPart(Number(url.searchParams.get("part")), req.body);
+    return json(part, 200, h);
+  }
+  if (url.pathname === "/media/mpu/complete" && req.method === "POST") {
+    const up = env.MEDIA.resumeMultipartUpload(key, url.searchParams.get("uploadId") || "");
+    const obj = await up.complete((await req.json()).parts || []);
+    return json({ ok: true, size: obj.size }, 200, h);
+  }
+  if (url.pathname === "/media/add" && req.method === "POST") {
+    const { event, item } = await req.json();
+    if (!/^[0-9a-f]{32}$/.test(event || "") || !item || !/^[0-9a-f-]{36}$/.test(item.id || "")) return json({ error: "Données invalides" }, 400, h);
+    if (![item.file, item.thumb].every((k) => MEDIA_KEY.test(k || "") && k.startsWith(`events/${event}/${item.id}`))) return json({ error: "Fichier invalide" }, 400, h);
+    const clean = {
+      id: item.id, kind: item.kind === "video" ? "video" : "photo", file: item.file, thumb: item.thumb,
+      w: Number(item.w) || null, h: Number(item.h) || null, dur: Number(item.dur) || null,
+      taken: typeof item.taken === "string" ? item.taken.slice(0, 30) : null, size: Number(item.size) || null,
+      name: String(item.name || "").slice(0, 120), added: new Date().toISOString(),
+    };
+    const index = await mediaIndex(env);
+    index[event] = (index[event] || []).filter((m) => m.id !== clean.id).concat(clean);
+    await env.STATE.put("media:index", JSON.stringify(index));
+    return json({ ok: true, item: clean }, 200, h);
+  }
+  if (url.pathname === "/media/item" && req.method === "DELETE") {
+    const event = url.searchParams.get("event") || "", id = url.searchParams.get("id") || "";
+    const index = await mediaIndex(env);
+    const item = (index[event] || []).find((m) => m.id === id);
+    if (!item) return json({ error: "Média introuvable" }, 404, h);
+    await env.MEDIA.delete([item.file, item.thumb]);
+    index[event] = index[event].filter((m) => m.id !== id);
+    if (!index[event].length) delete index[event];
+    await env.STATE.put("media:index", JSON.stringify(index));
+    return json({ ok: true }, 200, h);
+  }
+  return null;
+}
+
 // ---------------------------------------------------------------- routes
 async function handle(req, env) {
   const url = new URL(req.url);
@@ -532,6 +621,15 @@ async function handle(req, env) {
     const type = res.headers.get("Content-Type") || "";
     if (!res.ok || !type.startsWith("image/")) return new Response("Pochette introuvable", { status: 502 });
     return new Response(res.body, { headers: { "Content-Type": type, "Cache-Control": "public, max-age=86400", "Access-Control-Allow-Origin": "*" } });
+  }
+
+  // Photos et vidéos des concerts : liste et fichiers, visibles dans la version publique
+  if (req.method === "GET" && url.pathname === "/media") {
+    return json(await mediaIndex(env), 200, { ...h, "Cache-Control": "no-store" });
+  }
+  if ((req.method === "GET" || req.method === "HEAD") && url.pathname.startsWith("/media/f/")) {
+    if (!env.MEDIA) return new Response("Stockage des médias non configuré", { status: 503 });
+    return serveMedia(req, env, decodeURIComponent(url.pathname.slice(9)));
   }
 
   // Connexion du compte Spotify (une seule fois, depuis le navigateur)
@@ -590,6 +688,14 @@ async function handle(req, env) {
     catch { return json({ error: "Format invalide" }, 400, h); }
     await env.STATE.put("private:data", text);
     return json({ ok: true, size: text.length }, 200, h);
+  }
+
+  if (url.pathname.startsWith("/media/")) {
+    if (!env.MEDIA) return json({ error: "Stockage des médias pas encore créé chez Cloudflare (R2)." }, 503, h);
+    try {
+      const res = await mediaAdmin(req, env, url, h);
+      if (res) return res;
+    } catch (e) { return json({ error: e.message }, 502, h); }
   }
 
   try {

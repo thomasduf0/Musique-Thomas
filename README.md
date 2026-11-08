@@ -29,6 +29,8 @@ Page séparée en attendant validation, avec le bouton **Albums / Concerts** qui
 - **Carte** : les salles où j'ai vu un concert, la taille du point dépend du nombre de sorties. Fond de carte OpenStreetMap / CARTO, bibliothèque Leaflet.
 - **Statistiques** : sorties et artistes par année, artistes vus plusieurs fois, salles, villes, festivals, mois.
 
+- **Photos et vidéos** : dans la fiche d'un concert, une mosaïque (regroupée par jour pour les festivals) et une visionneuse plein écran (flèches, balayage sur mobile, vidéos lues dans le site). En mode privé, on glisse ses fichiers sur la zone « Glisse ici tes photos et vidéos » : le navigateur convertit les photos en JPEG (HEIC compris), réencode les vidéos en 1080p (H.264/AAC, ~30 à 50 Mo par minute), crée les vignettes et trie le tout par date de prise de vue. Bouton **Supprimer** dans la visionneuse. Les fichiers sont dans le stockage Cloudflare R2 `musique-medias` (les originaux restent dans la photothèque) ; la liste par concert est dans le KV (`media:index`).
+
 Les données viennent de la page Notion **Concerts** (bases « Événements » et « Passages ») : `scripts/build-concerts.mjs` les lit via la fonction Cloudflare (`/export/concerts`) et écrit `data/concerts.json`. Les positions des salles sont dans `data/venues.json` : une nouvelle salle est cherchée automatiquement sur OpenStreetMap lors de la synchro, et on peut corriger une position à la main.
 
 
@@ -41,6 +43,7 @@ Les données viennent de la page Notion **Concerts** (bases « Événements » e
 | `assets/auth.js` | Version publique / mode privé : cadenas, connexion, déconnexion |
 | `scripts/build-data.mjs` | Lit les données (via la fonction Cloudflare) et régénère `data/albums.json` |
 | `concerts.html`, `assets/concerts.*`, `scripts/build-concerts.mjs`, `data/concerts.json`, `data/venues.json` | Page Concerts et ses données |
+| `assets/concert-media.js` | Photos et vidéos des concerts : envoi, compression, mosaïque, visionneuse |
 | `worker/` | Fonction Cloudflare : recherche Spotify, écriture dans Notion, détection d'écoute complète, export des données |
 | `.github/workflows/deploy.yml` | Synchro toutes les heures + publication sur GitHub Pages |
 

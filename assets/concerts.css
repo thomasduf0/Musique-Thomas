@@ -200,3 +200,76 @@ form.todo-row[data-ev] { grid-template-columns: minmax(150px, 1.4fr) 150px 1fr 1
   .c-date b { font-size: 22px; }
   .c-year { font-size: 24px; }
 }
+
+/* ---------- Photos et vidéos ---------- */
+.c-card.has-media { position: relative; padding-right: 86px; }
+.c-thumb {
+  position: absolute; top: 16px; right: 16px; width: 58px; height: 58px; border-radius: 10px; overflow: hidden;
+  background: var(--card); box-shadow: 0 4px 12px var(--shadow);
+}
+.c-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.c-thumb b {
+  position: absolute; right: 4px; bottom: 4px; min-width: 18px; padding: 1px 5px; border-radius: 999px;
+  background: rgba(0,0,0,.65); color: #fff; font-size: 11px; font-weight: 600; text-align: center;
+}
+.c-media .d-sub { margin-top: 22px; }
+.m-day { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--gold); margin: 14px 0 8px; }
+.m-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); grid-auto-flow: dense; gap: 6px; }
+.m-tile {
+  position: relative; aspect-ratio: 1; padding: 0; border: 0; border-radius: 8px; overflow: hidden;
+  background: var(--card); cursor: zoom-in;
+}
+.m-tile.wide { grid-column: span 2; aspect-ratio: 2 / 1; }
+.m-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s; }
+.m-tile:hover img, .m-tile:focus-visible img { transform: scale(1.04); }
+.m-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.m-play {
+  position: absolute; left: 6px; bottom: 6px; display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 8px 2px 5px; border-radius: 999px; background: rgba(0,0,0,.65); color: #fff; font-size: 11.5px; font-weight: 600;
+}
+.m-drop {
+  display: flex; align-items: center; gap: 14px; margin-top: 12px; padding: 16px 18px; cursor: pointer;
+  border: 1.5px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: 13.5px; line-height: 1.45;
+  transition: border-color .15s, background .15s;
+}
+.m-drop b { color: var(--text); font-weight: 600; }
+.m-drop small { font-size: 12px; }
+.m-drop svg { flex: none; color: var(--accent); }
+.m-drop:hover, .m-drop.over { border-color: var(--accent); background: var(--hero-a); }
+.m-queue { list-style: none; margin: 8px 0 0; padding: 0; font-size: 13px; }
+.m-queue:empty { display: none; }
+.m-queue li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 2px; border-bottom: 1px solid var(--line); }
+.m-q-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.m-q-state { flex: none; color: var(--muted); font-variant-numeric: tabular-nums; }
+.m-queue li.ok .m-q-state { color: var(--gold); }
+.m-queue li.err .m-q-state { color: #e5533d; }
+
+/* Visionneuse plein écran (toujours sombre) */
+.m-lb {
+  width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+  background: #000; color: #fff; overflow: hidden;
+}
+.m-lb::backdrop { background: #000; }
+.m-lb-stage { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 56px 12px; }
+.m-lb-stage img, .m-lb-stage video { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; }
+.m-lb-btn {
+  position: absolute; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(255,255,255,.12); color: #fff; font-size: 28px; line-height: 1;
+}
+.m-lb-btn:hover { background: rgba(255,255,255,.24); }
+.m-lb-close { top: 12px; right: 12px; }
+.m-lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+.m-lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+.m-lb-bar {
+  position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; gap: 16px;
+  padding: 14px; font-size: 13px; color: rgba(255,255,255,.75); font-variant-numeric: tabular-nums;
+}
+.m-lb-del { background: none; border: 1px solid rgba(255,255,255,.3); color: #fff; border-radius: 999px; padding: 5px 12px; cursor: pointer; font: inherit; }
+.m-lb-del:hover { border-color: #e5533d; color: #ff8a75; }
+@media (max-width: 640px) {
+  .c-card.has-media { padding-right: 74px; }
+  .c-thumb { top: 14px; right: 14px; width: 50px; height: 50px; }
+  .m-grid { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .m-tile.wide { grid-column: span 2; }
+  .m-lb-prev, .m-lb-next { display: none; }
+}

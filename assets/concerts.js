@@ -186,7 +186,10 @@
       ? `<p class="c-place c-open">1re partie : ${openers.map((a) => esc(a.artist)).join(", ")}</p>`
       : showActs && acts.length ? `<div class="chips">${acts.map((a) => artistChip(a, q)).join("")}</div>` : "";
     const songs = acts.filter(hasSongs).length;
-    return `<button type="button" class="c-card${fest ? " is-fest" : ""}${upcoming(e) ? " is-soon" : ""}" data-id="${e.id}">
+    const media = window.ConcertMedia?.items(e.id) || [];
+    const thumb = media.length ? `<span class="c-thumb"><img src="${esc(window.ConcertMedia.thumb(e.id))}" alt="" loading="lazy"><b>${media.length}</b></span>` : "";
+    return `<button type="button" class="c-card${fest ? " is-fest" : ""}${upcoming(e) ? " is-soon" : ""}${thumb ? " has-media" : ""}" data-id="${e.id}">
+      ${thumb}
       ${dateBlock(e)}
       <div class="c-body">
         <div class="c-head"><h3>${esc(title(e))}</h3>${tags(e)}</div>
@@ -283,6 +286,7 @@
           <p class="c-place">${esc(place(e)) || "Lieu à préciser"}${e.start ? " · " + esc(fmt(e.start, { weekday: "long", day: "numeric", month: "long", year: "numeric" })) + (e.end && e.end !== e.start ? " → " + esc(fmt(e.end, { day: "numeric", month: "long" })) : "") : ""}</p>
         </div>
       </header>
+      <section class="c-media" id="c-media"></section>
       ${PRIV ? `<button type="button" class="btn edit-btn" id="edit-event">Modifier le concert</button>
       <form class="edit" id="event-form" hidden>
         <p class="edit-title">Concert</p>
@@ -313,8 +317,32 @@
         <div class="btns"><button class="btn">Ajouter</button></div>
       </form>` : ""}
     </div>`;
+    renderMedia(e);
     if (!keep) els.dialog.showModal();
   }
+
+  // Photos et vidéos (assets/concert-media.js) ; pour un festival, regroupées par jour avec les artistes vus ce jour-là
+  function renderMedia(e) {
+    const box = document.getElementById("c-media");
+    if (!box || !window.ConcertMedia) return;
+    let groups = null;
+    if (e.type === "Festival") {
+      const days = new Map();
+      (state.byEvent.get(e.id) || []).forEach((a) => { if (a.date) { days.has(a.date) || days.set(a.date, []); days.get(a.date).push(a.artist); } });
+      // Une photo prise après minuit compte pour la veille (jusqu'à 6 h)
+      const dayOf = (m) => m.taken ? new Intl.DateTimeFormat("fr-CA", { timeZone: "Europe/Paris" }).format(new Date(Date.parse(m.taken) - 6 * 3600e3)) : null;
+      if (days.size > 1) groups = [...days.keys()].sort().map((d) => ({
+        label: `${fmt(d, { weekday: "long", day: "numeric", month: "long" })} · ${days.get(d).join(", ")}`,
+        match: (m) => dayOf(m) === d,
+      }));
+    }
+    window.ConcertMedia.render(box, e.id, groups);
+  }
+  window.ConcertMedia?.onChange(() => {
+    if (state.view === "list") renderList();
+    const e = state.current && state.byId.get(state.current);
+    if (e && els.dialog.open) renderMedia(e);
+  });
 
   const formData = (form) => Object.fromEntries([...new FormData(form).entries()].map(([k, v]) => [k, String(v).trim()]));
   async function busy(btn, fn) {
@@ -717,5 +745,6 @@
   els.dialog.addEventListener("close", () => { state.current = null; });
 
   load();
+  window.ConcertMedia?.load();
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 })();
