@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-08T17:51:34.381Z",
+ "updatedAt": "2026-11-08T19:05:57.063Z",
  "source": "cloudflare",
  "events": [
   {
@@ -224,6 +224,19 @@
    "lng": 1.4521
   },
   {
+   "id": "411a7bc0f6df810281c1f939e6548e0d",
+   "name": "Suzane — Toulouse",
+   "type": "Concert",
+   "status": "Vu",
+   "start": "2021-11-29",
+   "end": null,
+   "venue": "Le Bikini",
+   "city": "Ramonville",
+   "comment": null,
+   "lat": 43.5562,
+   "lng": 1.4806
+  },
+  {
    "id": "411a7bc0f6df813b927decd3881afd6c",
    "name": "Polo & Pan — Toulouse",
    "type": "Concert",
@@ -339,19 +352,6 @@
    "comment": "Fosse",
    "lat": 43.5997,
    "lng": 1.4154
-  },
-  {
-   "id": "411a7bc0f6df810281c1f939e6548e0d",
-   "name": "Suzane — Toulouse",
-   "type": "Concert",
-   "status": "Vu",
-   "start": "2022-11-29",
-   "end": null,
-   "venue": "Le Bikini",
-   "city": "Ramonville",
-   "comment": null,
-   "lat": 43.5562,
-   "lng": 1.4806
   },
   {
    "id": "411a7bc0f6df81ff879dd8c4c6d418e4",
@@ -1228,6 +1228,17 @@
    "comment": "Programmation du samedi trouvée en ligne, à confirmer"
   },
   {
+   "id": "411a7bc0f6df818992caf44c0ddbc29e",
+   "artist": "Étienne de Crécy",
+   "event": "411a7bc0f6df81cf9c3bef02305bdc95",
+   "date": "2022-04-17",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
    "id": "411a7bc0f6df81a7a10bf141bd3f98bb",
    "artist": "Feder",
    "event": "411a7bc0f6df818cb464ce0e58c38e3f",
@@ -1899,6 +1910,17 @@
    "comment": null
   },
   {
+   "id": "411a7bc0f6df819d98b3d3207ecdcdae",
+   "artist": "Olympe Chabert",
+   "event": "411a7bc0f6df810281c1f939e6548e0d",
+   "date": "2021-11-29",
+   "setlist": null,
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": "1re partie d'un artiste (lequel ? date à retrouver)"
+  },
+  {
    "id": "411a7bc0f6df81b1bfd6d17377205866",
    "artist": "Olympe Chabert",
    "event": "411a7bc0f6df81cbb363d572be854516",
@@ -2289,6 +2311,17 @@
    "event": "411a7bc0f6df8148a235c65da93259d8",
    "date": "2019-06-30",
    "setlist": "https://www.setlist.fm/setlist/systema-solar/2019/plaine-de-la-filhole-marmande-france-43915baf.html",
+   "media": null,
+   "mediaType": null,
+   "rating": null,
+   "comment": null
+  },
+  {
+   "id": "411a7bc0f6df8169bd65f511179e3c48",
+   "artist": "The Avener",
+   "event": "411a7bc0f6df8188bbc7f30110c6790c",
+   "date": "2021-07-16",
+   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
