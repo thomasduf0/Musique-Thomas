@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-08T14:18:03.758Z",
+ "updatedAt": "2026-11-08T14:25:58.510Z",
  "source": "cloudflare",
  "events": [
   {
@@ -896,8 +896,8 @@
   {
    "id": "411a7bc0f6df81b890d3e43e98ffc518",
    "artist": "Anetha",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1028,8 +1028,8 @@
   {
    "id": "411a7bc0f6df8136b1aaf191c141a6d3",
    "artist": "Biffty",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-30",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1116,8 +1116,8 @@
   {
    "id": "411a7bc0f6df816eafc3d662b7fa144b",
    "artist": "Blaiz Fayah",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-06-30",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1204,7 +1204,7 @@
   {
    "id": "411a7bc0f6df8117ad54f9bf48f300f5",
    "artist": "Christine and the Queens",
-   "event": "411a7bc0f6df81288ce3c0b9d2fe0e92",
+   "event": "411a7bc0f6df8148a235c65da93259d8",
    "date": "2019-06-28",
    "setlist": null,
    "media": null,
@@ -1411,22 +1411,22 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8116b93ce8e2579ed8e3",
+   "id": "411a7bc0f6df81a7a10bf141bd3f98bb",
    "artist": "Feder",
-   "event": null,
-   "date": null,
-   "setlist": null,
+   "event": "411a7bc0f6df818cb464ce0e58c38e3f",
+   "date": "2016-07-01",
+   "setlist": "https://www.setlist.fm/setlist/feder/2016/plaine-de-la-filhole-marmande-france-3bff9440.html",
    "media": null,
    "mediaType": null,
    "rating": null,
    "comment": null
   },
   {
-   "id": "411a7bc0f6df81a7a10bf141bd3f98bb",
+   "id": "411a7bc0f6df8116b93ce8e2579ed8e3",
    "artist": "Feder",
-   "event": "411a7bc0f6df818cb464ce0e58c38e3f",
-   "date": "2016-07-01",
-   "setlist": "https://www.setlist.fm/setlist/feder/2016/plaine-de-la-filhole-marmande-france-3bff9440.html",
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-29",
+   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
@@ -1523,7 +1523,7 @@
   {
    "id": "411a7bc0f6df81a9bf5cefd5727f85ec",
    "artist": "Hoshi",
-   "event": null,
+   "event": "411a7bc0f6df8102864ffe45cecf095f",
    "date": "2019-08-30",
    "setlist": null,
    "media": null,
@@ -1600,8 +1600,8 @@
   {
    "id": "411a7bc0f6df814fadb0c182b05dd2a7",
    "artist": "Jahneration",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
+   "date": "2019-06-29",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -1631,22 +1631,22 @@
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8166863efa4ac09f7239",
+   "id": "411a7bc0f6df8159b3aef6f7e278e744",
    "artist": "Jamie xx",
-   "event": null,
-   "date": null,
-   "setlist": null,
+   "event": "411a7bc0f6df818cb464ce0e58c38e3f",
+   "date": "2016-07-01",
+   "setlist": "https://www.setlist.fm/setlist/jamie-xx/2016/plaine-de-la-filhole-marmande-france-23ff944f.html",
    "media": null,
    "mediaType": null,
    "rating": null,
    "comment": null
   },
   {
-   "id": "411a7bc0f6df8159b3aef6f7e278e744",
+   "id": "411a7bc0f6df8166863efa4ac09f7239",
    "artist": "Jamie xx",
-   "event": "411a7bc0f6df818cb464ce0e58c38e3f",
-   "date": "2016-07-01",
-   "setlist": "https://www.setlist.fm/setlist/jamie-xx/2016/plaine-de-la-filhole-marmande-france-23ff944f.html",
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-06-30",
+   "setlist": null,
    "media": null,
    "mediaType": null,
    "rating": null,
@@ -1677,7 +1677,7 @@
   {
    "id": "411a7bc0f6df818fb9abf9cbf9824e6a",
    "artist": "Julien Granel",
-   "event": null,
+   "event": "411a7bc0f6df81cbb363d572be854516",
    "date": "2023-09-02",
    "setlist": null,
    "media": null,
@@ -1721,7 +1721,7 @@
   {
    "id": "411a7bc0f6df81d9ae57ca983da3d14e",
    "artist": "L'Impératrice",
-   "event": null,
+   "event": "411a7bc0f6df815585e3fcc499adca2c",
    "date": "2022-09-02",
    "setlist": null,
    "media": null,
@@ -1743,7 +1743,7 @@
   {
    "id": "411a7bc0f6df8140bba2f7536fbe0df5",
    "artist": "La Femme",
-   "event": null,
+   "event": "411a7bc0f6df81cbb363d572be854516",
    "date": "2023-09-03",
    "setlist": null,
    "media": null,
@@ -1798,7 +1798,7 @@
   {
    "id": "411a7bc0f6df8154a848e30bd824eca6",
    "artist": "Lilly Palmer",
-   "event": null,
+   "event": "411a7bc0f6df81cbb363d572be854516",
    "date": "2023-09-02",
    "setlist": null,
    "media": null,
@@ -1941,7 +1941,7 @@
   {
    "id": "411a7bc0f6df81d1a263f80b70a63a05",
    "artist": "Martin Garrix",
-   "event": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
    "date": "2022-07-03",
    "setlist": null,
    "media": null,
@@ -2084,7 +2084,7 @@
   {
    "id": "411a7bc0f6df81ea90b7fffb902cce4b",
    "artist": "NTO",
-   "event": null,
+   "event": "411a7bc0f6df815585e3fcc499adca2c",
    "date": "2022-09-02",
    "setlist": null,
    "media": null,
@@ -2161,8 +2161,8 @@
   {
    "id": "411a7bc0f6df816082bcd799ad68ad6c",
    "artist": "Parcels",
-   "event": null,
-   "date": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
+   "date": "2022-07-02",
    "setlist": null,
    "media": null,
    "mediaType": null,
@@ -2568,7 +2568,7 @@
   {
    "id": "411a7bc0f6df81c8a0fad85345f4346b",
    "artist": "Thylacine",
-   "event": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
    "date": "2022-07-02",
    "setlist": null,
    "media": null,
@@ -2601,7 +2601,7 @@
   {
    "id": "411a7bc0f6df819aafdcc1702f241d45",
    "artist": "Vald",
-   "event": null,
+   "event": "411a7bc0f6df8148a235c65da93259d8",
    "date": "2019-06-28",
    "setlist": null,
    "media": null,
@@ -2623,7 +2623,7 @@
   {
    "id": "411a7bc0f6df81dda4d2d727d4f52e53",
    "artist": "Vianney",
-   "event": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
    "date": "2022-07-02",
    "setlist": null,
    "media": null,
@@ -2656,7 +2656,7 @@
   {
    "id": "411a7bc0f6df81678b7adf457957903b",
    "artist": "Vladimir Cauchemar",
-   "event": null,
+   "event": "411a7bc0f6df81d682d5d362e87fcf67",
    "date": "2022-07-03",
    "setlist": null,
    "media": null,
