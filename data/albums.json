@@ -1,7 +1,22 @@
 {
- "updatedAt": "2026-11-09T13:36:19.758Z",
+ "updatedAt": "2026-11-09T15:15:15.672Z",
  "source": "cloudflare",
  "albums": [
+  {
+   "id": "368a7bc0f6df8090bc2dfa9ea61e7db7",
+   "album": "Ritual",
+   "artist": "Icona Pop",
+   "genres": [
+    "Dance"
+   ],
+   "lang": "Anglais",
+   "rating": 3,
+   "listened": true,
+   "listenedOn": "2026-11-09",
+   "released": "2026-08-14",
+   "link": "https://open.spotify.com/album/48kNSC9VNag007n2cdI374",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4e/f9/e9/4ef9e917-0bb7-7988-b5ba-781e15cdaeb2/196874146361.jpg/600x600bb.jpg"
+  },
   {
    "id": "411a7bc0f6df817a996acdf23635a39a",
    "album": "ANTI (Deluxe)",
