@@ -420,3 +420,54 @@ html:not(.is-private) .priv { display: none !important; }
 :root[data-theme="light"] .login-dlg .gate-err { color: #c0392b; }
 .login-dlg .close { top: 10px; right: 10px; background: transparent; color: var(--muted); }
 .login-dlg .close:hover { color: var(--text); }
+
+/* ---------- Effet verre cannelé (header + cartes) ---------- */
+:root {
+  --flute-w: 14px;        /* largeur des stries */
+  --flute-blur: 16px;     /* flou */
+  --flute-veil: 35%;      /* opacité du voile */
+  --flute-hi: rgba(255,255,255,.20);
+  --flute-lo: rgba(255,255,255,.04);
+  --flute-sh: rgba(0,0,0,.14);
+  --flute-edge: rgba(255,255,255,.14);
+}
+:root[data-theme="light"] {
+  --flute-hi: rgba(255,255,255,.55);
+  --flute-lo: rgba(255,255,255,.10);
+  --flute-sh: rgba(60,40,20,.08);
+  --flute-edge: rgba(255,255,255,.6);
+}
+/* Fond coloré fixe, visible à travers le verre */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(520px 420px at 12% 18%, var(--accent), transparent 70%),
+    radial-gradient(480px 380px at 88% 30%, var(--gold), transparent 70%),
+    radial-gradient(560px 460px at 30% 85%, #7f77dd, transparent 70%),
+    radial-gradient(460px 380px at 85% 90%, #1d9e75, transparent 70%);
+  opacity: .55;
+}
+:root[data-theme="light"] body::before { opacity: .35; }
+.hero, .grid .card {
+  background:
+    linear-gradient(color-mix(in srgb, var(--bg) var(--flute-veil), transparent), color-mix(in srgb, var(--bg) var(--flute-veil), transparent)),
+    repeating-linear-gradient(90deg,
+      var(--flute-hi) 0,
+      var(--flute-lo) calc(var(--flute-w) * .45),
+      var(--flute-sh) calc(var(--flute-w) * .85),
+      var(--flute-hi) var(--flute-w));
+  -webkit-backdrop-filter: blur(var(--flute-blur)) saturate(140%);
+  backdrop-filter: blur(var(--flute-blur)) saturate(140%);
+}
+.hero { border-bottom-color: var(--flute-edge); }
+.grid .card {
+  padding: 10px 10px 12px; border: 1px solid var(--flute-edge); border-radius: calc(var(--radius) + 4px);
+}
+.grid .card h3, .grid .card p { text-shadow: 0 1px 2px var(--shadow); }
+.grid .card p { color: var(--text); opacity: .82; }
+/* Onglets collants : même verre pour ne pas couper le fond */
+.tabs { background: color-mix(in srgb, var(--bg) 70%, transparent); -webkit-backdrop-filter: blur(var(--flute-blur)); backdrop-filter: blur(var(--flute-blur)); }
+/* Navigateurs sans backdrop-filter : fond plein lisible */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .hero, .grid .card, .tabs { background: var(--bg-2); }
+}
