@@ -1,7 +1,39 @@
 {
- "updatedAt": "2026-11-23T06:28:35.147Z",
+ "updatedAt": "2026-11-23T08:50:43.209Z",
  "source": "cloudflare",
  "albums": [
+  {
+   "id": "41ea7bc0f6df8116acf8d7228c244e0e",
+   "album": "BLOND",
+   "artist": "jalda",
+   "genres": [
+    "Pop",
+    "Electro"
+   ],
+   "lang": null,
+   "rating": 5,
+   "listened": true,
+   "listenedOn": "2026-11-23",
+   "released": "2026-09-04",
+   "link": "https://open.spotify.com/album/43dn4ZDgTMhJyqvZ5PEmBE",
+   "cover": "https://i.scdn.co/image/ab67616d0000b27362facf7af35e8adb3e6c4343"
+  },
+  {
+   "id": "41ea7bc0f6df81ee9f8ef101467cf0c1",
+   "album": "SPRINGER DU TILL ELLER FRÅN",
+   "artist": "jalda",
+   "genres": [
+    "Pop"
+   ],
+   "lang": null,
+   "rating": 4,
+   "listened": true,
+   "listenedOn": "2026-11-23",
+   "released": "2025-07-18",
+   "link": "https://open.spotify.com/album/0gN70DG9nDLbrLbVJyB5IZ",
+   "cover": "https://i.scdn.co/image/ab67616d0000b2736b0ee0ae71f78e16235bf553",
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/89/f3/e7/89f3e7e0-48b9-a0a5-ce62-31bad5c18b00/26UMGIM80163.rgb.jpg/600x600bb.jpg"
+  },
   {
    "id": "368a7bc0f6df8090bc2dfa9ea61e7db7",
    "album": "Ritual",
