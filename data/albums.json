@@ -1,7 +1,20 @@
 {
- "updatedAt": "2026-11-23T12:17:06.128Z",
+ "updatedAt": "2026-11-23T13:44:00.374Z",
  "source": "cloudflare",
  "albums": [
+  {
+   "id": "421a7bc0f6df81d09a11e93bf4f51a23",
+   "album": "Bad Omen",
+   "artist": "Jasmine Not Jafar",
+   "genres": [],
+   "lang": null,
+   "rating": null,
+   "listened": true,
+   "listenedOn": "2026-11-23",
+   "released": "2026-10-23",
+   "link": "https://open.spotify.com/album/3hVSULkUtJH9ZjVXT0VTe2",
+   "cover": "https://i.scdn.co/image/ab67616d0000b273905c36411f3b86e8dfd64427"
+  },
   {
    "id": "41ea7bc0f6df8116acf8d7228c244e0e",
    "album": "BLOND",
