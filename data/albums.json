@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T22:11:15.341Z",
+ "updatedAt": "2026-11-23T23:13:34.131Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -39,7 +39,7 @@
     "Pop"
    ],
    "lang": null,
-   "rating": null,
+   "rating": 4,
    "listened": true,
    "listenedOn": "2026-11-23",
    "released": "2023-10-06",
@@ -62,6 +62,21 @@
    "link": "https://open.spotify.com/album/0gN70DG9nDLbrLbVJyB5IZ",
    "cover": "https://i.scdn.co/image/ab67616d0000b2736b0ee0ae71f78e16235bf553",
    "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/89/f3/e7/89f3e7e0-48b9-a0a5-ce62-31bad5c18b00/26UMGIM80163.rgb.jpg/600x600bb.jpg"
+  },
+  {
+   "id": "2dba7bc0f6df800b9ef3fed00d0ffe01",
+   "album": "Tons of Friends",
+   "artist": "Crookers",
+   "genres": [
+    "Dance"
+   ],
+   "lang": "Anglais",
+   "rating": 2,
+   "listened": true,
+   "listenedOn": "2026-11-23",
+   "released": "2010-03-08",
+   "link": "https://open.spotify.com/album/4PTgb4tiMT9djpRGUzbv1Q",
+   "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/3d/31/5d/mzi.dzhcyljd.jpg/600x600bb.jpg"
   },
   {
    "id": "368a7bc0f6df8090bc2dfa9ea61e7db7",
