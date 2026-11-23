@@ -167,7 +167,14 @@ async function searchAlbums(env, album, artist, opts = {}) {
     } catch { /* genres facultatifs */ }
   }
 
-  return items.map((a) => ({
+  // Spotify range les EP dans « single » : 1 à 3 titres = single, 4 titres et plus = EP.
+  const kindOf = (a) => a.album_type === "single" ? (a.total_tracks >= 4 ? "ep" : "single") : a.album_type;
+  // Site d'albums : albums d'abord, puis EP, compilations et singles (ordre Spotify gardé dans chaque groupe)
+  const rank = { album: 0, ep: 1, compilation: 2, single: 3 };
+  const sorted = items.map((a, i) => ({ a, i, k: kindOf(a) }))
+    .sort((x, y) => (rank[x.k] ?? 4) - (rank[y.k] ?? 4) || x.i - y.i);
+
+  return sorted.map(({ a, k }) => ({
     spotifyId: a.id,
     album: a.name,
     artist: a.artists.map((x) => x.name).join(", "),
@@ -175,7 +182,7 @@ async function searchAlbums(env, album, artist, opts = {}) {
     artistId: a.artists[0]?.id || null,
     released: a.release_date_precision === "day" ? a.release_date : a.release_date_precision === "month" ? `${a.release_date}-01` : `${a.release_date}-01-01`,
     tracks: a.total_tracks,
-    type: a.album_type,
+    type: k,
     cover: a.images?.[0]?.url || null,
     thumb: a.images?.[a.images.length > 1 ? 1 : 0]?.url || null,
     link: a.external_urls?.spotify || `https://open.spotify.com/album/${a.id}`,

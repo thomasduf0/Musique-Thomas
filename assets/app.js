@@ -732,7 +732,7 @@
       ${ext.length ? `<div class="s-ext${loading ? " stale" : ""}">${ext.map((r, i) => `
         <div class="srow" tabindex="-1">
           ${thumb(r.thumb || r.cover)}
-          <div><b>${esc(r.album)}</b><span>${esc(r.artist)}${r.released ? " · " + esc(r.released.slice(0, 4)) : ""}${r.type && r.type !== "album" ? " · " + esc(r.type) : ""}</span></div>
+          <div><b>${esc(r.album)}</b><span>${esc(r.artist)}${r.released ? " · " + esc(r.released.slice(0, 4)) : ""}${TYPE_LABEL[r.type] ? " · " + TYPE_LABEL[r.type] : ""}</span></div>
           <div class="acts">
             <button class="mini-btn primary" type="button" data-s-heard="${i}">✓ Écouté</button>
             <button class="mini-btn" type="button" data-s-todo="${i}">+ À écouter</button>
@@ -743,6 +743,7 @@
     sBox.hidden = false;
     if (keepFocus >= 0) sBox.querySelectorAll(".srow")[keepFocus]?.focus();
   }
+  const TYPE_LABEL = { ep: "EP", single: "Single", compilation: "Compilation" };
   async function fetchSpotify(q) {
     const key = norm(q);
     if (sCache.has(key)) return sCache.get(key);
