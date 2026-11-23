@@ -749,7 +749,11 @@
     if (sCache.has(key)) return sCache.get(key);
     sAbort?.abort();
     const ctrl = sAbort = new AbortController();
-    const { results = [] } = await api(`/search?q=${encodeURIComponent(q)}`, { signal: ctrl.signal });
+    const { results: raw = [] } = await api(`/search?q=${encodeURIComponent(q)}`, { signal: ctrl.signal });
+    // Spotify range les EP dans « single » (4 titres et plus = EP) ; albums d'abord, singles en dernier
+    const RANK = { album: 0, ep: 1, compilation: 2, single: 3 };
+    const results = raw.map((r, i) => ({ ...r, type: r.type === "single" && r.tracks >= 4 ? "ep" : r.type, _i: i }))
+      .sort((a, b) => (RANK[a.type] ?? 4) - (RANK[b.type] ?? 4) || a._i - b._i);
     sCache.set(key, results);
     if (sCache.size > 60) sCache.delete(sCache.keys().next().value);
     return results;
