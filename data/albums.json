@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T13:44:00.374Z",
+ "updatedAt": "2026-11-23T15:28:54.948Z",
  "source": "cloudflare",
  "albums": [
   {
@@ -8,7 +8,7 @@
    "artist": "Jasmine Not Jafar",
    "genres": [],
    "lang": null,
-   "rating": null,
+   "rating": 3,
    "listened": true,
    "listenedOn": "2026-11-23",
    "released": "2026-10-23",
