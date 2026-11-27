@@ -1,7 +1,23 @@
 {
- "updatedAt": "2026-11-27T12:17:18.040Z",
+ "updatedAt": "2026-11-27T13:39:34.213Z",
  "source": "cloudflare",
  "albums": [
+  {
+   "id": "424a7bc0f6df817d918cc07e722d2cb6",
+   "album": "Born To Die (Deluxe Version)",
+   "artist": "Lana Del Rey",
+   "genres": [
+    "Alternative"
+   ],
+   "lang": null,
+   "rating": null,
+   "listened": true,
+   "listenedOn": "2026-11-27",
+   "released": "2011-01-01",
+   "link": "https://open.spotify.com/album/2GGstjn2lepcltXd21I24t",
+   "cover": "https://i.scdn.co/image/ab67616d0000b273959280fee07d485cb5b56fe7",
+   "coverAlt": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/1b/bb/49/1bbb497b-07c6-cee8-236b-874ab1c17fbf/12UMGIM00033.rgb.jpg/600x600bb.jpg"
+  },
   {
    "id": "421a7bc0f6df81d09a11e93bf4f51a23",
    "album": "Bad Omen",
